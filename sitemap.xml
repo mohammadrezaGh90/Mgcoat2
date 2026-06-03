@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.mgcoat.com/</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mgcoat.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mgcoat.com/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.mgcoat.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://www.mgcoat.com/?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mgcoat.com/"/>
   </url>
 </urlset>
