@@ -292,6 +292,19 @@ h1 {
   border: 1px solid var(--brd); background: var(--glass); box-shadow: var(--shadow);
 }
 .visual-card img { display: block; width: 100%; height: auto; }
+.visual-video video { display: block; width: 100%; height: auto; background: #05070d; }
+
+/* cinematic image backdrop for selected sections (dark overlay keeps text legible) */
+.has-bg { position: relative; isolation: isolate; }
+.has-bg::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(rgba(5, 7, 13, .62), rgba(5, 7, 13, .78)),
+    var(--bg-img) center / cover no-repeat;
+  background-attachment: scroll, fixed;
+}
+/* extra readability scrim only behind the text column of the contact CTA */
+.has-bg.contact-section::before { background: linear-gradient(rgba(5, 7, 13, .55), rgba(5, 7, 13, .72)), var(--bg-img) center / cover no-repeat; }
 
 /* ============================================================
    CONTENT SECTIONS (clean / minimal)
