@@ -1,19 +1,19 @@
 /* ============================================================
-   MG TECH — cosmic welcome intro (scroll-driven)
-   A dense duotone (cyan / red-orange) particle accretion disk
-   swirls around a dark core (the MG lockup sits in the "eye").
-   Additive blending gives a luminous, high-graphics galaxy look.
-   Scrolling spins + tilts + recedes the disk — like pulling out
-   of a star system — then the canvas fades for clean content.
-   Progress is damped so it plays smoothly at any scroll speed.
-   Vanilla canvas. Honors prefers-reduced-motion.
+   MG TECH — WebGL cosmic welcome intro (scroll-driven)
+   Thousands of GPU particles form a luminous duotone (cyan / red)
+   accretion disk swirling around a dark core (the MG lockup sits
+   in the eye), over a parallax starfield. Additive blending gives
+   the film-grade glow. Scroll spins / tilts / pulls the disk back.
+   Progress is damped for smooth playback at any scroll speed.
+   Raw WebGL (no libraries). Honors prefers-reduced-motion, with a
+   2-D canvas fallback if WebGL is unavailable.
    ============================================================ */
 (function () {
   "use strict";
 
   var canvas = document.getElementById("fx");
   if (!canvas) return;
-  var ctx = canvas.getContext("2d", { alpha: true });
+
   var intro = document.getElementById("intro");
   var introInner = document.querySelector(".intro-inner");
   var introLogo = document.querySelector(".intro-logo");
@@ -26,71 +26,21 @@
   var reduce = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var CYAN = [90, 200, 255], RED = [255, 96, 60], WHITE = [255, 244, 235];
-  var BG = [6, 8, 14];
-  var TAU = Math.PI * 2;
-
-  var W = 0, H = 0, DPR = 1, cx = 0, cy = 0, minDim = 1;
-  var parts = [], stars = [];
-  var pointer = { x: 0, y: 0, px: 0, py: 0 };
-  var introTarget = 0, introP = 0, scrollY = 0, vh = 0, introH = 0, t = 0;
-  var rafId = null, running = false;
-
-  function rgba(c, a) { return "rgba(" + (c[0] | 0) + "," + (c[1] | 0) + "," + (c[2] | 0) + "," + a + ")"; }
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function lerp(a, b, k) { return a + (b - a) * k; }
-  function mix(a, b, k) { return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k]; }
   function easeIO(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
 
-  function build() {
-    W = window.innerWidth; H = window.innerHeight; cx = W / 2; cy = H * 0.44;
-    minDim = Math.min(W, H);
-    var small = W < 760;
-    var inner = minDim * 0.11, outer = minDim * 0.62;
+  var introTarget = 0, introP = 0, scrollY = 0, vh = 0, introH = 0;
 
-    parts = [];
-    var N = small ? 360 : 820;
-    for (var i = 0; i < N; i++) {
-      // bias density toward the inner edge (accretion glow)
-      var rr = Math.pow(Math.random(), 1.7);
-      var rad = inner + rr * (outer - inner);
-      parts.push({
-        rad: rad,
-        ang: Math.random() * TAU,
-        spd: (0.16 + 0.9 * (inner / rad)) * (Math.random() * 0.4 + 0.8), // faster inside
-        sz: 0.6 + Math.random() * 1.5,
-        fl: Math.random() * TAU, fs: 0.6 + Math.random() * 1.8,         // flicker
-        jit: (Math.random() - 0.5) * minDim * 0.03,                      // radial scatter
-      });
-    }
-
-    stars = [];
-    var ns = small ? 90 : 150;
-    for (var j = 0; j < ns; j++) {
-      stars.push({ x: Math.random() * W, y: Math.random() * H, z: 0.15 + Math.random() * 0.85, r: Math.random() * 1.2 + 0.2, tw: Math.random() * TAU, ts: 0.6 + Math.random() * 1.3 });
-    }
-  }
-
-  function resize() {
-    DPR = Math.min(2, window.devicePixelRatio || 1);
-    canvas.width = window.innerWidth * DPR;
-    canvas.height = window.innerHeight * DPR;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    build(); measure();
-  }
   function measure() { vh = window.innerHeight; introH = intro ? intro.offsetHeight : vh; }
-
   function onScroll() {
     scrollY = window.pageYOffset || document.documentElement.scrollTop;
     introTarget = clamp(scrollY / Math.max(1, introH - vh), 0, 1);
   }
-
   function updateIntroDOM() {
     if (!introInner) return;
     var e = easeIO(introP), settle = clamp(introP / 0.35, 0, 1);
-    if (introLogo) { introLogo.style.opacity = "1"; introLogo.style.transform = "scale(" + lerp(0.92, 1.06, e) + ")"; }
+    if (introLogo) { introLogo.style.opacity = "1"; introLogo.style.transform = "scale(" + lerp(0.92, 1.07, e) + ")"; }
     if (introTitle) { introTitle.style.opacity = "1"; introTitle.style.transform = "translateY(" + lerp(10, 0, settle) + "px)"; }
     if (introSub) introSub.style.opacity = "1";
     if (introTag) introTag.style.opacity = clamp((introP - 0.42) / 0.26, 0, 1);
@@ -100,103 +50,217 @@
     introInner.style.opacity = String(1 - out);
     introInner.style.transform = "translateY(" + (-out * 46) + "px) scale(" + (1 - out * 0.05) + ")";
   }
-
   function updateCanvasFade() {
     var k = clamp((scrollY - (introH + vh * 0.4)) / (vh * 1.1), 0, 1);
     canvas.style.opacity = String(lerp(1, 0.05, k));
   }
 
-  function frame() {
+  var gl = null;
+  try {
+    gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: false, antialias: true, depth: false })
+      || canvas.getContext("experimental-webgl", { alpha: true, premultipliedAlpha: false });
+  } catch (e) { gl = null; }
+
+  // ---------------- 2-D fallback (no WebGL) ----------------
+  if (!gl) {
+    var c2 = canvas.getContext("2d");
+    function fb() {
+      var W = canvas.width = window.innerWidth, H = canvas.height = window.innerHeight;
+      c2.clearRect(0, 0, W, H);
+      var g = c2.createRadialGradient(W / 2, H * 0.44, 0, W / 2, H * 0.44, Math.min(W, H) * 0.45);
+      g.addColorStop(0, "rgba(120,160,255,.12)"); g.addColorStop(1, "rgba(0,0,0,0)");
+      c2.fillStyle = g; c2.fillRect(0, 0, W, H);
+    }
+    fb(); window.addEventListener("resize", fb);
+    return;
+  }
+
+  // ---------------- shaders ----------------
+  var VS = [
+    "precision highp float;",
+    "attribute float aType;",   // 0 disk, 1 star
+    "attribute float aSeed;",
+    "attribute float aR1;",      // radius rand
+    "attribute float aR2;",      // angle rand
+    "attribute float aR3;",      // misc
+    "uniform float uTime;",
+    "uniform float uScroll;",
+    "uniform vec2 uRes;",
+    "uniform vec2 uPtr;",
+    "uniform vec2 uCenter;",
+    "varying vec3 vColor;",
+    "varying float vAlpha;",
+    "const float TAU=6.2831853;",
+    "void main(){",
+    "  float e=uScroll;",
+    "  float aspect=uRes.x/uRes.y;",
+    "  if(aType>0.5){",            // STAR
+    "    float sx=aR1*2.0-1.0;",
+    "    float sy=aR2*2.0-1.0;",
+    "    sx+=uPtr.x*0.04*(0.3+aR3);",
+    "    sy+=uPtr.y*0.03*(0.3+aR3);",
+    "    gl_Position=vec4(sx,sy,0.0,1.0);",
+    "    float tw=0.5+0.5*sin(uTime*1.5+aSeed*TAU);",
+    "    vAlpha=(0.10+0.35*aR3)*tw;",
+    "    vColor=vec3(0.85,0.92,1.0);",
+    "    gl_PointSize=(1.0+aR3*1.6)*(uRes.y/900.0);",
+    "    return;",
+    "  }",
+    "  vec2 center=uCenter;",
+    "  float inner=0.17, outer=0.98;",
+    "  float rad=mix(inner,outer,pow(aR1,0.7));",
+    "  float spd=0.16+0.8*(inner/rad);",
+    "  float ang=aR2*TAU+rad*2.6+uTime*spd+e*1.6;",
+    "  float thick=(aR3-0.5)*0.05;",
+    "  float x=cos(ang)*rad;",
+    "  float z=sin(ang)*rad;",
+    "  float scale=mix(1.05,0.8,e);",
+    "  float tilt=mix(0.62,0.32,e);",
+    "  float xs=x*scale;",
+    "  float ys=(z*tilt+thick)*scale;",
+    "  float depth=(z+1.0)*0.5;",
+    "  vec2 pos=center+vec2(xs/aspect,ys)+uPtr*0.02;",
+    "  gl_Position=vec4(pos,0.0,1.0);",
+    "  float innerGlow=clamp(1.0-(rad-inner)/(outer-inner),0.0,1.0);",
+    "  innerGlow=pow(innerGlow,1.3);",
+    "  gl_PointSize=(2.4+depth*5.5+innerGlow*8.0)*(uRes.y/900.0);",
+    "  float side=(cos(ang)+1.0)*0.5;",
+    "  vec3 cyan=vec3(0.22,0.66,1.0);",
+    "  vec3 red=vec3(1.0,0.30,0.18);",
+    "  vec3 col=mix(cyan,red,side);",
+    "  col=mix(col,vec3(1.0,0.95,0.88),innerGlow*0.4);",
+    "  vColor=col;",
+    "  float flick=0.65+0.35*sin(uTime*2.0+aSeed*TAU*3.0);",
+    "  float below=smoothstep(center.y-0.32,center.y-0.05,pos.y);",
+    "  vAlpha=(0.42+0.55*innerGlow)*(0.5+0.5*depth)*flick*(0.72+0.28*e)*mix(0.35,1.0,below);",
+    "}"
+  ].join("\n");
+
+  var FS = [
+    "precision mediump float;",
+    "varying vec3 vColor;",
+    "varying float vAlpha;",
+    "void main(){",
+    "  vec2 d=gl_PointCoord-0.5;",
+    "  float r=length(d);",
+    "  float a=smoothstep(0.5,0.0,r)*vAlpha;",
+    "  gl_FragColor=vec4(vColor,a);",
+    "}"
+  ].join("\n");
+
+  function sh(type, src) {
+    var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { console.warn(gl.getShaderInfoLog(s)); }
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+
+  // ---------------- particle buffer ----------------
+  var DISK = window.innerWidth < 760 ? 11000 : 26000;
+  var STAR = window.innerWidth < 760 ? 700 : 1400;
+  var N = DISK + STAR;
+  var data = new Float32Array(N * 5); // type, seed, r1, r2, r3
+  for (var i = 0; i < N; i++) {
+    var o = i * 5;
+    data[o] = i < DISK ? 0 : 1;
+    data[o + 1] = Math.random();
+    data[o + 2] = Math.random();
+    data[o + 3] = Math.random();
+    data[o + 4] = Math.random();
+  }
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+  var stride = 5 * 4;
+  ["aType", "aSeed", "aR1", "aR2", "aR3"].forEach(function (name, k) {
+    var loc = gl.getAttribLocation(prog, name);
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 1, gl.FLOAT, false, stride, k * 4);
+  });
+
+  var uTime = gl.getUniformLocation(prog, "uTime");
+  var uScroll = gl.getUniformLocation(prog, "uScroll");
+  var uRes = gl.getUniformLocation(prog, "uRes");
+  var uPtr = gl.getUniformLocation(prog, "uPtr");
+  var uCenter = gl.getUniformLocation(prog, "uCenter");
+
+  // clip-space centre of the disk = centre of the logo (the void)
+  var centerX = 0, centerY = 0.12;
+  function calcCenter() {
+    if (!introLogo) return;
+    var r = introLogo.getBoundingClientRect();
+    if (!r.width) return;
+    var px = r.left + r.width / 2, py = r.top + r.height / 2;
+    centerX = (px / window.innerWidth) * 2 - 1;
+    centerY = -((py / window.innerHeight) * 2 - 1);
+  }
+
+  gl.disable(gl.DEPTH_TEST);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE);   // additive
+
+  var DPR = 1, ptr = { x: 0, y: 0, px: 0, py: 0 };
+  function resize() {
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = Math.floor(window.innerWidth * DPR);
+    canvas.height = Math.floor(window.innerHeight * DPR);
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    measure();
+    calcCenter();
+  }
+
+  var t0 = performance.now(), running = false, rafId = null;
+  function render() {
     if (!running) return;
-    rafId = requestAnimationFrame(frame);
-    t += 0.016;
+    rafId = requestAnimationFrame(render);
+    var t = (performance.now() - t0) / 1000;
 
     introP += (introTarget - introP) * 0.085;
     if (Math.abs(introTarget - introP) < 0.0004) introP = introTarget;
     updateIntroDOM();
     updateCanvasFade();
 
-    pointer.px += (pointer.x - pointer.px) * 0.05;
-    pointer.py += (pointer.y - pointer.py) * 0.05;
-    var ox = (pointer.px - cx) * 0.025, oy = (pointer.py - cy) * 0.02;
+    ptr.px += (ptr.x - ptr.px) * 0.05; ptr.py += (ptr.y - ptr.py) * 0.05;
 
-    var e = easeIO(introP);
-    var scale = lerp(1.12, 0.82, e);             // pull back as you scroll out
-    var tilt = lerp(0.62, 0.34, e);              // disk flattens (more edge-on)
-    var spin = t * 0.25 + e * 1.6;
-    var hx = cx + ox, hy = cy + oy;
-    var inner = minDim * 0.11 * scale;
-
-    ctx.clearRect(0, 0, W, H);
-
-    // ---- starfield ----
-    var i, s;
-    for (i = 0; i < stars.length; i++) {
-      s = stars[i];
-      var tw = 0.4 + 0.6 * Math.abs(Math.sin(s.tw + t * s.ts));
-      ctx.fillStyle = rgba(WHITE, tw * (0.16 + 0.4 * s.z));
-      ctx.beginPath(); ctx.arc(s.x + ox * s.z * 2.5, s.y + oy * s.z * 2, s.r * (0.6 + s.z), 0, TAU); ctx.fill();
-    }
-
-    // ---- accretion disk (additive glow) ----
-    ctx.globalCompositeOperation = "lighter";
-    for (i = 0; i < parts.length; i++) {
-      var p = parts[i];
-      p.ang += p.spd * 0.012 * (1 + e * 0.8);
-      var rad = (p.rad + p.jit) * scale;
-      var a = p.ang + spin;
-      var ca = Math.cos(a), sa = Math.sin(a);
-      var x = hx + ca * rad;
-      var y = hy + sa * rad * tilt;
-      var front = 0.5 + 0.5 * sa;                          // near edge brighter
-      var side = (ca + 1) / 2;                             // 0 cyan .. 1 red
-      var innerGlow = clamp(1 - (rad / (minDim * 0.62)), 0, 1); // hotter inside
-      var col = mix(mix(CYAN, RED, side), WHITE, innerGlow * 0.6);
-      var fl = 0.6 + 0.4 * Math.sin(p.fl + t * p.fs);
-      var al = (0.10 + 0.5 * innerGlow) * (0.45 + 0.55 * front) * fl;
-      ctx.fillStyle = rgba(col, clamp(al, 0, 0.9));
-      ctx.beginPath(); ctx.arc(x, y, p.sz * (0.9 + innerGlow * 1.2), 0, TAU); ctx.fill();
-    }
-
-    // soft photon-ring glow at the inner edge
-    var rg = ctx.createRadialGradient(hx, hy, inner * 0.7, hx, hy, inner * 1.7);
-    rg.addColorStop(0, rgba(WHITE, 0.0));
-    rg.addColorStop(0.5, rgba(mix(CYAN, RED, 0.5), 0.22 + 0.08 * Math.sin(t * 1.5)));
-    rg.addColorStop(1, rgba(mix(CYAN, RED, 0.5), 0));
-    ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(hx, hy, inner * 1.7, 0, TAU); ctx.fill();
-
-    // ---- dark core (the void where the logo sits) ----
-    ctx.globalCompositeOperation = "source-over";
-    var vg = ctx.createRadialGradient(hx, hy, 0, hx, hy, inner * 1.25);
-    vg.addColorStop(0, rgba(BG, 1));
-    vg.addColorStop(0.72, rgba(BG, 0.95));
-    vg.addColorStop(1, rgba(BG, 0));
-    ctx.fillStyle = vg; ctx.beginPath(); ctx.arc(hx, hy, inner * 1.25, 0, TAU); ctx.fill();
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform1f(uTime, t);
+    gl.uniform1f(uScroll, introP);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform2f(uPtr, ptr.px, ptr.py);
+    gl.uniform2f(uCenter, centerX, centerY);
+    gl.drawArrays(gl.POINTS, 0, N);
   }
-
-  function start() { if (!running && !reduce) { running = true; rafId = requestAnimationFrame(frame); } }
+  function start() { if (!running && !reduce) { running = true; rafId = requestAnimationFrame(render); } }
   function stop() { running = false; if (rafId) cancelAnimationFrame(rafId); }
 
-  if (reduce) {
-    resize();
-    introP = 0; updateIntroDOM();
-    for (var k = 0; k < stars.length; k++) { var st = stars[k]; ctx.fillStyle = rgba(WHITE, 0.4 * st.z); ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, TAU); ctx.fill(); }
-    var g0 = ctx.createRadialGradient(cx, cy, 0, cx, cy, minDim * 0.4);
-    g0.addColorStop(0, rgba(mix(CYAN, RED, 0.5), 0.14)); g0.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g0; ctx.fillRect(0, 0, W, H);
-    canvas.style.opacity = "0.6";
-    return;
-  }
-
-  pointer.x = pointer.px = window.innerWidth / 2;
-  pointer.y = pointer.py = window.innerHeight * 0.44;
   resize();
   onScroll();
-  start();
+  updateIntroDOM();
+
+  if (reduce) {
+    // single static frame
+    gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform1f(uTime, 2.0); gl.uniform1f(uScroll, 0.0);
+    gl.uniform2f(uRes, canvas.width, canvas.height); gl.uniform2f(uPtr, 0, 0); gl.uniform2f(uCenter, centerX, centerY);
+    gl.drawArrays(gl.POINTS, 0, N);
+    canvas.style.opacity = "0.7";
+  } else {
+    start();
+  }
 
   var rT;
   window.addEventListener("resize", function () { clearTimeout(rT); rT = setTimeout(resize, 200); });
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("pointermove", function (ev) { pointer.x = ev.clientX; pointer.y = ev.clientY; }, { passive: true });
+  window.addEventListener("pointermove", function (ev) {
+    ptr.x = (ev.clientX / window.innerWidth) * 2 - 1;
+    ptr.y = -((ev.clientY / window.innerHeight) * 2 - 1);
+  }, { passive: true });
   document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); else start(); });
 })();
