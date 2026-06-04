@@ -48,6 +48,32 @@
   });
   var buttons = Array.prototype.slice.call(document.querySelectorAll(".lang-btn"));
 
+  /* ---------- Language dropdown ---------- */
+  var langSelect = document.querySelector(".lang-select");
+  var langTrigger = document.querySelector(".lang-trigger");
+  var ltFlag = document.querySelector(".lt-flag");
+  var ltName = document.querySelector(".lt-name");
+  var LANG_INFO = {};
+  buttons.forEach(function (b) {
+    var sp = b.querySelectorAll("span");
+    LANG_INFO[b.dataset.lang] = { flag: sp[0] ? sp[0].textContent : "", name: sp[1] ? sp[1].textContent : b.dataset.lang };
+  });
+  function closeLangMenu() {
+    if (langSelect) langSelect.classList.remove("open");
+    if (langTrigger) langTrigger.setAttribute("aria-expanded", "false");
+  }
+  if (langTrigger && langSelect) {
+    langTrigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = langSelect.classList.toggle("open");
+      langTrigger.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", function (e) {
+      if (!langSelect.contains(e.target)) closeLangMenu();
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLangMenu(); });
+  }
+
   /* ---------- Reveal-on-scroll ---------- */
   var revealSelector =
     ".section-title, .section-copy, .text-stack, .apps, .badge-row, " +
@@ -84,6 +110,8 @@
     buttons.forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
+    var info = LANG_INFO[lang];
+    if (info) { if (ltFlag) ltFlag.textContent = info.flag; if (ltName) ltName.textContent = info.name; }
 
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
@@ -122,7 +150,7 @@
   }
 
   buttons.forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.dataset.lang, true); });
+    b.addEventListener("click", function () { setLang(b.dataset.lang, true); closeLangMenu(); });
   });
 
   /* ---------- Header navigation ---------- */

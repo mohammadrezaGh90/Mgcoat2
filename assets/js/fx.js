@@ -126,7 +126,7 @@
     "  gl_Position=vec4(pos,0.0,1.0);",
     "  float innerGlow=clamp(1.0-(rad-inner)/(outer-inner),0.0,1.0);",
     "  innerGlow=pow(innerGlow,1.3);",
-    "  gl_PointSize=(0.7+depth*1.6+innerGlow*2.4)*(uRes.y/900.0);",
+    "  gl_PointSize=(1.1+depth*2.3+innerGlow*3.4)*(uRes.y/900.0);",
     "  float side=(cos(ang)+1.0)*0.5;",
     "  vec3 cyan=vec3(0.22,0.66,1.0);",
     "  vec3 red=vec3(1.0,0.30,0.18);",
@@ -135,7 +135,7 @@
     "  vColor=col;",
     "  float flick=0.65+0.35*sin(uTime*2.0+aSeed*TAU*3.0);",
     "  float below=smoothstep(center.y-0.32,center.y-0.05,pos.y);",
-    "  vAlpha=(0.22+0.4*innerGlow)*(0.5+0.5*depth)*flick*(0.72+0.28*e)*mix(0.4,1.0,below)*(1.0-bloom*0.92);",
+    "  vAlpha=(0.34+0.55*innerGlow)*(0.55+0.45*depth)*flick*(0.78+0.22*e)*mix(0.45,1.0,below)*(1.0-bloom*0.92);",
     "}"
   ].join("\n");
 
@@ -208,7 +208,7 @@
 
   var DPR = 1, ptr = { x: 0, y: 0, px: 0, py: 0 };
   function resize() {
-    DPR = Math.min(2, window.devicePixelRatio || 1);
+    DPR = Math.min(1.5, window.devicePixelRatio || 1);
     canvas.width = Math.floor(window.innerWidth * DPR);
     canvas.height = Math.floor(window.innerHeight * DPR);
     canvas.style.width = window.innerWidth + "px";
@@ -228,6 +228,10 @@
     if (Math.abs(introTarget - introP) < 0.0004) introP = introTarget;
     updateIntroDOM();
     updateCanvasFade();
+
+    // Once scrolled past the intro the canvas is faded out — stop the heavy
+    // particle draw so reading content stays perfectly smooth (no jank).
+    if (scrollY > introH + vh * 1.35) return;
 
     ptr.px += (ptr.x - ptr.px) * 0.05; ptr.py += (ptr.y - ptr.py) * 0.05;
 
