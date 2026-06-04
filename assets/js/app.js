@@ -259,5 +259,28 @@
     function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
     lenis.scrollTo(0, { immediate: true });
+
+    /* ---------- "Elevator": auto-glide through the intro if idle ---------- */
+    var userTook = false;
+    function takeOver() {
+      if (userTook) return;
+      userTook = true;
+      if (lenis) lenis.stop();           // cancel any auto-scroll in progress
+      setTimeout(function () { if (lenis) lenis.start(); }, 30);
+    }
+    ["wheel", "touchstart", "keydown", "pointerdown"].forEach(function (ev) {
+      window.addEventListener(ev, takeOver, { passive: true, once: true });
+    });
+    var introEl = document.getElementById("intro");
+    setTimeout(function () {
+      if (userTook) return;
+      if ((window.pageYOffset || 0) > 12) return;     // already scrolled
+      if (!introEl) return;
+      var target = introEl.offsetHeight - window.innerHeight * 0.85; // land at the hero/content
+      lenis.scrollTo(target, {
+        duration: 6.5,
+        easing: function (t) { return 1 - Math.pow(1 - t, 3); },
+      });
+    }, 3200);
   }
 })();
