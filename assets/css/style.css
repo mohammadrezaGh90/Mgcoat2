@@ -100,7 +100,7 @@ a { color: inherit; }
    ============================================================ */
 #intro {
   position: relative;
-  height: 220vh;            /* scroll room for the scrub */
+  height: 340vh;            /* scroll room for the scrub */
 }
 .intro-sticky {
   position: sticky;
@@ -482,7 +482,7 @@ footer { background: rgba(7, 9, 16, .6); color: var(--muted); text-align: center
   .visual-card { max-width: 460px; }
   .image-box { position: static; }
   .brand-text small { display: none; }
-  #intro { height: 180vh; }
+  #intro { height: 280vh; }
 }
 @media (max-width: 600px) {
   .nav { min-height: 0; padding: 10px 0; gap: 8px; }
