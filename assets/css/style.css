@@ -598,3 +598,22 @@ h1, .intro-title, .section-title, .statement h2 { font-feature-settings: "ss01" 
 .gallery-grid .gal:hover img { transform: scale(1.06); }
 .gallery-grid figcaption { position: absolute; inset-inline: 0; bottom: 0; padding: 22px 14px 12px; font-size: 13px; font-weight: 600; color: #fff; background: linear-gradient(transparent, rgba(5,7,13,.85)); }
 @media (max-width: 600px) { .gallery-grid .gal img { height: 190px; } }
+
+/* ---------- Blog / article ---------- */
+.article { padding: clamp(40px, 7vw, 90px) 0 72px; min-height: 70vh; }
+.prose { max-width: 760px; }
+.crumbs { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+.crumbs a { color: var(--cyan); text-decoration: none; }
+.article h1 { font-family: var(--display); font-size: clamp(28px, 4vw, 44px); line-height: 1.14; color: var(--ink); margin: 0 0 10px; font-weight: 700; letter-spacing: -.02em; }
+.article-meta { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 26px; }
+.prose .lead-p { font-size: 18.5px; color: var(--ink); line-height: 1.7; }
+.prose h2 { font-family: var(--display); font-size: clamp(20px, 2.6vw, 26px); color: var(--ink); margin: 34px 0 10px; font-weight: 600; }
+.prose p { color: var(--text); font-size: 16.5px; line-height: 1.8; margin: 0 0 16px; }
+.article-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; }
+.blog-grid { display: grid; gap: 16px; margin-top: 26px; }
+.blog-card { display: block; text-decoration: none; background: var(--glass); border: 1px solid var(--brd); border-radius: var(--radius); padding: 24px; transition: transform .25s var(--ease), border-color .25s, background .25s; }
+.blog-card:hover { transform: translateY(-4px); border-color: var(--brd-2); background: var(--glass-2); }
+.blog-card h2 { font-family: var(--display); font-size: 19px; color: var(--ink); margin: 0 0 8px; font-weight: 600; }
+.blog-card p { color: var(--muted); font-size: 15px; margin: 0 0 12px; }
+.blog-more { color: var(--cyan); font-size: 14px; font-weight: 600; }
+footer a { color: var(--cyan); text-decoration: none; }
