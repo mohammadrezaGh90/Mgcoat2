@@ -26,6 +26,7 @@
 
   var W = 0, H = 0, DPR = 1, cx = 0, cy = 0;
   var P = [];                 // particles
+  var packets = [];           // light packets streaming along links
   var pointer = { x: -9999, y: -9999, active: false };
   var introP = 0, fieldOn = false, scrollY = 0, vh = 0, introH = 0;
   var rafId = null, running = false;
@@ -58,6 +59,24 @@
         pulse: Math.random() * 6.28,
       });
     }
+    // light packets that stream along the links
+    packets = [];
+    var pc = window.innerWidth < 760 ? 7 : 14;
+    for (var k = 0; k < pc; k++) packets.push(newPacket());
+  }
+
+  function newPacket() {
+    var a = (Math.random() * P.length) | 0;
+    return { a: a, b: pickNear(a), p: Math.random(), speed: 0.005 + Math.random() * 0.012 };
+  }
+  function pickNear(a) {
+    var na = P[a], best = (a + 1) % P.length, bd = 1e9;
+    for (var i = 0; i < P.length; i++) {
+      if (i === a) continue;
+      var dx = P[i].x - na.x, dy = P[i].y - na.y, d = dx * dx + dy * dy;
+      if (d < bd && d > 80) { bd = d; best = i; }
+    }
+    return best;
   }
 
   function resize() {
@@ -121,13 +140,25 @@
 
     var i, j, a, b;
 
+    // glowing core — brightens as the lattice forms
+    var coreA = inIntro ? e * 0.5 : 0.12;
+    var cr = Math.min(W, H) * (inIntro ? lerp(0.22, 0.46, e) : 0.44);
+    var cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, cr);
+    cg.addColorStop(0, rgba(lerp2(CYAN, RED, inIntro ? introP : 1), coreA));
+    cg.addColorStop(0.5, rgba(col, coreA * 0.35));
+    cg.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = cg; ctx.fillRect(0, 0, W, H);
+
     // position update
     if (inIntro) {
       fieldOn = false;
+      var sw = (1 - e) * 0.9;                 // swirl: targets spin in as they settle
+      var cs = Math.cos(sw), sn = Math.sin(sw);
       for (i = 0; i < P.length; i++) {
         var p = P[i];
-        p.x = lerp(p.sx, cx + p.tx, e);
-        p.y = lerp(p.sy, cy + p.ty, e);
+        var rx = p.tx * cs - p.ty * sn, ry = p.tx * sn + p.ty * cs;
+        p.x = lerp(p.sx, cx + rx, e);
+        p.y = lerp(p.sy, cy + ry, e);
         p.pulse += 0.02;
       }
     } else {
@@ -174,6 +205,21 @@
       g.addColorStop(0, rgba(nc, glow * a.z)); g.addColorStop(1, rgba(nc, 0));
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(a.x, a.y, rr * 4, 0, 6.2832); ctx.fill();
       ctx.fillStyle = rgba(nc, Math.min(1, glow + 0.2) * a.z); ctx.beginPath(); ctx.arc(a.x, a.y, rr, 0, 6.2832); ctx.fill();
+    }
+
+    // light packets streaming along the links
+    for (i = 0; i < packets.length; i++) {
+      var pk = packets[i];
+      a = P[pk.a]; b = P[pk.b];
+      if (!a || !b) { packets[i] = newPacket(); continue; }
+      pk.p += pk.speed * (inIntro ? amp : 1);
+      if (pk.p >= 1) { pk.a = pk.b; pk.b = pickNear(pk.a); pk.p = 0; pk.speed = 0.005 + Math.random() * 0.012; }
+      var px = a.x + (b.x - a.x) * pk.p, py2 = a.y + (b.y - a.y) * pk.p;
+      var pg = ctx.createRadialGradient(px, py2, 0, px, py2, 6);
+      pg.addColorStop(0, rgba(WHITE, 0.95 * amp));
+      pg.addColorStop(0.4, rgba(CYAN, 0.7 * amp));
+      pg.addColorStop(1, rgba(CYAN, 0));
+      ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(px, py2, 6, 0, 6.2832); ctx.fill();
     }
   }
 

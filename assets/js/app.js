@@ -21,6 +21,18 @@
   var introSubEl = document.querySelector(".intro-sub");
   var introHintTextEl = document.querySelector(".intro-hint b");
 
+  // localized header navigation labels (data-sec -> label)
+  var NAV = {
+    en: { overview: "About", technology: "Technology", applications: "Applications", tests: "Tests", contact: "Contact" },
+    ru: { overview: "О нас", technology: "Технология", applications: "Применение", tests: "Тесты", contact: "Контакты" },
+    tr: { overview: "Hakkında", technology: "Teknoloji", applications: "Uygulamalar", tests: "Testler", contact: "İletişim" },
+    ar: { overview: "من نحن", technology: "التقنية", applications: "التطبيقات", tests: "الاختبارات", contact: "اتصل بنا" },
+    fa: { overview: "درباره", technology: "تکنولوژی", applications: "کاربردها", tests: "تست‌ها", contact: "تماس" },
+  };
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
+  var navToggle = document.querySelector(".nav-toggle");
+  var curLang = "en";
+
   var sections = {};
   LANGS.forEach(function (l) {
     sections[l] = document.getElementById("content-" + l);
@@ -55,6 +67,7 @@
   /* ---------- Language switching ---------- */
   function setLang(lang, push) {
     if (LANGS.indexOf(lang) === -1) lang = "en";
+    curLang = lang;
 
     LANGS.forEach(function (l) {
       if (sections[l]) sections[l].hidden = (l !== lang);
@@ -69,6 +82,12 @@
     var it = INTRO[lang] || INTRO.en;
     if (introSubEl) introSubEl.textContent = it.sub;
     if (introHintTextEl) introHintTextEl.textContent = it.hint;
+
+    var nv = NAV[lang] || NAV.en;
+    navLinks.forEach(function (a) {
+      var label = nv[a.dataset.sec];
+      if (label) a.textContent = label;
+    });
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
@@ -95,6 +114,27 @@
   buttons.forEach(function (b) {
     b.addEventListener("click", function () { setLang(b.dataset.lang, true); });
   });
+
+  /* ---------- Header navigation ---------- */
+  var headerEl = document.querySelector(".site-header");
+  function closeMenu() {
+    if (headerEl) headerEl.classList.remove("nav-open");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+  }
+  navLinks.forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var el = document.getElementById(curLang + "-" + a.dataset.sec);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      closeMenu();
+    });
+  });
+  if (navToggle && headerEl) {
+    navToggle.addEventListener("click", function () {
+      var open = headerEl.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+  }
 
   setLang(initialLang(), false);
 
