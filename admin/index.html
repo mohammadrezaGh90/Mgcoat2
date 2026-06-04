@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MG TECH — Admin / Webmail</title>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="theme-color" content="#070910"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"/>
+<style>
+  :root{--red:#ff3340;--red-deep:#e30613;--cyan:#54d8ec;--bg:#070910;--bg-2:#0a0d15;--ink:#f2f4f9;--text:#b7bfce;--muted:#7b8597;--glass:rgba(255,255,255,.045);--glass-2:rgba(255,255,255,.07);--brd:rgba(255,255,255,.1);--brd-2:rgba(255,255,255,.18)}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
+    font-family:Inter,"Segoe UI",system-ui,sans-serif;color:var(--text);
+    background:radial-gradient(700px 480px at 20% 0%,rgba(255,51,64,.1),transparent 60%),radial-gradient(680px 560px at 90% 12%,rgba(84,216,236,.09),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg-2))}
+  .card{width:min(420px,100%);background:rgba(10,13,21,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--brd);border-radius:22px;padding:38px 32px;box-shadow:0 30px 80px rgba(0,0,0,.5);text-align:center}
+  .logo{width:88px;height:auto;margin:0 auto 18px;display:block;filter:drop-shadow(0 8px 30px rgba(84,216,236,.2))}
+  h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--ink);margin:0 0 4px}
+  .sub{font-family:"Space Grotesk",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:22px}
+  p{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 22px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;text-decoration:none;
+    padding:14px 18px;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;border:1px solid var(--brd);
+    background:transparent;color:var(--ink);transition:.2s ease;margin-bottom:11px}
+  .btn:hover{transform:translateY(-2px);border-color:var(--brd-2);background:var(--glass)}
+  .btn.red{background:var(--red);border-color:var(--red);color:#fff}
+  .btn.red:hover{background:var(--red-deep);border-color:var(--red-deep)}
+  .foot{margin-top:18px;font-size:11.5px;color:var(--muted)}
+  .foot a{color:var(--cyan);text-decoration:none}
+  .back{position:fixed;top:18px;left:18px;color:var(--muted);text-decoration:none;font-size:13px}
+  .back:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<a class="back" href="/">← mgcoat.com</a>
+<main class="card">
+<img class="logo" src="../assets/img/logo-mark.png" alt="MG TECH"/>
+<h1>MG&nbsp;TECH Admin</h1>
+<div class="sub">Secure Webmail</div>
+<p>Sign in to your <b>@mgcoat.com</b> mailbox to read and reply to messages. Authentication is handled securely by your mail provider.</p>
+<a class="btn red" href="https://mail.zoho.com" rel="noopener" target="_blank">Open Webmail (Zoho Mail)</a>
+<a class="btn" href="https://accounts.zoho.com/signin" rel="noopener" target="_blank">Account Sign-in</a>
+<div class="foot">Mailbox not set up yet? <a href="https://www.zoho.com/mail/" rel="noopener" target="_blank">Create it on Zoho Mail</a></div>
+</main>
+</body>
+</html>

@@ -240,6 +240,21 @@ a { color: inherit; }
 .contact-section .contact-actions { margin: 4px 0 22px; }
 .contact-section .social-strip { justify-content: flex-start; padding: 0; }
 
+/* WhatsApp order form */
+.wa-form { max-width: 560px; margin: 6px 0 26px; }
+.wa-form .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.wa-form .field {
+  width: 100%; margin-bottom: 12px; padding: 13px 15px; border-radius: 11px;
+  background: var(--glass); border: 1px solid var(--brd); color: var(--ink);
+  font: inherit; font-size: 15px; transition: border-color .2s, background .2s;
+}
+.wa-form .form-grid .field { margin-bottom: 0; }
+.wa-form textarea.field { resize: vertical; min-height: 92px; }
+.wa-form .field::placeholder { color: var(--muted); }
+.wa-form .field:focus { outline: none; border-color: var(--cyan); background: var(--glass-2); }
+.wa-form .btn { margin-top: 14px; }
+@media (max-width: 560px) { .wa-form .form-grid { grid-template-columns: 1fr; gap: 12px; } .wa-form .form-grid .field { margin-bottom: 0; } }
+
 .lang-section[hidden] { display: none; }
 
 /* ============================================================

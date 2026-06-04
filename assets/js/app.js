@@ -136,6 +136,21 @@
     });
   }
 
+  /* ---------- WhatsApp order form ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".wa-form"), function (f) {
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      function v(n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ""; }
+      var d = f.dataset, lines = [d.prefix || ""];
+      var name = v("name"), phone = v("phone"), need = v("need"), msg = v("message");
+      if (name) lines.push(d.lname + ": " + name);
+      if (phone) lines.push(d.lphone + ": " + phone);
+      if (need) lines.push(d.lneed + ": " + need);
+      if (msg) lines.push(d.lmsg + ": " + msg);
+      window.open("https://wa.me/" + d.wa + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+    });
+  });
+
   setLang(initialLang(), false);
 
   /* ---------- Scroll progress + header state + back-to-top ---------- */
