@@ -123,7 +123,7 @@
     "  gl_Position=vec4(pos,0.0,1.0);",
     "  float innerGlow=clamp(1.0-(rad-inner)/(outer-inner),0.0,1.0);",
     "  innerGlow=pow(innerGlow,1.3);",
-    "  gl_PointSize=(1.1+depth*2.2+innerGlow*3.2)*(uRes.y/900.0);",
+    "  gl_PointSize=(0.7+depth*1.6+innerGlow*2.4)*(uRes.y/900.0);",
     "  float side=(cos(ang)+1.0)*0.5;",
     "  vec3 cyan=vec3(0.22,0.66,1.0);",
     "  vec3 red=vec3(1.0,0.30,0.18);",
@@ -132,7 +132,7 @@
     "  vColor=col;",
     "  float flick=0.65+0.35*sin(uTime*2.0+aSeed*TAU*3.0);",
     "  float below=smoothstep(center.y-0.32,center.y-0.05,pos.y);",
-    "  vAlpha=(0.5+0.6*innerGlow)*(0.5+0.5*depth)*flick*(0.72+0.28*e)*mix(0.4,1.0,below);",
+    "  vAlpha=(0.22+0.4*innerGlow)*(0.5+0.5*depth)*flick*(0.72+0.28*e)*mix(0.4,1.0,below);",
     "}"
   ].join("\n");
 
@@ -160,8 +160,8 @@
   gl.useProgram(prog);
 
   // ---------------- particle buffer ----------------
-  var DISK = window.innerWidth < 760 ? 18000 : 42000;
-  var STAR = window.innerWidth < 760 ? 900 : 1800;
+  var DISK = window.innerWidth < 760 ? 70000 : 200000;
+  var STAR = window.innerWidth < 760 ? 1500 : 3000;
   var N = DISK + STAR;
   var data = new Float32Array(N * 5); // type, seed, r1, r2, r3
   for (var i = 0; i < N; i++) {
