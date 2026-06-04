@@ -643,15 +643,3 @@ footer a { color: var(--cyan); text-decoration: none; }
 .lang-menu .lang-btn span:first-child { font-size: 16px; }
 .lang-menu .lang-btn[aria-pressed="true"] { background: var(--red); color: #fff; }
 /* logical inset-inline-end on .lang-menu already flips correctly for RTL */
-
-/* ---------- Sound toggle (ambient music) ---------- */
-.sound-toggle {
-  position: fixed; inset-block-end: 84px; inset-inline-end: 22px; z-index: 90;
-  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
-  border: 1px solid var(--brd); background: rgba(7, 9, 16, .7); color: var(--cyan);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); cursor: pointer;
-  box-shadow: var(--shadow-sm); transition: color .2s, border-color .2s, transform .2s var(--ease);
-}
-.sound-toggle:hover { color: #fff; border-color: var(--brd-2); transform: translateY(-2px); }
-.sound-toggle svg { width: 20px; height: 20px; }
-@media (max-width: 600px) { .sound-toggle { inset-block-end: 76px; inset-inline-end: 16px; width: 42px; height: 42px; } }
