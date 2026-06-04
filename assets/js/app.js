@@ -6,9 +6,20 @@
 (function () {
   "use strict";
 
-  var LANGS = ["en", "tr", "ar", "fa"];
+  var LANGS = ["en", "ru", "tr", "ar", "fa"];
   var RTL = { ar: true, fa: true };
   var STORAGE_KEY = "mgtech-lang";
+
+  // localized intro (welcome) strings
+  var INTRO = {
+    en: { sub: "Electronic Circuit Waterproofing", hint: "Scroll" },
+    ru: { sub: "Гидроизоляция электронных плат", hint: "Прокрутите" },
+    tr: { sub: "Elektronik Devre Su Yalıtımı", hint: "Kaydır" },
+    ar: { sub: "عزل مائي للدوائر الإلكترونية", hint: "مرّر للأسفل" },
+    fa: { sub: "ضدآب‌سازی مدارهای الکترونیکی", hint: "اسکرول کن" },
+  };
+  var introSubEl = document.querySelector(".intro-sub");
+  var introHintTextEl = document.querySelector(".intro-hint b");
 
   var sections = {};
   LANGS.forEach(function (l) {
@@ -54,6 +65,10 @@
 
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
+
+    var it = INTRO[lang] || INTRO.en;
+    if (introSubEl) introSubEl.textContent = it.sub;
+    if (introHintTextEl) introHintTextEl.textContent = it.hint;
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
