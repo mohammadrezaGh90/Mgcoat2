@@ -313,12 +313,14 @@
         audio.volume = Math.max(0, Math.min(VOL, audio.volume + (d > 0 ? 0.012 : -0.012)));
       }, 45);
     }
+    function showBtn() { if (available && unlocked && inView) btn.hidden = false; }
+    function hideBtn() { btn.hidden = true; }
     function start() {
       if (!available || muted || !unlocked) return;
       var pr = audio.play();
-      if (pr && pr.then) pr.then(function () { btn.hidden = false; ramp(VOL); }).catch(function () {});
+      if (pr && pr.then) pr.then(function () { ramp(VOL); }).catch(function () {});
     }
-    function unlock() { unlocked = true; if (inView) start(); }
+    function unlock() { unlocked = true; if (inView) { showBtn(); start(); } }
     ["pointerdown", "touchstart", "keydown", "wheel"].forEach(function (ev) {
       window.addEventListener(ev, unlock, { once: true, passive: true });
     });
@@ -331,7 +333,8 @@
       es.forEach(function (e) {
         if (e.target.offsetParent === null) return; // hidden language
         inView = e.isIntersecting;
-        if (e.isIntersecting) start(); else ramp(0);
+        if (e.isIntersecting) { showBtn(); start(); }
+        else { hideBtn(); ramp(0); }       // icon only while the video is in view
       });
     }, { threshold: 0.35 });
     targets.forEach(function (t) { io.observe(t); });
