@@ -643,3 +643,5 @@ footer a { color: var(--cyan); text-decoration: none; }
 .lang-menu .lang-btn span:first-child { font-size: 16px; }
 .lang-menu .lang-btn[aria-pressed="true"] { background: var(--red); color: #fff; }
 /* logical inset-inline-end on .lang-menu already flips correctly for RTL */
+
+.post[hidden] { display: none; }
