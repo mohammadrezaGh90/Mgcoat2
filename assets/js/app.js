@@ -12,13 +12,14 @@
 
   // localized intro (welcome) strings
   var INTRO = {
-    en: { sub: "Electronic Circuit Waterproofing", hint: "Scroll" },
-    ru: { sub: "Гидроизоляция электронных плат", hint: "Прокрутите" },
-    tr: { sub: "Elektronik Devre Su Yalıtımı", hint: "Kaydır" },
-    ar: { sub: "عزل مائي للدوائر الإلكترونية", hint: "مرّر للأسفل" },
-    fa: { sub: "ضدآب‌سازی مدارهای الکترونیکی", hint: "اسکرول کن" },
+    en: { sub: "Electronic Circuit Waterproofing", tag: "Waterproof · Reinforced · Heat‑free", hint: "Scroll" },
+    ru: { sub: "Гидроизоляция электронных плат", tag: "Влагозащита · Усиление · Без нагрева", hint: "Прокрутите" },
+    tr: { sub: "Elektronik Devre Su Yalıtımı", tag: "Su yalıtımı · Güçlendirme · Isısız", hint: "Kaydır" },
+    ar: { sub: "عزل مائي للدوائر الإلكترونية", tag: "عازل للماء · معزّز · بدون حرارة", hint: "مرّر للأسفل" },
+    fa: { sub: "ضدآب‌سازی مدارهای الکترونیکی", tag: "ضدآب · مقاوم · بدون حرارت", hint: "اسکرول کن" },
   };
   var introSubEl = document.querySelector(".intro-sub");
+  var introTagEl = document.querySelector(".intro-tag");
   var introHintTextEl = document.querySelector(".intro-hint b");
 
   // localized header navigation labels (data-sec -> label)
@@ -81,6 +82,7 @@
 
     var it = INTRO[lang] || INTRO.en;
     if (introSubEl) introSubEl.textContent = it.sub;
+    if (introTagEl) introTagEl.textContent = it.tag;
     if (introHintTextEl) introHintTextEl.textContent = it.hint;
 
     var nv = NAV[lang] || NAV.en;
@@ -150,6 +152,32 @@
       window.open("https://wa.me/" + d.wa + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
     });
   });
+
+  /* ---------- Animated stat counters ---------- */
+  function runCount(el) {
+    var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+    var valEl = el.querySelector(".val"); if (!valEl) return;
+    var start = null, dur = 1400;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      valEl.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var nums = Array.prototype.slice.call(document.querySelectorAll(".stat-num"));
+  if ("IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(function (n) { cio.observe(n); });
+  } else {
+    nums.forEach(runCount);
+  }
 
   setLang(initialLang(), false);
 

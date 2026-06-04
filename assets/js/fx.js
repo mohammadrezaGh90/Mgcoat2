@@ -17,7 +17,9 @@
   var introLogo = document.querySelector(".intro-logo");
   var introTitle = document.querySelector(".intro-title");
   var introSub = document.querySelector(".intro-sub");
+  var introTag = document.querySelector(".intro-tag");
   var introHint = document.querySelector(".intro-hint");
+  var introProg = document.querySelector(".intro-progress i");
 
   var reduce = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -114,6 +116,8 @@
     }
     if (introTitle) { introTitle.style.opacity = "1"; introTitle.style.transform = "translateY(" + lerp(10, 0, settle) + "px)"; }
     if (introSub) introSub.style.opacity = "1";
+    if (introTag) introTag.style.opacity = clamp((introP - 0.42) / 0.26, 0, 1);
+    if (introProg) introProg.style.width = (introP * 100).toFixed(1) + "%";
     if (introHint) introHint.style.opacity = clamp(1 - introP / 0.3, 0, 1);
     // whole intro lifts away & fades at the end to reveal the site
     var out = clamp((introP - 0.74) / 0.26, 0, 1);
