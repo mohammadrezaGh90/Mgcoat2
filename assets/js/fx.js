@@ -223,7 +223,7 @@
     rafId = requestAnimationFrame(render);
     var t = (performance.now() - t0) / 1000;
 
-    introP += (introTarget - introP) * 0.085;
+    introP += (introTarget - introP) * 0.16;
     if (Math.abs(introTarget - introP) < 0.0004) introP = introTarget;
     updateIntroDOM();
     updateCanvasFade();

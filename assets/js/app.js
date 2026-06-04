@@ -6,6 +6,14 @@
 (function () {
   "use strict";
 
+  // Always open at the very top (the intro), never restore a deep position.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+  window.addEventListener("load", function () { window.scrollTo(0, 0); });
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var lenis = null; // smooth-scroll instance (set up below)
+
   var LANGS = ["en", "ru", "tr", "ar", "fa"];
   var RTL = { ar: true, fa: true };
   var STORAGE_KEY = "mgtech-lang";
@@ -127,7 +135,7 @@
     a.addEventListener("click", function (e) {
       e.preventDefault();
       var el = document.getElementById(curLang + "-" + a.dataset.sec);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (el) { if (lenis) lenis.scrollTo(el, { offset: -64 }); else el.scrollIntoView({ behavior: "smooth", block: "start" }); }
       closeMenu();
     });
   });
@@ -207,7 +215,21 @@
 
   if (toTop) {
     toTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  }
+
+  /* ---------- Smooth scrolling (Lenis) ---------- */
+  if (window.Lenis && !reduceMotion) {
+    lenis = new window.Lenis({
+      lerp: 0.085,          // soft easing — fast input still glides down gently
+      wheelMultiplier: 0.9,
+      smoothWheel: true,
+      syncTouch: true,      // also smooth touch/flick scrolling on mobile
+      syncTouchLerp: 0.08,
+    });
+    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    lenis.scrollTo(0, { immediate: true });
   }
 })();
