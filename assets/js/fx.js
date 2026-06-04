@@ -157,8 +157,9 @@
       for (i = 0; i < P.length; i++) {
         var p = P[i];
         var rx = p.tx * cs - p.ty * sn, ry = p.tx * sn + p.ty * cs;
-        p.x = lerp(p.sx, cx + rx, e);
-        p.y = lerp(p.sy, cy + ry, e);
+        var shim = 0.5 + 0.5 * (1 - e);       // gentle life, stronger when scattered
+        p.x = lerp(p.sx, cx + rx, e) + Math.sin(p.pulse) * 7 * shim;
+        p.y = lerp(p.sy, cy + ry, e) + Math.cos(p.pulse * 0.9) * 7 * shim;
         p.pulse += 0.02;
       }
     } else {
