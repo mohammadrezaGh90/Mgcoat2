@@ -1,10 +1,11 @@
 /* ============================================================
-   MG TECH — welcome intro + circuit field (scroll-driven)
-   The intro is SCRUBBED by scroll: particles assemble into a
-   circuit lattice as you scroll down and disperse as you scroll
-   up. After the intro it relaxes into a calm field for the hero,
-   then the canvas fades out so content stays clean & minimal.
-   Vanilla canvas, no libraries. Honors prefers-reduced-motion.
+   MG TECH — cosmic welcome intro (scroll-driven)
+   A duotone (brand red / cyan) particle galaxy swirls around the
+   MG core over a deep starfield. Scrolling tilts and expands the
+   disk and lifts a glowing ring/crescent — like emerging from a
+   star system — then the canvas fades so content stays clean.
+   Progress is smoothed (damped) so it plays naturally at any
+   scroll speed. Vanilla canvas. Honors prefers-reduced-motion.
    ============================================================ */
 (function () {
   "use strict";
@@ -24,61 +25,54 @@
   var reduce = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var RED = [255, 51, 64], CYAN = [84, 216, 236], WHITE = [235, 244, 255];
+  var RED = [255, 70, 86], CYAN = [86, 214, 240], WHITE = [240, 246, 255];
 
-  var W = 0, H = 0, DPR = 1, cx = 0, cy = 0;
-  var P = [];                 // particles
-  var packets = [];           // light packets streaming along links
-  var pointer = { x: -9999, y: -9999, active: false };
-  var introP = 0, fieldOn = false, scrollY = 0, vh = 0, introH = 0;
+  var W = 0, H = 0, DPR = 1, cx = 0, cy = 0, minDim = 1;
+  var stars = [], disk = [];
+  var pointer = { x: 0, y: 0, px: 0, py: 0 };
+  var introTarget = 0, introP = 0, scrollY = 0, vh = 0, introH = 0, t = 0;
   var rafId = null, running = false;
 
   function rgba(c, a) { return "rgba(" + c[0] + "," + c[1] + "," + c[2] + "," + a + ")"; }
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function easeIO(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function lerp(a, b, k) { return a + (b - a) * k; }
+  function mix(a, b, k) { return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k]; }
+  function easeIO(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
 
-  function count() {
-    var base = Math.round((window.innerWidth * window.innerHeight) / 15000);
-    var cap = window.innerWidth < 760 ? 64 : 150;
-    return Math.max(30, Math.min(cap, base));
+  function counts() {
+    var small = window.innerWidth < 760;
+    return { stars: small ? 90 : 170, disk: small ? 120 : 220 };
   }
 
   function build() {
-    W = window.innerWidth; H = window.innerHeight; cx = W / 2; cy = H * 0.5;
-    var n = count(), rings = 4;
-    P = [];
-    for (var i = 0; i < n; i++) {
-      var ring = i % rings;
-      var rad = (0.13 + ring * 0.1) * Math.min(W, H) + (Math.random() - 0.5) * 36;
-      var ang = Math.random() * Math.PI * 2;
-      var z = 0.4 + Math.random() * 0.6;
-      P.push({
-        sx: Math.random() * W, sy: Math.random() * H,           // scattered start
-        tx: Math.cos(ang) * rad, ty: Math.sin(ang) * rad,        // formation (rel. centre)
-        x: 0, y: 0, vx: (Math.random() - .5) * .18, vy: (Math.random() - .5) * .18,
-        z: z, r: (0.8 + Math.random() * 1.6) * z, t: Math.random(),
-        pulse: Math.random() * 6.28,
+    W = window.innerWidth; H = window.innerHeight; cx = W / 2; cy = H * 0.46;
+    minDim = Math.min(W, H);
+    var c = counts(), i;
+
+    stars = [];
+    for (i = 0; i < c.stars; i++) {
+      stars.push({
+        x: Math.random() * W, y: Math.random() * H,
+        z: 0.15 + Math.random() * 0.85,
+        r: Math.random() * 1.3 + 0.2,
+        tw: Math.random() * 6.28, ts: 0.6 + Math.random() * 1.4,
       });
     }
-    // light packets that stream along the links
-    packets = [];
-    var pc = window.innerWidth < 760 ? 7 : 14;
-    for (var k = 0; k < pc; k++) packets.push(newPacket());
-  }
 
-  function newPacket() {
-    var a = (Math.random() * P.length) | 0;
-    return { a: a, b: pickNear(a), p: Math.random(), speed: 0.005 + Math.random() * 0.012 };
-  }
-  function pickNear(a) {
-    var na = P[a], best = (a + 1) % P.length, bd = 1e9;
-    for (var i = 0; i < P.length; i++) {
-      if (i === a) continue;
-      var dx = P[i].x - na.x, dy = P[i].y - na.y, d = dx * dx + dy * dy;
-      if (d < bd && d > 80) { bd = d; best = i; }
+    disk = [];
+    for (i = 0; i < c.disk; i++) {
+      var rr = Math.pow(Math.random(), 0.65);              // denser toward the ring
+      var rad = (0.06 + rr * 0.46) * minDim;
+      var z = 0.35 + Math.random() * 0.65;
+      disk.push({
+        ang: Math.random() * 6.28,
+        rad: rad,
+        z: z,
+        spd: (0.0012 + 0.0042 * (1 - rad / (0.52 * minDim))) * (0.6 + 0.4 * z),
+        sz: (0.8 + Math.random() * 1.5) * z,
+        tw: Math.random() * 6.28, ts: 0.8 + Math.random() * 1.6,
+      });
     }
-    return best;
   }
 
   function resize() {
@@ -91,159 +85,133 @@
     build();
     measure();
   }
-
-  function measure() {
-    vh = window.innerHeight;
-    introH = intro ? intro.offsetHeight : vh;
-  }
+  function measure() { vh = window.innerHeight; introH = intro ? intro.offsetHeight : vh; }
 
   function onScroll() {
     scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    var pin = Math.max(1, introH - vh);
-    introP = clamp(scrollY / pin, 0, 1);
-    updateIntroDOM();
-    updateCanvasFade();
+    introTarget = clamp(scrollY / Math.max(1, introH - vh), 0, 1);
   }
 
   function updateIntroDOM() {
     if (!introInner) return;
-    // Welcome (logo + title) is visible from the very top; scrolling
-    // gently scales it while the circuit assembles, then it lifts away.
-    var settle = clamp(introP / 0.35, 0, 1);     // small entrance settle
-    if (introLogo) {
-      introLogo.style.opacity = "1";
-      introLogo.style.transform = "scale(" + lerp(0.94, 1.06, easeIO(introP)) + ")";
-    }
+    var e = easeIO(introP), settle = clamp(introP / 0.35, 0, 1);
+    if (introLogo) { introLogo.style.opacity = "1"; introLogo.style.transform = "scale(" + lerp(0.9, 1.08, e) + ")"; }
     if (introTitle) { introTitle.style.opacity = "1"; introTitle.style.transform = "translateY(" + lerp(10, 0, settle) + "px)"; }
     if (introSub) introSub.style.opacity = "1";
     if (introTag) introTag.style.opacity = clamp((introP - 0.42) / 0.26, 0, 1);
     if (introProg) introProg.style.width = (introP * 100).toFixed(1) + "%";
     if (introHint) introHint.style.opacity = clamp(1 - introP / 0.3, 0, 1);
-    // whole intro lifts away & fades at the end to reveal the site
     var out = clamp((introP - 0.74) / 0.26, 0, 1);
     introInner.style.opacity = String(1 - out);
-    introInner.style.transform = "translateY(" + (-out * 44) + "px) scale(" + (1 - out * 0.04) + ")";
+    introInner.style.transform = "translateY(" + (-out * 46) + "px) scale(" + (1 - out * 0.05) + ")";
   }
 
   function updateCanvasFade() {
-    var fadeStart = introH + vh * 0.4;
-    var fadeEnd = introH + vh * 1.5;
-    var k = clamp((scrollY - fadeStart) / (fadeEnd - fadeStart), 0, 1);
-    canvas.style.opacity = String(lerp(1, 0.06, k));
+    var k = clamp((scrollY - (introH + vh * 0.4)) / (vh * 1.1), 0, 1);
+    canvas.style.opacity = String(lerp(1, 0.05, k));
   }
 
   function frame() {
     if (!running) return;
     rafId = requestAnimationFrame(frame);
+    t += 0.016;
+
+    // smoothed progress -> natural playback at any scroll speed
+    introP += (introTarget - introP) * 0.085;
+    if (Math.abs(introTarget - introP) < 0.0005) introP = introTarget;
+    updateIntroDOM();
+    updateCanvasFade();
+
+    // gentle pointer parallax
+    pointer.px += (pointer.x - pointer.px) * 0.05;
+    pointer.py += (pointer.y - pointer.py) * 0.05;
+    var ox = (pointer.px - cx) * 0.02, oy = (pointer.py - cy) * 0.02;
+
+    var e = easeIO(introP);
+    var expand = lerp(1, 1.5, e);
+    var tilt = lerp(0.92, 0.34, e);          // flatten the disk as we pull out
+    var dcx = cx + ox, dcy = cy + oy - e * H * 0.04;
+
     ctx.clearRect(0, 0, W, H);
 
-    var inIntro = introP < 0.999;
-    var e = easeIO(introP);
-    var link = window.innerWidth < 760 ? 120 : 165, link2 = link * link;
-    var col = scrollY < introH ? lerp2(CYAN, RED, introP) : RED;
+    // ---- starfield (parallax with progress) ----
+    var i, s, a;
+    var drift = t * 6;
+    for (i = 0; i < stars.length; i++) {
+      s = stars[i];
+      var sx = s.x + (ox * 3 + e * 40) * s.z;
+      var sy = s.y + (oy * 3) * s.z + (drift * s.z * 0.0);
+      var tw = 0.45 + 0.55 * Math.abs(Math.sin(s.tw + t * s.ts));
+      ctx.fillStyle = rgba(WHITE, tw * (0.25 + 0.6 * s.z));
+      ctx.beginPath(); ctx.arc(sx, sy, s.r * (0.6 + s.z), 0, 6.2832); ctx.fill();
+    }
 
-    var i, j, a, b;
-
-    // glowing core — brightens as the lattice forms
-    var coreA = inIntro ? e * 0.5 : 0.12;
-    var cr = Math.min(W, H) * (inIntro ? lerp(0.22, 0.46, e) : 0.44);
-    var cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, cr);
-    cg.addColorStop(0, rgba(lerp2(CYAN, RED, inIntro ? introP : 1), coreA));
-    cg.addColorStop(0.5, rgba(col, coreA * 0.35));
+    // ---- bright core (the gravitational centre) ----
+    var coreR = minDim * lerp(0.10, 0.20, e);
+    var cg = ctx.createRadialGradient(dcx, dcy, 0, dcx, dcy, coreR);
+    var coreCol = mix(WHITE, mix(CYAN, RED, 0.5), 0.35);
+    cg.addColorStop(0, rgba(coreCol, 0.55 + 0.25 * Math.sin(t * 1.2)));
+    cg.addColorStop(0.4, rgba(mix(CYAN, RED, 0.5), 0.16));
     cg.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = cg; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = cg; ctx.beginPath(); ctx.arc(dcx, dcy, coreR, 0, 6.2832); ctx.fill();
 
-    // position update
-    if (inIntro) {
-      fieldOn = false;
-      var sw = (1 - e) * 0.9;                 // swirl: targets spin in as they settle
-      var cs = Math.cos(sw), sn = Math.sin(sw);
-      for (i = 0; i < P.length; i++) {
-        var p = P[i];
-        var rx = p.tx * cs - p.ty * sn, ry = p.tx * sn + p.ty * cs;
-        var shim = 0.5 + 0.5 * (1 - e);       // gentle life, stronger when scattered
-        p.x = lerp(p.sx, cx + rx, e) + Math.sin(p.pulse) * 7 * shim;
-        p.y = lerp(p.sy, cy + ry, e) + Math.cos(p.pulse * 0.9) * 7 * shim;
-        p.pulse += 0.02;
-      }
-    } else {
-      if (!fieldOn) { // handoff: seed live positions from formation
-        for (i = 0; i < P.length; i++) { P[i].x = cx + P[i].tx; P[i].y = cy + P[i].ty; }
-        fieldOn = true;
-      }
-      for (i = 0; i < P.length; i++) {
-        var q = P[i];
-        q.x += q.vx; q.y += q.vy; q.pulse += 0.03;
-        if (pointer.active) {
-          var dx = q.x - pointer.x, dy = q.y - pointer.y, d2 = dx * dx + dy * dy;
-          if (d2 < 15000 && d2 > 1) { var f = (15000 - d2) / 15000 * 0.8, inv = 1 / Math.sqrt(d2); q.x += dx * inv * f; q.y += dy * inv * f; }
-        }
-        if (q.x < -20) q.x = W + 20; else if (q.x > W + 20) q.x = -20;
-        if (q.y < -20) q.y = H + 20; else if (q.y > H + 20) q.y = -20;
-      }
+    // ---- duotone particle galaxy ----
+    for (i = 0; i < disk.length; i++) {
+      var d = disk[i];
+      d.ang += d.spd;
+      var rad = d.rad * expand;
+      var ca = Math.cos(d.ang), sa = Math.sin(d.ang);
+      var x = dcx + ca * rad;
+      var y = dcy + sa * rad * tilt;
+      var side = (ca + 1) / 2;                         // 0 = cyan, 1 = red
+      var col = mix(CYAN, RED, side);
+      var front = 0.55 + 0.45 * sa;                    // brighter on the near edge
+      var tw = 0.5 + 0.5 * Math.sin(d.tw + t * d.ts);
+      var alpha = (0.18 + 0.5 * tw) * d.z * front * (0.6 + 0.4 * e);
+      ctx.fillStyle = rgba(col, clamp(alpha, 0, 0.9));
+      ctx.beginPath(); ctx.arc(x, y, d.sz * (0.9 + 0.3 * tw), 0, 6.2832); ctx.fill();
     }
 
-    // intensity: links/nodes brighten as the lattice forms
-    var amp = inIntro ? e : 1;
-
-    // links
-    ctx.lineWidth = 1;
-    for (i = 0; i < P.length; i++) {
-      a = P[i];
-      for (j = i + 1; j < P.length; j++) {
-        b = P[j];
-        var ddx = a.x - b.x, ddy = a.y - b.y, dd = ddx * ddx + ddy * ddy;
-        if (dd < link2) {
-          ctx.strokeStyle = rgba(col, (1 - dd / link2) * 0.18 * amp * Math.min(a.z, b.z));
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-        }
+    // ---- glowing ring / crescent (reveals as we pull out) ----
+    var ringA = e * 0.5;
+    if (ringA > 0.01) {
+      var rr = 0.46 * minDim * expand;
+      ctx.lineWidth = 2;
+      ctx.save();
+      ctx.shadowBlur = 18;
+      for (var h = 0; h < 2; h++) {
+        var c2 = h === 0 ? CYAN : RED;
+        ctx.strokeStyle = rgba(c2, ringA);
+        ctx.shadowColor = rgba(c2, ringA);
+        ctx.beginPath();
+        ctx.ellipse(dcx, dcy, rr, rr * tilt, 0, h ? -1.0 : 2.14, h ? 2.14 : 5.28);
+        ctx.stroke();
       }
-    }
-
-    // nodes
-    for (i = 0; i < P.length; i++) {
-      a = P[i];
-      var nc = a.t > 0.62 ? CYAN : col;
-      var glow = (0.5 + Math.sin(a.pulse) * 0.22) * amp;
-      var rr = a.r * (1.5 + Math.sin(a.pulse) * 0.25);
-      var g = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, rr * 4);
-      g.addColorStop(0, rgba(nc, glow * a.z)); g.addColorStop(1, rgba(nc, 0));
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(a.x, a.y, rr * 4, 0, 6.2832); ctx.fill();
-      ctx.fillStyle = rgba(nc, Math.min(1, glow + 0.2) * a.z); ctx.beginPath(); ctx.arc(a.x, a.y, rr, 0, 6.2832); ctx.fill();
-    }
-
-    // light packets streaming along the links
-    for (i = 0; i < packets.length; i++) {
-      var pk = packets[i];
-      a = P[pk.a]; b = P[pk.b];
-      if (!a || !b) { packets[i] = newPacket(); continue; }
-      pk.p += pk.speed * (inIntro ? amp : 1);
-      if (pk.p >= 1) { pk.a = pk.b; pk.b = pickNear(pk.a); pk.p = 0; pk.speed = 0.005 + Math.random() * 0.012; }
-      var px = a.x + (b.x - a.x) * pk.p, py2 = a.y + (b.y - a.y) * pk.p;
-      var pg = ctx.createRadialGradient(px, py2, 0, px, py2, 6);
-      pg.addColorStop(0, rgba(WHITE, 0.95 * amp));
-      pg.addColorStop(0.4, rgba(CYAN, 0.7 * amp));
-      pg.addColorStop(1, rgba(CYAN, 0));
-      ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(px, py2, 6, 0, 6.2832); ctx.fill();
+      ctx.restore();
     }
   }
-
-  function lerp2(a, b, t) { return [Math.round(lerp(a[0], b[0], t)), Math.round(lerp(a[1], b[1], t)), Math.round(lerp(a[2], b[2], t))]; }
 
   function start() { if (!running && !reduce) { running = true; rafId = requestAnimationFrame(frame); } }
   function stop() { running = false; if (rafId) cancelAnimationFrame(rafId); }
 
-  // ---- reduced motion: calm static frame, no scrub ----
+  // ---- reduced motion: a calm static cosmos ----
   if (reduce) {
     resize();
     introP = 0; updateIntroDOM();
-    var ge = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.6);
-    ge.addColorStop(0, rgba(RED, 0.06)); ge.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = ge; ctx.fillRect(0, 0, W, H);
-    canvas.style.opacity = "0.5";
+    for (var k = 0; k < stars.length; k++) {
+      var st = stars[k];
+      ctx.fillStyle = rgba(WHITE, 0.4 * st.z);
+      ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 6.2832); ctx.fill();
+    }
+    var g0 = ctx.createRadialGradient(cx, cy, 0, cx, cy, minDim * 0.4);
+    g0.addColorStop(0, rgba(mix(CYAN, RED, 0.5), 0.12)); g0.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = g0; ctx.fillRect(0, 0, W, H);
+    canvas.style.opacity = "0.6";
     return;
   }
 
+  pointer.x = pointer.px = window.innerWidth / 2;
+  pointer.y = pointer.py = window.innerHeight * 0.46;
   resize();
   onScroll();
   start();
@@ -251,7 +219,6 @@
   var rT;
   window.addEventListener("resize", function () { clearTimeout(rT); rT = setTimeout(resize, 200); });
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("pointermove", function (e) { pointer.x = e.clientX; pointer.y = e.clientY; pointer.active = true; }, { passive: true });
-  window.addEventListener("pointerleave", function () { pointer.active = false; });
+  window.addEventListener("pointermove", function (ev) { pointer.x = ev.clientX; pointer.y = ev.clientY; }, { passive: true });
   document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); else start(); });
 })();
