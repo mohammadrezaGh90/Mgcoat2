@@ -24,11 +24,11 @@
 
   // localized header navigation labels (data-sec -> label)
   var NAV = {
-    en: { overview: "About", technology: "Technology", applications: "Applications", tests: "Tests", contact: "Contact" },
-    ru: { overview: "О нас", technology: "Технология", applications: "Применение", tests: "Тесты", contact: "Контакты" },
-    tr: { overview: "Hakkında", technology: "Teknoloji", applications: "Uygulamalar", tests: "Testler", contact: "İletişim" },
-    ar: { overview: "من نحن", technology: "التقنية", applications: "التطبيقات", tests: "الاختبارات", contact: "اتصل بنا" },
-    fa: { overview: "درباره", technology: "تکنولوژی", applications: "کاربردها", tests: "تست‌ها", contact: "تماس" },
+    en: { overview: "About", technology: "Technology", applications: "Applications", tests: "Tests", faq: "FAQ", contact: "Contact" },
+    ru: { overview: "О нас", technology: "Технология", applications: "Применение", tests: "Тесты", faq: "Вопросы", contact: "Контакты" },
+    tr: { overview: "Hakkında", technology: "Teknoloji", applications: "Uygulamalar", tests: "Testler", faq: "SSS", contact: "İletişim" },
+    ar: { overview: "من نحن", technology: "التقنية", applications: "التطبيقات", tests: "الاختبارات", faq: "الأسئلة", contact: "اتصل بنا" },
+    fa: { overview: "درباره", technology: "تکنولوژی", applications: "کاربردها", tests: "تست‌ها", faq: "سؤالات", contact: "تماس" },
   };
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
   var navToggle = document.querySelector(".nav-toggle");

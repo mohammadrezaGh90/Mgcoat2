@@ -580,3 +580,13 @@ footer { background: rgba(7, 9, 16, .6); color: var(--muted); text-align: center
 
 /* slightly tighter, more corporate headings */
 h1, .intro-title, .section-title, .statement h2 { font-feature-settings: "ss01" 1, "cv01" 1; }
+
+/* ---------- FAQ ---------- */
+.faq-list { display: grid; gap: 12px; max-width: 860px; }
+.faq-item { background: var(--glass); border: 1px solid var(--brd); border-radius: var(--radius); overflow: hidden; transition: border-color .2s, background .2s; }
+.faq-item[open] { border-color: var(--brd-2); background: var(--glass-2); }
+.faq-item summary { list-style: none; cursor: pointer; padding: 18px 22px; font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--cyan); font-size: 24px; font-weight: 400; line-height: 1; transition: transform .25s var(--ease); flex: 0 0 auto; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin: 0; padding: 0 22px 20px; color: var(--muted); font-size: 15px; }
