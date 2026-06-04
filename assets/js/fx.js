@@ -117,6 +117,7 @@
     "  float x=cos(ang)*rad;",
     "  float z=sin(ang)*rad;",
     "  float scale=mix(1.06,0.52,rec)*(1.0+bloom*5.0);",
+    "  scale*=1.0+clamp(aspect-0.72,0.0,1.2)*0.62;",
     "  float tilt=mix(0.62,0.30,rec);",
     "  float xs=x*scale;",
     "  float ys=(z*tilt+thick)*scale;",
