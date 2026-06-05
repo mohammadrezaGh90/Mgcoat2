@@ -14,7 +14,8 @@
 
 <style>
 :root{--ink:#f5f7fb;--red:#ff3340;--cyan:#54d8ec;--bg:#070910;--card:rgba(255,255,255,.04);--brd:rgba(255,255,255,.12);--muted:#9aa6b8}
-*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Vazirmatn,system-ui,sans-serif;line-height:1.6}
 .catalog{max-width:920px;margin:0 auto;padding:24px 20px 60px}
 .cat-cover{text-align:center;padding:54px 18px 46px;margin-bottom:24px;border:1px solid var(--brd);border-radius:22px;
@@ -35,13 +36,14 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Vazirmatn,
 .cat-card{border:1px solid var(--brd);border-radius:14px;padding:16px;background:rgba(255,255,255,.03)}
 .cat-card h3{margin:0 0 6px;font-size:16px;font-weight:700;color:var(--ink)}
 .cat-card p{margin:0;color:var(--muted);font-size:14px}
-.spec-table{width:100%;border-collapse:collapse}
-.spec-table td{padding:9px 4px;border-bottom:1px solid var(--brd);font-size:14px;vertical-align:top}
-.spec-table td:first-child{color:var(--muted);width:46%;padding-inline-end:14px}
+.spec-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.spec-table td{padding:9px 4px;border-bottom:1px solid var(--brd);font-size:14px;vertical-align:top;overflow-wrap:anywhere}
+.spec-table td:first-child{color:var(--muted);width:44%;padding-inline-end:14px}
 .spec-table td:last-child{color:var(--ink);font-weight:500}
-.grade-table{width:100%;border-collapse:collapse;font-size:14px;overflow:hidden;border-radius:10px}
-.grade-table th{text-align:start;padding:10px 12px;background:rgba(84,216,236,.12);font-weight:700;border-bottom:1px solid var(--brd)}
-.grade-table td{padding:10px 12px;border-bottom:1px solid var(--brd)}
+.grade-table{width:100%;border-collapse:collapse;font-size:14px;border-radius:10px;table-layout:fixed}
+.grade-table th,.grade-table td{padding:10px 8px;border-bottom:1px solid var(--brd);overflow-wrap:anywhere}
+.grade-table th{text-align:start;background:rgba(84,216,236,.12);font-weight:700}
+.grade-table th:first-child,.grade-table td:first-child{width:46%}
 .grade-table tr td:last-child{color:var(--cyan);font-weight:700}
 .cat-steps{margin:0;padding-inline-start:20px}
 .cat-steps li{margin:8px 0;color:var(--ink)}
