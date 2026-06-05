@@ -200,9 +200,14 @@
     });
   });
 
-  /* ---------- Application cards: tap to keep the red accent ---------- */
-  Array.prototype.forEach.call(document.querySelectorAll(".app-card"), function (c) {
-    c.addEventListener("click", function () { c.classList.toggle("tapped"); });
+  /* ---------- Application cards: click selects one (single-select red accent) ---------- */
+  var appCards = Array.prototype.slice.call(document.querySelectorAll(".app-card"));
+  appCards.forEach(function (c) {
+    c.addEventListener("click", function () {
+      var was = c.classList.contains("tapped");
+      appCards.forEach(function (x) { x.classList.remove("tapped"); });
+      if (!was) c.classList.add("tapped"); // only one card keeps the red line
+    });
   });
 
   /* ---------- Animated stat counters ---------- */
