@@ -106,8 +106,15 @@
     ? new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
+            var el = e.target;
+            el.classList.add("is-visible");
+            io.unobserve(el);
+            // After the blur-in finishes, drop the filter layer so it ends fully
+            // crisp (iOS Safari otherwise keeps the card on a blurry/matte layer).
+            setTimeout(function () {
+              el.classList.add("reveal-done");
+              Array.prototype.forEach.call(el.children, function (ch) { ch.style.animation = "none"; });
+            }, 850);
           }
         });
       }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 })
