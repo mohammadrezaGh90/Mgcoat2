@@ -43,6 +43,28 @@
   var navToggle = document.querySelector(".nav-toggle");
   var curLang = "en";
 
+  /* ---------- Scroll-spy: auto-highlight the nav item in view ---------- */
+  var spyObserver = null;
+  function setActiveNav(sec) {
+    navLinks.forEach(function (a) {
+      if (a.dataset.sec) a.classList.toggle("active", a.dataset.sec === sec);
+    });
+  }
+  function armSpy(lang) {
+    if (!("IntersectionObserver" in window)) return;
+    if (spyObserver) spyObserver.disconnect();
+    spyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) setActiveNav(e.target.id.slice(lang.length + 1));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    navLinks.forEach(function (a) {
+      if (!a.dataset.sec) return;
+      var el = document.getElementById(lang + "-" + a.dataset.sec);
+      if (el) spyObserver.observe(el);
+    });
+  }
+
   var sections = {};
   LANGS.forEach(function (l) {
     sections[l] = document.getElementById("content-" + l);
@@ -139,6 +161,7 @@
     }
 
     if (sections[lang]) armReveal(sections[lang]);
+    armSpy(lang);
   }
 
   function initialLang() {
