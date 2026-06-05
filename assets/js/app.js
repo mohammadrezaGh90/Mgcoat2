@@ -166,6 +166,8 @@
     a.addEventListener("click", function (e) {
       if (!a.dataset.sec) return; // external links (e.g. catalogue) navigate normally
       e.preventDefault();
+      navLinks.forEach(function (x) { if (x.dataset.sec) x.classList.remove("active"); });
+      a.classList.add("active"); // bold neon stays on the chosen item
       var el = document.getElementById(curLang + "-" + a.dataset.sec);
       if (el) { if (lenis) lenis.scrollTo(el, { offset: -64 }); else el.scrollIntoView({ behavior: "smooth", block: "start" }); }
       closeMenu();

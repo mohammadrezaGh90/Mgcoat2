@@ -269,14 +269,26 @@ a { color: inherit; }
 
 /* neon glow around the top nav items (About → Contact), smooth */
 .main-nav .nav-link:hover {
-  color: #eafdff; background: rgba(84, 216, 236, .06);
-  border-color: rgba(84, 216, 236, .65);
-  box-shadow: 0 0 0 1px rgba(84, 216, 236, .22), 0 0 16px rgba(84, 216, 236, .42), inset 0 0 12px rgba(84, 216, 236, .12);
-  text-shadow: 0 0 8px rgba(84, 216, 236, .55);
+  color: #eafdff; background: rgba(84, 216, 236, .08);
+  border-color: rgba(84, 216, 236, .8);
+  box-shadow: 0 0 0 1px rgba(84, 216, 236, .3), 0 0 18px rgba(84, 216, 236, .55), inset 0 0 13px rgba(84, 216, 236, .14);
+  text-shadow: 0 0 9px rgba(84, 216, 236, .6);
 }
 .main-nav .nav-cta:hover {
   color: #fff; background: var(--red); border-color: var(--red);
-  box-shadow: 0 0 0 1px rgba(255, 51, 64, .35), 0 0 18px rgba(255, 51, 64, .55);
+  box-shadow: 0 0 0 1px rgba(255, 51, 64, .4), 0 0 18px rgba(255, 51, 64, .6);
+  text-shadow: none;
+}
+/* clicked item: bolder neon that stays (current-section indicator) */
+.main-nav .nav-link.active {
+  color: #ffffff; background: rgba(84, 216, 236, .13);
+  border-color: rgba(84, 216, 236, .95);
+  box-shadow: 0 0 0 1px rgba(84, 216, 236, .5), 0 0 24px rgba(84, 216, 236, .72), inset 0 0 16px rgba(84, 216, 236, .2);
+  text-shadow: 0 0 11px rgba(84, 216, 236, .85);
+}
+.main-nav .nav-cta.active {
+  color: #fff; background: var(--red); border-color: var(--red);
+  box-shadow: 0 0 0 1px rgba(255, 51, 64, .6), 0 0 26px rgba(255, 51, 64, .8);
   text-shadow: none;
 }
 
