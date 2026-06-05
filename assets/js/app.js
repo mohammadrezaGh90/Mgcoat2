@@ -198,6 +198,11 @@
     });
   });
 
+  /* ---------- Application cards: tap to keep the red accent ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".app-card"), function (c) {
+    c.addEventListener("click", function () { c.classList.toggle("tapped"); });
+  });
+
   /* ---------- Animated stat counters ---------- */
   function runCount(el) {
     var target = parseInt(el.getAttribute("data-count"), 10) || 0;
