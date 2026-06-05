@@ -43,6 +43,8 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* very subtle static base glow (fallback behind canvas) */
@@ -128,11 +130,25 @@ a { color: inherit; }
   font-weight: 700;
   font-size: clamp(38px, 8vw, 92px);
   letter-spacing: .12em;
-  color: var(--ink);
   margin: 0;
   line-height: 1;
+  /* glassy chrome fill — bright top highlight fading to cool glass at the base */
+  color: var(--ink); /* fallback */
+  background: linear-gradient(176deg, #ffffff 0%, #eef6ff 30%, #c3d7e7 56%, #9bbace 78%, #e2eefb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* crisp edge for legibility + soft cool glow = the "glass" depth */
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35)) drop-shadow(0 10px 30px rgba(120, 185, 255, .28));
 }
-.intro-title b { color: var(--red); font-weight: 700; }
+.intro-title b {
+  font-weight: 700;
+  color: var(--red); /* fallback */
+  background: linear-gradient(176deg, #ff8088 0%, #ff3340 50%, #d11825 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* pulsing halo behind the logo */
 .intro-inner::before {
   content: "";
