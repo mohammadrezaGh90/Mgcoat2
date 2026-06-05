@@ -62,16 +62,79 @@
   } catch (e) { gl = null; }
 
   // ---------------- 2-D fallback (no WebGL) ----------------
+  // Some in-app browsers (e.g. Instagram / Facebook webview) refuse a WebGL
+  // context. Instead of a flat gradient we draw a real animated duotone
+  // particle galaxy on a 2-D canvas so the intro always looks rich.
   if (!gl) {
     var c2 = canvas.getContext("2d");
-    function fb() {
-      var W = canvas.width = window.innerWidth, H = canvas.height = window.innerHeight;
-      c2.clearRect(0, 0, W, H);
-      var g = c2.createRadialGradient(W / 2, H * 0.44, 0, W / 2, H * 0.44, Math.min(W, H) * 0.45);
-      g.addColorStop(0, "rgba(120,160,255,.12)"); g.addColorStop(1, "rgba(0,0,0,0)");
-      c2.fillStyle = g; c2.fillRect(0, 0, W, H);
+    var DPR2 = Math.min(1.5, window.devicePixelRatio || 1);
+    var W2 = 0, H2 = 0;
+    function sprite(rgb) {
+      var s = document.createElement("canvas"); s.width = s.height = 32;
+      var x = s.getContext("2d");
+      var g = x.createRadialGradient(16, 16, 0, 16, 16, 16);
+      g.addColorStop(0, "rgba(" + rgb + ",1)");
+      g.addColorStop(0.45, "rgba(" + rgb + ",0.45)");
+      g.addColorStop(1, "rgba(" + rgb + ",0)");
+      x.fillStyle = g; x.fillRect(0, 0, 32, 32);
+      return s;
     }
-    fb(); window.addEventListener("resize", fb);
+    var spCyan = sprite("90,190,255"), spRed = sprite("255,95,72"), spWhite = sprite("220,235,255");
+    var NP = window.innerWidth < 760 ? 1200 : 2000, P = [];
+    for (var fi = 0; fi < NP; fi++) {
+      var rr = 0.12 + Math.pow(Math.random(), 0.7) * 0.86;
+      P.push({ rad: rr, base: Math.random() * 6.2831853, spd: 0.16 + 0.8 * (0.12 / rr),
+        side: Math.random() < 0.5, seed: Math.random(), sz: 0.6 + Math.random() * 1.7 });
+    }
+    var ST = [];
+    for (var sj = 0; sj < 80; sj++) ST.push({ x: Math.random(), y: Math.random(), s: Math.random() });
+    function fbResize() {
+      W2 = canvas.width = Math.floor(window.innerWidth * DPR2);
+      H2 = canvas.height = Math.floor(window.innerHeight * DPR2);
+      canvas.style.width = window.innerWidth + "px"; canvas.style.height = window.innerHeight + "px";
+      measure();
+    }
+    function fbCenter() {
+      var cx = W2 * 0.5, cy = H2 * 0.42;
+      if (introLogo) { var r = introLogo.getBoundingClientRect(); if (r.width) { cx = (r.left + r.width / 2) * DPR2; cy = (r.top + r.height / 2) * DPR2; } }
+      return [cx, cy];
+    }
+    var ft0 = performance.now();
+    function fbFrame(drawOnly) {
+      var sy = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var e = clamp(sy / Math.max(1, introH - vh), 0, 1);
+      introP = e; updateIntroDOM(); scrollY = sy; updateCanvasFade();
+      if (!drawOnly && sy > introH + vh) return;
+      var t = (performance.now() - ft0) / 1000;
+      var ctr = fbCenter(), cx = ctr[0], cy = ctr[1];
+      var R = Math.min(W2, H2) * 0.46 * (1.0 + e * 1.3);
+      c2.clearRect(0, 0, W2, H2);
+      c2.globalCompositeOperation = "lighter";
+      for (var s = 0; s < ST.length; s++) {
+        var st = ST[s], a = (0.12 + 0.4 * st.s) * (0.5 + 0.5 * Math.sin(t * 1.5 + st.s * 6.2831853));
+        c2.globalAlpha = a; var sz = (1 + st.s * 2) * DPR2;
+        c2.drawImage(spWhite, st.x * W2 - sz, st.y * H2 - sz, sz * 2, sz * 2);
+      }
+      for (var i = 0; i < NP; i++) {
+        var p = P[i], ang = p.base + p.rad * 2.6 + t * p.spd + e * 1.6;
+        var x = cx + Math.cos(ang) * p.rad * R, y = cy + Math.sin(ang) * p.rad * R * 0.5;
+        var glow = clamp(1 - (p.rad - 0.12) / 0.86, 0, 1);
+        var al = (0.28 + 0.55 * glow) * (0.7 + 0.3 * Math.sin(t * 2 + p.seed * 6.2831853)) * (1 - e * 0.7);
+        if (al <= 0.01) continue;
+        c2.globalAlpha = clamp(al, 0, 1);
+        var z = (p.sz + glow * 2.4) * DPR2 * 2;
+        c2.drawImage(p.side ? spCyan : spRed, x - z, y - z, z * 2, z * 2);
+      }
+      c2.globalAlpha = 1; c2.globalCompositeOperation = "source-over";
+    }
+    var fbRun = false;
+    function fbLoop() { if (!fbRun) return; requestAnimationFrame(fbLoop); fbFrame(false); }
+    fbResize();
+    window.addEventListener("resize", function () { fbResize(); fbFrame(true); });
+    window.addEventListener("load", function () { fbResize(); fbFrame(true); });
+    if (reduce) { fbFrame(true); canvas.style.opacity = "0.8"; }
+    else { fbRun = true; requestAnimationFrame(fbLoop);
+      document.addEventListener("visibilitychange", function () { fbRun = !document.hidden; if (fbRun) requestAnimationFrame(fbLoop); }); }
     return;
   }
 
@@ -234,6 +297,7 @@
     if (scrollY > introH + vh * 1.35) return;
 
     ptr.px += (ptr.x - ptr.px) * 0.05; ptr.py += (ptr.y - ptr.py) * 0.05;
+    calcCenter();   // keep the disk locked on the logo even if it lays out late
 
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
@@ -264,6 +328,11 @@
 
   var rT;
   window.addEventListener("resize", function () { clearTimeout(rT); rT = setTimeout(resize, 200); });
+  // Re-measure once images/fonts settle so the disk centres on the final logo box.
+  window.addEventListener("load", function () { resize(); onScroll(); });
+  // Recover gracefully if the (in-app) browser drops the GL context.
+  canvas.addEventListener("webglcontextlost", function (ev) { ev.preventDefault(); stop(); }, false);
+  canvas.addEventListener("webglcontextrestored", function () { resize(); start(); }, false);
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("pointermove", function (ev) {
     ptr.x = (ev.clientX / window.innerWidth) * 2 - 1;
