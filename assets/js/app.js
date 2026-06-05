@@ -32,11 +32,11 @@
 
   // localized header navigation labels (data-sec -> label)
   var NAV = {
-    en: { overview: "About", technology: "Technology", applications: "Applications", tests: "Tests", faq: "FAQ", contact: "Contact" },
-    ru: { overview: "О нас", technology: "Технология", applications: "Применение", tests: "Тесты", faq: "Вопросы", contact: "Контакты" },
-    tr: { overview: "Hakkında", technology: "Teknoloji", applications: "Uygulamalar", tests: "Testler", faq: "SSS", contact: "İletişim" },
-    ar: { overview: "من نحن", technology: "التقنية", applications: "التطبيقات", tests: "الاختبارات", faq: "الأسئلة", contact: "اتصل بنا" },
-    fa: { overview: "درباره", technology: "تکنولوژی", applications: "کاربردها", tests: "تست‌ها", faq: "سؤالات", contact: "تماس" },
+    en: { overview: "About", technology: "Technology", applications: "Applications", tests: "Tests", faq: "FAQ", partners: "Partners", contact: "Contact" },
+    ru: { overview: "О нас", technology: "Технология", applications: "Применение", tests: "Тесты", faq: "Вопросы", partners: "Партнёрам", contact: "Контакты" },
+    tr: { overview: "Hakkında", technology: "Teknoloji", applications: "Uygulamalar", tests: "Testler", faq: "SSS", partners: "İş Ortaklığı", contact: "İletişim" },
+    ar: { overview: "من نحن", technology: "التقنية", applications: "التطبيقات", tests: "الاختبارات", faq: "الأسئلة", partners: "الشراكة", contact: "اتصل بنا" },
+    fa: { overview: "درباره", technology: "تکنولوژی", applications: "کاربردها", tests: "تست‌ها", faq: "سؤالات", partners: "همکاری با ما", contact: "تماس" },
   };
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
   var navToggle = document.querySelector(".nav-toggle");
@@ -181,10 +181,15 @@
       function v(n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ""; }
       var d = f.dataset, lines = [d.prefix || ""];
       var name = v("name"), phone = v("phone"), need = v("need"), msg = v("message");
+      var city = v("city"), country = v("country"), address = v("address"), location = v("location");
       if (name) lines.push(d.lname + ": " + name);
       if (phone) lines.push(d.lphone + ": " + phone);
-      if (need) lines.push(d.lneed + ": " + need);
-      if (msg) lines.push(d.lmsg + ": " + msg);
+      if (need && d.lneed) lines.push(d.lneed + ": " + need);
+      if (city && d.lcity) lines.push(d.lcity + ": " + city);
+      if (country && d.lcountry) lines.push(d.lcountry + ": " + country);
+      if (address && d.laddress) lines.push(d.laddress + ": " + address);
+      if (location && d.llocation) lines.push(d.llocation + ": " + location);
+      if (msg && d.lmsg) lines.push(d.lmsg + ": " + msg);
       window.open("https://wa.me/" + d.wa + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
     });
   });
