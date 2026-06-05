@@ -38,6 +38,7 @@
     ar: { overview: "من نحن", technology: "التقنية", applications: "التطبيقات", tests: "الاختبارات", faq: "الأسئلة", partners: "الشراكة", contact: "اتصل بنا" },
     fa: { overview: "درباره", technology: "تکنولوژی", applications: "کاربردها", tests: "تست‌ها", faq: "سؤالات", partners: "همکاری با ما", contact: "تماس" },
   };
+  var CATW = { en: "Catalogue", ru: "Каталог", tr: "Katalog", ar: "الكتالوج", fa: "کاتالوگ" };
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
   var navToggle = document.querySelector(".nav-toggle");
   var curLang = "en";
@@ -126,6 +127,8 @@
       var label = nv[a.dataset.sec];
       if (label) a.textContent = label;
     });
+    var catLink = document.querySelector('.nav-ext[data-ext="catalog"]');
+    if (catLink) catLink.textContent = CATW[lang] || CATW.en;
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
@@ -161,6 +164,7 @@
   }
   navLinks.forEach(function (a) {
     a.addEventListener("click", function (e) {
+      if (!a.dataset.sec) return; // external links (e.g. catalogue) navigate normally
       e.preventDefault();
       var el = document.getElementById(curLang + "-" + a.dataset.sec);
       if (el) { if (lenis) lenis.scrollTo(el, { offset: -64 }); else el.scrollIntoView({ behavior: "smooth", block: "start" }); }
