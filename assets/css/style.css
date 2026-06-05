@@ -735,3 +735,43 @@ body::after {
 
 /* application cards: clickable — the red accent now also sticks after a tap (shares the :hover rules above) */
 .app-card { cursor: pointer; }
+
+/* ============================================================
+   GLOBAL INTERACTIVE NEON — smooth glow on anything clickable
+   ============================================================ */
+.btn, .nav-link, .lang-trigger, .lang-menu .lang-btn, .nav-toggle, .social-link,
+.wa-float, #to-top, .faq-item summary, .video-frame, .gallery-grid .gal,
+.blog-card, .app-card, .crumbs a, footer a {
+  transition: color .28s var(--ease), background .28s var(--ease),
+              border-color .28s var(--ease), box-shadow .28s var(--ease),
+              transform .28s var(--ease), text-shadow .28s var(--ease);
+}
+
+/* cyan neon halo for bordered controls, tiles and outline buttons */
+.lang-trigger:hover,
+.lang-menu .lang-btn:hover,
+.faq-item summary:hover,
+.nav-toggle:hover,
+#to-top:hover,
+.video-frame:hover,
+.gallery-grid .gal:hover,
+.btn:not(.red):hover {
+  border-color: rgba(84, 216, 236, .6);
+  box-shadow: 0 0 0 1px rgba(84, 216, 236, .18), 0 0 15px rgba(84, 216, 236, .34);
+  color: var(--ink);
+}
+.faq-item summary:hover { background: rgba(84, 216, 236, .05); }
+.gallery-grid .gal:hover, .video-frame:hover { transform: translateY(-3px); }
+#to-top:hover { transform: translateY(-2px); }
+
+/* round whatsapp button keeps its green identity */
+.wa-float:hover { box-shadow: 0 0 24px rgba(37, 211, 102, .6), 0 10px 30px rgba(0, 0, 0, .4); }
+
+/* social links glow in their brand colour */
+.social-link.instagram:hover { box-shadow: 0 0 0 1px rgba(225, 48, 108, .4), 0 0 15px rgba(225, 48, 108, .4); }
+.social-link.whatsapp-mini:hover { box-shadow: 0 0 0 1px rgba(37, 211, 102, .4), 0 0 15px rgba(37, 211, 102, .4); }
+
+/* soft cyan glow on inline text links */
+.prose a:hover, footer a:hover, .crumbs a:hover, .section-copy a:hover {
+  color: var(--cyan); text-shadow: 0 0 8px rgba(84, 216, 236, .4);
+}
