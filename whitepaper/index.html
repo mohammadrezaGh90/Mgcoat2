@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Heat-Free Plastic-Based Protective Coating for PCBs — Technical White Paper | MG TECH</title>
+<meta name="description" content="Technical white paper on a heat-free, plastic-based nanostructured protective coating for printed circuit boards (PCBs): failure mechanisms, the coating system and specifications, application and protection grades, and reliability evaluation aligned with IPC-CC-830 and IEC 61086."/>
+<meta name="keywords" content="PCB protective coating, conformal coating, white paper, IPC-CC-830, IEC 61086, surface insulation resistance, electrochemical migration, waterproof PCB, plastic coating, MGCoat"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.mgcoat.com/whitepaper/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Heat-Free Plastic-Based Protective Coating for PCBs — Technical White Paper"/>
+<meta property="og:description" content="A technical white paper on MG TECH's heat-free, plastic-based protective coating for PCBs: failure mechanisms, specifications, protection grades and reliability evaluation (IPC-CC-830 / IEC 61086)."/>
+<meta property="og:url" content="https://www.mgcoat.com/whitepaper/"/>
+<meta property="og:image" content="https://www.mgcoat.com/assets/img/og-banner.jpg"/>
+<meta name="theme-color" content="#070910"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="/assets/css/style.css?v=202606064"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Heat-Free, Plastic-Based Nanostructured Protective Coating for Printed Circuit Boards","description":"A technical white paper on the technology, specifications, application methodology and reliability evaluation of a heat-free, plastic-based protective coating for PCBs, aligned with IPC-CC-830 and IEC 61086 frameworks.","inLanguage":"en","datePublished":"2026-06-06","dateModified":"2026-06-06","author":{"@type":"Organization","name":"MG TECH"},"publisher":{"@type":"Organization","name":"MG TECH","logo":{"@type":"ImageObject","url":"https://www.mgcoat.com/assets/img/logo-mark.png"}},"mainEntityOfPage":"https://www.mgcoat.com/whitepaper/","image":"https://www.mgcoat.com/assets/img/og-banner.jpg","about":["conformal coating","PCB reliability","IPC-CC-830","IEC 61086"]}</script>
+<style>
+.wp-head { border-bottom:1px solid var(--brd); }
+.wp-meta { font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+.prose .abstract { background:var(--glass); border:1px solid var(--brd); border-inline-start:3px solid var(--cyan); border-radius:14px; padding:20px 22px; margin:24px 0 8px; }
+.prose .abstract h2 { margin-top:0; font-size:18px; }
+.prose .keywords { color:var(--muted); font-size:14px; margin:10px 0 28px; }
+.prose h2 { scroll-margin-top:90px; }
+.prose strong { color:var(--ink); font-weight:600; }
+.wp-table-wrap { overflow-x:auto; border:1px solid var(--brd); border-radius:14px; margin:20px 0; }
+.wp-table { width:100%; min-width:520px; border-collapse:collapse; font-size:14px; }
+.wp-table th, .wp-table td { padding:11px 14px; border-bottom:1px solid var(--line); text-align:start; vertical-align:top; }
+.wp-table thead th { font-family:var(--display); color:var(--ink); background:rgba(84,216,236,.08); font-weight:600; }
+.wp-table td:first-child { color:var(--muted); white-space:nowrap; }
+.wp-table .y { color:var(--cyan); font-weight:600; }
+.wp-refs { font-size:13.5px; color:var(--text); }
+.wp-refs li { margin:7px 0; }
+.wp-note { font-size:13.5px; color:var(--muted); border:1px dashed var(--brd); border-radius:12px; padding:14px 16px; margin:18px 0; }
+.wp-cta { display:flex; flex-wrap:wrap; gap:12px; margin:30px 0 10px; }
+</style>
+</head>
+<body>
+<header class="site-header wp-head"><div class="container nav">
+<a class="brand" href="/" aria-label="MG TECH — home"><picture><source srcset="/assets/img/logo-mark.webp" type="image/webp"/><img src="/assets/img/logo-mark.png" alt="MG TECH logo" width="40" height="40"/></picture><span class="brand-text">MG&nbsp;TECH<small>Technical White Paper</small></span></a>
+<a class="btn" href="/whitepaper/MGCoat-Technical-White-Paper.pdf" download>Download PDF</a>
+</div></header>
+
+<main class="article"><div class="container prose">
+<nav class="crumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a> / White Paper</nav>
+
+<p class="wp-meta">Technical White Paper · MG TECH R&amp;D · 2026</p>
+<h1>Heat-Free, Plastic-Based Nanostructured Protective Coating for Printed Circuit Boards: Technology, Performance and Reliability Considerations</h1>
+
+<div class="abstract">
+<h2>Abstract</h2>
+<p>Printed circuit boards (PCBs) deployed in automotive, industrial, marine, outdoor and high-humidity environments are exposed to moisture, liquid water, ionic contamination, corrosion, thermal cycling and mechanical stress. These stressors degrade surface insulation resistance and drive failure mechanisms such as electrochemical migration, dendritic growth and corrosion. Protective (conformal) coatings are an established mitigation, and international frameworks such as <strong>IPC-CC-830</strong> and <strong>IEC 61086</strong> define how such coatings should be qualified and evaluated. This white paper describes a <strong>heat-free, plastic-based, multi-layer protective coating</strong> (MGCoat Liquid PCB Plastic Coating) that forms a reinforced, non-transparent layer at room temperature. We summarise the relevant failure mechanisms, the coating system and its specifications, an application methodology with defined protection grades, and a reliability-evaluation framework aligned with industry standards. Quantitative figures are stated as manufacturer specifications and observed performance; independent qualification testing under the cited frameworks is recommended for formal compliance.</p>
+</div>
+<p class="keywords"><strong>Keywords:</strong> PCB reliability; conformal coating; protective coating; surface insulation resistance (SIR); electrochemical migration; IPC-CC-830; IEC 61086; immersion protection; heat-free application.</p>
+
+<h2>1. Introduction</h2>
+<p>The reliability of electronic assemblies in the field is strongly governed by their tolerance to environmental stress. As electronics migrate into under-hood automotive modules, outdoor sensors, marine equipment, LED systems, drones and motorcycle electronics, the printed circuit board is increasingly exposed to conditions far beyond a clean laboratory: condensation, rain, wash-down, salt, dust, ionic residues, temperature excursions and vibration. Conformal coatings reduce these risks by forming a thin protective barrier on the board surface, helping to preserve dielectric strength and long-term function [1], [4].</p>
+<p>This paper presents the technology and engineering rationale of a <strong>plastic-based protective coating applied without heat</strong>. Unlike very thin films that act primarily as a surface insulator, the system is engineered as a <strong>reinforced, build-up layer</strong> intended to combine environmental and mechanical protection. The objective is to document the approach transparently, position it against established material classes, and define a credible path to standards-based validation.</p>
+
+<h2>2. Failure Mechanisms of PCBs in Service Environments</h2>
+<p><strong>2.1 Moisture and ionic contamination.</strong> Adsorbed moisture in combination with ionic residues (flux, handling salts, atmospheric pollutants) lowers the <strong>surface insulation resistance (SIR)</strong> between adjacent conductors, enabling unwanted leakage currents that can shift bias points and, in severe cases, cause malfunction [4], [5].</p>
+<p><strong>2.2 Electrochemical migration and dendrites.</strong> Under bias and humidity, dissolved metal ions migrate across the surface and can re-deposit as conductive dendrites that bridge conductors, producing intermittent or hard shorts. Coatings that limit moisture films and ionic mobility suppress this mechanism.</p>
+<p><strong>2.3 Corrosion and conductive anodic filamentation (CAF).</strong> Moisture and contamination corrode copper tracks and plated features; internally, CAF can form along the glass-resin interface. Both reduce service life, particularly in fine-pitch designs.</p>
+<p><strong>2.4 Thermal and mechanical stress.</strong> Temperature cycling pumps humid air in and out of enclosures, while handling, vibration and abrasion impose mechanical loads. A coating that adds <strong>mechanical robustness after curing</strong> — not only a moisture barrier — addresses both stress families.</p>
+
+<h2>3. Conformal Coatings: Function and Material Classes</h2>
+<p>Conformal coatings are thin polymeric layers that conform to the topology of the assembly. The common material classes are <strong>acrylic (AR), silicone (SR), polyurethane (UR), epoxy (ER) and parylene (XY)</strong>. Each balances moisture protection, mechanical and chemical resistance, temperature range, rework and process complexity differently [1], [4]. In practice, many market coatings are ultra-thin transparent films optimised primarily for humidity and light contamination; they add limited mechanical protection and provide no optical concealment of the board layout. This leaves a gap for applications that simultaneously require water and humidity protection, mechanical reinforcement, and design confidentiality.</p>
+
+<h2>4. The MGCoat Coating System</h2>
+<p><strong>4.1 Material concept.</strong> MGCoat Liquid PCB Plastic Coating is a <strong>plastic-based, non-transparent protective coating</strong> that cures at room temperature to form a reinforced layer. It is designed to be <strong>built up in multiple passes</strong>, allowing thickness and protection level to be matched to the application rather than fixed at a single thin film. Three application methods are supported — <strong>dipping, spraying and brushing</strong> — covering both volume production and field repair.</p>
+<p><strong>4.2 Specifications.</strong> The following values are manufacturer specifications and observed performance.</p>
+<div class="wp-table-wrap"><table class="wp-table"><tbody>
+<tr><td>Base / finish</td><td><strong>Plastic-based, non-transparent</strong> (white, black or grey)</td></tr>
+<tr><td>Application method</td><td>Dipping, spraying or brushing</td></tr>
+<tr><td>Application temperature</td><td><strong>Heat-free</strong>, 15–45 °C (optimum 25–35 °C)</td></tr>
+<tr><td>Initial dry (touch)</td><td>8–10 minutes</td></tr>
+<tr><td>Full cure (max. mechanical strength)</td><td>12 hours</td></tr>
+<tr><td>Layer thickness per pass</td><td>20–200 µm (normal grade 50–100 µm)</td></tr>
+<tr><td>Recommended passes</td><td>2–4, with ~10 min between passes</td></tr>
+<tr><td>Coverage</td><td>≈ 1 L per 1 m² at 300–500 µm (greater area at lower thickness)</td></tr>
+<tr><td>Operating temperature (cured)</td><td>−55 °C to +90…110 °C</td></tr>
+<tr><td>Reworkability</td><td><strong>Removable with a dedicated solvent</strong></td></tr>
+<tr><td>Shelf life</td><td>5 years (sealed)</td></tr>
+</tbody></table></div>
+
+<p><strong>4.3 Application methodology and protection grades.</strong> Protection is specified as a number of passes for a target environment and operating voltage, with a short inter-pass dry. After coating, the assembly is visually inspected to confirm full, air-free coverage.</p>
+<div class="wp-table-wrap"><table class="wp-table">
+<thead><tr><th>Environment</th><th>Voltage</th><th>Passes</th></tr></thead>
+<tbody>
+<tr><td>Full water immersion</td><td>AC 220 V</td><td class="y">4</td></tr>
+<tr><td>Full water immersion</td><td>DC ≤ 24 V</td><td class="y">3</td></tr>
+<tr><td>Rain / splash resistant</td><td>AC 220 V</td><td class="y">2</td></tr>
+<tr><td>Rain / splash resistant</td><td>DC ≤ 24 V</td><td class="y">2</td></tr>
+</tbody></table></div>
+
+<h2>5. Reliability Evaluation Framework</h2>
+<p>Formal performance should be judged against recognised frameworks rather than a generic “waterproof” claim. <strong>IPC-CC-830</strong> specifies qualification and conformance requirements for electrical insulating compounds on printed wiring assemblies [1]. <strong>IEC 61086-1</strong> defines and classifies coatings for loaded printed wire boards and their general requirements, while <strong>IEC 61086-3-1</strong> sets material specifications for general-purpose, high-reliability and aerospace applications [2], [3]. Representative evaluation methods include <strong>surface insulation resistance</strong> (e.g., IPC-TM-650 2.6.3 [5]), humidity and damp-heat, thermal cycling, adhesion, mechanical durability, contamination and salt-spray resistance, UV exposure, post-immersion functional testing and short-circuit verification. Consistent with these documents, material selection should follow the real requirements of each application and be validated under realistic, repeatable conditions.</p>
+<div class="wp-note"><strong>Note on claims.</strong> The figures in this paper are manufacturer specifications and in-house observed results. They are <strong>not</strong> a statement of third-party certification. Independent qualification under IPC-CC-830 / IEC 61086 is recommended where formal compliance is required.</div>
+
+<h2>6. Comparative Positioning</h2>
+<p>Relative to thin, transparent conformal films, the system is positioned as a reinforced plastic layer with combined protection. Key differentiators are highlighted below.</p>
+<div class="wp-table-wrap"><table class="wp-table">
+<thead><tr><th>Attribute</th><th>Typical thin conformal film</th><th>MGCoat plastic-based coating</th></tr></thead>
+<tbody>
+<tr><td>Curing</td><td>Often needs heat/UV or long cure</td><td class="y"><strong>Heat-free, room temperature</strong></td></tr>
+<tr><td>Layer</td><td>Very thin surface film</td><td class="y"><strong>Reinforced 20–200 µm, multi-layer</strong></td></tr>
+<tr><td>Mechanical protection</td><td>Limited</td><td class="y"><strong>Hard, abrasion-resistant after cure</strong></td></tr>
+<tr><td>Water exposure</td><td>Humidity / light splash</td><td class="y"><strong>Rain to full immersion (graded)</strong></td></tr>
+<tr><td>Optical</td><td>Transparent</td><td class="y"><strong>Non-transparent (design concealment)</strong></td></tr>
+<tr><td>Application</td><td>Usually spray only</td><td class="y"><strong>Dip / spray / brush</strong></td></tr>
+<tr><td>Rework</td><td>Varies</td><td class="y"><strong>Solvent-removable</strong></td></tr>
+</tbody></table></div>
+
+<h2>7. Limitations, Safety and Recommended Validation</h2>
+<p>Engineering honesty is part of credibility. The following limitations apply: the product is <strong>plastic-based and, like most plastics, somewhat flammable in the liquid state</strong> — the liquid must never be exposed to open flame; once cured it is a stable film that continues to protect until exposed to heat above ~120 °C or a hard mechanical scratch (e.g., drill or cutting blade). Waterproofing <strong>does not replace electrical-safety design</strong>: voltage, current, creepage and clearance, connectors and user access must be evaluated separately. For deep-immersion use, the complete assembly must be sealed with no trapped air, since the coating is one element of a larger system. Finally, performance depends on correct surface preparation, masking of functional areas and full, air-free coverage. For formal adoption, third-party testing under the cited standards and documented lot data are recommended.</p>
+
+<h2>8. Conclusion</h2>
+<p>Protective coatings remain an essential tool for electronic reliability in harsh environments. A <strong>heat-free, plastic-based, multi-layer coating</strong> that is mechanically reinforced after curing, graded from rain resistance to full immersion, non-transparent for design protection and solvent-reworkable, offers a practical industrial route that addresses environmental and mechanical stress together — a gap not fully covered by thin transparent films. Positioned within the IPC-CC-830 and IEC 61086 evaluation frameworks and supported by documented testing, the approach is well suited to automotive, industrial, marine, LED and unmanned-system electronics.</p>
+
+<h2>References</h2>
+<ol class="wp-refs">
+<li>IPC-CC-830, <em>Qualification and Performance of Electrical Insulating Compound for Printed Wiring Assemblies</em>, IPC.</li>
+<li>IEC 61086-1, <em>Coatings for loaded printed wire boards (conformal coatings) — Part 1: Definitions, classification and general requirements</em>, IEC.</li>
+<li>IEC 61086-3-1, <em>Coatings for loaded printed wire boards — Part 3-1: Specifications for individual materials — general purpose, high-reliability and aerospace applications</em>, IEC.</li>
+<li>IPC-HDBK-830, <em>Guidelines for Design, Selection and Application of Conformal Coatings</em>, IPC.</li>
+<li>IPC-TM-650, <em>Test Methods Manual</em> (e.g., Method 2.6.3, Surface Insulation Resistance), IPC.</li>
+</ol>
+
+<div class="wp-cta">
+<a class="btn red" href="https://wa.me/905528767973" rel="noopener" target="_blank">Request a sample / quote on WhatsApp</a>
+<a class="btn" href="/whitepaper/MGCoat-Technical-White-Paper.pdf" download>Download this white paper (PDF)</a>
+<a class="btn" href="/catalog/">Product catalogue</a>
+</div>
+</div></main>
+
+<footer>© M.Ghanbari — MG TECH · Liquid PCB Plastic Coating. Technical white paper for informational purposes. · <a href="/">mgcoat.com</a></footer>
+</body></html>
