@@ -599,6 +599,11 @@
   var assistForm = document.getElementById("assist-form");
   var assistInput = document.getElementById("assist-input");
   var assistTitle = assistPanel ? assistPanel.querySelector(".assist-title") : null;
+  var assistStatus = document.getElementById("assist-status");
+  var ASSIST_STATUS = {
+    en: "Online · replies in seconds", ru: "Онлайн · ответит за секунды",
+    tr: "Çevrimiçi · saniyede yanıt", ar: "متصل · يرد خلال ثوانٍ", fa: "آنلاین · پاسخ در چند ثانیه"
+  };
   function assistNorm(s) {
     return (s || "").toLowerCase().replace(/[ي]/g, "ی").replace(/[ك]/g, "ک").replace(/[ًٌٍَُِّْ]/g, "");
   }
@@ -681,6 +686,7 @@
     if (!assistPanel) return;
     var ui = ASSIST_UI[lang] || ASSIST_UI.en;
     if (assistTitle) assistTitle.textContent = ui.title;
+    if (assistStatus) assistStatus.textContent = ASSIST_STATUS[lang] || ASSIST_STATUS.en;
     if (assistInput) assistInput.placeholder = ui.ph;
     assistHistory = [];   // a language switch starts a fresh conversation
     assistBody.innerHTML = "";
