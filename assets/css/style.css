@@ -1059,13 +1059,18 @@ body::after {
   position: fixed; inset-block-end: 18px; inset-inline-start: 50%; transform: translateX(-50%);
   z-index: 94; display: inline-flex; align-items: center; gap: 7px;
   padding: 8px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 12px; font-weight: 600;
-  color: var(--text); background: rgba(7, 9, 16, .82); border: 1px solid var(--brd);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-sm); transition: color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+  /* frosted glass — see-through with just a hint of blur */
+  color: #fff; background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .22);
+  backdrop-filter: blur(3px) saturate(120%); -webkit-backdrop-filter: blur(3px) saturate(120%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .25), 0 1px 0 rgba(255, 255, 255, .12) inset;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .55);
+  transition: color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
 }
-.tilt-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+.tilt-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .5)); }
+.tilt-toggle:hover { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .32); }
 .tilt-toggle.on {
-  color: #fff; border-color: var(--red);
+  color: #fff; border-color: rgba(255, 90, 100, .8); background: rgba(255, 51, 64, .14);
   box-shadow: 0 0 0 2px rgba(255, 51, 64, .18), 0 0 18px rgba(255, 51, 64, .45);
 }
 [dir=rtl] .tilt-toggle { inset-inline-start: 50%; }
