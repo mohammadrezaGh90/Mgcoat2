@@ -335,6 +335,28 @@ a { color: inherit; }
 .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 52px; align-items: center; }
 .hero-logo { width: 200px; max-width: 64%; height: auto; display: block; margin-bottom: 22px; }
 
+/* text-based brand lockup used in the hero (icon + chrome "MG COAT" wordmark) */
+.hero-lockup { display: flex; align-items: center; gap: 16px; width: auto; max-width: 100%; margin-bottom: 22px; }
+.hero-lockup .hl-mark { width: clamp(64px, 12vw, 92px); height: auto; flex: none; filter: drop-shadow(0 8px 24px rgba(84, 216, 236, .16)); }
+.hl-text { display: flex; flex-direction: column; line-height: 1; }
+.hl-name {
+  font-family: var(--display); font-weight: 700; letter-spacing: .08em;
+  font-size: clamp(34px, 6vw, 58px);
+  color: var(--ink); /* fallback */
+  background: linear-gradient(176deg, #ffffff 0%, #eef6ff 30%, #c3d7e7 56%, #9bbace 78%, #e2eefb 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35)) drop-shadow(0 8px 22px rgba(120, 185, 255, .22));
+}
+.hl-name b {
+  font-weight: 700; color: var(--red); /* fallback */
+  background: linear-gradient(176deg, #ff8088 0%, #ff3340 50%, #d11825 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hl-text small {
+  font-family: var(--mono); font-weight: 400; font-size: clamp(9px, 1.4vw, 12px);
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 8px;
+}
+
 .kicker {
   display: inline-flex; align-items: center; gap: 12px;
   font-family: var(--mono); color: var(--cyan); font-weight: 500; font-size: 12px;
