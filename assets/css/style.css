@@ -118,28 +118,6 @@ a { color: inherit; }
   padding: 0 24px;
   will-change: opacity, transform;
 }
-/* frosted-glass plate behind the welcome lockup — frosts the WebGL behind it */
-.intro-glass {
-  position: absolute; z-index: -1; inset: -42px -54px;
-  border-radius: 34px; pointer-events: none; overflow: hidden;
-  background: linear-gradient(155deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .015) 55%, rgba(255, 255, 255, .04));
-  border: 1px solid rgba(255, 255, 255, .14);
-  backdrop-filter: blur(11px) saturate(125%); -webkit-backdrop-filter: blur(11px) saturate(125%);
-  box-shadow:
-    0 40px 90px rgba(0, 0, 0, .45),
-    inset 0 1px 0 rgba(255, 255, 255, .22),
-    inset 0 0 60px rgba(120, 185, 255, .06);
-}
-/* slow specular sheen sweeping across the glass */
-.intro-glass::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .1) 47%, rgba(180, 235, 255, .16) 50%, rgba(255, 255, 255, .1) 53%, transparent 62%);
-  transform: translateX(-120%); mix-blend-mode: screen;
-  animation: glassSheen 7.5s ease-in-out infinite;
-}
-@keyframes glassSheen { 0% { transform: translateX(-120%); } 55%, 100% { transform: translateX(120%); } }
-@media (max-width: 600px) { .intro-glass { inset: -30px -26px; border-radius: 26px; } }
-@media (prefers-reduced-motion: reduce) { .intro-glass::before { animation: none; } }
 .intro-logo {
   width: clamp(116px, 21vw, 232px);
   height: auto;
@@ -205,20 +183,14 @@ a { color: inherit; }
 }
 .intro-hint {
   position: absolute;
-  inset-block-end: 34px;
-  inset-inline-start: 50%; transform: translateX(-50%);
-  display: inline-flex; flex-direction: column; align-items: center; gap: 4px;
-  padding: 10px 20px; border-radius: 999px;
-  background: rgba(255, 255, 255, .05);
-  border: 1px solid rgba(255, 255, 255, .14);
-  backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .16);
+  inset-block-end: 38px;
+  inset-inline: 0;
   text-align: center;
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: .26em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--muted);
 }
 .intro-hint span {
   display: block;
@@ -1090,9 +1062,10 @@ body::after {
 
 /* tilt-to-scroll toggle (mobile/tablet only; injected by JS when sensors exist) */
 .tilt-toggle {
-  position: fixed; inset-block-end: 18px; inset-inline-start: 50%; transform: translateX(-50%);
-  z-index: 94; display: inline-flex; align-items: center; gap: 7px;
-  padding: 8px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 12px; font-weight: 600;
+  /* physical left:50% so it stays perfectly centred in both LTR and RTL */
+  position: fixed; inset-block-end: 14px; left: 50%; right: auto; transform: translateX(-50%);
+  z-index: 94; display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 11px; font-weight: 600;
   /* frosted glass — see-through with just a hint of blur */
   color: #fff; background: rgba(255, 255, 255, .06);
   border: 1px solid rgba(255, 255, 255, .22);
@@ -1101,10 +1074,10 @@ body::after {
   text-shadow: 0 1px 3px rgba(0, 0, 0, .55);
   transition: color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
 }
-.tilt-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .5)); }
+.tilt-toggle svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .5)); }
 .tilt-toggle:hover { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .32); }
 .tilt-toggle.on {
   color: #fff; border-color: rgba(255, 90, 100, .8); background: rgba(255, 51, 64, .14);
   box-shadow: 0 0 0 2px rgba(255, 51, 64, .18), 0 0 18px rgba(255, 51, 64, .45);
 }
-[dir=rtl] .tilt-toggle { inset-inline-start: 50%; }
+[dir=rtl] .tilt-toggle { left: 50%; right: auto; }

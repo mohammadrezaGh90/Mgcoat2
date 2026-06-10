@@ -191,10 +191,10 @@
     "  innerGlow=pow(innerGlow,1.3);",
     "  gl_PointSize=(1.1+depth*2.3+innerGlow*3.4)*(uRes.y/900.0);",
     "  float side=(cos(ang)+1.0)*0.5;",
-    "  vec3 cyan=vec3(0.22,0.66,1.0);",
-    "  vec3 red=vec3(1.0,0.30,0.18);",
+    "  vec3 cyan=vec3(0.30,0.74,1.0);",
+    "  vec3 red=vec3(1.0,0.32,0.22);",
     "  vec3 col=mix(cyan,red,side);",
-    "  col=mix(col,vec3(1.0,0.95,0.88),innerGlow*0.4);",
+    "  col=mix(col,vec3(0.90,0.96,1.0),innerGlow*0.55);",
     "  vColor=col;",
     "  float flick=0.65+0.35*sin(uTime*2.0+aSeed*TAU*3.0);",
     "  float below=smoothstep(center.y-0.32,center.y-0.05,pos.y);",
@@ -209,8 +209,10 @@
     "void main(){",
     "  vec2 d=gl_PointCoord-0.5;",
     "  float r=length(d);",
-    "  float a=smoothstep(0.5,0.0,r)*vAlpha;",
-    "  gl_FragColor=vec4(vColor,a);",
+    "  float core=smoothstep(0.5,0.0,r);",       // soft glassy falloff
+    "  float spec=pow(core,6.0);",                // tight crystalline highlight
+    "  vec3 col=vColor+vec3(0.80,0.90,1.0)*spec*0.7;", // icy white-hot centre
+    "  gl_FragColor=vec4(col,core*vAlpha);",
     "}"
   ].join("\n");
 
