@@ -76,6 +76,7 @@
   var langTrigger = document.querySelector(".lang-trigger");
   var ltFlag = document.querySelector(".lt-flag");
   var ltName = document.querySelector(".lt-name");
+  var ltLabel = document.querySelector(".lt-label");
   var LANG_INFO = {};
   buttons.forEach(function (b) {
     var sp = b.querySelectorAll("span");
@@ -106,21 +107,28 @@
   function flashLangSwitcher() {
     if (attractShown || reduceMotion) return;
     attractShown = true;
-    if (!langSelect || !ltFlag || !ltName) return;
+    if (!langSelect || !ltLabel || !ltFlag || !ltName) return;
     langSelect.classList.add("attract");
-    var order = ["en", "ru", "tr", "ar", "fa"];
-    var i = 1; // start on the next language so the change is visible immediately
-    var iv = setInterval(function () {
-      var info = LANG_INFO[order[i % order.length]];
+    // roll through every other language, then settle back on the current one.
+    // This only previews the label — the page language never changes here;
+    // it changes only when the visitor actually picks one from the menu.
+    var seq = LANGS.filter(function (l) { return l !== curLang; }).concat(curLang);
+    function rollTo(lang) {
+      var info = LANG_INFO[lang];
       if (info) { ltFlag.textContent = info.flag; ltName.textContent = info.name; }
+      ltLabel.classList.remove("roll");
+      void ltLabel.offsetWidth;   // force reflow so the roll animation restarts
+      ltLabel.classList.add("roll");
+    }
+    var i = 0;
+    var iv = setInterval(function () {
+      rollTo(seq[i]);
       i++;
-      if (i > order.length + 1) {
+      if (i >= seq.length) {
         clearInterval(iv);
-        var cur = LANG_INFO[curLang] || LANG_INFO.en; // settle back on the real language
-        if (cur) { ltFlag.textContent = cur.flag; ltName.textContent = cur.name; }
+        langSelect.classList.remove("attract"); // ends on the real (current) language
       }
-    }, 170);
-    setTimeout(function () { langSelect.classList.remove("attract"); }, 1150);
+    }, 200);
   }
 
   /* ---------- Reveal-on-scroll ---------- */
