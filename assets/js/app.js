@@ -200,6 +200,7 @@
     });
     var catLink = document.querySelector('.nav-ext[data-ext="catalog"]');
     if (catLink) catLink.textContent = CATW[lang] || CATW.en;
+    if (typeof updateTiltLabel === "function") updateTiltLabel(lang);
 
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
 
@@ -499,7 +500,9 @@
       { k: ["catalog", "catalogue", "brochure", "pdf", "download"], a: "The full catalogue is available in 5 languages as PDF:", l: [{ h: "/catalog/", t: "Catalogue ↓" }] },
       { k: ["white paper", "whitepaper", "datasheet", "technical doc", "specification", "spec", "paper"], a: "Our technical white paper (EN/RU/TR/AR/FA) covers the science, comparisons and test framework:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
       { k: ["partner", "reseller", "distributor", "wholesale", "agency", "represent"], a: "We welcome partners in sales, repair and industry — become the MG COAT reseller in your region.", l: [{ s: "partners", t: "Partnership →" }] },
-      { k: ["durab", "year", "lifetime", "long", "warranty", "scratch", "strength", "mechanical", "hard"], a: "After full curing it forms a hard, scratch-resistant layer with a 10-year-plus design target under correct application and conditions.", l: [{ s: "tests", t: "Tests →" }] }
+      { k: ["durab", "year", "lifetime", "long", "warranty", "scratch", "strength", "mechanical", "hard"], a: "After full curing it forms a hard, scratch-resistant layer with a 10-year-plus design target under correct application and conditions.", l: [{ s: "tests", t: "Tests →" }] },
+      { k: ["phone", "call", "number", "contact", "reach", "telephone", "whatsapp"], a: "You can reach us directly — our phone is the same as our WhatsApp: +90 552 876 7973. Tap to chat:", l: [{ h: WA_URL, t: "WhatsApp / Call" }, { s: "contact", t: "Contact →" }] },
+      { k: ["address", "location", "where", "based", "office", "country", "city", "istanbul", "turkey"], a: "We're based in Istanbul, Turkey, and serve customers there, in Iran and worldwide.", l: [{ s: "contact", t: "Contact →" }, { h: WA_URL, t: "WhatsApp" }] }
     ],
     ru: [
       { k: ["что такое", "о продукте", "mg coat", "mgcoat", "покрытие", "продукт"], a: "MG COAT Liquid PCB Plastic Coating — промышленное наноз­ащитное покрытие на пластиковой основе: гидроизолирует платы, датчики и схемы, образуя прочный непрозрачный механически стойкий слой без нагрева.", l: [{ s: "overview", t: "О нас →" }, { s: "technology", t: "Технология →" }] },
@@ -513,7 +516,9 @@
       { k: ["каталог", "брошюр", "pdf", "скачать"], a: "Полный каталог доступен на 5 языках в PDF:", l: [{ h: "/catalog/", t: "Каталог ↓" }] },
       { k: ["white paper", "технич", "документ", "даташит", "спецификац"], a: "Наш технический white paper (EN/RU/TR/AR/FA) — наука, сравнения и методика испытаний:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
       { k: ["партн", "дилер", "дистриб", "опт", "представит"], a: "Мы открыты к партнёрству в продажах, ремонте и промышленности — станьте реселлером MG COAT в своём регионе.", l: [{ s: "partners", t: "Партнёрам →" }] },
-      { k: ["долговечн", "срок", "лет", "гарант", "царапин", "прочн", "механ"], a: "После полного отверждения образуется твёрдый, стойкий к царапинам слой с расчётным сроком службы 10+ лет при правильном нанесении.", l: [{ s: "tests", t: "Тесты →" }] }
+      { k: ["долговечн", "срок", "лет", "гарант", "царапин", "прочн", "механ"], a: "После полного отверждения образуется твёрдый, стойкий к царапинам слой с расчётным сроком службы 10+ лет при правильном нанесении.", l: [{ s: "tests", t: "Тесты →" }] },
+      { k: ["телефон", "звон", "номер", "контакт", "связ", "whatsapp", "ватсап"], a: "Свяжитесь с нами напрямую — телефон совпадает с WhatsApp: +90 552 876 7973. Нажмите, чтобы написать:", l: [{ h: WA_URL, t: "WhatsApp / Звонок" }, { s: "contact", t: "Контакты →" }] },
+      { k: ["адрес", "где наход", "локац", "город", "страна", "стамбул", "турци", "офис"], a: "Мы находимся в Стамбуле (Турция) и работаем с клиентами там, в Иране и по всему миру.", l: [{ s: "contact", t: "Контакты →" }, { h: WA_URL, t: "WhatsApp" }] }
     ],
     tr: [
       { k: ["nedir", "hakkında", "mg coat", "mgcoat", "kaplama", "ürün"], a: "MG COAT Liquid PCB Plastic Coating; PCB'leri, sensörleri ve devreleri su geçirmez yapan, plastik esaslı endüstriyel bir nano koruyucu kaplamadır — ısı gerektirmeyen, güçlü, opak ve mekanik dirençli bir katman.", l: [{ s: "overview", t: "Hakkında →" }, { s: "technology", t: "Teknoloji →" }] },
@@ -527,7 +532,9 @@
       { k: ["katalog", "broşür", "pdf", "indir"], a: "Tam katalog 5 dilde PDF olarak mevcut:", l: [{ h: "/catalog/", t: "Katalog ↓" }] },
       { k: ["white paper", "teknik dok", "datasheet", "şartname"], a: "Teknik white paper'ımız (EN/RU/TR/AR/FA) bilimi, karşılaştırmaları ve test çerçevesini kapsar:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
       { k: ["bayi", "partner", "distribütör", "toptan", "temsilci", "iş ortak"], a: "Satış, tamir ve sanayide iş ortaklarına açığız — bölgenizin MG COAT bayisi olun.", l: [{ s: "partners", t: "İş Ortaklığı →" }] },
-      { k: ["dayanıklı", "yıl", "ömür", "garanti", "çizik", "mukavemet", "mekanik", "sert"], a: "Tam kürlenmeden sonra sert, çizilmeye dayanıklı bir katman oluşur; doğru uygulamayla 10+ yıl hedef dayanım.", l: [{ s: "tests", t: "Testler →" }] }
+      { k: ["dayanıklı", "yıl", "ömür", "garanti", "çizik", "mukavemet", "mekanik", "sert"], a: "Tam kürlenmeden sonra sert, çizilmeye dayanıklı bir katman oluşur; doğru uygulamayla 10+ yıl hedef dayanım.", l: [{ s: "tests", t: "Testler →" }] },
+      { k: ["telefon", "ara", "numara", "iletişim", "ulaş", "whatsapp"], a: "Bize doğrudan ulaşın — telefonumuz WhatsApp ile aynı: +90 552 876 7973. Yazmak için dokunun:", l: [{ h: WA_URL, t: "WhatsApp / Ara" }, { s: "contact", t: "İletişim →" }] },
+      { k: ["adres", "konum", "nerede", "şehir", "ülke", "istanbul", "türkiye", "ofis"], a: "İstanbul, Türkiye'deyiz; Türkiye, İran ve tüm dünyaya hizmet veriyoruz.", l: [{ s: "contact", t: "İletişim →" }, { h: WA_URL, t: "WhatsApp" }] }
     ],
     ar: [
       { k: ["ما هو", "عن المنتج", "mg coat", "mgcoat", "طلاء", "منتج"], a: "‏MG COAT Liquid PCB Plastic Coating طلاء حماية نانوي صناعي قائم على البلاستيك يعزل لوحات PCB والحساسات والدوائر عن الماء — طبقة قوية غير شفافة مقاومة ميكانيكياً وبدون حرارة.", l: [{ s: "overview", t: "من نحن ←" }, { s: "technology", t: "التقنية ←" }] },
@@ -541,7 +548,9 @@
       { k: ["كتالوج", "كتيب", "pdf", "تحميل", "تنزيل"], a: "الكتالوج الكامل متاح بخمس لغات بصيغة PDF:", l: [{ h: "/catalog/", t: "الكتالوج ↓" }] },
       { k: ["white paper", "ورقة", "وثيقة", "مواصفات", "تقني"], a: "ورقتنا التقنية (EN/RU/TR/AR/FA) تغطي العلم والمقارنات وإطار الاختبار:", l: [{ h: "/whitepaper/", t: "الورقة التقنية ↓" }] },
       { k: ["وكيل", "موزع", "شراكة", "جملة", "ممثل"], a: "نرحّب بالشركاء في البيع والإصلاح والصناعة — كن موزّع MG COAT في منطقتك.", l: [{ s: "partners", t: "الشراكة ←" }] },
-      { k: ["متانة", "سنوات", "عمر", "ضمان", "خدش", "قوة", "ميكانيك", "صلب"], a: "بعد الجفاف الكامل تتكوّن طبقة صلبة مقاومة للخدش بهدف تصميمي يتجاوز 10 سنوات مع التطبيق الصحيح.", l: [{ s: "tests", t: "الاختبارات ←" }] }
+      { k: ["متانة", "سنوات", "عمر", "ضمان", "خدش", "قوة", "ميكانيك", "صلب"], a: "بعد الجفاف الكامل تتكوّن طبقة صلبة مقاومة للخدش بهدف تصميمي يتجاوز 10 سنوات مع التطبيق الصحيح.", l: [{ s: "tests", t: "الاختبارات ←" }] },
+      { k: ["هاتف", "اتصال", "رقم", "تواصل", "واتساب", "واتس"], a: "تواصل معنا مباشرة — هاتفنا هو نفسه واتساب: ‎+90 552 876 7973. اضغط للمحادثة:", l: [{ h: WA_URL, t: "واتساب / اتصال" }, { s: "contact", t: "اتصل بنا ←" }] },
+      { k: ["عنوان", "موقع", "أين", "اين", "مدينة", "دولة", "إسطنبول", "اسطنبول", "تركيا", "مكتب"], a: "مقرّنا في إسطنبول، تركيا، ونخدم العملاء هناك وفي إيران وحول العالم.", l: [{ s: "contact", t: "اتصل بنا ←" }, { h: WA_URL, t: "واتساب" }] }
     ],
     fa: [
       { k: ["چیست", "چیه", "درباره", "mg coat", "mgcoat", "محصول", "پوشش چ"], a: "‏MG COAT Liquid PCB Plastic Coating یک پوشش محافظ نانویی صنعتی بر پایهٔ پلاستیک است که بردها، سنسورها و مدارها را ضدآب می‌کند — لایه‌ای قوی، غیرشفاف و مقاوم مکانیکی، بدون نیاز به حرارت.", l: [{ s: "overview", t: "درباره ←" }, { s: "technology", t: "تکنولوژی ←" }] },
@@ -555,7 +564,9 @@
       { k: ["کاتالوگ", "بروشور", "pdf", "دانلود"], a: "کاتالوگ کامل به ۵ زبان به‌صورت PDF موجود است:", l: [{ h: "/catalog/", t: "کاتالوگ ↓" }] },
       { k: ["وایت", "white paper", "دیتاشیت", "سند فنی", "مشخصات", "مقاله فنی"], a: "وایت‌پیپر فنی ما (EN/RU/TR/AR/FA) علم، مقایسه‌ها و چارچوب تست را پوشش می‌دهد:", l: [{ h: "/whitepaper/", t: "وایت‌پیپر ↓" }] },
       { k: ["نمایندگی", "همکاری", "پخش", "عاملیت", "عمده", "نماینده"], a: "در فروش، تعمیر و صنعت از شریک استقبال می‌کنیم — نمایندهٔ MG COAT در منطقهٔ خودت باش.", l: [{ s: "partners", t: "همکاری با ما ←" }] },
-      { k: ["ماندگاری", "دوام", "سال", "عمر", "خش", "مقاومت", "گارانتی", "سخت"], a: "بعد از خشک‌شدن کامل، لایه‌ای سخت و مقاوم به خش تشکیل می‌شود با هدف طراحی ۱۰ سال+ در شرایط اجرای صحیح.", l: [{ s: "tests", t: "تست‌ها ←" }] }
+      { k: ["ماندگاری", "دوام", "سال", "عمر", "خش", "مقاومت", "گارانتی", "سخت"], a: "بعد از خشک‌شدن کامل، لایه‌ای سخت و مقاوم به خش تشکیل می‌شود با هدف طراحی ۱۰ سال+ در شرایط اجرای صحیح.", l: [{ s: "tests", t: "تست‌ها ←" }] },
+      { k: ["تلفن", "شماره", "تماس", "زنگ", "واتساپ", "واتس", "ارتباط"], a: "مستقیم با ما در تماس باش — شماره تلفن همان واتساپ است: ‎+90 552 876 7973. برای گفتگو بزن:", l: [{ h: WA_URL, t: "واتساپ / تماس" }, { s: "contact", t: "تماس ←" }] },
+      { k: ["آدرس", "مکان", "کجا", "کجاست", "شهر", "کشور", "استانبول", "ترکیه", "دفتر", "محل"], a: "ما در استانبولِ ترکیه هستیم و به مشتریان آنجا، ایران و سراسر دنیا خدمت می‌دهیم.", l: [{ s: "contact", t: "تماس ←" }, { h: WA_URL, t: "واتساپ" }] }
     ]
   };
   var assistFab = document.getElementById("assist-fab");
@@ -691,6 +702,80 @@
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideAssist(); });
   }
+
+  /* ============================================================
+     Tilt-to-scroll (mobile/tablet) — opt-in toggle.
+     Tilt the device forward to scroll down, back to scroll up.
+     Speed is proportional to the tilt past a neutral baseline.
+     iOS needs sensor permission, requested on the tap that turns it on.
+     ============================================================ */
+  var tiltBtn = null;
+  var TILT_LABEL = { en: "Tilt scroll", ru: "Скролл наклоном", tr: "Eğerek kaydır", ar: "تمرير بالإمالة", fa: "اسکرول با حرکت" };
+  function updateTiltLabel(lang) {
+    if (!tiltBtn) return;
+    var span = tiltBtn.querySelector(".tt-text");
+    if (span) span.textContent = TILT_LABEL[lang] || TILT_LABEL.en;
+  }
+  (function () {
+    var isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
+    if (!isTouch || !window.DeviceOrientationEvent) return;   // desktop / no sensors → skip
+
+    tiltBtn = document.createElement("button");
+    tiltBtn.type = "button";
+    tiltBtn.className = "tilt-toggle";
+    tiltBtn.setAttribute("aria-pressed", "false");
+    tiltBtn.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M12 3l-4 4M12 3l4 4M12 21l-4-4M12 21l4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '<span class="tt-text"></span>';
+    document.body.appendChild(tiltBtn);
+    updateTiltLabel(curLang);
+
+    var active = false, baseline = null, speed = 0, rafId = null;
+    var DEAD = 7;        // degrees of neutral dead-zone
+    var SCALE = 2.6;     // larger = slower
+    var MAXV = 26;       // max pixels per frame
+
+    function onTilt(e) {
+      if (e.beta == null) return;
+      if (baseline === null) baseline = e.beta;          // capture neutral on first reading
+      var d = e.beta - baseline;
+      var mag = Math.abs(d) - DEAD;
+      if (mag <= 0) { speed = 0; return; }
+      var v = Math.min(mag / SCALE, MAXV);
+      speed = (d > 0 ? 1 : -1) * v;                      // tilt forward → scroll down
+    }
+    function loop() {
+      if (!active) return;
+      if (speed) window.scrollBy(0, speed);
+      rafId = requestAnimationFrame(loop);
+    }
+    function start() {
+      active = true; baseline = null; speed = 0;
+      window.addEventListener("deviceorientation", onTilt, true);
+      rafId = requestAnimationFrame(loop);
+      tiltBtn.classList.add("on");
+      tiltBtn.setAttribute("aria-pressed", "true");
+    }
+    function stop() {
+      active = false; speed = 0;
+      window.removeEventListener("deviceorientation", onTilt, true);
+      if (rafId) cancelAnimationFrame(rafId);
+      tiltBtn.classList.remove("on");
+      tiltBtn.setAttribute("aria-pressed", "false");
+    }
+    tiltBtn.addEventListener("click", function () {
+      if (active) { stop(); return; }
+      // iOS 13+: must request permission inside the user gesture
+      var DOE = window.DeviceOrientationEvent;
+      if (DOE && typeof DOE.requestPermission === "function") {
+        DOE.requestPermission().then(function (res) {
+          if (res === "granted") start();
+        }).catch(function () {});
+      } else {
+        start();
+      }
+    });
+  })();
 
   setLang(initialLang(), false);
 

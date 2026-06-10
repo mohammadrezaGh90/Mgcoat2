@@ -31,8 +31,14 @@ Update this file whenever a task is finished or a new one is requested.
       with typing indicator + automatic keyword fallback. NOT yet live — needs owner to deploy the
       Worker + provide the worker URL to set `ASSIST_API`. See `worker/README.md`.
 
+- [x] Assistant facts: phone = WhatsApp number (+90 552 876 7973) and address = Istanbul, Turkey
+      added to the keyword KB (5 langs) and the Worker system prompt
+- [x] Tilt-to-scroll: opt-in toggle on mobile/tablet (DeviceOrientation; iOS permission on tap).
+      Tilt forward = scroll down, back = up. Desktop unaffected (button only injected with sensors).
+
 ## Remaining / Ideas
 - [ ] Deploy the Cloudflare Worker (owner) → set `ASSIST_API` in app.js to turn on the real AI assistant
+- [ ] If tilt-scroll direction feels reversed on a device, flip the sign in the `onTilt` mapping
 - [ ] `assets/img/og-banner.jpg` (social-share image) may still show "MG TECH" — needs redesign (image file, not code)
 - [ ] Professional "MG COAT" logo to replace the CSS hero lockup when ready
 - [ ] Favicons likely fine (icon-only MG mark) — verify on a real device

@@ -988,3 +988,19 @@ body::after {
 .assist-typing span:nth-child(2) { animation-delay: .15s; }
 .assist-typing span:nth-child(3) { animation-delay: .3s; }
 @keyframes assistType { 0%, 60%, 100% { opacity: .25; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+
+/* tilt-to-scroll toggle (mobile/tablet only; injected by JS when sensors exist) */
+.tilt-toggle {
+  position: fixed; inset-block-end: 18px; inset-inline-start: 50%; transform: translateX(-50%);
+  z-index: 94; display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 12px; font-weight: 600;
+  color: var(--text); background: rgba(7, 9, 16, .82); border: 1px solid var(--brd);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm); transition: color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.tilt-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+.tilt-toggle.on {
+  color: #fff; border-color: var(--cyan);
+  box-shadow: 0 0 0 2px rgba(84, 216, 236, .16), 0 0 16px rgba(84, 216, 236, .4);
+}
+[dir=rtl] .tilt-toggle { inset-inline-start: 50%; }
