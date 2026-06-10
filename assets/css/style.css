@@ -715,6 +715,23 @@ footer a { color: var(--cyan); text-decoration: none; }
   transition: background .2s var(--ease), border-color .2s var(--ease);
 }
 .lang-trigger:hover { background: var(--glass-2); border-color: var(--brd-2); }
+
+/* attention cue: a ~1s neon pulse (red↔cyan) that draws the eye to the
+   language pill once the visitor reaches the hero. Paired with the JS that
+   riffles the flag/name preview inside it. */
+.lang-select.attract { z-index: 95; }
+.lang-select.attract .lang-trigger {
+  animation: langAttract 1.15s var(--ease) both;
+  will-change: box-shadow, transform;
+}
+@keyframes langAttract {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 51, 64, 0);    border-color: var(--brd);  transform: scale(1); }
+  14%  { box-shadow: 0 0 0 3px rgba(255, 51, 64, .38), 0 0 20px 3px rgba(255, 51, 64, .55); border-color: var(--red);  transform: scale(1.07); }
+  36%  { box-shadow: 0 0 0 2px rgba(84, 216, 236, .34), 0 0 18px 3px rgba(84, 216, 236, .5);  border-color: var(--cyan); transform: scale(1); }
+  56%  { box-shadow: 0 0 0 3px rgba(255, 51, 64, .36), 0 0 20px 3px rgba(255, 51, 64, .52); border-color: var(--red);  transform: scale(1.06); }
+  78%  { box-shadow: 0 0 0 2px rgba(84, 216, 236, .30), 0 0 16px 2px rgba(84, 216, 236, .42); border-color: var(--cyan); transform: scale(1); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 51, 64, 0);    border-color: var(--brd);  transform: scale(1); }
+}
 .lt-flag { font-size: 15px; line-height: 1; }
 .lt-chev { font-size: 10px; color: var(--muted); transition: transform .25s var(--ease); }
 .lang-select.open .lt-chev { transform: rotate(180deg); }

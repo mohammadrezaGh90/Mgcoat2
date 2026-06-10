@@ -97,6 +97,32 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLangMenu(); });
   }
 
+  /* ---------- Attention cue: neon flash + in-place language preview ----------
+     Once the visitor reaches the hero, briefly glow the language pill and
+     riffle its flag/name through every language (without opening the menu),
+     then settle back on the current one — a 1s hint that the site is
+     multilingual. Runs at most once per page load. */
+  var attractShown = false;
+  function flashLangSwitcher() {
+    if (attractShown || reduceMotion) return;
+    attractShown = true;
+    if (!langSelect || !ltFlag || !ltName) return;
+    langSelect.classList.add("attract");
+    var order = ["en", "ru", "tr", "ar", "fa"];
+    var i = 1; // start on the next language so the change is visible immediately
+    var iv = setInterval(function () {
+      var info = LANG_INFO[order[i % order.length]];
+      if (info) { ltFlag.textContent = info.flag; ltName.textContent = info.name; }
+      i++;
+      if (i > order.length + 1) {
+        clearInterval(iv);
+        var cur = LANG_INFO[curLang] || LANG_INFO.en; // settle back on the real language
+        if (cur) { ltFlag.textContent = cur.flag; ltName.textContent = cur.name; }
+      }
+    }, 170);
+    setTimeout(function () { langSelect.classList.remove("attract"); }, 1150);
+  }
+
   /* ---------- Reveal-on-scroll ---------- */
   var revealSelector =
     ".section-title, .section-copy, .text-stack, .apps, .badge-row, " +
@@ -172,14 +198,11 @@
   }
 
   function initialLang() {
+    // Always open in English by default. Only an explicit ?lang= URL param
+    // (e.g. a shared deep link) overrides — saved/browser language is ignored.
     var p = new URLSearchParams(window.location.search).get("lang");
     if (p && LANGS.indexOf(p) !== -1) return p;
-    try {
-      var s = localStorage.getItem(STORAGE_KEY);
-      if (s && LANGS.indexOf(s) !== -1) return s;
-    } catch (e) {}
-    var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
-    return LANGS.indexOf(nav) !== -1 ? nav : "en";
+    return "en";
   }
 
   buttons.forEach(function (b) {
@@ -337,6 +360,10 @@
       toTop.hidden = false;
       toTop.classList.toggle("show", show);
     }
+    // fire the language attention cue once the visitor reaches the hero
+    // (covers the case where they scroll themselves and the auto-glide
+    //  never runs / never fires its onComplete).
+    if (!attractShown && st > window.innerHeight * 0.85) flashLangSwitcher();
     ticking = false;
   }
 
@@ -380,13 +407,17 @@
       if (userTook) return;
       if ((window.pageYOffset || 0) > 12) return;     // already scrolled
       if (!introEl) return;
-      // land at the hero/content (end of the intro) — slow glide so the
-      // welcome animation plays out as it descends.
+      // land at the hero/content (end of the intro) — gentle glide so the
+      // welcome animation plays out as it descends, with a soft "feathered"
+      // landing (quintic ease-in-out: long decelerating tail = calm finish).
       var target = introEl.offsetHeight - window.innerHeight * 0.04;
       lenis.scrollTo(target, {
-        duration: 9,
-        easing: function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; },
+        duration: 7,
+        easing: function (t) {
+          return t < 0.5 ? 16 * t * t * t * t * t : 1 - Math.pow(-2 * t + 2, 5) / 2;
+        },
+        onComplete: flashLangSwitcher,   // draw the eye to the language pill
       });
-    }, 4000);
+    }, 2000);
   }
 })();
