@@ -90,6 +90,7 @@
   if (langTrigger && langSelect) {
     langTrigger.addEventListener("click", function (e) {
       e.stopPropagation();
+      cancelAttract();   // user is interacting with the switcher — stop the preview
       var open = langSelect.classList.toggle("open");
       langTrigger.setAttribute("aria-expanded", String(open));
     });
@@ -105,11 +106,20 @@
      (without opening the menu), settling back on the current one. This only
      previews the label — the page language never changes here; it changes
      only when the visitor picks one. Runs at most once per page load. */
-  var attractShown = false, attractQueued = false;
+  var attractShown = false, attractQueued = false, attractIv = null;
   function queueAttract(delay) {
     if (attractQueued || attractShown) return;
     attractQueued = true;
     setTimeout(flashLangSwitcher, delay || 0);
+  }
+  // cancel the preview and lock the pill onto the real current language
+  function cancelAttract() {
+    attractShown = true;                 // never run/replay after this
+    if (attractIv) { clearInterval(attractIv); attractIv = null; }
+    if (langSelect) langSelect.classList.remove("attract");
+    if (ltLabel) ltLabel.classList.remove("roll");
+    var info = LANG_INFO[curLang] || LANG_INFO.en;
+    if (info && ltFlag && ltName) { ltFlag.textContent = info.flag; ltName.textContent = info.name; }
   }
   function flashLangSwitcher() {
     if (attractShown || reduceMotion) return;
@@ -129,14 +139,27 @@
     }
     var i = 0;
     rollTo(seq[i++]);             // first frame immediately
-    var iv = setInterval(function () {
+    attractIv = setInterval(function () {
       rollTo(seq[i]);
       i++;
       if (i >= seq.length) {
-        clearInterval(iv);
+        clearInterval(attractIv); attractIv = null;
         langSelect.classList.remove("attract"); // ends on the real (current) language
       }
     }, 360);
+  }
+  // lock the pill width to the widest language so it never resizes mid-preview
+  function fixLangPillWidth() {
+    var view = document.querySelector(".lt-view");
+    if (!view || !ltLabel || !ltFlag || !ltName) return;
+    var keepF = ltFlag.textContent, keepN = ltName.textContent, max = 0;
+    LANGS.forEach(function (l) {
+      var info = LANG_INFO[l]; if (!info) return;
+      ltFlag.textContent = info.flag; ltName.textContent = info.name;
+      if (ltLabel.offsetWidth > max) max = ltLabel.offsetWidth;
+    });
+    ltFlag.textContent = keepF; ltName.textContent = keepN;
+    if (max) view.style.minWidth = max + "px";
   }
 
   /* ---------- Reveal-on-scroll ---------- */
@@ -225,7 +248,7 @@
   }
 
   buttons.forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.dataset.lang, true); closeLangMenu(); });
+    b.addEventListener("click", function () { cancelAttract(); setLang(b.dataset.lang, true); closeLangMenu(); });
   });
 
   /* ---------- Header navigation ---------- */
@@ -778,6 +801,9 @@
   })();
 
   setLang(initialLang(), false);
+  // lock the language pill to the widest name once fonts are ready (avoids resize)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fixLangPillWidth);
+  else setTimeout(fixLangPillWidth, 400);
 
   /* ---------- Scroll progress + header state + back-to-top ---------- */
   var bar = document.getElementById("scroll-progress");
