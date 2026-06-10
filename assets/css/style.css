@@ -1065,7 +1065,7 @@ body::after {
 }
 .tilt-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
 .tilt-toggle.on {
-  color: #fff; border-color: var(--cyan);
-  box-shadow: 0 0 0 2px rgba(84, 216, 236, .16), 0 0 16px rgba(84, 216, 236, .4);
+  color: #fff; border-color: var(--red);
+  box-shadow: 0 0 0 2px rgba(255, 51, 64, .18), 0 0 18px rgba(255, 51, 64, .45);
 }
 [dir=rtl] .tilt-toggle { inset-inline-start: 50%; }

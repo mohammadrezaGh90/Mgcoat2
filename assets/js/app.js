@@ -760,9 +760,9 @@
     updateTiltLabel(curLang);
 
     var active = false, baseline = null, speed = 0, rafId = null;
-    var DEAD = 7;        // degrees of neutral dead-zone
-    var SCALE = 2.6;     // larger = slower
-    var MAXV = 26;       // max pixels per frame
+    var DEAD = 5;        // degrees of neutral dead-zone
+    var SCALE = 2.2;     // larger = slower
+    var MAXV = 30;       // max pixels per frame
 
     function onTilt(e) {
       if (e.beta == null) return;
@@ -775,7 +775,18 @@
     }
     function loop() {
       if (!active) return;
-      if (speed) window.scrollBy(0, speed);
+      if (speed) {
+        // Lenis owns the scroll; when it's running, drive it directly so the
+        // page actually moves. Otherwise fall back to native scrolling.
+        if (lenis && typeof lenis.scrollTo === "function") {
+          var cur = (typeof lenis.actualScroll === "number") ? lenis.actualScroll
+                  : (typeof lenis.scroll === "number") ? lenis.scroll
+                  : (window.pageYOffset || 0);
+          lenis.scrollTo(cur + speed, { immediate: true, force: true });
+        } else {
+          window.scrollBy(0, speed);
+        }
+      }
       rafId = requestAnimationFrame(loop);
     }
     function start() {
