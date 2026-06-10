@@ -1,4 +1,4 @@
-# MG TECH — mgcoat.com
+# MG COAT — mgcoat.com
 # Search engines and AI assistants are welcome to read, index and cite this site.
 User-agent: *
 Allow: /

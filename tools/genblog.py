@@ -26,7 +26,7 @@ A1={ "slug":"how-to-waterproof-a-pcb","kw":"waterproof PCB, PCB waterproofing, p
 ("Mask functional areas","Connectors, switches, moving contacts, heat-dissipation surfaces and calibration points should be masked before coating so they stay accessible."),
 ("Choose an application method","Dipping suits full coverage, spraying gives even layers, and brushing is ideal for local reinforcement of edges, cable entries and repair zones. Liquid PCB Plastic Coating supports all three."),
 ("Cure and test","Let the coating cure fully, then verify with a controlled water test on a powered low-voltage board and a simple scratch test. For immersion, the whole assembly must be sealed with no trapped air.")],
-"close":"Liquid PCB Plastic Coating by MG TECH is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."},
+"close":"Liquid PCB Plastic Coating by MG COAT is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."},
 "fa":{"title":"چطور یک برد PCB را ضدآب کنیم: روش‌ها و نکات کلیدی",
 "desc":"راهنمای کاربردی ضدآب‌کردن بردهای PCB: تمیزکاری، ماسک‌کاری، روش‌های پوشش (غوطه‌وری، اسپری، قلم‌مو)، خشک‌شدن و تست.",
 "intro":"رطوبت، بخار، میعان، نمک و شست‌وشو از دلایل رایج خرابی الکترونیک‌اند. پوشش‌دادن برد یکی از مقرون‌به‌صرفه‌ترین راه‌ها برای افزایش عمر آن در شرایط سخت یا فضای باز است. مراحل عملی:",
@@ -34,7 +34,7 @@ A1={ "slug":"how-to-waterproof-a-pcb","kw":"waterproof PCB, PCB waterproofing, p
 ("ماسک‌کردن بخش‌های عملکردی","کانکتورها، کلیدها، کنتاکت‌های متحرک، سطوح دفع حرارت و نقاط کالیبراسیون باید قبل از پوشش ماسک شوند تا در دسترس بمانند."),
 ("انتخاب روش اجرا","غوطه‌وری برای پوشش کامل، اسپری برای لایهٔ یکنواخت، و قلم‌مو برای تقویت موضعی لبه‌ها، ورودی کابل و نقاط تعمیر مناسب است. Liquid PCB Plastic Coating هر سه را پشتیبانی می‌کند."),
 ("خشک‌شدن و تست","بگذارید پوشش کاملاً خشک شود، سپس با یک تست آبِ کنترل‌شده روی برد فعال کم‌ولتاژ و یک تست خراش ساده آن را بررسی کنید. برای غوطه‌وری، کل مجموعه باید بدون حباب هوا آب‌بندی شود.")],
-"close":"Liquid PCB Plastic Coating محصول MG TECH یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."},
+"close":"Liquid PCB Plastic Coating محصول MG COAT یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."},
 "ru":{"title":"Как сделать плату (PCB) водостойкой: методы и практики",
 "desc":"Практическое руководство по гидроизоляции печатных плат: очистка, маскирование, методы нанесения (окунание, распыление, кисть), отверждение и тесты.",
 "intro":"Влага, конденсат, соль и мойка — частые причины отказов электроники. Покрытие платы — один из самых экономичных способов продлить её срок службы в тяжёлых или уличных условиях. Практические шаги:",
@@ -42,7 +42,7 @@ A1={ "slug":"how-to-waterproof-a-pcb","kw":"waterproof PCB, PCB waterproofing, p
 ("Замаскируйте функциональные зоны","Разъёмы, переключатели, подвижные контакты, поверхности теплоотвода и точки калибровки нужно замаскировать до нанесения, чтобы они оставались доступными."),
 ("Выберите метод нанесения","Окунание — для полного покрытия, распыление — для ровного слоя, кисть — для локального усиления краёв, вводов кабеля и зон ремонта. Liquid PCB Plastic Coating поддерживает все три."),
 ("Отверждение и тест","Дайте покрытию полностью высохнуть, затем проверьте контролируемым водным тестом на работающей низковольтной плате и простым тестом на царапание. Для погружения весь узел должен быть герметизирован без воздуха.")],
-"close":"Liquid PCB Plastic Coating от MG TECH — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."},
+"close":"Liquid PCB Plastic Coating от MG COAT — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."},
 "tr":{"title":"Bir PCB Nasıl Su Geçirmez Yapılır: Yöntemler ve İpuçları",
 "desc":"Baskılı devre kartlarını su geçirmez yapma rehberi: temizleme, maskeleme, kaplama yöntemleri (daldırma, püskürtme, fırça), kürlenme ve test.",
 "intro":"Nem, yoğuşma, tuz ve yıkama elektronik arızalarının yaygın nedenleridir. Bir PCB'yi kaplamak, zorlu veya dış mekân koşullarında ömrünü uzatmanın en uygun maliyetli yollarından biridir. Pratik adımlar:",
@@ -50,7 +50,7 @@ A1={ "slug":"how-to-waterproof-a-pcb","kw":"waterproof PCB, PCB waterproofing, p
 ("İşlevsel alanları maskeleyin","Konnektörler, anahtarlar, hareketli kontaklar, ısı dağıtma yüzeyleri ve kalibrasyon noktaları kaplamadan önce maskelenmeli, erişilebilir kalmalıdır."),
 ("Bir uygulama yöntemi seçin","Daldırma tam kaplama, püskürtme düzgün katman, fırça ise kenarların, kablo girişlerinin ve onarım bölgelerinin yerel güçlendirmesi içindir. Liquid PCB Plastic Coating üçünü de destekler."),
 ("Kürleme ve test","Kaplamanın tamamen kurumasını bekleyin, ardından çalışan düşük voltajlı bir kartta kontrollü su testi ve basit bir çizik testiyle doğrulayın. Daldırma için tüm montaj hava boşluğu olmadan sızdırmaz olmalıdır.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."},
 "ar":{"title":"كيف تجعل لوحة PCB مقاومة للماء: الطرق وأفضل الممارسات",
 "desc":"دليل عملي لعزل لوحات PCB: التنظيف، التغطية، طرق الطلاء (الغمس، الرش، الفرشاة)، الجفاف والاختبار.",
 "intro":"الرطوبة والتكثّف والملح والغسيل من الأسباب الشائعة لتعطّل الإلكترونيات. طلاء اللوحة من أكثر الطرق فعاليةً من حيث التكلفة لإطالة عمرها في البيئات القاسية أو الخارجية. الخطوات العملية:",
@@ -58,7 +58,7 @@ A1={ "slug":"how-to-waterproof-a-pcb","kw":"waterproof PCB, PCB waterproofing, p
 ("غطِّ المناطق الوظيفية","يجب تغطية الموصلات والمفاتيح والكونتاكتات المتحركة وأسطح تبديد الحرارة ونقاط المعايرة قبل الطلاء لتبقى متاحة."),
 ("اختر طريقة التطبيق","الغمس للتغطية الكاملة، والرش لطبقة متساوية، والفرشاة للتقوية الموضعية للحواف ومداخل الكابلات ومناطق الإصلاح. يدعم Liquid PCB Plastic Coating الطرق الثلاث."),
 ("الجفاف والاختبار","اترك الطلاء يجف تماماً، ثم تحقّق باختبار ماء مضبوط على لوحة منخفضة الجهد تعمل واختبار خدش بسيط. للغمر، يجب عزل المجموعة كاملةً دون هواء محبوس.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."},
 }}
 
 A2={"slug":"conformal-coating-vs-plastic-coating","kw":"conformal coating, PCB protective coating, acrylic coating",
@@ -70,7 +70,7 @@ A2={"slug":"conformal-coating-vs-plastic-coating","kw":"conformal coating, PCB p
 ("How a plastic-based coating differs","A plastic-based coating builds a thicker, harder, non-transparent layer. Beyond moisture protection it adds mechanical resistance, edge reinforcement and visual concealment, and can be built up in layers."),
 ("Mechanical protection","Thin coatings can be vulnerable to scratches and abrasion. A reinforced plastic-based layer is harder after curing and better for boards that are washed, handled or vibrated."),
 ("Which should you choose?","For light indoor moisture protection, a thin conformal coating may be enough. For harsh environments, immersion risk or mechanical stress, a thicker plastic-based coating is stronger.")],
-"close":"MG TECH's Liquid PCB Plastic Coating is a reinforced, heat-free plastic-based coating that combines water protection, mechanical strength and non-transparent coverage."},
+"close":"MG COAT's Liquid PCB Plastic Coating is a reinforced, heat-free plastic-based coating that combines water protection, mechanical strength and non-transparent coverage."},
 "fa":{"title":"پوشش Conformal در برابر پوشش محافظ پلاستیکی مایع",
 "desc":"تفاوت پوشش‌های نازک Conformal (اکریلیک، وارنیش) با پوشش محافظ ضخیم‌ترِ بر پایه پلاستیک برای بردهای PCB.",
 "intro":"بسیاری از محصولات محافظت مدار، پوشش‌های نازک و شفاف Conformal هستند. Liquid PCB Plastic Coating رویکرد متفاوتی دارد. درک این تفاوت به انتخاب محافظت درست کمک می‌کند.",
@@ -78,7 +78,7 @@ A2={"slug":"conformal-coating-vs-plastic-coating","kw":"conformal coating, PCB p
 ("تفاوت پوشش بر پایه پلاستیک","پوشش بر پایه پلاستیک یک لایهٔ ضخیم‌تر، سخت‌تر و غیرشفاف می‌سازد. علاوه بر محافظت رطوبتی، مقاومت مکانیکی، تقویت لبه و پنهان‌سازی بصری اضافه می‌کند و می‌تواند لایه‌لایه ساخته شود."),
 ("محافظت مکانیکی","پوشش‌های نازک می‌توانند در برابر خراش و سایش آسیب‌پذیر باشند. یک لایهٔ تقویت‌شدهٔ پلاستیکی پس از خشک‌شدن سخت‌تر است و برای بردهایی که شسته، جابه‌جا یا دچار لرزش می‌شوند بهتر است."),
 ("کدام را انتخاب کنید؟","برای محافظت رطوبتی سبکِ داخل ساختمان، یک پوشش نازک Conformal کافی است. برای شرایط سخت، ریسک غوطه‌وری یا تنش مکانیکی، پوشش ضخیم‌تر پلاستیکی قوی‌تر است.")],
-"close":"Liquid PCB Plastic Coating محصول MG TECH یک پوشش تقویت‌شده، بدون حرارت و بر پایه پلاستیک است که محافظت در برابر آب، استحکام مکانیکی و پوشش غیرشفاف را با هم دارد."},
+"close":"Liquid PCB Plastic Coating محصول MG COAT یک پوشش تقویت‌شده، بدون حرارت و بر پایه پلاستیک است که محافظت در برابر آب، استحکام مکانیکی و پوشش غیرشفاف را با هم دارد."},
 "ru":{"title":"Конформное покрытие против жидкого пластикового покрытия",
 "desc":"Разница между тонкими конформными покрытиями (акрил, лак) и более толстым покрытием на пластиковой основе для плат.",
 "intro":"Многие средства защиты плат — это тонкие прозрачные конформные покрытия. Liquid PCB Plastic Coating работает иначе. Понимание разницы помогает выбрать правильную защиту.",
@@ -86,7 +86,7 @@ A2={"slug":"conformal-coating-vs-plastic-coating","kw":"conformal coating, PCB p
 ("Чем отличается пластиковое покрытие","Покрытие на пластиковой основе образует более толстый, твёрдый, непрозрачный слой. Помимо защиты от влаги оно добавляет механическую стойкость, усиление краёв и визуальное скрытие, и наносится слоями."),
 ("Механическая защита","Тонкие покрытия уязвимы к царапинам и истиранию. Усиленный пластиковый слой твёрже после отверждения и лучше для плат, которые моют, берут в руки или подвергают вибрации."),
 ("Что выбрать?","Для лёгкой защиты от влаги в помещении достаточно тонкого конформного покрытия. Для тяжёлых условий, риска погружения или механических нагрузок прочнее покрытие на пластиковой основе.")],
-"close":"Liquid PCB Plastic Coating от MG TECH — усиленное покрытие на пластиковой основе без нагрева, сочетающее водозащиту, механическую прочность и непрозрачность."},
+"close":"Liquid PCB Plastic Coating от MG COAT — усиленное покрытие на пластиковой основе без нагрева, сочетающее водозащиту, механическую прочность и непрозрачность."},
 "tr":{"title":"Konformal Kaplama ile Sıvı Plastik Koruyucu Kaplama",
 "desc":"İnce konformal kaplamalar (akrilik, vernik) ile daha kalın plastik esaslı koruyucu kaplama arasındaki fark.",
 "intro":"Birçok devre koruma ürünü ince, şeffaf konformal kaplamadır. Liquid PCB Plastic Coating farklı bir yaklaşım benimser. Farkı anlamak doğru korumayı seçmenize yardımcı olur.",
@@ -94,7 +94,7 @@ A2={"slug":"conformal-coating-vs-plastic-coating","kw":"conformal coating, PCB p
 ("Plastik esaslı kaplama nasıl farklıdır","Plastik esaslı kaplama daha kalın, daha sert, opak bir katman oluşturur. Nem korumasının ötesinde mekanik direnç, kenar güçlendirmesi ve görsel gizleme ekler ve katmanlı yapılabilir."),
 ("Mekanik koruma","İnce kaplamalar çizik ve aşınmaya karşı savunmasız olabilir. Güçlendirilmiş plastik katman kürlendikten sonra daha serttir; yıkanan, elle tutulan veya titreşen kartlar için daha iyidir."),
 ("Hangisini seçmelisiniz?","Hafif iç mekân nem koruması için ince bir konformal kaplama yeterli olabilir. Zorlu ortamlar, daldırma riski veya mekanik gerilim için daha kalın plastik esaslı kaplama daha güçlüdür.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü; su korumasını, mekanik dayanımı ve opak kaplamayı birleştiren, güçlendirilmiş, ısı gerektirmeyen plastik esaslı bir kaplamadır."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü; su korumasını, mekanik dayanımı ve opak kaplamayı birleştiren, güçlendirilmiş, ısı gerektirmeyen plastik esaslı bir kaplamadır."},
 "ar":{"title":"الطلاء المطابق مقابل الطلاء البلاستيكي السائل الواقي",
 "desc":"الفرق بين الطلاءات المطابقة الرقيقة (أكريليك، ورنيش) والطلاء الواقي الأسمك القائم على البلاستيك للوحات PCB.",
 "intro":"كثير من منتجات حماية الدوائر طلاءات مطابقة رقيقة وشفافة. يتبع Liquid PCB Plastic Coating نهجاً مختلفاً. فهم الفرق يساعدك على اختيار الحماية المناسبة.",
@@ -102,7 +102,7 @@ A2={"slug":"conformal-coating-vs-plastic-coating","kw":"conformal coating, PCB p
 ("كيف يختلف الطلاء البلاستيكي","يُكوّن الطلاء القائم على البلاستيك طبقة أسمك وأصلب وغير شفافة. إلى جانب الحماية من الرطوبة يضيف مقاومة ميكانيكية وتقوية للحواف وإخفاءً بصرياً، ويمكن بناؤه طبقات."),
 ("الحماية الميكانيكية","الطلاءات الرقيقة قد تكون عرضة للخدش والتآكل. الطبقة البلاستيكية المعزّزة أصلب بعد الجفاف وأفضل للوحات التي تُغسل أو تُمسك أو تتعرّض للاهتزاز."),
 ("أيّهما تختار؟","للحماية الخفيفة من الرطوبة داخل المباني قد يكفي طلاء مطابق رقيق. أما للبيئات القاسية أو خطر الغمر أو الإجهاد الميكانيكي فالطلاء البلاستيكي الأسمك أقوى.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH طلاء معزّز بدون حرارة قائم على البلاستيك يجمع بين الحماية من الماء والقوة الميكانيكية والتغطية غير الشفافة."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT طلاء معزّز بدون حرارة قائم على البلاستيك يجمع بين الحماية من الماء والقوة الميكانيكية والتغطية غير الشفافة."},
 }}
 
 A3={"slug":"waterproofing-drone-fpv-electronics","kw":"waterproof drone electronics, FPV waterproofing, flight controller coating",
@@ -157,7 +157,7 @@ A4={"slug":"waterproofing-cctv-outdoor-camera-electronics","kw":"waterproof CCTV
 ("Coat the board, mask the optics","Apply the coating to the main PCB, power section and connector pads. Mask the image sensor, lens, IR LEDs and microphone so image and audio performance stay unchanged."),
 ("Protect connectors and cable entries","Corrosion at the RJ45 or power connector is a common failure point. Reinforce these areas and the cable entry with a brushed layer for extra moisture and salt resistance."),
 ("Result: fewer field failures","A coated board survives fog, light leaks and condensation far better, which means fewer service visits and longer camera life in outdoor and coastal installations.")],
-"close":"Liquid PCB Plastic Coating by MG TECH is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."},
+"close":"Liquid PCB Plastic Coating by MG COAT is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."},
 "fa":{"title":"ضدآب‌کردن الکترونیک دوربین مداربسته و دوربین‌های فضای باز",
 "desc":"چطور برد، کانکتورها و ماژول‌های IR دوربین‌های امنیتی فضای باز را با پوشش محافظ در برابر باران، مه و رطوبت محافظت کنیم.",
 "intro":"دوربین‌های امنیتی فضای باز با باران، مه، تغییرات دما و میعان دست‌وپنجه نرم می‌کنند. حتی محفظه‌های دارای استاندارد IP هم می‌توانند از مسیر ورودی کابل و آب‌بندهای فرسوده رطوبت را به داخل راه دهند. پوشش‌دادن برد داخلی یک خط دفاعی دوم اضافه می‌کند.",
@@ -165,7 +165,7 @@ A4={"slug":"waterproofing-cctv-outdoor-camera-electronics","kw":"waterproof CCTV
 ("برد را بپوشانید، اپتیک را ماسک کنید","پوشش را روی برد اصلی، بخش تغذیه و پدهای کانکتور اجرا کنید. سنسور تصویر، لنز، LEDهای مادون‌قرمز و میکروفون را ماسک کنید تا کیفیت تصویر و صدا تغییر نکند."),
 ("محافظت از کانکتورها و ورودی کابل","خوردگی در کانکتور RJ45 یا تغذیه یکی از نقاط رایج خرابی است. این نواحی و ورودی کابل را با یک لایهٔ قلم‌مویی برای مقاومت بیشتر در برابر رطوبت و نمک تقویت کنید."),
 ("نتیجه: خرابی کمتر در محل","بردِ پوشش‌داده‌شده در برابر مه، نفوذ نور و میعان بسیار بهتر دوام می‌آورد؛ یعنی مراجعهٔ سرویس کمتر و عمر بیشتر دوربین در نصب‌های فضای باز و ساحلی.")],
-"close":"Liquid PCB Plastic Coating محصول MG TECH یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."},
+"close":"Liquid PCB Plastic Coating محصول MG COAT یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."},
 "ru":{"title":"Гидроизоляция электроники камер видеонаблюдения и уличных камер",
 "desc":"Как защитить платы, разъёмы и ИК-модули уличных камер видеонаблюдения от дождя, тумана и влаги защитным покрытием.",
 "intro":"Уличные камеры видеонаблюдения работают в дожде, тумане, при перепадах температуры и конденсате. Даже корпуса со степенью защиты IP могут пропускать влагу через кабельные вводы и стареющие уплотнения. Покрытие внутренней платы добавляет второй рубеж защиты.",
@@ -173,7 +173,7 @@ A4={"slug":"waterproofing-cctv-outdoor-camera-electronics","kw":"waterproof CCTV
 ("Покройте плату, замаскируйте оптику","Нанесите покрытие на основную плату, блок питания и площадки разъёмов. Замаскируйте матрицу, объектив, ИК-светодиоды и микрофон, чтобы качество изображения и звука не изменилось."),
 ("Защитите разъёмы и кабельные вводы","Коррозия на разъёме RJ45 или питания — частая точка отказа. Усилите эти зоны и кабельный ввод нанесённым кистью слоем для дополнительной стойкости к влаге и соли."),
 ("Итог: меньше отказов на объекте","Покрытая плата гораздо лучше переносит туман, протечки света и конденсат, а значит — меньше выездов сервиса и больше срок службы камеры на уличных и прибрежных объектах.")],
-"close":"Liquid PCB Plastic Coating от MG TECH — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."},
+"close":"Liquid PCB Plastic Coating от MG COAT — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."},
 "tr":{"title":"CCTV ve Dış Mekân Kamera Elektroniğini Su Geçirmez Yapmak",
 "desc":"Dış mekân güvenlik kamerası kartlarını, konnektörleri ve IR modüllerini koruyucu kaplamayla yağmurdan, sisten ve nemden koruma.",
 "intro":"Dış mekân güvenlik kameraları yağmur, sis, sıcaklık değişimleri ve yoğuşma içinde yaşar. IP korumalı muhafazalar bile kablo girişlerinden ve eskiyen contalardan nem alabilir. İç kartı kaplamak ikinci bir savunma hattı ekler.",
@@ -181,7 +181,7 @@ A4={"slug":"waterproofing-cctv-outdoor-camera-electronics","kw":"waterproof CCTV
 ("Kartı kaplayın, optiği maskeleyin","Kaplamayı ana karta, güç bölümüne ve konnektör padlerine uygulayın. Görüntü ve ses performansının değişmemesi için görüntü sensörünü, lensi, IR LED'leri ve mikrofonu maskeleyin."),
 ("Konnektörleri ve kablo girişlerini koruyun","RJ45 veya güç konnektöründeki korozyon yaygın bir arıza noktasıdır. Neme ve tuza karşı ekstra direnç için bu bölgeleri ve kablo girişini fırçayla bir katmanla güçlendirin."),
 ("Sonuç: sahada daha az arıza","Kaplı bir kart sisi, ışık sızıntısını ve yoğuşmayı çok daha iyi atlatır; bu da dış mekân ve kıyı kurulumlarında daha az servis ziyareti ve daha uzun kamera ömrü demektir.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."},
 "ar":{"title":"عزل إلكترونيات كاميرات المراقبة والكاميرات الخارجية ضد الماء",
 "desc":"كيف تحمي لوحات كاميرات المراقبة الخارجية وموصلاتها ووحدات الأشعة تحت الحمراء من المطر والضباب والرطوبة بطلاء واقٍ.",
 "intro":"تعيش كاميرات المراقبة الخارجية في المطر والضباب وتقلّبات الحرارة والتكثّف. حتى الصناديق ذات تصنيف IP قد تسمح بدخول الرطوبة عبر مداخل الكابلات والحشوات المتقادمة. طلاء اللوحة الداخلية يضيف خط دفاع ثانياً.",
@@ -189,7 +189,7 @@ A4={"slug":"waterproofing-cctv-outdoor-camera-electronics","kw":"waterproof CCTV
 ("اطلِ اللوحة وغطِّ البصريات","طبّق الطلاء على اللوحة الرئيسية وقسم الطاقة وأطراف الموصلات. غطِّ مستشعر الصورة والعدسة ومصابيح الأشعة تحت الحمراء والميكروفون لئلا يتغيّر أداء الصورة والصوت."),
 ("احمِ الموصلات ومداخل الكابلات","التآكل عند موصل RJ45 أو الطاقة نقطة عطل شائعة. قوِّ هذه المناطق ومدخل الكابل بطبقة بالفرشاة لمقاومة أكبر للرطوبة والملح."),
 ("النتيجة: أعطال أقل في الميدان","تتحمّل اللوحة المطلية الضباب وتسرّب الضوء والتكثّف أفضل بكثير، ما يعني زيارات صيانة أقل وعمراً أطول للكاميرا في التركيبات الخارجية والساحلية.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."},
 }}
 
 A5={"slug":"protecting-car-ecu-automotive-electronics","kw":"waterproof car ECU, automotive electronics coating, ECU moisture protection",
@@ -201,7 +201,7 @@ A5={"slug":"protecting-car-ecu-automotive-electronics","kw":"waterproof car ECU,
 ("What to coat","Engine and body control modules, sensor boards, dashboard electronics and aftermarket modules all benefit. Apply an even layer over tracks, components and solder joints."),
 ("Mask connectors and grounds","Mask multi-pin connectors, programming and diagnostic pads, press-fit pins and chassis-ground contacts so electrical connections and serviceability are preserved."),
 ("Vibration and salt resistance","Constant vibration fatigues solder joints and salt accelerates corrosion. A reinforced coating that resists abrasion and chemicals helps modules last in real road conditions.")],
-"close":"Liquid PCB Plastic Coating by MG TECH is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."},
+"close":"Liquid PCB Plastic Coating by MG COAT is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."},
 "fa":{"title":"محافظت از ECU خودرو و الکترونیک خودرو در برابر رطوبت",
 "desc":"چطور ECU خودرو، بردهای سنسور و ماژول‌های کنترل را با پوشش محافظ در برابر رطوبت، شست‌وشو و خوردگی ضدآب کنیم.",
 "intro":"الکترونیک خودرو با رطوبت، چرخهٔ دمایی، نمک جاده، لرزش و گاهی نفوذ آب روبه‌روست. یک پوشش محافظ روی برد کمک می‌کند ECUها، سنسورها و ماژول‌های کنترل سال‌ها در محیط سخت زیر کاپوت یا زیر بدنه دوام بیاورند.",
@@ -209,7 +209,7 @@ A5={"slug":"protecting-car-ecu-automotive-electronics","kw":"waterproof car ECU,
 ("چه چیزی را بپوشانیم","ماژول‌های کنترل موتور و بدنه، بردهای سنسور، الکترونیک داشبورد و ماژول‌های افترمارکت همگی سود می‌برند. یک لایهٔ یکنواخت روی مسیرها، قطعات و نقاط لحیم اجرا کنید."),
 ("کانکتورها و اتصال‌بدنه را ماسک کنید","کانکتورهای چندپین، پدهای برنامه‌ریزی و عیب‌یابی، پین‌های پرس‌فیت و کنتاکت‌های اتصال‌بدنه را ماسک کنید تا اتصالات الکتریکی و قابلیت سرویس حفظ شود."),
 ("مقاومت در برابر لرزش و نمک","لرزش دائم نقاط لحیم را خسته می‌کند و نمک خوردگی را تسریع می‌کند. یک پوشش تقویت‌شده که در برابر سایش و مواد شیمیایی مقاوم است به دوام ماژول‌ها در شرایط واقعی جاده کمک می‌کند.")],
-"close":"Liquid PCB Plastic Coating محصول MG TECH یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."},
+"close":"Liquid PCB Plastic Coating محصول MG COAT یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."},
 "ru":{"title":"Защита автомобильных ЭБУ и электроники от влаги",
 "desc":"Как сделать автомобильные ЭБУ, платы датчиков и модули управления водостойкими против влаги, мойки и коррозии защитным покрытием.",
 "intro":"Автомобильная электроника сталкивается с влагой, температурными циклами, дорожной солью, вибрацией и иногда с попаданием воды. Защитное покрытие платы помогает ЭБУ, датчикам и модулям управления служить годами в суровых условиях под капотом или под днищем.",
@@ -217,7 +217,7 @@ A5={"slug":"protecting-car-ecu-automotive-electronics","kw":"waterproof car ECU,
 ("Что покрывать","Модули управления двигателем и кузовом, платы датчиков, электроника приборной панели и дополнительные модули — все они выигрывают. Нанесите ровный слой на дорожки, компоненты и пайки."),
 ("Замаскируйте разъёмы и массу","Замаскируйте многоконтактные разъёмы, площадки программирования и диагностики, запрессованные контакты и точки массы кузова, чтобы сохранить электрические соединения и ремонтопригодность."),
 ("Стойкость к вибрации и соли","Постоянная вибрация утомляет пайки, а соль ускоряет коррозию. Усиленное покрытие, стойкое к истиранию и химии, помогает модулям выдерживать реальные дорожные условия.")],
-"close":"Liquid PCB Plastic Coating от MG TECH — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."},
+"close":"Liquid PCB Plastic Coating от MG COAT — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."},
 "tr":{"title":"Araç ECU'larını ve Otomotiv Elektroniğini Nemden Koruma",
 "desc":"Araç ECU'larını, sensör kartlarını ve kontrol modüllerini koruyucu kaplamayla neme, yıkamaya ve korozyona karşı su geçirmez yapma.",
 "intro":"Otomotiv elektroniği nem, sıcaklık döngüsü, yol tuzu, titreşim ve zaman zaman su girişiyle karşılaşır. Kart üzerindeki koruyucu kaplama; ECU'ların, sensörlerin ve kontrol modüllerinin zorlu motor bölmesi veya alt gövde ortamında yıllarca dayanmasına yardımcı olur.",
@@ -225,7 +225,7 @@ A5={"slug":"protecting-car-ecu-automotive-electronics","kw":"waterproof car ECU,
 ("Ne kaplanmalı","Motor ve karoseri kontrol modülleri, sensör kartları, gösterge paneli elektroniği ve satış sonrası modüllerin hepsi fayda görür. Yollara, bileşenlere ve lehim noktalarına düzgün bir katman uygulayın."),
 ("Konnektörleri ve şasi topraklarını maskeleyin","Çok pinli konnektörleri, programlama ve teşhis padlerini, geçme pinleri ve şasi toprak kontaklarını maskeleyin; böylece elektriksel bağlantılar ve servis edilebilirlik korunur."),
 ("Titreşim ve tuz direnci","Sürekli titreşim lehim noktalarını yorar, tuz korozyonu hızlandırır. Aşınmaya ve kimyasallara dayanan güçlendirilmiş bir kaplama, modüllerin gerçek yol koşullarında dayanmasına yardımcı olur.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."},
 "ar":{"title":"حماية وحدات تحكم السيارة (ECU) وإلكترونياتها من الرطوبة",
 "desc":"كيف تجعل وحدات تحكم السيارة ولوحات الحساسات ووحدات التحكم مقاومة للماء ضد الرطوبة والغسيل والتآكل بطلاء واقٍ.",
 "intro":"تواجه إلكترونيات السيارات الرطوبة والدورات الحرارية وملح الطريق والاهتزاز وأحياناً دخول الماء. طلاء واقٍ على اللوحة يساعد وحدات التحكم والحساسات ووحدات التحكم على الصمود سنوات في بيئة حجرة المحرك أو أسفل الهيكل القاسية.",
@@ -233,7 +233,7 @@ A5={"slug":"protecting-car-ecu-automotive-electronics","kw":"waterproof car ECU,
 ("ماذا تطلي","وحدات التحكم بالمحرك والهيكل، ولوحات الحساسات، وإلكترونيات لوحة العدادات، والوحدات الإضافية كلها تستفيد. طبّق طبقة متساوية على المسارات والمكوّنات ونقاط اللحام."),
 ("غطِّ الموصلات ونقاط التأريض","غطِّ الموصلات متعددة الأطراف وأطراف البرمجة والتشخيص والدبابيس المضغوطة ونقاط تأريض الهيكل للحفاظ على التوصيلات الكهربائية وقابلية الصيانة."),
 ("مقاومة الاهتزاز والملح","الاهتزاز المستمر يُجهد نقاط اللحام والملح يسرّع التآكل. طلاء معزّز يقاوم التآكل والمواد الكيميائية يساعد الوحدات على الصمود في ظروف الطريق الحقيقية.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."},
 }}
 A6={"slug":"nanostructured-protective-coating-pcb","kw":"PCB protective coating, conformal coating, nanostructured coating, IPC-CC-830, IEC 61086, waterproof PCB, electronic circuit protection, plastic coating",
 "L":{
@@ -247,7 +247,7 @@ A6={"slug":"nanostructured-protective-coating-pcb","kw":"PCB protective coating,
 ("Functional advantages","The coating can be applied by dipping, spraying or brushing, making it suitable for both specialist repair and industrial use. After curing it develops meaningful mechanical resistance, which matters where boards also face handling, vibration, dust or light physical stress. Its non-transparent nature hides traces, components and board architecture from direct view, acting as a visual barrier against reverse engineering. Multi-layer application lets the thickness and protection level be tuned to each application, and the heat-free process keeps it compatible with sensitive assemblies."),
 ("Industrial applications","The coating suits a wide range of uses: automotive ECUs, sensors, LED modules, control boards and motorcycle electronics; industrial control boards, environmental sensors and outdoor equipment; marine electronics exposed to water and humidity; and drones and FPV systems facing rain, dust and changing conditions. In LED products in particular, moisture and contamination can shorten life or cause shorts, so an appropriate protective coating helps maintain long-term stability."),
 ("Testing and validation","While the functional design is compelling, the professional path to industrial adoption is structured testing and documented results. Relevant tests include surface insulation resistance, humidity resistance, thermal cycling, adhesion, mechanical durability, contamination resistance, salt-spray and UV resistance, post-immersion performance and short-circuit checks. Consistent with IPC-CC-830 and IEC 61086, material selection should be based on the real requirements of each application and validated under realistic, repeatable conditions rather than a general specification alone.")],
-"close":"Protective coatings are an essential tool for keeping electronic circuits reliable in harsh environments. A nanostructured, plastic-based coating that applies without heat, builds up in layers, is mechanically resistant after curing, protects against water and humidity, and stays non-transparent to limit reverse engineering offers a practical industrial route to advanced board protection. Compared with common coatings such as acrylic, silicone, polyurethane, epoxy and parylene, MGCoat Liquid PCB Plastic Coating is positioned not as a thin insulating film but as a reinforced, heat-free plastic protective layer for combined environmental and mechanical protection. To consolidate its position, performance testing within the IPC and IEC frameworks, documented as technical data and lab reports, is recommended."},
+"close":"Protective coatings are an essential tool for keeping electronic circuits reliable in harsh environments. A nanostructured, plastic-based coating that applies without heat, builds up in layers, is mechanically resistant after curing, protects against water and humidity, and stays non-transparent to limit reverse engineering offers a practical industrial route to advanced board protection. Compared with common coatings such as acrylic, silicone, polyurethane, epoxy and parylene, MG COAT Liquid PCB Plastic Coating is positioned not as a thin insulating film but as a reinforced, heat-free plastic protective layer for combined environmental and mechanical protection. To consolidate its position, performance testing within the IPC and IEC frameworks, documented as technical data and lab reports, is recommended."},
 "fa":{"title":"پوشش محافظ نانوساختار برای PCB و مدارهای الکترونیکی: پایداری محیطی، مکانیکی و ضدآب",
 "desc":"راهنمای فنی پوشش‌های محافظ نانوساختار (Conformal) برای بردهای PCB و مدارهای الکترونیکی: چرا بردها خراب می‌شوند، چارچوب‌های ارزیابی IPC-CC-830 و IEC 61086، و چگونه یک پوشش بدون حرارت، چندلایه و پلاستیک‌پایه در برابر آب، رطوبت، خوردگی و تنش مکانیکی محافظت می‌کند.",
 "intro":"با گسترش استفاده از مدارهای الکترونیکی در محیط‌های صنعتی، خودرویی، دریایی، مرطوب و فضای باز، حفاظت از بردهای PCB در برابر رطوبت، آب، آلودگی، خوردگی، نوسانات دمایی و تنش‌های مکانیکی به یکی از چالش‌های مهم طراحی و نگهداری سامانه‌های الکترونیکی تبدیل شده است. پوشش‌های محافظ (Conformal Coatings) روشی شناخته‌شده برای افزایش دوام و قابلیت اطمینان بردهای الکترونیکی‌اند. این مقاله مرور می‌کند که چرا این حفاظت مهم است، با چه چارچوب‌هایی ارزیابی می‌شود، و یک پوشش نانوساختارِ بدون حرارت و پلاستیک‌پایه چگونه با این نیازها هماهنگ است.",
@@ -258,7 +258,7 @@ A6={"slug":"nanostructured-protective-coating-pcb","kw":"PCB protective coating,
 ("مزایای عملکردی","این پوشش با غوطه‌وری، اسپری و قلم‌مو قابل اجراست؛ پس هم برای تعمیرات تخصصی و هم کاربرد صنعتی مناسب است. پس از خشک‌شدن، مقاومت مکانیکی قابل‌توجهی پیدا می‌کند که در شرایط تماس سطحی، لرزش، گردوغبار یا فشار فیزیکی سبک اهمیت دارد. ماهیت غیرشفافش مسیرها، قطعات و معماری برد را از دید مستقیم پنهان می‌کند و به‌عنوان سدی بصری در برابر مهندسی معکوس عمل می‌کند. اجرای چندلایه امکان تنظیم ضخامت و سطح محافظت را فراهم می‌کند و فرایند بدون حرارت آن را با مجموعه‌های حساس سازگار نگه می‌دارد."),
 ("کاربردهای صنعتی","این پوشش برای طیف وسیعی از کاربردها مناسب است: ECU خودرو، سنسورها، ماژول‌های LED، بردهای کنترل و الکترونیک موتورسیکلت؛ بردهای کنترل صنعتی، سنسورهای محیطی و تجهیزات فضای باز؛ الکترونیک دریایی در معرض آب و رطوبت؛ و پهپادها و سیستم‌های FPV در برابر باران، گردوغبار و شرایط متغیر. به‌ویژه در محصولات LED، رطوبت و آلودگی می‌توانند عمر را کاهش یا اتصال کوتاه ایجاد کنند؛ پوشش محافظ مناسب به پایداری بلندمدت کمک می‌کند."),
 ("آزمون و اعتبارسنجی","هرچند طراحی عملکردی این پوشش قابل‌توجه است، مسیر حرفه‌ای برای ورود صنعتی، آزمون ساختارمند و مستندسازی نتایج است. آزمون‌های مرتبط شامل مقاومت عایقی سطح، مقاومت در برابر رطوبت، چرخهٔ حرارتی، چسبندگی، دوام مکانیکی، مقاومت در برابر آلودگی، نمک‌پاشی و UV، عملکرد پس از غوطه‌وری و بررسی عدم اتصال‌کوتاه است. هم‌سو با IPC-CC-830 و IEC 61086، انتخاب ماده باید بر اساس نیاز واقعی هر کاربرد و در شرایط واقعی و قابل‌تکرار اعتبارسنجی شود، نه صرفاً تطابق عمومی با یک مشخصات.")],
-"close":"پوشش‌های محافظ ابزاری کلیدی برای حفظ قابلیت اطمینان مدارهای الکترونیکی در محیط‌های سخت‌اند. یک پوشش نانوساختارِ پلاستیک‌پایه که بدون حرارت اجرا می‌شود، چندلایه ساخته می‌شود، پس از خشک‌شدن مقاوم است، در برابر آب و رطوبت محافظت می‌کند و غیرشفاف می‌ماند تا مهندسی معکوس را دشوار کند، یک راهکار صنعتیِ کاربردی برای حفاظت پیشرفته از بردهاست. در مقایسه با پوشش‌های رایج مانند اکریلیک، سیلیکون، پلی‌یورتان، اپوکسی و parylene، محصول MGCoat نه به‌عنوان یک فیلم عایق نازک، بلکه به‌عنوان یک لایهٔ محافظ پلاستیکیِ تقویت‌شده و بدون حرارت برای حفاظت توأمان محیطی و مکانیکی جایگاه‌گذاری می‌شود. برای تثبیت جایگاه صنعتی، انجام آزمون‌های عملکردی در چارچوب IPC و IEC و مستندسازی نتایج توصیه می‌شود."},
+"close":"پوشش‌های محافظ ابزاری کلیدی برای حفظ قابلیت اطمینان مدارهای الکترونیکی در محیط‌های سخت‌اند. یک پوشش نانوساختارِ پلاستیک‌پایه که بدون حرارت اجرا می‌شود، چندلایه ساخته می‌شود، پس از خشک‌شدن مقاوم است، در برابر آب و رطوبت محافظت می‌کند و غیرشفاف می‌ماند تا مهندسی معکوس را دشوار کند، یک راهکار صنعتیِ کاربردی برای حفاظت پیشرفته از بردهاست. در مقایسه با پوشش‌های رایج مانند اکریلیک، سیلیکون، پلی‌یورتان، اپوکسی و parylene، محصول MG COAT نه به‌عنوان یک فیلم عایق نازک، بلکه به‌عنوان یک لایهٔ محافظ پلاستیکیِ تقویت‌شده و بدون حرارت برای حفاظت توأمان محیطی و مکانیکی جایگاه‌گذاری می‌شود. برای تثبیت جایگاه صنعتی، انجام آزمون‌های عملکردی در چارچوب IPC و IEC و مستندسازی نتایج توصیه می‌شود."},
 "ru":{"title":"Наноструктурное защитное покрытие для печатных плат и электроники: экологическая, механическая и водостойкая надёжность",
 "desc":"Технический обзор наноструктурных защитных (конформных) покрытий для печатных плат и электронных схем: почему платы выходят из строя, оценочные рамки IPC-CC-830 и IEC 61086, и как покрытие на пластиковой основе без нагрева, наносимое слоями, защищает от воды, влаги, коррозии и механических нагрузок.",
 "intro":"По мере распространения электроники в автомобильной, промышленной, морской, влажной и уличной средах защита печатных плат (PCB) от влаги, воды, загрязнений, коррозии, перепадов температуры и механических нагрузок стала ключевой задачей надёжности. Защитные покрытия, часто называемые конформными, — это проверенный способ продлить срок службы и надёжность электронных сборок. В статье рассматривается, почему важна защита, какими рамками она оценивается и как наноструктурное покрытие на пластиковой основе без нагрева отвечает этим требованиям.",
@@ -269,7 +269,7 @@ A6={"slug":"nanostructured-protective-coating-pcb","kw":"PCB protective coating,
 ("Функциональные преимущества","Покрытие наносится окунанием, распылением или кистью, что подходит и для специализированного ремонта, и для промышленного применения. После отверждения оно приобретает заметную механическую стойкость, что важно там, где платы подвергаются обращению, вибрации, пыли или лёгким физическим нагрузкам. Его непрозрачность скрывает дорожки, компоненты и архитектуру платы от прямого обзора, действуя как визуальный барьер против обратного проектирования. Многослойное нанесение позволяет настраивать толщину и уровень защиты под каждое применение, а процесс без нагрева сохраняет совместимость с чувствительными сборками."),
 ("Промышленные применения","Покрытие подходит для широкого спектра задач: автомобильные ЭБУ, датчики, светодиодные модули, платы управления и электроника мотоциклов; промышленные платы управления, датчики среды и уличное оборудование; морская электроника, подверженная воде и влаге; дроны и FPV-системы под дождём, пылью и в меняющихся условиях. Особенно в светодиодных изделиях влага и загрязнения могут сокращать срок службы или вызывать короткие замыкания, поэтому подходящее защитное покрытие помогает сохранять долговременную стабильность."),
 ("Испытания и валидация","Хотя функциональная конструкция убедительна, профессиональный путь к промышленному внедрению — структурированные испытания и документированные результаты. Соответствующие тесты включают поверхностное сопротивление изоляции, стойкость к влаге, термоциклирование, адгезию, механическую долговечность, стойкость к загрязнениям, соляной туман и УФ, характеристики после погружения и проверку отсутствия коротких замыканий. В соответствии с IPC-CC-830 и IEC 61086 выбор материала следует основывать на реальных требованиях каждого применения и проверять в реалистичных, воспроизводимых условиях, а не только по общей спецификации.")],
-"close":"Защитные покрытия — важный инструмент сохранения надёжности электроники в тяжёлых условиях. Наноструктурное покрытие на пластиковой основе, наносимое без нагрева, наращиваемое слоями, механически стойкое после отверждения, защищающее от воды и влаги и остающееся непрозрачным для затруднения обратного проектирования, — практичный промышленный путь к продвинутой защите плат. По сравнению с распространёнными покрытиями, такими как акрил, силикон, полиуретан, эпоксид и parylene, продукт MGCoat позиционируется не как тонкая изоляционная плёнка, а как усиленный защитный слой на пластиковой основе без нагрева для совместной экологической и механической защиты. Для закрепления позиции рекомендуется проводить испытания в рамках IPC и IEC и документировать результаты."},
+"close":"Защитные покрытия — важный инструмент сохранения надёжности электроники в тяжёлых условиях. Наноструктурное покрытие на пластиковой основе, наносимое без нагрева, наращиваемое слоями, механически стойкое после отверждения, защищающее от воды и влаги и остающееся непрозрачным для затруднения обратного проектирования, — практичный промышленный путь к продвинутой защите плат. По сравнению с распространёнными покрытиями, такими как акрил, силикон, полиуретан, эпоксид и parylene, продукт MG COAT позиционируется не как тонкая изоляционная плёнка, а как усиленный защитный слой на пластиковой основе без нагрева для совместной экологической и механической защиты. Для закрепления позиции рекомендуется проводить испытания в рамках IPC и IEC и документировать результаты."},
 "tr":{"title":"PCB ve Elektronik için Nanoyapılı Koruyucu Kaplama: Çevresel, Mekanik ve Su Geçirmez Güvenilirlik",
 "desc":"PCB'ler ve elektronik devreler için nanoyapılı koruyucu (konformal) kaplamalara teknik bir bakış: kartlar neden arızalanır, IPC-CC-830 ve IEC 61086 değerlendirme çerçeveleri ve ısı gerektirmeyen, çok katmanlı, plastik esaslı bir kaplamanın suya, neme, korozyona ve mekanik gerilime karşı nasıl koruduğu.",
 "intro":"Elektronik devreler otomotiv, endüstriyel, deniz, nemli ve dış mekân ortamlarına yayıldıkça, baskılı devre kartlarını (PCB) nemden, sudan, kirlilikten, korozyondan, sıcaklık değişimlerinden ve mekanik gerilimden korumak temel bir güvenilirlik sorunu hâline geldi. Çoğunlukla konformal kaplama olarak adlandırılan koruyucu kaplamalar, elektronik montajların ömrünü ve güvenilirliğini artırmanın köklü bir yoludur. Bu makale korumanın neden önemli olduğunu, hangi çerçevelerle değerlendirildiğini ve ısı gerektirmeyen, plastik esaslı nanoyapılı bir kaplamanın bu ihtiyaçlara nasıl uyduğunu inceler.",
@@ -280,7 +280,7 @@ A6={"slug":"nanostructured-protective-coating-pcb","kw":"PCB protective coating,
 ("İşlevsel avantajlar","Kaplama daldırma, püskürtme veya fırça ile uygulanabilir; bu da onu hem uzman onarımı hem de endüstriyel kullanım için uygun kılar. Kürlendikten sonra, kartların ayrıca elleçleme, titreşim, toz veya hafif fiziksel gerilimle karşılaştığı yerlerde önemli olan kayda değer bir mekanik direnç kazanır. Opak yapısı; yolları, bileşenleri ve kart mimarisini doğrudan görüşten gizleyerek tersine mühendisliğe karşı görsel bir bariyer görevi görür. Çok katmanlı uygulama, kalınlığın ve koruma düzeyinin her uygulamaya göre ayarlanmasını sağlar; ısı gerektirmeyen süreç ise hassas montajlarla uyumlu kalmasını sağlar."),
 ("Endüstriyel uygulamalar","Kaplama geniş bir kullanım yelpazesine uygundur: otomotiv ECU'ları, sensörler, LED modülleri, kontrol kartları ve motosiklet elektroniği; endüstriyel kontrol kartları, çevre sensörleri ve dış mekân ekipmanları; suya ve neme maruz kalan deniz elektroniği; yağmur, toz ve değişken koşullarla karşılaşan drone ve FPV sistemleri. Özellikle LED ürünlerinde nem ve kirlilik ömrü kısaltabilir veya kısa devreye yol açabilir; uygun bir koruyucu kaplama uzun vadeli kararlılığı korumaya yardımcı olur."),
 ("Test ve doğrulama","İşlevsel tasarım ikna edici olsa da, endüstriyel kabule giden profesyonel yol yapılandırılmış testler ve belgelenmiş sonuçlardır. İlgili testler arasında yüzey yalıtım direnci, neme dayanım, termal çevrim, yapışma, mekanik dayanıklılık, kirliliğe direnç, tuz püskürtme ve UV direnci, daldırma sonrası performans ve kısa devre kontrolleri yer alır. IPC-CC-830 ve IEC 61086 ile tutarlı olarak, malzeme seçimi her uygulamanın gerçek gereksinimlerine dayanmalı ve yalnızca genel bir şartnameye göre değil, gerçekçi ve tekrarlanabilir koşullarda doğrulanmalıdır.")],
-"close":"Koruyucu kaplamalar, elektroniği zorlu ortamlarda güvenilir tutmak için temel bir araçtır. Isı olmadan uygulanan, katmanlar hâlinde oluşturulan, kürlendikten sonra mekanik olarak dayanıklı, suya ve neme karşı koruyan ve tersine mühendisliği zorlaştırmak için opak kalan plastik esaslı nanoyapılı bir kaplama, ileri kart koruması için pratik bir endüstriyel yol sunar. Akrilik, silikon, poliüretan, epoksi ve parylene gibi yaygın kaplamalarla karşılaştırıldığında MGCoat ürünü ince bir yalıtım filmi olarak değil, çevresel ve mekanik korumayı birlikte sağlayan güçlendirilmiş, ısı gerektirmeyen plastik esaslı bir koruyucu katman olarak konumlanır. Konumunu pekiştirmek için IPC ve IEC çerçevelerinde performans testleri yapılması ve sonuçların belgelenmesi önerilir."},
+"close":"Koruyucu kaplamalar, elektroniği zorlu ortamlarda güvenilir tutmak için temel bir araçtır. Isı olmadan uygulanan, katmanlar hâlinde oluşturulan, kürlendikten sonra mekanik olarak dayanıklı, suya ve neme karşı koruyan ve tersine mühendisliği zorlaştırmak için opak kalan plastik esaslı nanoyapılı bir kaplama, ileri kart koruması için pratik bir endüstriyel yol sunar. Akrilik, silikon, poliüretan, epoksi ve parylene gibi yaygın kaplamalarla karşılaştırıldığında MG COAT ürünü ince bir yalıtım filmi olarak değil, çevresel ve mekanik korumayı birlikte sağlayan güçlendirilmiş, ısı gerektirmeyen plastik esaslı bir koruyucu katman olarak konumlanır. Konumunu pekiştirmek için IPC ve IEC çerçevelerinde performans testleri yapılması ve sonuçların belgelenmesi önerilir."},
 "ar":{"title":"طلاء واقٍ نانوي البنية لـ PCB والإلكترونيات: موثوقية بيئية وميكانيكية ومقاومة للماء",
 "desc":"نظرة تقنية على الطلاءات الواقية نانوية البنية (المطابقة) للوحات PCB والدوائر الإلكترونية: لماذا تتعطّل اللوحات، وأطر التقييم IPC-CC-830 وIEC 61086، وكيف يحمي طلاء قائم على البلاستيك بدون حرارة ومتعدد الطبقات من الماء والرطوبة والتآكل والإجهاد الميكانيكي.",
 "intro":"مع انتشار الدوائر الإلكترونية في البيئات الصناعية والسياراتية والبحرية والرطبة والخارجية، أصبحت حماية لوحات الدوائر المطبوعة (PCB) من الرطوبة والماء والتلوّث والتآكل وتقلّبات الحرارة والإجهاد الميكانيكي تحدياً أساسياً للموثوقية. الطلاءات الواقية، التي تُسمى غالباً الطلاءات المطابقة، وسيلة راسخة لإطالة عمر المجموعات الإلكترونية وزيادة موثوقيتها. تستعرض هذه المقالة سبب أهمية الحماية، والأطر المستخدمة لتقييمها، وكيف يتوافق طلاء نانوي البنية قائم على البلاستيك وبدون حرارة مع هذه الاحتياجات.",
@@ -291,7 +291,7 @@ A6={"slug":"nanostructured-protective-coating-pcb","kw":"PCB protective coating,
 ("المزايا الوظيفية","يمكن تطبيق الطلاء بالغمس أو الرش أو الفرشاة، ما يجعله مناسباً للإصلاح المتخصّص وللاستخدام الصناعي معاً. بعد الجفاف يكتسب مقاومة ميكانيكية ملحوظة، وهو أمر مهم حيث تتعرّض اللوحات أيضاً للمناولة والاهتزاز والغبار أو إجهاد فيزيائي خفيف. طبيعته غير الشفافة تُخفي المسارات والمكوّنات وبنية اللوحة عن الرؤية المباشرة، فيعمل كحاجز بصري ضد الهندسة العكسية. يتيح التطبيق متعدّد الطبقات ضبط السماكة ومستوى الحماية حسب كل تطبيق، وتبقيه العملية الخالية من الحرارة متوافقاً مع المجموعات الحساسة."),
 ("التطبيقات الصناعية","يناسب الطلاء مجموعة واسعة من الاستخدامات: وحدات ECU في السيارات، والحساسات، ووحدات LED، ولوحات التحكم، وإلكترونيات الدراجات النارية؛ ولوحات التحكم الصناعية، وحساسات البيئة، والمعدات الخارجية؛ والإلكترونيات البحرية المعرّضة للماء والرطوبة؛ والدرونات وأنظمة FPV التي تواجه المطر والغبار والظروف المتغيّرة. وفي منتجات LED خصوصاً، قد تقصّر الرطوبة والتلوّث العمر أو تسبّب قصراً، لذا يساعد الطلاء الواقي المناسب على الحفاظ على الاستقرار طويل الأمد."),
 ("الاختبار والتحقّق","رغم أن التصميم الوظيفي مقنع، فإن المسار المهني للاعتماد الصناعي هو اختبارات منظّمة ونتائج موثّقة. تشمل الاختبارات ذات الصلة مقاومة العزل السطحية، ومقاومة الرطوبة، والدورات الحرارية، والالتصاق، والمتانة الميكانيكية، ومقاومة التلوّث، والرذاذ الملحي والأشعة فوق البنفسجية، والأداء بعد الغمر، والتحقّق من عدم حدوث قصر. وانسجاماً مع IPC-CC-830 وIEC 61086، ينبغي أن يعتمد اختيار المادة على الاحتياجات الفعلية لكل تطبيق وأن يُتحقَّق منه في ظروف واقعية وقابلة للتكرار، لا بمجرد التطابق مع مواصفة عامة.")],
-"close":"الطلاءات الواقية أداة أساسية للحفاظ على موثوقية الإلكترونيات في البيئات القاسية. إن طلاءً نانوي البنية قائماً على البلاستيك، يُطبَّق بدون حرارة، ويُبنى طبقات، ويقاوم ميكانيكياً بعد الجفاف، ويحمي من الماء والرطوبة، ويبقى غير شفاف ليُصعّب الهندسة العكسية، يقدّم مساراً صناعياً عملياً لحماية متقدّمة للوحات. ومقارنةً بالطلاءات الشائعة مثل الأكريليك والسيليكون والبولي يوريثان والإيبوكسي وparylene، يُوضَع منتج MGCoat لا كغشاء عزل رقيق، بل كطبقة واقية معزّزة قائمة على البلاستيك وبدون حرارة لحماية بيئية وميكانيكية معاً. ولترسيخ مكانته، يُوصى بإجراء اختبارات أداء ضمن أطر IPC وIEC وتوثيق النتائج."},
+"close":"الطلاءات الواقية أداة أساسية للحفاظ على موثوقية الإلكترونيات في البيئات القاسية. إن طلاءً نانوي البنية قائماً على البلاستيك، يُطبَّق بدون حرارة، ويُبنى طبقات، ويقاوم ميكانيكياً بعد الجفاف، ويحمي من الماء والرطوبة، ويبقى غير شفاف ليُصعّب الهندسة العكسية، يقدّم مساراً صناعياً عملياً لحماية متقدّمة للوحات. ومقارنةً بالطلاءات الشائعة مثل الأكريليك والسيليكون والبولي يوريثان والإيبوكسي وparylene، يُوضَع منتج MG COAT لا كغشاء عزل رقيق، بل كطبقة واقية معزّزة قائمة على البلاستيك وبدون حرارة لحماية بيئية وميكانيكية معاً. ولترسيخ مكانته، يُوصى بإجراء اختبارات أداء ضمن أطر IPC وIEC وتوثيق النتائج."},
 }}
 A7={"slug":"pcb-coating-application-process-quality-control","kw":"PCB coating application, conformal coating process, masking PCB, coating defects, coating quality control, bubbles wicking delamination, coating inspection",
 "L":{
@@ -305,7 +305,7 @@ A7={"slug":"pcb-coating-application-process-quality-control","kw":"PCB coating a
 ("Curing and handling","Allow full curing (about 12 hours for maximum mechanical strength) before stacking, packing or stressing the board. Cure at room temperature in a clean, dust-free area; premature handling can mar a soft film."),
 ("Inspection and acceptance","After coating, visually confirm complete, air-free coverage with no exposed traces and no bridging across masked areas. Because the layer is non-transparent, inspect under good light and from several angles; for critical work, verify function with a controlled powered test after full cure."),
 ("Common defects and how to prevent them","Bubbles and voids — apply thin passes and avoid shaking the liquid; wicking or capillary creep onto pads — mask precisely and do not over-apply at edges; orange peel — control distance and viscosity when spraying; delamination — clean and dry thoroughly before coating; edge or corner thinning — add a brushed reinforcement pass; cracking — avoid one excessively thick coat. Most defects trace back to cleanliness, layer thickness or curing.")],
-"close":"Liquid PCB Plastic Coating by MG TECH is heat-free and can be applied by dipping, spraying or brushing, built up in 2–4 passes and inspected visually for air-free coverage — and it remains removable with a dedicated solvent for rework, making a clean, repeatable process straightforward in production or in the field."},
+"close":"Liquid PCB Plastic Coating by MG COAT is heat-free and can be applied by dipping, spraying or brushing, built up in 2–4 passes and inspected visually for air-free coverage — and it remains removable with a dedicated solvent for rework, making a clean, repeatable process straightforward in production or in the field."},
 "fa":{"title":"اجرای پوشش محافظ روی PCB: فرآیند، کنترل کیفیت و پیشگیری از عیوب",
 "desc":"راهنمای مهندسیِ کاربردی برای اجرای پوشش محافظ/Conformal روی PCB: آماده‌سازی سطح، ماسک‌کاری، تکنیک غوطه‌وری/اسپری/قلم‌مو، ساخت چندلایه، خشک‌شدن، بازرسی و عیوب رایج (حباب، wicking، پوست‌پرتقالی، لایه‌لایه‌شدن) و راه پیشگیری.",
 "intro":"یک پوشش محافظ فقط به‌اندازهٔ فرآیند اجرایش خوب عمل می‌کند. حتی بهترین ماده هم اگر برد آلوده باشد، ماسک‌کاری اشتباه باشد یا فیلم هوا حبس کند یا روی کانکتور پل بزند، شکست می‌خورد. این راهنما فرآیند عملی — آماده‌سازی، ماسک، اجرا، خشک‌شدن و بازرسی — و عیوب رایجی که باید از آن‌ها پرهیز کرد را پوشش می‌دهد.",
@@ -316,7 +316,7 @@ A7={"slug":"pcb-coating-application-process-quality-control","kw":"PCB coating a
 ("خشک‌شدن و جابه‌جایی","پیش از روی‌هم‌گذاری، بسته‌بندی یا واردکردن تنش به برد، اجازهٔ خشک‌شدن کامل (حدود ۱۲ ساعت برای حداکثر استحکام مکانیکی) بدهید. در دمای محیط و در محیطی تمیز و بدون گردوغبار خشک کنید؛ جابه‌جاییِ زودهنگام می‌تواند فیلم نرم را خط بیندازد."),
 ("بازرسی و پذیرش","پس از پوشش، به‌صورت بصری پوشش کامل و بدون هوا را تأیید کنید؛ هیچ مسیر بازی نماند و روی نواحی ماسک‌شده پل نزند. چون لایه غیرشفاف است، زیر نور خوب و از چند زاویه بازرسی کنید؛ برای کارِ حساس، پس از خشک‌شدن کامل عملکرد را با یک تستِ کنترل‌شدهٔ روشن بررسی کنید."),
 ("عیوب رایج و راه پیشگیری","حباب و حفره — لایهٔ نازک بزنید و مادهٔ مایع را تکان ندهید؛ خزشِ مویینه (wicking) روی پدها — دقیق ماسک کنید و لبه‌ها را زیادی پوشش ندهید؛ پوست‌پرتقالی — هنگام اسپری فاصله و گرانروی را کنترل کنید؛ لایه‌لایه‌شدن — قبل از پوشش کاملاً تمیز و خشک کنید؛ نازکیِ لبه و گوشه — یک مرحلهٔ تقویتیِ قلم‌مو اضافه کنید؛ ترک — از یک لایهٔ بیش‌ازحد ضخیم پرهیز کنید. بیشتر عیوب به تمیزی، ضخامت لایه یا خشک‌شدن برمی‌گردند.")],
-"close":"محصول Liquid PCB Plastic Coating شرکت MG TECH بدون حرارت است و با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود، در ۲ تا ۴ مرحله ساخته می‌شود و از نظر پوششِ بدون هوا به‌صورت بصری بازرسی می‌شود — و برای تعمیر با حلال مخصوص قابل برداشتن است، که یک فرآیندِ تمیز و قابل‌تکرار را در تولید یا میدان ساده می‌کند."},
+"close":"محصول Liquid PCB Plastic Coating شرکت MG COAT بدون حرارت است و با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود، در ۲ تا ۴ مرحله ساخته می‌شود و از نظر پوششِ بدون هوا به‌صورت بصری بازرسی می‌شود — و برای تعمیر با حلال مخصوص قابل برداشتن است، که یک فرآیندِ تمیز و قابل‌تکرار را در تولید یا میدان ساده می‌کند."},
 "ru":{"title":"Нанесение защитного покрытия на печатные платы: процесс, контроль качества и предотвращение дефектов",
 "desc":"Практическое инженерное руководство по нанесению конформных/защитных покрытий на платы: подготовка поверхности, маскирование, техника окунания/распыления/кисти, многослойное нанесение, отверждение, контроль и распространённые дефекты (пузыри, затекание, апельсиновая корка, расслоение) и их предотвращение.",
 "intro":"Защитное покрытие работает лишь настолько хорошо, насколько корректен процесс нанесения. Даже отличный материал откажет, если плата загрязнена, маскирование неверно, а плёнка захватывает воздух или перемыкает разъёмы. Это руководство охватывает практический процесс — подготовку, маскирование, нанесение, отверждение и контроль — и дефекты, которых следует избегать.",
@@ -327,7 +327,7 @@ A7={"slug":"pcb-coating-application-process-quality-control","kw":"PCB coating a
 ("Отверждение и обращение","Дайте полностью отвердеть (около 12 часов для максимальной прочности) до укладки, упаковки или нагрузки платы. Отверждайте при комнатной температуре в чистом, беспыльном месте; преждевременное обращение может повредить мягкую плёнку."),
 ("Контроль и приёмка","После нанесения визуально подтвердите полное покрытие без воздуха, без открытых дорожек и перемычек по маскированным зонам. Так как слой непрозрачный, осматривайте при хорошем свете и с разных углов; для ответственных работ проверьте функцию контролируемым тестом под напряжением после полного отверждения."),
 ("Распространённые дефекты и их предотвращение","Пузыри и поры — наносите тонкими проходами и не взбалтывайте жидкость; затекание на площадки — точно маскируйте и не наносите лишнее у краёв; апельсиновая корка — контролируйте расстояние и вязкость при распылении; расслоение — тщательно очищайте и сушите перед нанесением; утончение на краях и углах — добавьте усиливающий проход кистью; растрескивание — избегайте одного чрезмерно толстого слоя. Большинство дефектов связаны с чистотой, толщиной слоя или отверждением.")],
-"close":"Liquid PCB Plastic Coating от MG TECH наносится без нагрева окунанием, распылением или кистью, наращивается за 2–4 прохода и проверяется визуально на покрытие без воздуха — и остаётся снимаемым специальным растворителем для ремонта, делая чистый, воспроизводимый процесс простым в производстве и в поле."},
+"close":"Liquid PCB Plastic Coating от MG COAT наносится без нагрева окунанием, распылением или кистью, наращивается за 2–4 прохода и проверяется визуально на покрытие без воздуха — и остаётся снимаемым специальным растворителем для ремонта, делая чистый, воспроизводимый процесс простым в производстве и в поле."},
 "tr":{"title":"PCB'ye Koruyucu Kaplama Uygulama: Süreç, Kalite Kontrol ve Kusur Önleme",
 "desc":"PCB'lere konformal/koruyucu kaplama uygulamak için pratik mühendislik rehberi: yüzey hazırlığı, maskeleme, daldırma/püskürtme/fırça tekniği, çok katmanlı yapı, kürlenme, muayene ve yaygın kusurlar (kabarcık, kılcal yürüme, portakal kabuğu, delaminasyon) ve önlenmesi.",
 "intro":"Bir koruyucu kaplama, ancak uygulandığı süreç kadar iyi çalışır. Kart kirliyse, maskeleme yanlışsa ya da film hava hapsediyor veya konnektörleri köprülüyorsa, en iyi malzeme bile başarısız olur. Bu rehber pratik süreci — hazırlık, maskeleme, uygulama, kürlenme ve muayene — ve kaçınılması gereken yaygın kusurları kapsar.",
@@ -338,7 +338,7 @@ A7={"slug":"pcb-coating-application-process-quality-control","kw":"PCB coating a
 ("Kürlenme ve elleçleme","Kartı istiflemeden, paketlemeden veya zorlamadan önce tam kürlenmeye (maksimum mekanik dayanım için yaklaşık 12 saat) izin verin. Oda sıcaklığında, temiz ve tozsuz bir ortamda kürleyin; erken elleçleme yumuşak filmi bozabilir."),
 ("Muayene ve kabul","Kaplamadan sonra hava boşluğu olmadan tam kaplamayı, açık yol kalmadığını ve maskeli bölgelerde köprüleme olmadığını gözle doğrulayın. Katman opak olduğundan iyi ışıkta ve birkaç açıdan inceleyin; kritik işlerde tam kürlenme sonrası işlevi kontrollü enerjili testle doğrulayın."),
 ("Yaygın kusurlar ve önlenmesi","Kabarcık ve boşluk — ince katlar uygulayın ve sıvıyı çalkalamayın; kılcal yürüme (padlere) — hassas maskeleyin ve kenarlarda fazla uygulamayın; portakal kabuğu — püskürtürken mesafeyi ve viskoziteyi kontrol edin; delaminasyon — kaplamadan önce iyice temizleyip kurutun; kenar ve köşe incelmesi — fırçayla güçlendirme katı ekleyin; çatlama — tek aşırı kalın kattan kaçının. Çoğu kusur temizliğe, kat kalınlığına veya kürlenmeye dayanır.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü ısı gerektirmez; daldırma, püskürtme veya fırçayla uygulanır, 2–4 katta oluşturulur ve hava boşluğu olmadan kaplama açısından gözle muayene edilir — ve onarım için özel çözücüyle sökülebilir; bu da üretimde veya sahada temiz, tekrarlanabilir bir süreci kolaylaştırır."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü ısı gerektirmez; daldırma, püskürtme veya fırçayla uygulanır, 2–4 katta oluşturulur ve hava boşluğu olmadan kaplama açısından gözle muayene edilir — ve onarım için özel çözücüyle sökülebilir; bu da üretimde veya sahada temiz, tekrarlanabilir bir süreci kolaylaştırır."},
 "ar":{"title":"تطبيق طلاء واقٍ على لوحات PCB: العملية وضبط الجودة ومنع العيوب",
 "desc":"دليل هندسي عملي لتطبيق الطلاءات المطابقة/الواقية على لوحات PCB: تحضير السطح، الحجب، تقنية الغمس/الرش/الفرشاة، البناء متعدد الطبقات، الجفاف، الفحص والعيوب الشائعة (الفقاعات، الزحف الشعري، قشرة البرتقال، التقشّر) وكيفية منعها.",
 "intro":"لا يعمل الطلاء الواقي إلا بقدر جودة عملية تطبيقه. حتى أفضل مادة تفشل إذا كانت اللوحة ملوّثة أو الحجب خاطئاً أو احتبس الهواء في الغشاء أو جسّر الموصلات. يغطّي هذا الدليل العملية العملية — التحضير والحجب والتطبيق والجفاف والفحص — والعيوب الشائعة التي يجب تجنّبها.",
@@ -349,7 +349,7 @@ A7={"slug":"pcb-coating-application-process-quality-control","kw":"PCB coating a
 ("الجفاف والمناولة","اترك الجفاف الكامل (نحو 12 ساعة لأقصى قوة ميكانيكية) قبل التكديس أو التغليف أو إجهاد اللوحة. جفّف في درجة حرارة الغرفة في مكان نظيف خالٍ من الغبار؛ فالمناولة المبكرة قد تخدش الغشاء الطري."),
 ("الفحص والقبول","بعد الطلاء، تأكّد بصرياً من التغطية الكاملة دون هواء، دون مسارات مكشوفة ودون تجسير على المناطق المحجوبة. ولأن الطبقة غير شفافة، افحص تحت إضاءة جيدة ومن عدة زوايا؛ وفي الأعمال الحرجة تحقّق من الأداء باختبار مضبوط تحت الطاقة بعد الجفاف الكامل."),
 ("العيوب الشائعة وكيفية منعها","الفقاعات والفراغات — طبّق طبقات رقيقة ولا ترُجّ السائل؛ الزحف الشعري إلى الأطراف — احجب بدقة ولا تُفرط عند الحواف؛ قشرة البرتقال — اضبط المسافة واللزوجة عند الرش؛ التقشّر — نظّف وجفّف جيداً قبل الطلاء؛ ترقّق الحواف والزوايا — أضف طبقة تقوية بالفرشاة؛ التشقّق — تجنّب طبقة واحدة مفرطة السماكة. معظم العيوب تعود إلى النظافة أو سماكة الطبقة أو الجفاف.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH بدون حرارة، ويُطبَّق بالغمس أو الرش أو الفرشاة، ويُبنى في 2–4 طبقات ويُفحص بصرياً للتأكد من التغطية دون هواء — ويبقى قابلاً للإزالة بمذيب خاص للإصلاح، ما يجعل العملية النظيفة القابلة للتكرار سهلة في الإنتاج أو الميدان."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT بدون حرارة، ويُطبَّق بالغمس أو الرش أو الفرشاة، ويُبنى في 2–4 طبقات ويُفحص بصرياً للتأكد من التغطية دون هواء — ويبقى قابلاً للإزالة بمذيب خاص للإصلاح، ما يجعل العملية النظيفة القابلة للتكرار سهلة في الإنتاج أو الميدان."},
 }}
 A8={"slug":"how-to-remove-conformal-coating-pcb","kw":"remove conformal coating, rework conformal coating, strip PCB coating, coating removal solvent, repair coated PCB, how to remove coating",
 "L":{
@@ -363,7 +363,7 @@ A8={"slug":"how-to-remove-conformal-coating-pcb","kw":"remove conformal coating,
 ("Mechanical and micro-abrasion","A scalpel, fibreglass scratch pen or micro-abrasive eraser removes thin coating from a single pad or test point. Work gently along, not across, fine traces, and vacuum away dust so it does not bridge other nets."),
 ("Work safely","Use removers in a ventilated area, wear gloves and eye protection, and keep solvents away from plastics they can attack (connectors, displays). Follow the remover's data sheet and dispose of waste properly."),
 ("Re-coat after repair","Once the repair is verified, clean the area, mask anything that must stay exposed, and re-apply coating to restore protection. A board designed around a removable coating can be opened and resealed many times.")],
-"close":"MG TECH's Liquid PCB Plastic Coating is removable with a dedicated solvent for repair, so boards stay serviceable — rework a single point, then re-coat to restore full water and mechanical protection."},
+"close":"MG COAT's Liquid PCB Plastic Coating is removable with a dedicated solvent for repair, so boards stay serviceable — rework a single point, then re-coat to restore full water and mechanical protection."},
 "fa":{"title":"چطور پوشش Conformal را برای تعمیر و بازکاری برد PCB برداریم",
 "desc":"راهنمای کاربردی برداشتن پوشش Conformal و محافظ از برد PCB برای بازکاری: شناخت نوع پوشش، روش‌های حلال، حرارتی، لایه‌برداری و سایش میکرو، ایمنی و پوشش مجدد.",
 "intro":"گاهی یک بردِ محافظت‌شده هم نیاز به تعمیر دارد — قطعهٔ خراب، تعویض چیپ، افزودن یک سیم. هدف این است که پوشش را فقط در محل کار برداری، برد را تعمیر کنی و دوباره محافظت کنی. روش تمیز و بدون آسیب به مسیرها و پدها:",
@@ -374,7 +374,7 @@ A8={"slug":"how-to-remove-conformal-coating-pcb","kw":"remove conformal coating,
 ("روش مکانیکی و سایش میکرو","تیغ جراحی، قلم خراش فایبرگلاس یا پاک‌کن میکروسایشی، پوشش نازک را از یک پد یا نقطهٔ تست برمی‌دارد. آرام و در امتداد مسیرهای ظریف کار کن نه عمود بر آن‌ها، و گردوغبار را بمک تا روی شبکه‌های دیگر پل نزند."),
 ("ایمن کار کن","حلال‌ها را در فضای تهویه‌دار به‌کار ببر، دستکش و محافظ چشم بزن و حلال را از پلاستیک‌هایی که آسیب می‌بینند (کانکتور، نمایشگر) دور نگه دار. برگهٔ اطلاعات حلال را رعایت کن و پسماند را درست دفع کن."),
 ("بعد از تعمیر دوباره پوشش بده","وقتی تعمیر تأیید شد، ناحیه را تمیز کن، هر چیزی که باید باز بماند را ماسک کن و پوشش را دوباره اجرا کن تا محافظت برگردد. بردی که حول یک پوشش برداشتنی طراحی شده، بارها باز و دوباره آب‌بندی می‌شود.")],
-"close":"Liquid PCB Plastic Coating محصول MG TECH برای تعمیر با حلال مخصوص برداشتنی است؛ پس برد قابل‌سرویس می‌ماند — یک نقطه را بازکاری کن و دوباره پوشش بده تا محافظت کامل آب و مکانیکی برگردد."},
+"close":"Liquid PCB Plastic Coating محصول MG COAT برای تعمیر با حلال مخصوص برداشتنی است؛ پس برد قابل‌سرویس می‌ماند — یک نقطه را بازکاری کن و دوباره پوشش بده تا محافظت کامل آب و مکانیکی برگردد."},
 "ru":{"title":"Как удалить конформное покрытие для ремонта и доработки платы",
 "desc":"Практическое руководство по удалению конформного и защитного покрытия с платы для доработки: определение типа, растворитель, нагрев, снятие плёнки и микроабразив, безопасность и повторное покрытие.",
 "intro":"Защищённой плате иногда всё же нужен ремонт — отказавший компонент, перепрошитый чип, добавленный провод. Цель — снять покрытие только в зоне работы, починить плату и снова защитить её. Вот как сделать это чисто, не повредив дорожки и площадки.",
@@ -385,7 +385,7 @@ A8={"slug":"how-to-remove-conformal-coating-pcb","kw":"remove conformal coating,
 ("Механика и микроабразив","Скальпель, стеклянная царапающая ручка или микроабразивный ластик снимают тонкое покрытие с одной площадки или контрольной точки. Работайте мягко вдоль, а не поперёк тонких дорожек, и удаляйте пыль пылесосом, чтобы она не замкнула другие цепи."),
 ("Работайте безопасно","Используйте составы в проветриваемом месте, надевайте перчатки и защиту глаз, держите растворители вдали от пластика, который они разрушают (разъёмы, дисплеи). Следуйте паспорту состава и правильно утилизируйте отходы."),
 ("Повторное покрытие после ремонта","Когда ремонт проверен, очистите зону, замаскируйте всё, что должно оставаться открытым, и снова нанесите покрытие. Плата, спроектированная под удаляемое покрытие, открывается и герметизируется многократно.")],
-"close":"Liquid PCB Plastic Coating от MG TECH удаляется специальным растворителем для ремонта, поэтому плата остаётся ремонтопригодной — доработайте одну точку и снова нанесите покрытие, восстановив полную водо- и механическую защиту."},
+"close":"Liquid PCB Plastic Coating от MG COAT удаляется специальным растворителем для ремонта, поэтому плата остаётся ремонтопригодной — доработайте одну точку и снова нанесите покрытие, восстановив полную водо- и механическую защиту."},
 "tr":{"title":"PCB Onarımı ve Reworku için Konformal Kaplama Nasıl Çıkarılır",
 "desc":"Rework için PCB'den konformal ve koruyucu kaplama çıkarma rehberi: kaplamayı tanımlama, çözücü, ısıl, soyma ve mikro-aşındırma yöntemleri, güvenlik ve yeniden kaplama.",
 "intro":"Korumalı bir kart bazen yine de onarım ister — arızalı bir bileşen, yeniden yazılan bir çip, eklenen bir kablo. Amaç, kaplamayı yalnızca çalıştığınız yerden çıkarmak, kartı onarmak ve yeniden korumaktır. Hatları ve padleri zedelemeden temiz şekilde nasıl yapılacağı:",
@@ -396,7 +396,7 @@ A8={"slug":"how-to-remove-conformal-coating-pcb","kw":"remove conformal coating,
 ("Mekanik ve mikro-aşındırma","Bisturi, cam elyaf kazıma kalemi veya mikro-aşındırıcı silgi tek bir paddan veya test noktasından ince kaplamayı çıkarır. İnce hatlar boyunca, üzerinden değil, nazikçe çalışın ve tozu emerek başka hatları köprülememesini sağlayın."),
 ("Güvenli çalışın","Sökücüleri havalandırılan bir yerde kullanın, eldiven ve göz koruması takın, çözücüleri zarar verebilecekleri plastiklerden (konnektör, ekran) uzak tutun. Sökücünün veri sayfasını izleyin ve atığı doğru bertaraf edin."),
 ("Onarımdan sonra yeniden kaplayın","Onarım doğrulandığında alanı temizleyin, açık kalması gerekeni maskeleyin ve korumayı geri getirmek için kaplamayı yeniden uygulayın. Çıkarılabilir bir kaplama etrafında tasarlanan kart defalarca açılıp yeniden sızdırmaz yapılabilir.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü onarım için özel bir çözücüyle çıkarılabilir, böylece kart servis edilebilir kalır — tek bir noktayı reworklayın, sonra yeniden kaplayarak tam su ve mekanik korumayı geri getirin."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü onarım için özel bir çözücüyle çıkarılabilir, böylece kart servis edilebilir kalır — tek bir noktayı reworklayın, sonra yeniden kaplayarak tam su ve mekanik korumayı geri getirin."},
 "ar":{"title":"كيفية إزالة الطلاء المطابق لإصلاح لوحة PCB وإعادة العمل عليها",
 "desc":"دليل عملي لإزالة الطلاء المطابق والواقي من لوحة PCB لإعادة العمل: تحديد نوع الطلاء، وطرق المذيب والحرارة والتقشير والكشط الدقيق، والسلامة وإعادة الطلاء.",
 "intro":"أحياناً تحتاج اللوحة المحمية إلى إصلاح رغم ذلك — مكوّن تالف، شريحة أُعيدت برمجتها، سلك مُضاف. الهدف إزالة الطلاء فقط في موضع العمل، وإصلاح اللوحة، ثم إعادة حمايتها. إليك كيف تفعل ذلك بنظافة دون إتلاف المسارات أو النقاط.",
@@ -407,7 +407,7 @@ A8={"slug":"how-to-remove-conformal-coating-pcb","kw":"remove conformal coating,
 ("الميكانيكي والكشط الدقيق","المشرط أو قلم خدش من الألياف الزجاجية أو ممحاة كاشطة دقيقة تزيل الطلاء الرقيق من نقطة واحدة أو نقطة اختبار. اعمل برفق بمحاذاة المسارات الدقيقة لا عبرها، واشفط الغبار كي لا يجسر شبكات أخرى."),
 ("اعمل بأمان","استخدم المزيلات في مكان جيد التهوية، والبس قفازات وواقي عين، وأبعِد المذيبات عن البلاستيك الذي قد تهاجمه (الموصلات، الشاشات). اتبع صحيفة بيانات المزيل وتخلّص من النفايات بشكل سليم."),
 ("أعد الطلاء بعد الإصلاح","بعد التحقق من الإصلاح، نظّف المنطقة، وغطِّ ما يجب أن يبقى مكشوفاً، وأعد تطبيق الطلاء لاستعادة الحماية. اللوحة المصمَّمة حول طلاء قابل للإزالة يمكن فتحها وإعادة عزلها مرات عديدة.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH قابل للإزالة بمذيب خاص للإصلاح، فتبقى اللوحة قابلة للصيانة — أعد العمل على نقطة واحدة ثم أعد الطلاء لاستعادة الحماية الكاملة من الماء والميكانيكا."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT قابل للإزالة بمذيب خاص للإصلاح، فتبقى اللوحة قابلة للصيانة — أعد العمل على نقطة واحدة ثم أعد الطلاء لاستعادة الحماية الكاملة من الماء والميكانيكا."},
 }}
 
 A9={"slug":"conformal-coating-vs-potting-encapsulation","kw":"conformal coating vs potting, encapsulation, potting compound, PCB protection methods, which to choose, resin encapsulation",
@@ -422,7 +422,7 @@ A9={"slug":"conformal-coating-vs-potting-encapsulation","kw":"conformal coating 
 ("Repair and rework","This is the biggest difference. A coated board can be opened locally, repaired and re-coated. A fully potted block is usually impossible to repair — a single failure means replacing the whole unit."),
 ("Cost and process","Coating is fast, low-material and easy to apply by dip, spray or brush. Potting needs more resin, moulds or cavities, longer cure and careful degassing, raising material and process cost per unit."),
 ("Where a reinforced plastic coating fits","A thicker plastic-based coating sits between the two: more mechanical and water protection than a thin conformal film, but without the weight, heat and lost repairability of full potting — a strong middle ground for harsh but serviceable electronics.")],
-"close":"MG TECH's Liquid PCB Plastic Coating gives much of potting's robustness — water, abrasion and edge protection — while keeping boards light and repairable, applied heat-free by dip, spray or brush."},
+"close":"MG COAT's Liquid PCB Plastic Coating gives much of potting's robustness — water, abrasion and edge protection — while keeping boards light and repairable, applied heat-free by dip, spray or brush."},
 "fa":{"title":"پوشش Conformal در برابر Potting و Encapsulation: کدام را انتخاب کنیم",
 "desc":"مقایسهٔ پوشش Conformal با Potting و Encapsulation برای محافظت PCB: وزن، رفتار حرارتی، تعمیرپذیری، هزینه و جایگاه پوشش پلاستیکی تقویت‌شده.",
 "intro":"وقتی الکترونیک باید در برابر آب، لرزش و مواد شیمیایی سخت دوام بیاورد، دو راهبرد غالب‌اند: یک پوشش نازک Conformal روی برد، یا غرق‌کردن کامل آن در رزین (Potting). این‌ها خیلی متفاوت محافظت می‌کنند. دانستن مزایا و معایب به انتخاب سطح درست محافظت کمک می‌کند.",
@@ -433,7 +433,7 @@ A9={"slug":"conformal-coating-vs-potting-encapsulation","kw":"conformal coating 
 ("تعمیر و بازکاری","این بزرگ‌ترین تفاوت است. بردِ پوشش‌داده‌شده را می‌توان به‌صورت موضعی باز کرد، تعمیر و دوباره پوشش داد. یک بلوک کاملاً Pot‌شده معمولاً غیرقابل‌تعمیر است — یک خرابی یعنی تعویض کل واحد."),
 ("هزینه و فرایند","پوشش سریع، کم‌مصرف و آسان است و با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود. Potting رزین بیشتر، قالب یا حفره، پخت طولانی‌تر و هواگیری دقیق می‌خواهد و هزینهٔ مواد و فرایند هر واحد را بالا می‌برد."),
 ("جایگاه پوشش پلاستیکی تقویت‌شده","پوشش ضخیم‌ترِ بر پایه پلاستیک میان این دو قرار می‌گیرد: محافظت مکانیکی و آبی بیشتر از فیلم نازک Conformal، اما بدون وزن، گرما و ازدست‌رفتن تعمیرپذیریِ Potting کامل — یک حد وسط قوی برای الکترونیک سخت اما قابل‌سرویس.")],
-"close":"Liquid PCB Plastic Coating محصول MG TECH بخش زیادی از استحکام Potting — محافظت در برابر آب، سایش و لبه — را می‌دهد و در عین حال برد را سبک و قابل‌تعمیر نگه می‌دارد، بدون حرارت با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود."},
+"close":"Liquid PCB Plastic Coating محصول MG COAT بخش زیادی از استحکام Potting — محافظت در برابر آب، سایش و لبه — را می‌دهد و در عین حال برد را سبک و قابل‌تعمیر نگه می‌دارد، بدون حرارت با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود."},
 "ru":{"title":"Конформное покрытие против заливки и герметизации: что выбрать",
 "desc":"Сравнение конформного покрытия с заливкой и герметизацией для защиты плат: вес, тепловое поведение, ремонтопригодность, стоимость и место усиленного пластикового покрытия.",
 "intro":"Когда электроника должна выдерживать воду, вибрацию и агрессивную химию, преобладают две стратегии: тонкое конформное покрытие платы или её полная заливка смолой. Защищают они очень по-разному. Понимание компромиссов помогает выбрать нужный уровень защиты.",
@@ -444,7 +444,7 @@ A9={"slug":"conformal-coating-vs-potting-encapsulation","kw":"conformal coating 
 ("Ремонт и доработка","Это главное различие. Покрытую плату можно вскрыть локально, отремонтировать и заново покрыть. Полностью залитый блок обычно не ремонтируется — один отказ означает замену всего узла."),
 ("Стоимость и процесс","Покрытие быстрое, маломатериальное и простое в нанесении окунанием, распылением или кистью. Заливка требует больше смолы, форм или полостей, дольше отверждается и нуждается в дегазации, повышая стоимость материала и процесса на единицу."),
 ("Место усиленного пластикового покрытия","Более толстое покрытие на пластиковой основе находится между ними: больше механической и водной защиты, чем тонкая конформная плёнка, но без веса, нагрева и потери ремонтопригодности полной заливки — прочная золотая середина для тяжёлой, но ремонтопригодной электроники.")],
-"close":"Liquid PCB Plastic Coating от MG TECH даёт значительную часть прочности заливки — защиту от воды, истирания и по краям — сохраняя платы лёгкими и ремонтопригодными, наносится без нагрева окунанием, распылением или кистью."},
+"close":"Liquid PCB Plastic Coating от MG COAT даёт значительную часть прочности заливки — защиту от воды, истирания и по краям — сохраняя платы лёгкими и ремонтопригодными, наносится без нагрева окунанием, распылением или кистью."},
 "tr":{"title":"Konformal Kaplama ile Potting ve Kapsülleme: Hangisini Seçmeli",
 "desc":"PCB koruması için konformal kaplama ile potting ve kapsüllemeyi karşılaştırma: ağırlık, ısıl davranış, onarılabilirlik, maliyet ve güçlendirilmiş plastik kaplamanın yeri.",
 "intro":"Elektroniğin suya, titreşime ve sert kimyasallara dayanması gerektiğinde iki strateji öne çıkar: kart üzerine ince bir konformal kaplama veya kartı reçineyle tamamen potting yapmak. Çok farklı korurlar. Ödünleşmeleri bilmek doğru koruma seviyesini seçmenize yardımcı olur.",
@@ -455,7 +455,7 @@ A9={"slug":"conformal-coating-vs-potting-encapsulation","kw":"conformal coating 
 ("Onarım ve rework","En büyük fark budur. Kaplı bir kart yerel olarak açılıp onarılıp yeniden kaplanabilir. Tamamen potting edilmiş bir blok genelde onarılamaz — tek bir arıza tüm ünitenin değişmesi demektir."),
 ("Maliyet ve süreç","Kaplama hızlı, az malzemeli ve daldırma, püskürtme veya fırçayla kolayca uygulanır. Potting daha çok reçine, kalıp veya boşluk, daha uzun kürlenme ve dikkatli gaz alma gerektirir; birim başına malzeme ve süreç maliyetini artırır."),
 ("Güçlendirilmiş plastik kaplamanın yeri","Daha kalın plastik esaslı bir kaplama ikisinin arasında durur: ince konformal filmden daha çok mekanik ve su koruması, ama tam potting'in ağırlığı, ısısı ve kaybolan onarılabilirliği olmadan — sert ama servis edilebilir elektronik için güçlü bir orta yol.")],
-"close":"MG TECH'in Liquid PCB Plastic Coating ürünü potting'in dayanıklılığının çoğunu — su, aşınma ve kenar koruması — verirken kartları hafif ve onarılabilir tutar; ısı gerektirmeden daldırma, püskürtme veya fırçayla uygulanır."},
+"close":"MG COAT'in Liquid PCB Plastic Coating ürünü potting'in dayanıklılığının çoğunu — su, aşınma ve kenar koruması — verirken kartları hafif ve onarılabilir tutar; ısı gerektirmeden daldırma, püskürtme veya fırçayla uygulanır."},
 "ar":{"title":"الطلاء المطابق مقابل التغليف بالراتنج (Potting): أيّهما تختار",
 "desc":"مقارنة الطلاء المطابق بالتغليف بالراتنج لحماية لوحات PCB: الوزن والسلوك الحراري وقابلية الإصلاح والتكلفة وموضع الطلاء البلاستيكي المعزّز.",
 "intro":"عندما يجب أن تصمد الإلكترونيات أمام الماء والاهتزاز والمواد الكيميائية القاسية، تسود استراتيجيتان: طلاء مطابق رقيق فوق اللوحة، أو تغليفها كاملاً بالراتنج. تحميان بشكل مختلف جداً. معرفة المفاضلات تساعدك على اختيار مستوى الحماية المناسب.",
@@ -466,13 +466,13 @@ A9={"slug":"conformal-coating-vs-potting-encapsulation","kw":"conformal coating 
 ("الإصلاح وإعادة العمل","هذا أكبر فرق. يمكن فتح اللوحة المطلية موضعياً وإصلاحها وإعادة طلائها. أما الكتلة المغلّفة كاملاً فعادةً يتعذّر إصلاحها — عطل واحد يعني استبدال الوحدة كلها."),
 ("التكلفة والعملية","الطلاء سريع وقليل المواد وسهل التطبيق بالغمس أو الرش أو الفرشاة. التغليف يحتاج راتنجاً أكثر وقوالب أو تجاويف وتصلّباً أطول ونزع غاز بعناية، ما يرفع تكلفة المواد والعملية لكل وحدة."),
 ("موضع الطلاء البلاستيكي المعزّز","الطلاء الأسمك القائم على البلاستيك يقع بين الاثنين: حماية ميكانيكية ومائية أكثر من الغشاء المطابق الرقيق، لكن دون وزن وحرارة وفقدان قابلية الإصلاح في التغليف الكامل — حلٌّ وسط قوي للإلكترونيات القاسية والقابلة للصيانة في آن.")],
-"close":"إن Liquid PCB Plastic Coating من MG TECH يمنح كثيراً من متانة التغليف — الحماية من الماء والتآكل والحواف — مع إبقاء اللوحات خفيفة وقابلة للإصلاح، ويُطبَّق بدون حرارة بالغمس أو الرش أو الفرشاة."},
+"close":"إن Liquid PCB Plastic Coating من MG COAT يمنح كثيراً من متانة التغليف — الحماية من الماء والتآكل والحواف — مع إبقاء اللوحات خفيفة وقابلة للإصلاح، ويُطبَّق بدون حرارة بالغمس أو الرش أو الفرشاة."},
 }}
 ARTICLES=[A1,A2,A3,A4,A5,A6,A7,A8,A9]
 
 def header(active_back):
     return ('<header class="site-header"><div class="container nav">'
-      '<a class="brand" href="/" aria-label="MG TECH — home"><picture><source srcset="/assets/img/logo-mark.webp" type="image/webp"/><img src="/assets/img/logo-mark.png" alt="MG TECH logo" width="40" height="40"/></picture><span class="brand-text">MG&nbsp;TECH<small>Electronic Circuit Waterproofing</small></span></a>'
+      '<a class="brand" href="/" aria-label="MG COAT — home"><picture><source srcset="/assets/img/logo-mark.webp" type="image/webp"/><img src="/assets/img/logo-mark.png" alt="MG COAT logo" width="40" height="40"/></picture><span class="brand-text">MG&nbsp;COAT<small>Electronic Circuit Waterproofing</small></span></a>'
       '<div class="lang-select"><button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language"><span class="lt-flag">🇬🇧</span><span class="lt-name">English</span><span class="lt-chev">▾</span></button>'
       '<div class="lang-menu" role="listbox">'+''.join(f'<button class="lang-btn" type="button" data-lang="{l}"><span>{LBL[l][0]}</span><span>{LBL[l][1]}</span></button>' for l in LANGS)+'</div></div>'
       '</div></header>')
@@ -487,16 +487,16 @@ def article_page(a):
         body="".join(f"<h2>{html.escape(h)}</h2><p>{html.escape(p)}</p>" for h,p in d["secs"])
         posts+=(f'<article class="post" data-lang="{l}" lang="{l}" dir="{dirv}" hidden>'
                 f'<nav class="crumbs"><a href="/">{HOME[l]}</a> / <a href="/blog/">{BLOGW[l]}</a></nav>'
-                f'<h1>{html.escape(d["title"])}</h1><p class="article-meta">MG TECH · {DATE}</p>'
+                f'<h1>{html.escape(d["title"])}</h1><p class="article-meta">MG COAT · {DATE}</p>'
                 f'<p class="lead-p">{html.escape(d["intro"])}</p>{body}<p>{html.escape(d["close"])}</p>'
                 f'<div class="article-cta"><a class="btn red" href="{WA}" rel="noopener" target="_blank">{CTA[l]}</a> <a class="btn" href="/blog/">{MORE[l]}</a></div></article>')
-        lds.append({"@type":"Article","headline":d["title"],"description":d["desc"],"inLanguage":l,"datePublished":DATE,"dateModified":DATE,"author":{"@type":"Organization","name":"MG TECH"},"publisher":{"@type":"Organization","name":"MG TECH","logo":{"@type":"ImageObject","url":SITE+"/assets/img/logo-mark.png"}},"mainEntityOfPage":f"{SITE}/blog/{a['slug']}.html","image":SITE+"/assets/img/og-banner.jpg"})
+        lds.append({"@type":"Article","headline":d["title"],"description":d["desc"],"inLanguage":l,"datePublished":DATE,"dateModified":DATE,"author":{"@type":"Organization","name":"MG COAT"},"publisher":{"@type":"Organization","name":"MG COAT","logo":{"@type":"ImageObject","url":SITE+"/assets/img/logo-mark.png"}},"mainEntityOfPage":f"{SITE}/blog/{a['slug']}.html","image":SITE+"/assets/img/og-banner.jpg"})
     en=a["L"]["en"]
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>{html.escape(en['title'])} | MG TECH</title>
+<title>{html.escape(en['title'])} | MG COAT</title>
 <meta name="description" content="{html.escape(en['desc'])}"/>
 <meta name="keywords" content="{html.escape(a['kw'])}"/>
 <meta name="robots" content="index, follow"/>
@@ -514,7 +514,7 @@ def article_page(a):
 <main class="article"><div class="container prose">
 {posts}
 </div></main>
-<footer>© M.Ghanbari — MG TECH · Liquid PCB Plastic Coating. <a href="/">mgcoat.com</a></footer>
+<footer>© M.Ghanbari — MG COAT · Liquid PCB Plastic Coating. <a href="/">mgcoat.com</a></footer>
 {BLOGJS}
 </body></html>"""
 
@@ -534,11 +534,11 @@ idx=f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Blog — PCB Waterproofing & Protective Coating | MG TECH</title>
+<title>Blog — PCB Waterproofing & Protective Coating | MG COAT</title>
 <meta name="description" content="Guides on waterproofing PCBs, conformal vs plastic coatings and protecting electronics — in English, Russian, Turkish, Arabic and Persian."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="{SITE}/blog/"/>
-<meta property="og:type" content="website"/><meta property="og:title" content="MG TECH Blog"/>
+<meta property="og:type" content="website"/><meta property="og:title" content="MG COAT Blog"/>
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
 {FONTS}
@@ -549,7 +549,7 @@ idx=f"""<!DOCTYPE html>
 <main class="article"><div class="container prose">
 {posts}
 </div></main>
-<footer>© M.Ghanbari — MG TECH · Liquid PCB Plastic Coating. <a href="/">mgcoat.com</a></footer>
+<footer>© M.Ghanbari — MG COAT · Liquid PCB Plastic Coating. <a href="/">mgcoat.com</a></footer>
 {BLOGJS}
 </body></html>"""
 open("blog/index.html","w",encoding='utf-8').write(idx)

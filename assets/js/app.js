@@ -1,5 +1,5 @@
 /* ============================================================
-   MG TECH — interactive layer
+   MG COAT — interactive layer
    Language switching (lang/dir + URL + storage), scroll reveal,
    progress bar, sticky header state, back-to-top.
    ============================================================ */
