@@ -266,6 +266,59 @@
     nums.forEach(runCount);
   }
 
+  /* ---------- Background motion video: robust autoplay ----------
+     Native autoplay is unreliable on iOS (Low Power Mode, and videos that
+     start inside a hidden language section). Drive it from JS: keep it muted
+     + inline, play when scrolled into view, pause when out, and retry on the
+     first user gesture and on tab refocus. Honors reduced-motion. */
+  (function () {
+    var vids = Array.prototype.slice.call(document.querySelectorAll(".visual-video video"));
+    if (!vids.length) return;
+
+    vids.forEach(function (v) {
+      v.muted = true;            // attribute alone isn't always honored before play()
+      v.defaultMuted = true;
+      v.playsInline = true;
+      v.setAttribute("muted", "");
+      v.setAttribute("playsinline", "");
+    });
+
+    if (reduceMotion) return;    // leave the poster frame for reduced-motion users
+
+    function tryPlay(v) {
+      if (!v) return;
+      var p = v.play();
+      if (p && typeof p.catch === "function") p.catch(function () {});
+    }
+    function playVisible() {
+      vids.forEach(function (v) {
+        // a video inside a hidden language section has no layout box
+        if (v.offsetParent !== null || v.getClientRects().length) tryPlay(v);
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) tryPlay(e.target);
+          else if (!e.target.paused) e.target.pause();
+        });
+      }, { threshold: 0.1 });
+      vids.forEach(function (v) { vio.observe(v); });
+    } else {
+      vids.forEach(tryPlay);
+    }
+
+    // iOS blocks muted autoplay until a user gesture — retry once one happens.
+    ["touchstart", "pointerdown", "click", "keydown"].forEach(function (ev) {
+      window.addEventListener(ev, playVisible, { passive: true, once: true });
+    });
+    // Resume after returning to the tab (iOS pauses on background).
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) playVisible();
+    });
+  })();
+
   setLang(initialLang(), false);
 
   /* ---------- Scroll progress + header state + back-to-top ---------- */
