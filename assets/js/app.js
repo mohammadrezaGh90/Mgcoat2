@@ -211,6 +211,8 @@
 
     if (sections[lang]) armReveal(sections[lang]);
     armSpy(lang);
+    closeBadgePop();      // badge popover holds old-language text
+    syncAssist(lang);     // assistant greeting/chips follow the language
   }
 
   function initialLang() {
@@ -357,6 +359,292 @@
       if (!document.hidden) playVisible();
     });
   })();
+
+  /* ============================================================
+     Tappable hero badges — small localized popover per badge
+     ============================================================ */
+  var BADGE_SEC = ["technology", "technology", "technology", "tests", "tests", "technology"];
+  var BADGE_TIPS = {
+    en: { more: "Learn more →", tips: [
+      "A liquid nano-engineered layer that bonds to the board surface, sealing every trace and joint against water, humidity and corrosion.",
+      "Applies and cures at room temperature — no oven, no pre-heating. Safe even for heat-sensitive components and field repairs.",
+      "Layers stack perfectly: build from a thin film up to a thick reinforced barrier on edges, cable entries and repair zones.",
+      "Designed for 10+ years of protection under correct application and full curing — a long-term shield, not a temporary fix.",
+      "With proper sealing the system can be engineered for continuous immersion at 100 m depth and beyond. See our real water tests.",
+      "The non-transparent layer hides components and traces, making visual copying and reverse engineering far harder."
+    ]},
+    ru: { more: "Подробнее →", tips: [
+      "Жидкий наноструктурированный слой сцепляется с поверхностью платы, герметизируя дорожки и соединения от воды, влаги и коррозии.",
+      "Наносится и отверждается при комнатной температуре — без печи и нагрева. Безопасно даже для термочувствительных компонентов.",
+      "Слои идеально совмещаются: от тонкой плёнки до усиленного барьера на кромках, кабельных вводах и зонах ремонта.",
+      "Рассчитано на 10+ лет защиты при правильном нанесении и полном отверждении — долговременный щит, а не временное решение.",
+      "При правильной герметизации система рассчитана на постоянное погружение на глубину 100 м и более. Смотрите наши тесты.",
+      "Непрозрачный слой скрывает компоненты и дорожки, заметно усложняя копирование и реверс-инжиниринг."
+    ]},
+    tr: { more: "Daha fazla →", tips: [
+      "Sıvı nano katman kart yüzeyine bağlanır; tüm hatları ve bağlantıları suya, neme ve korozyona karşı mühürler.",
+      "Oda sıcaklığında uygulanır ve kurur — fırın yok, ısıtma yok. Isıya duyarlı bileşenler için bile güvenlidir.",
+      "Katmanlar üst üste mükemmel uyum sağlar: ince filmden, kenarlarda ve kablo girişlerinde kalın güçlendirilmiş bariyere.",
+      "Doğru uygulama ve tam kürlenmeyle 10+ yıl koruma hedefiyle tasarlandı — geçici değil, uzun vadeli bir kalkan.",
+      "Doğru sızdırmazlıkla sistem, 100 m ve üzeri derinlikte sürekli daldırma için tasarlanabilir. Gerçek su testlerimize bakın.",
+      "Opak katman bileşenleri ve hatları gizler; görsel kopyalamayı ve tersine mühendisliği çok zorlaştırır."
+    ]},
+    ar: { more: "اعرف المزيد ←", tips: [
+      "طبقة نانوية سائلة تلتصق بسطح اللوحة وتُحكم إغلاق المسارات والوصلات ضد الماء والرطوبة والتآكل.",
+      "تُطبَّق وتجفّ في درجة حرارة الغرفة — بلا فرن ولا تسخين. آمنة حتى للمكوّنات الحسّاسة للحرارة.",
+      "الطبقات تتراكب بتوافق تام: من غشاء رقيق إلى حاجز سميك معزّز على الحواف ومداخل الكابلات ومناطق الإصلاح.",
+      "مصمَّم لحماية تتجاوز 10 سنوات مع التطبيق الصحيح والجفاف الكامل — درع طويل الأمد لا حلّ مؤقت.",
+      "مع الإحكام الصحيح يمكن هندسة النظام للغمر المستمر حتى عمق 100 متر وأكثر. شاهد اختبارات الماء الحقيقية.",
+      "الطبقة غير الشفافة تخفي المكوّنات والمسارات، فتجعل النسخ والهندسة العكسية أصعب بكثير."
+    ]},
+    fa: { more: "بیشتر بدانید ←", tips: [
+      "لایه‌ای نانومهندسی‌شده و مایع که به سطح برد می‌چسبد و تمام مسیرها و اتصالات را در برابر آب، رطوبت و خوردگی مهروموم می‌کند.",
+      "در دمای اتاق اجرا و خشک می‌شود — بدون کوره و حرارت. حتی برای قطعات حساس به گرما و تعمیرات میدانی امن است.",
+      "لایه‌ها روی هم می‌نشینند: از یک فیلم نازک تا سپر ضخیم و تقویت‌شده روی لبه‌ها، ورودی کابل و نقاط تعمیر.",
+      "برای ۱۰ سال+ محافظت طراحی شده (با اجرای صحیح و خشک‌شدن کامل) — یک سپر بلندمدت، نه راه‌حل موقت.",
+      "با آب‌بندی صحیح، سیستم برای غوطه‌وری دائم تا عمق ۱۰۰ متر و بیشتر قابل مهندسی است. تست‌های واقعی آب را ببینید.",
+      "لایهٔ غیرشفاف قطعات و مسیرها را پنهان می‌کند و کپی‌برداری و مهندسی معکوس را بسیار دشوار می‌سازد."
+    ]}
+  };
+  var badgePop = document.createElement("div");
+  badgePop.className = "badge-pop";
+  document.body.appendChild(badgePop);
+  var badgeOpenEl = null;
+  function closeBadgePop() {
+    badgePop.classList.remove("show");
+    if (badgeOpenEl) { badgeOpenEl.classList.remove("open"); badgeOpenEl = null; }
+  }
+  function scrollToSec(sec) {
+    var el = document.getElementById(curLang + "-" + sec);
+    if (!el) return;
+    if (lenis) lenis.scrollTo(el, { offset: -64 }); else el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function openBadgePop(span) {
+    var row = span.parentElement;
+    var idx = Array.prototype.indexOf.call(row.children, span);
+    var pack = BADGE_TIPS[curLang] || BADGE_TIPS.en;
+    var tip = pack.tips[idx];
+    if (!tip) return;
+    badgePop.innerHTML = "";
+    var p = document.createElement("p"); p.textContent = tip; badgePop.appendChild(p);
+    var more = document.createElement("button");
+    more.type = "button"; more.className = "bp-more"; more.textContent = pack.more;
+    more.addEventListener("click", function () { closeBadgePop(); scrollToSec(BADGE_SEC[idx] || "technology"); });
+    badgePop.appendChild(more);
+    var r = span.getBoundingClientRect();
+    var pw = Math.min(300, window.innerWidth * 0.86);
+    var left = Math.max(12, Math.min(r.left + window.pageXOffset, document.documentElement.clientWidth - pw - 12));
+    badgePop.style.left = left + "px";
+    badgePop.style.top = (r.bottom + window.pageYOffset + 10) + "px";
+    badgePop.classList.add("show");
+    badgeOpenEl = span; span.classList.add("open");
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".badge-row span"), function (s) {
+    s.setAttribute("role", "button"); s.setAttribute("tabindex", "0");
+    s.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); s.click(); }
+    });
+  });
+  document.addEventListener("click", function (e) {
+    var span = e.target.closest ? e.target.closest(".badge-row span") : null;
+    if (span) {
+      if (badgeOpenEl === span) { closeBadgePop(); return; }
+      closeBadgePop(); openBadgePop(span); return;
+    }
+    if (!badgePop.contains(e.target)) closeBadgePop();
+  });
+  window.addEventListener("resize", closeBadgePop);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeBadgePop(); });
+
+  /* ============================================================
+     Site assistant — search + keyword Q&A over a built-in
+     knowledge base (static site: no server, so matching is
+     keyword-based; WhatsApp is the human fallback)
+     ============================================================ */
+  var WA_URL = "https://wa.me/905528767973";
+  var ASSIST_UI = {
+    en: { title: "MG COAT Assistant", hi: "Hi! 👋 I'm the MG COAT assistant. Ask me anything about the coating — or tap a question below.",
+          ph: "Ask or search…", no: "I don't have an exact answer for that yet — our team replies fast on WhatsApp!", wa: "Chat on WhatsApp",
+          chips: ["What is MG COAT?", "Does it work underwater?", "How is it applied?", "How can I order?"] },
+    ru: { title: "Ассистент MG COAT", hi: "Здравствуйте! 👋 Я ассистент MG COAT. Спросите что угодно о покрытии — или нажмите на вопрос ниже.",
+          ph: "Спросите или найдите…", no: "Точного ответа пока нет — наша команда быстро отвечает в WhatsApp!", wa: "Написать в WhatsApp",
+          chips: ["Что такое MG COAT?", "Работает под водой?", "Как наносится?", "Как заказать?"] },
+    tr: { title: "MG COAT Asistanı", hi: "Merhaba! 👋 MG COAT asistanıyım. Kaplama hakkında her şeyi sorabilirsiniz — veya aşağıdaki sorulara dokunun.",
+          ph: "Sorun veya arayın…", no: "Bunun için net bir cevabım yok — ekibimiz WhatsApp'tan hızla yanıtlıyor!", wa: "WhatsApp'tan yazın",
+          chips: ["MG COAT nedir?", "Su altında çalışır mı?", "Nasıl uygulanır?", "Nasıl sipariş verilir?"] },
+    ar: { title: "مساعد MG COAT", hi: "مرحباً! 👋 أنا مساعد MG COAT. اسألني أي شيء عن الطلاء — أو اضغط على سؤال أدناه.",
+          ph: "اسأل أو ابحث…", no: "ليس لديّ إجابة دقيقة بعد — فريقنا يرد سريعاً على واتساب!", wa: "تواصل عبر واتساب",
+          chips: ["ما هو MG COAT؟", "هل يعمل تحت الماء؟", "كيف يُطبَّق؟", "كيف أطلب؟"] },
+    fa: { title: "دستیار MG COAT", hi: "سلام! 👋 من دستیار MG COAT هستم. هر سؤالی دربارهٔ پوشش داری بپرس — یا یکی از سؤال‌های زیر را لمس کن.",
+          ph: "بپرس یا جستجو کن…", no: "هنوز جواب دقیقی برای این ندارم — تیم ما در واتساپ سریع پاسخ می‌دهد!", wa: "گفتگو در واتساپ",
+          chips: ["MG COAT چیست؟", "زیر آب کار می‌کند؟", "چطور اجرا می‌شود؟", "چطور سفارش بدهم؟"] }
+  };
+  /* entries: k = keywords (substring match), a = answer, l = links [{s:sectionId}|{h:href}, t:label] */
+  var ASSIST_KB = {
+    en: [
+      { k: ["what is", "about", "product", "mg coat", "mgcoat", "coating", "liquid"], a: "MG COAT Liquid PCB Plastic Coating is an industrial, plastic-based nano protective coating that waterproofs PCBs, sensors and electronic circuits — a strong, non-transparent, mechanically resistant layer, with no heat needed.", l: [{ s: "overview", t: "About →" }, { s: "technology", t: "Technology →" }] },
+      { k: ["heat", "oven", "cure", "curing", "temperature", "bake"], a: "No heat at all — it applies and fully cures at room temperature, so it's safe for heat-sensitive components and field repair.", l: [{ s: "technology", t: "Technology →" }] },
+      { k: ["water", "underwater", "immersion", "depth", "waterproof", "100", "sea", "rain", "humidity", "moisture", "ip68"], a: "Yes — with correct sealing and full curing the system can be engineered for continuous immersion at 100 m and beyond. We show real water tests on the site.", l: [{ s: "tests", t: "Tests →" }, { s: "video", t: "Watch the test →" }] },
+      { k: ["apply", "spray", "dip", "brush", "how to use", "install", "masking"], a: "Three methods: dipping for full coverage, spraying for even layers, and brush for local reinforcement (edges, cable entries, repair zones). Connectors and serviceable parts should be masked first.", l: [{ s: "technology", t: "Technology →" }, { h: "/blog/how-to-waterproof-a-pcb.html", t: "Guide: waterproof a PCB" }] },
+      { k: ["price", "cost", "quote", "order", "buy", "purchase", "payment", "ship"], a: "Send your request via the order form or WhatsApp — we reply quickly with pricing and details for your exact use case.", l: [{ s: "contact", t: "Order form →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["ecu", "car", "automotive", "drone", "fpv", "cctv", "camera", "led", "marine", "boat", "solar", "ev", "bms", "telecom", "motorcycle", "use case"], a: "It protects automotive ECUs, drones/FPV, CCTV, LED boards, marine sensors, EV/BMS, solar inverters, telecom units, power supplies and repair-shop work.", l: [{ s: "applications", t: "Applications →" }] },
+      { k: ["remove", "removal", "repair", "rework", "solvent", "fix", "service"], a: "Yes — it's removable with a dedicated solvent, so boards stay serviceable: rework one point, then re-coat to restore full protection.", l: [{ h: "/blog/how-to-remove-conformal-coating-pcb.html", t: "Guide: removing the coating" }] },
+      { k: ["color", "colour", "black", "white", "gray", "grey"], a: "Black, white and gray are standard; custom colors are available for industrial and private-label orders. The layer is non-transparent by design.", l: [{ s: "technology", t: "Technology →" }] },
+      { k: ["catalog", "catalogue", "brochure", "pdf", "download"], a: "The full catalogue is available in 5 languages as PDF:", l: [{ h: "/catalog/", t: "Catalogue ↓" }] },
+      { k: ["white paper", "whitepaper", "datasheet", "technical doc", "specification", "spec", "paper"], a: "Our technical white paper (EN/RU/TR/AR/FA) covers the science, comparisons and test framework:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
+      { k: ["partner", "reseller", "distributor", "wholesale", "agency", "represent"], a: "We welcome partners in sales, repair and industry — become the MG COAT reseller in your region.", l: [{ s: "partners", t: "Partnership →" }] },
+      { k: ["durab", "year", "lifetime", "long", "warranty", "scratch", "strength", "mechanical", "hard"], a: "After full curing it forms a hard, scratch-resistant layer with a 10-year-plus design target under correct application and conditions.", l: [{ s: "tests", t: "Tests →" }] }
+    ],
+    ru: [
+      { k: ["что такое", "о продукте", "mg coat", "mgcoat", "покрытие", "продукт"], a: "MG COAT Liquid PCB Plastic Coating — промышленное наноз­ащитное покрытие на пластиковой основе: гидроизолирует платы, датчики и схемы, образуя прочный непрозрачный механически стойкий слой без нагрева.", l: [{ s: "overview", t: "О нас →" }, { s: "technology", t: "Технология →" }] },
+      { k: ["нагрев", "печь", "температур", "отвержд", "запек"], a: "Нагрев не нужен — наносится и полностью отверждается при комнатной температуре. Безопасно для термочувствительных компонентов.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["вода", "под водой", "погружен", "глубин", "гидроизоляц", "влага", "дожд", "море", "100"], a: "Да — при правильной герметизации и полном отверждении система рассчитана на постоянное погружение на 100 м и более. На сайте есть реальные тесты с водой.", l: [{ s: "tests", t: "Тесты →" }, { s: "video", t: "Смотреть тест →" }] },
+      { k: ["нанес", "распыл", "окунан", "кист", "как использ", "примен", "маскир"], a: "Три способа: окунание для полного покрытия, распыление для равномерных слоёв, кисть для локального усиления (кромки, кабельные вводы, зоны ремонта). Разъёмы предварительно маскируются.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["цена", "стоимост", "заказ", "купить", "оплат", "прайс", "доставк"], a: "Отправьте запрос через форму заказа или WhatsApp — мы быстро ответим с ценой и деталями под вашу задачу.", l: [{ s: "contact", t: "Форма заказа →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["эбу", "ecu", "авто", "дрон", "fpv", "камер", "светодиод", "led", "морск", "солнечн", "телеком", "мото"], a: "Защищает автомобильные ЭБУ, дроны/FPV, камеры видеонаблюдения, LED-платы, морские датчики, EV/BMS, солнечные инверторы, телеком-блоки и ремонтные работы.", l: [{ s: "applications", t: "Применение →" }] },
+      { k: ["снять", "удал", "ремонт", "растворител", "довод"], a: "Да — покрытие снимается специальным растворителем, платы остаются ремонтопригодными: доработайте точку и нанесите слой заново.", l: [{ h: "/blog/how-to-remove-conformal-coating-pcb.html", t: "Гид: удаление покрытия" }] },
+      { k: ["цвет", "чёрн", "черн", "бел", "сер"], a: "Стандартные цвета: чёрный, белый, серый; для промышленных и private-label заказов возможны свои цвета. Слой непрозрачный по дизайну.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["каталог", "брошюр", "pdf", "скачать"], a: "Полный каталог доступен на 5 языках в PDF:", l: [{ h: "/catalog/", t: "Каталог ↓" }] },
+      { k: ["white paper", "технич", "документ", "даташит", "спецификац"], a: "Наш технический white paper (EN/RU/TR/AR/FA) — наука, сравнения и методика испытаний:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
+      { k: ["партн", "дилер", "дистриб", "опт", "представит"], a: "Мы открыты к партнёрству в продажах, ремонте и промышленности — станьте реселлером MG COAT в своём регионе.", l: [{ s: "partners", t: "Партнёрам →" }] },
+      { k: ["долговечн", "срок", "лет", "гарант", "царапин", "прочн", "механ"], a: "После полного отверждения образуется твёрдый, стойкий к царапинам слой с расчётным сроком службы 10+ лет при правильном нанесении.", l: [{ s: "tests", t: "Тесты →" }] }
+    ],
+    tr: [
+      { k: ["nedir", "hakkında", "mg coat", "mgcoat", "kaplama", "ürün"], a: "MG COAT Liquid PCB Plastic Coating; PCB'leri, sensörleri ve devreleri su geçirmez yapan, plastik esaslı endüstriyel bir nano koruyucu kaplamadır — ısı gerektirmeyen, güçlü, opak ve mekanik dirençli bir katman.", l: [{ s: "overview", t: "Hakkında →" }, { s: "technology", t: "Teknoloji →" }] },
+      { k: ["ısı", "fırın", "sıcaklık", "kürlen", "pişir"], a: "Hiç ısı gerekmez — oda sıcaklığında uygulanır ve tamamen kürlenir. Isıya duyarlı bileşenler için bile güvenlidir.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["su", "su altı", "daldırma", "derinlik", "su geçirmez", "nem", "yağmur", "deniz", "100"], a: "Evet — doğru sızdırmazlık ve tam kürlenmeyle sistem 100 m ve üzeri sürekli daldırma için tasarlanabilir. Sitede gerçek su testleri var.", l: [{ s: "tests", t: "Testler →" }, { s: "video", t: "Testi izle →" }] },
+      { k: ["uygula", "püskürt", "daldır", "fırça", "nasıl kullan", "maskele"], a: "Üç yöntem: tam kaplama için daldırma, eşit katmanlar için püskürtme, lokal güçlendirme için fırça (kenarlar, kablo girişleri, onarım bölgeleri). Konektörler önce maskelenmeli.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["fiyat", "maliyet", "teklif", "sipariş", "satın", "ödeme", "kargo"], a: "Talebinizi sipariş formundan veya WhatsApp'tan gönderin — kullanım senaryonuza göre fiyat ve detaylarla hızla dönüyoruz.", l: [{ s: "contact", t: "Sipariş formu →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["ecu", "araç", "araba", "drone", "fpv", "kamera", "led", "deniz", "güneş", "telekom", "motosiklet"], a: "Araç ECU'ları, drone/FPV, güvenlik kameraları, LED kartları, deniz sensörleri, EV/BMS, güneş inverterleri, telekom üniteleri ve tamirhane işlerini korur.", l: [{ s: "applications", t: "Uygulamalar →" }] },
+      { k: ["çıkar", "söküm", "onar", "çözücü", "rework", "tamir"], a: "Evet — özel bir çözücüyle sökülebilir; kartlar servis edilebilir kalır: tek noktayı reworklayıp yeniden kaplayın.", l: [{ h: "/blog/how-to-remove-conformal-coating-pcb.html", t: "Rehber: kaplama söküm" }] },
+      { k: ["renk", "siyah", "beyaz", "gri"], a: "Standart renkler siyah, beyaz ve gri; endüstriyel ve private-label siparişler için özel renkler üretilebilir. Katman tasarım gereği opaktır.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["katalog", "broşür", "pdf", "indir"], a: "Tam katalog 5 dilde PDF olarak mevcut:", l: [{ h: "/catalog/", t: "Katalog ↓" }] },
+      { k: ["white paper", "teknik dok", "datasheet", "şartname"], a: "Teknik white paper'ımız (EN/RU/TR/AR/FA) bilimi, karşılaştırmaları ve test çerçevesini kapsar:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
+      { k: ["bayi", "partner", "distribütör", "toptan", "temsilci", "iş ortak"], a: "Satış, tamir ve sanayide iş ortaklarına açığız — bölgenizin MG COAT bayisi olun.", l: [{ s: "partners", t: "İş Ortaklığı →" }] },
+      { k: ["dayanıklı", "yıl", "ömür", "garanti", "çizik", "mukavemet", "mekanik", "sert"], a: "Tam kürlenmeden sonra sert, çizilmeye dayanıklı bir katman oluşur; doğru uygulamayla 10+ yıl hedef dayanım.", l: [{ s: "tests", t: "Testler →" }] }
+    ],
+    ar: [
+      { k: ["ما هو", "عن المنتج", "mg coat", "mgcoat", "طلاء", "منتج"], a: "‏MG COAT Liquid PCB Plastic Coating طلاء حماية نانوي صناعي قائم على البلاستيك يعزل لوحات PCB والحساسات والدوائر عن الماء — طبقة قوية غير شفافة مقاومة ميكانيكياً وبدون حرارة.", l: [{ s: "overview", t: "من نحن ←" }, { s: "technology", t: "التقنية ←" }] },
+      { k: ["حرارة", "فرن", "تسخين", "تجفيف", "درجة"], a: "لا حاجة لأي حرارة — يُطبَّق ويجفّ تماماً في درجة حرارة الغرفة، فهو آمن للمكوّنات الحسّاسة للحرارة والإصلاح الميداني.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["ماء", "تحت الماء", "غمر", "عمق", "عازل", "رطوبة", "مطر", "بحر", "100"], a: "نعم — مع الإحكام الصحيح والجفاف الكامل يمكن هندسة النظام للغمر المستمر حتى 100 متر وأكثر. على الموقع اختبارات ماء حقيقية.", l: [{ s: "tests", t: "الاختبارات ←" }, { s: "video", t: "شاهد الاختبار ←" }] },
+      { k: ["تطبيق", "رش", "غمس", "فرشاة", "كيف يستخدم", "إخفاء", "تقنيع"], a: "ثلاث طرق: الغمس لتغطية كاملة، الرش لطبقات متساوية، والفرشاة للتقوية الموضعية (الحواف ومداخل الكابلات ومناطق الإصلاح). يجب تقنيع الموصلات أولاً.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["سعر", "تكلفة", "عرض", "طلب", "شراء", "دفع", "شحن"], a: "أرسل طلبك عبر نموذج الطلب أو واتساب — نرد سريعاً بالسعر والتفاصيل حسب حالتك.", l: [{ s: "contact", t: "نموذج الطلب ←" }, { h: WA_URL, t: "واتساب" }] },
+      { k: ["سيارة", "ecu", "درون", "طائرة", "كاميرا", "مراقبة", "led", "بحري", "شمسي", "اتصالات", "دراجة"], a: "يحمي وحدات ECU للسيارات، الدرونز/FPV، كاميرات المراقبة، لوحات LED، الحساسات البحرية، EV/BMS، عواكس الطاقة الشمسية، وحدات الاتصالات وأعمال الورش.", l: [{ s: "applications", t: "التطبيقات ←" }] },
+      { k: ["إزالة", "ازالة", "إصلاح", "اصلاح", "مذيب", "صيانة"], a: "نعم — يُزال بمذيب مخصص فتبقى اللوحات قابلة للصيانة: أصلح نقطة واحدة ثم أعد الطلاء لاستعادة الحماية.", l: [{ h: "/blog/how-to-remove-conformal-coating-pcb.html", t: "دليل: إزالة الطلاء" }] },
+      { k: ["لون", "ألوان", "الوان", "أسود", "اسود", "أبيض", "ابيض", "رمادي"], a: "الألوان القياسية: أسود وأبيض ورمادي؛ وتتوفر ألوان مخصّصة للطلبات الصناعية والعلامات الخاصة. الطبقة غير شفافة بالتصميم.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["كتالوج", "كتيب", "pdf", "تحميل", "تنزيل"], a: "الكتالوج الكامل متاح بخمس لغات بصيغة PDF:", l: [{ h: "/catalog/", t: "الكتالوج ↓" }] },
+      { k: ["white paper", "ورقة", "وثيقة", "مواصفات", "تقني"], a: "ورقتنا التقنية (EN/RU/TR/AR/FA) تغطي العلم والمقارنات وإطار الاختبار:", l: [{ h: "/whitepaper/", t: "الورقة التقنية ↓" }] },
+      { k: ["وكيل", "موزع", "شراكة", "جملة", "ممثل"], a: "نرحّب بالشركاء في البيع والإصلاح والصناعة — كن موزّع MG COAT في منطقتك.", l: [{ s: "partners", t: "الشراكة ←" }] },
+      { k: ["متانة", "سنوات", "عمر", "ضمان", "خدش", "قوة", "ميكانيك", "صلب"], a: "بعد الجفاف الكامل تتكوّن طبقة صلبة مقاومة للخدش بهدف تصميمي يتجاوز 10 سنوات مع التطبيق الصحيح.", l: [{ s: "tests", t: "الاختبارات ←" }] }
+    ],
+    fa: [
+      { k: ["چیست", "چیه", "درباره", "mg coat", "mgcoat", "محصول", "پوشش چ"], a: "‏MG COAT Liquid PCB Plastic Coating یک پوشش محافظ نانویی صنعتی بر پایهٔ پلاستیک است که بردها، سنسورها و مدارها را ضدآب می‌کند — لایه‌ای قوی، غیرشفاف و مقاوم مکانیکی، بدون نیاز به حرارت.", l: [{ s: "overview", t: "درباره ←" }, { s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["حرارت", "گرما", "دما", "کوره", "پخت", "خشک"], a: "اصلاً حرارت نمی‌خواهد — در دمای اتاق اجرا و کاملاً خشک می‌شود؛ برای قطعات حساس به گرما و تعمیر میدانی امن است.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["آب", "ضدآب", "ضد آب", "غوطه", "عمق", "دریا", "باران", "رطوبت", "زیر آب", "100", "۱۰۰"], a: "بله — با آب‌بندی صحیح و خشک‌شدن کامل، سیستم برای غوطه‌وری دائم تا عمق ۱۰۰ متر و بیشتر قابل مهندسی است. تست‌های واقعی آب در سایت هست.", l: [{ s: "tests", t: "تست‌ها ←" }, { s: "video", t: "دیدن تست ←" }] },
+      { k: ["اجرا", "اعمال", "اسپری", "غوطه‌وری", "قلم", "نحوه", "روش", "استفاده", "ماسک"], a: "سه روش: غوطه‌وری برای پوشش کامل، اسپری برای لایه‌های یکنواخت، و قلم‌مو برای تقویت موضعی (لبه‌ها، ورودی کابل، نقاط تعمیر). کانکتورها اول باید ماسک شوند.", l: [{ s: "technology", t: "تکنولوژی ←" }, { h: "/blog/how-to-waterproof-a-pcb.html", t: "راهنما: ضدآب‌کردن PCB" }] },
+      { k: ["قیمت", "هزینه", "خرید", "سفارش", "فاکتور", "پرداخت", "ارسال", "تهیه"], a: "درخواستت را از فرم سفارش یا واتساپ بفرست — سریع با قیمت و جزئیاتِ متناسب با کاربردت جواب می‌دهیم.", l: [{ s: "contact", t: "فرم سفارش ←" }, { h: WA_URL, t: "واتساپ" }] },
+      { k: ["ایسیو", "ecu", "خودرو", "ماشین", "پهپاد", "درون", "دوربین", "مداربسته", "ال‌ای‌دی", "led", "دریایی", "خورشیدی", "مخابرات", "موتور"], a: "از ایسیوی خودرو، پهپاد/FPV، دوربین مداربسته، بردهای LED، سنسورهای دریایی، EV/BMS، اینورتر خورشیدی، تجهیزات مخابراتی و کارهای تعمیرگاهی محافظت می‌کند.", l: [{ s: "applications", t: "کاربردها ←" }] },
+      { k: ["پاک", "حذف", "برداشتن", "تعمیر", "حلال", "سرویس"], a: "بله — با حلال مخصوص قابل برداشتن است؛ برد قابل‌سرویس می‌ماند: یک نقطه را تعمیر کن و دوباره پوشش بده.", l: [{ h: "/blog/how-to-remove-conformal-coating-pcb.html", t: "راهنما: برداشتن پوشش" }] },
+      { k: ["رنگ", "مشکی", "سفید", "خاکستری"], a: "رنگ‌های استاندارد: مشکی، سفید و خاکستری؛ برای سفارش‌های صنعتی و برند اختصاصی رنگ سفارشی هم تولید می‌شود. لایه عمداً غیرشفاف است.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["کاتالوگ", "بروشور", "pdf", "دانلود"], a: "کاتالوگ کامل به ۵ زبان به‌صورت PDF موجود است:", l: [{ h: "/catalog/", t: "کاتالوگ ↓" }] },
+      { k: ["وایت", "white paper", "دیتاشیت", "سند فنی", "مشخصات", "مقاله فنی"], a: "وایت‌پیپر فنی ما (EN/RU/TR/AR/FA) علم، مقایسه‌ها و چارچوب تست را پوشش می‌دهد:", l: [{ h: "/whitepaper/", t: "وایت‌پیپر ↓" }] },
+      { k: ["نمایندگی", "همکاری", "پخش", "عاملیت", "عمده", "نماینده"], a: "در فروش، تعمیر و صنعت از شریک استقبال می‌کنیم — نمایندهٔ MG COAT در منطقهٔ خودت باش.", l: [{ s: "partners", t: "همکاری با ما ←" }] },
+      { k: ["ماندگاری", "دوام", "سال", "عمر", "خش", "مقاومت", "گارانتی", "سخت"], a: "بعد از خشک‌شدن کامل، لایه‌ای سخت و مقاوم به خش تشکیل می‌شود با هدف طراحی ۱۰ سال+ در شرایط اجرای صحیح.", l: [{ s: "tests", t: "تست‌ها ←" }] }
+    ]
+  };
+  var assistFab = document.getElementById("assist-fab");
+  var assistPanel = document.getElementById("assist");
+  var assistBody = document.getElementById("assist-body");
+  var assistChips = document.getElementById("assist-chips");
+  var assistForm = document.getElementById("assist-form");
+  var assistInput = document.getElementById("assist-input");
+  var assistTitle = assistPanel ? assistPanel.querySelector(".assist-title") : null;
+  function assistNorm(s) {
+    return (s || "").toLowerCase().replace(/[ي]/g, "ی").replace(/[ك]/g, "ک").replace(/[ًٌٍَُِّْ]/g, "");
+  }
+  function assistMsg(kind, text, links) {
+    var m = document.createElement("div");
+    m.className = "assist-msg " + kind;
+    m.appendChild(document.createTextNode(text));
+    if (links && links.length) {
+      var row = document.createElement("div"); row.className = "am-links";
+      links.forEach(function (lk) {
+        var el;
+        if (lk.h) {
+          el = document.createElement("a"); el.href = lk.h;
+          if (/^https?:/.test(lk.h)) { el.target = "_blank"; el.rel = "noopener"; }
+        } else {
+          el = document.createElement("button"); el.type = "button";
+          el.addEventListener("click", function () { hideAssist(); scrollToSec(lk.s); });
+        }
+        el.className = "am-link"; el.textContent = lk.t;
+        row.appendChild(el);
+      });
+      m.appendChild(row);
+    }
+    assistBody.appendChild(m);
+    assistBody.scrollTop = assistBody.scrollHeight;
+  }
+  function assistAnswer(q) {
+    var ui = ASSIST_UI[curLang] || ASSIST_UI.en;
+    var kb = ASSIST_KB[curLang] || ASSIST_KB.en;
+    var nq = assistNorm(q);
+    var best = null, bestScore = 0;
+    kb.forEach(function (e) {
+      var score = 0;
+      e.k.forEach(function (kw) { if (nq.indexOf(assistNorm(kw)) !== -1) score += kw.length > 4 ? 2 : 1; });
+      if (score > bestScore) { bestScore = score; best = e; }
+    });
+    if (best) assistMsg("bot", best.a, best.l);
+    else assistMsg("bot", ui.no, [{ h: WA_URL, t: ui.wa }]);
+  }
+  function syncAssist(lang) {
+    if (!assistPanel) return;
+    var ui = ASSIST_UI[lang] || ASSIST_UI.en;
+    if (assistTitle) assistTitle.textContent = ui.title;
+    if (assistInput) assistInput.placeholder = ui.ph;
+    assistBody.innerHTML = "";
+    assistMsg("bot", ui.hi);
+    assistChips.innerHTML = "";
+    ui.chips.forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "assist-chip"; b.textContent = c;
+      b.addEventListener("click", function () { assistMsg("user", c); assistAnswer(c); });
+      assistChips.appendChild(b);
+    });
+  }
+  function showAssist() {
+    if (!assistPanel) return;
+    assistPanel.hidden = false;
+    requestAnimationFrame(function () { assistPanel.classList.add("show"); });
+    assistFab.setAttribute("aria-expanded", "true");
+    if (assistInput && window.innerWidth > 700) assistInput.focus();
+  }
+  function hideAssist() {
+    if (!assistPanel) return;
+    assistPanel.classList.remove("show");
+    assistFab.setAttribute("aria-expanded", "false");
+    setTimeout(function () { assistPanel.hidden = true; }, 250);
+  }
+  if (assistFab && assistPanel) {
+    assistFab.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (assistPanel.hidden) showAssist(); else hideAssist();
+    });
+    assistPanel.querySelector(".assist-close").addEventListener("click", hideAssist);
+    assistForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var q = assistInput.value.trim();
+      if (!q) return;
+      assistInput.value = "";
+      assistMsg("user", q);
+      assistAnswer(q);
+    });
+    document.addEventListener("click", function (e) {
+      if (!assistPanel.hidden && !assistPanel.contains(e.target) && e.target !== assistFab && !assistFab.contains(e.target)) hideAssist();
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideAssist(); });
+  }
 
   setLang(initialLang(), false);
 

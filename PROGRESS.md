@@ -21,6 +21,10 @@ Update this file whenever a task is finished or a new one is requested.
 - [x] Elevator auto-glide: 2s initial pause, 7s glide, soft quintic landing
 - [x] Language pill attention cue: fires 1s after the elevator lands, 3s red-neon pulse,
       soft vertical roll preview of all languages (page language does NOT change — preview only)
+- [x] Hero badges are tappable: localized glass popover (6 badges × 5 langs) + "Learn more" scroll link
+- [x] Site assistant: floating bot (bottom-start, above WhatsApp) with localized greeting/chips,
+      keyword Q&A over a built-in 12-topic knowledge base × 5 langs, section/blog/catalog links,
+      WhatsApp fallback when no match. Static-site only (no server/LLM)
 
 ## Remaining / Ideas
 - [ ] `assets/img/og-banner.jpg` (social-share image) may still show "MG TECH" — needs redesign (image file, not code)
