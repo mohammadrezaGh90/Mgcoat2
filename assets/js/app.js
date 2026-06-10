@@ -462,6 +462,12 @@
      keyword-based; WhatsApp is the human fallback)
      ============================================================ */
   var WA_URL = "https://wa.me/905528767973";
+  // Optional AI backend (Cloudflare Worker). When set, the assistant sends the
+  // question to a real model for an open-ended answer; when empty or on error,
+  // it falls back to the built-in keyword knowledge base below.
+  var ASSIST_API = ""; // e.g. "https://mgcoat-assistant.<your>.workers.dev"
+  var assistHistory = [];   // [{role:"user"|"assistant", content:"..."}]
+  var assistBusy = false;
   var ASSIST_UI = {
     en: { title: "MG COAT Assistant", hi: "Hi! 👋 I'm the MG COAT assistant. Ask me anything about the coating — or tap a question below.",
           ph: "Ask or search…", no: "I don't have an exact answer for that yet — our team replies fast on WhatsApp!", wa: "Chat on WhatsApp",
@@ -585,7 +591,8 @@
     assistBody.appendChild(m);
     assistBody.scrollTop = assistBody.scrollHeight;
   }
-  function assistAnswer(q) {
+  // keyword knowledge base — used as the offline fallback and when no AI backend
+  function assistAnswerKB(q) {
     var ui = ASSIST_UI[curLang] || ASSIST_UI.en;
     var kb = ASSIST_KB[curLang] || ASSIST_KB.en;
     var nq = assistNorm(q);
@@ -598,11 +605,50 @@
     if (best) assistMsg("bot", best.a, best.l);
     else assistMsg("bot", ui.no, [{ h: WA_URL, t: ui.wa }]);
   }
+  // typing indicator
+  function assistTyping(on) {
+    var ex = assistBody.querySelector(".assist-typing");
+    if (on) {
+      if (ex) return;
+      var t = document.createElement("div");
+      t.className = "assist-msg bot assist-typing";
+      t.innerHTML = "<span></span><span></span><span></span>";
+      assistBody.appendChild(t);
+      assistBody.scrollTop = assistBody.scrollHeight;
+    } else if (ex) { ex.parentNode.removeChild(ex); }
+  }
+  function assistAnswer(q) {
+    if (!ASSIST_API) { assistAnswerKB(q); return; }   // no backend → keyword mode
+    if (assistBusy) return;
+    assistBusy = true;
+    var ui = ASSIST_UI[curLang] || ASSIST_UI.en;
+    assistHistory.push({ role: "user", content: q });
+    assistTyping(true);
+    fetch(ASSIST_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lang: curLang, messages: assistHistory.slice(-10) })
+    }).then(function (r) {
+      if (!r.ok) throw new Error("bad status " + r.status);
+      return r.json();
+    }).then(function (data) {
+      assistTyping(false);
+      var reply = (data && data.reply ? String(data.reply) : "").trim();
+      if (!reply) throw new Error("empty reply");
+      assistHistory.push({ role: "assistant", content: reply });
+      assistMsg("bot", reply, [{ h: WA_URL, t: ui.wa }]);
+    }).catch(function () {
+      assistTyping(false);
+      assistHistory.pop();              // drop the unanswered turn
+      assistAnswerKB(q);                // graceful fallback to keyword mode
+    }).then(function () { assistBusy = false; });
+  }
   function syncAssist(lang) {
     if (!assistPanel) return;
     var ui = ASSIST_UI[lang] || ASSIST_UI.en;
     if (assistTitle) assistTitle.textContent = ui.title;
     if (assistInput) assistInput.placeholder = ui.ph;
+    assistHistory = [];   // a language switch starts a fresh conversation
     assistBody.innerHTML = "";
     assistMsg("bot", ui.hi);
     assistChips.innerHTML = "";

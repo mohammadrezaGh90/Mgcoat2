@@ -26,7 +26,13 @@ Update this file whenever a task is finished or a new one is requested.
       keyword Q&A over a built-in 12-topic knowledge base × 5 langs, section/blog/catalog links,
       WhatsApp fallback when no match. Static-site only (no server/LLM)
 
+- [x] AI assistant backend ready: `worker/mgcoat-assistant.js` (Cloudflare Worker, Claude+DeepSeek
+      switchable, MGCoat system prompt, 5-lang). Frontend wired via `ASSIST_API` const in app.js
+      with typing indicator + automatic keyword fallback. NOT yet live — needs owner to deploy the
+      Worker + provide the worker URL to set `ASSIST_API`. See `worker/README.md`.
+
 ## Remaining / Ideas
+- [ ] Deploy the Cloudflare Worker (owner) → set `ASSIST_API` in app.js to turn on the real AI assistant
 - [ ] `assets/img/og-banner.jpg` (social-share image) may still show "MG TECH" — needs redesign (image file, not code)
 - [ ] Professional "MG COAT" logo to replace the CSS hero lockup when ready
 - [ ] Favicons likely fine (icon-only MG mark) — verify on a real device

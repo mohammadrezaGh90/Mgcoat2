@@ -978,3 +978,13 @@ body::after {
 }
 .assist-send:hover { background: var(--red); color: #fff; }
 [dir=rtl] .assist-send { transform: scaleX(-1); }
+
+/* assistant "typing" indicator */
+.assist-typing { display: inline-flex; gap: 4px; align-items: center; }
+.assist-typing span {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--muted);
+  animation: assistType 1s var(--ease) infinite;
+}
+.assist-typing span:nth-child(2) { animation-delay: .15s; }
+.assist-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes assistType { 0%, 60%, 100% { opacity: .25; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
