@@ -12,7 +12,8 @@
   window.addEventListener("load", function () { window.scrollTo(0, 0); });
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var lenis = null; // smooth-scroll instance (set up below)
+  var lenis = null;       // smooth-scroll instance (set up below)
+  var userTook = false;   // set once the visitor takes manual control of scroll
 
   var LANGS = ["en", "ru", "tr", "ar", "fa"];
   var RTL = { ar: true, fa: true };
@@ -99,20 +100,26 @@
   }
 
   /* ---------- Attention cue: neon flash + in-place language preview ----------
-     Once the visitor reaches the hero, briefly glow the language pill and
-     riffle its flag/name through every language (without opening the menu),
-     then settle back on the current one — a 1s hint that the site is
-     multilingual. Runs at most once per page load. */
-  var attractShown = false;
+     After the elevator glide finishes (and a 1s beat), glow the language pill
+     in red neon for ~3s and softly roll its flag/name through the languages
+     (without opening the menu), settling back on the current one. This only
+     previews the label — the page language never changes here; it changes
+     only when the visitor picks one. Runs at most once per page load. */
+  var attractShown = false, attractQueued = false;
+  function queueAttract(delay) {
+    if (attractQueued || attractShown) return;
+    attractQueued = true;
+    setTimeout(flashLangSwitcher, delay || 0);
+  }
   function flashLangSwitcher() {
     if (attractShown || reduceMotion) return;
     attractShown = true;
     if (!langSelect || !ltLabel || !ltFlag || !ltName) return;
     langSelect.classList.add("attract");
-    // roll through every other language, then settle back on the current one.
-    // This only previews the label — the page language never changes here;
-    // it changes only when the visitor actually picks one from the menu.
-    var seq = LANGS.filter(function (l) { return l !== curLang; }).concat(curLang);
+    // roll through the other languages twice, then settle on the current one,
+    // spread over ~3s so each name glides in softly and stays readable.
+    var others = LANGS.filter(function (l) { return l !== curLang; });
+    var seq = others.concat(others).concat(curLang);
     function rollTo(lang) {
       var info = LANG_INFO[lang];
       if (info) { ltFlag.textContent = info.flag; ltName.textContent = info.name; }
@@ -121,6 +128,7 @@
       ltLabel.classList.add("roll");
     }
     var i = 0;
+    rollTo(seq[i++]);             // first frame immediately
     var iv = setInterval(function () {
       rollTo(seq[i]);
       i++;
@@ -128,7 +136,7 @@
         clearInterval(iv);
         langSelect.classList.remove("attract"); // ends on the real (current) language
       }
-    }, 200);
+    }, 360);
   }
 
   /* ---------- Reveal-on-scroll ---------- */
@@ -368,10 +376,10 @@
       toTop.hidden = false;
       toTop.classList.toggle("show", show);
     }
-    // fire the language attention cue once the visitor reaches the hero
-    // (covers the case where they scroll themselves and the auto-glide
-    //  never runs / never fires its onComplete).
-    if (!attractShown && st > window.innerHeight * 0.85) flashLangSwitcher();
+    // fallback: if the visitor scrolls themselves (so the auto-glide never
+    // runs / never fires its onComplete), still cue the pill ~1s after they
+    // reach the hero.
+    if (st > window.innerHeight * 0.85 && (userTook || !lenis)) queueAttract(1000);
     ticking = false;
   }
 
@@ -400,7 +408,6 @@
     lenis.scrollTo(0, { immediate: true });
 
     /* ---------- "Elevator": auto-glide through the intro if idle ---------- */
-    var userTook = false;
     function takeOver() {
       if (userTook) return;
       userTook = true;
@@ -424,7 +431,7 @@
         easing: function (t) {
           return t < 0.5 ? 16 * t * t * t * t * t : 1 - Math.pow(-2 * t + 2, 5) / 2;
         },
-        onComplete: flashLangSwitcher,   // draw the eye to the language pill
+        onComplete: function () { queueAttract(1000); }, // 1s beat, then the pill cue
       });
     }, 2000);
   }

@@ -721,24 +721,30 @@ footer a { color: var(--cyan); text-decoration: none; }
    flag/name preview inside it. */
 .lang-select.attract { z-index: 95; }
 .lang-select.attract .lang-trigger {
-  animation: langAttract 1s var(--ease) both;
+  animation: langAttract 3s var(--ease) both;
   will-change: box-shadow, transform;
 }
+/* gentle red neon that breathes ~4 times across the 3s window */
 @keyframes langAttract {
-  0%   { box-shadow: 0 0 0 0 rgba(255, 51, 64, 0);    border-color: var(--brd);  transform: scale(1); }
-  18%  { box-shadow: 0 0 0 3px rgba(255, 51, 64, .40), 0 0 22px 4px rgba(255, 51, 64, .6);  border-color: var(--red); transform: scale(1.07); }
-  42%  { box-shadow: 0 0 0 2px rgba(255, 51, 64, .22), 0 0 12px 2px rgba(255, 51, 64, .32); border-color: var(--red); transform: scale(1); }
-  64%  { box-shadow: 0 0 0 3px rgba(255, 51, 64, .40), 0 0 22px 4px rgba(255, 51, 64, .58); border-color: var(--red); transform: scale(1.05); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 51, 64, 0);    border-color: var(--brd);  transform: scale(1); }
+  0%   { box-shadow: 0 0 0 0 rgba(255, 51, 64, 0);    border-color: var(--brd); transform: scale(1); }
+  9%   { box-shadow: 0 0 0 3px rgba(255, 51, 64, .42), 0 0 24px 5px rgba(255, 51, 64, .62); border-color: var(--red); transform: scale(1.06); }
+  18%  { box-shadow: 0 0 0 2px rgba(255, 51, 64, .20), 0 0 12px 2px rgba(255, 51, 64, .28); border-color: var(--red); transform: scale(1); }
+  34%  { box-shadow: 0 0 0 3px rgba(255, 51, 64, .40), 0 0 22px 4px rgba(255, 51, 64, .58); border-color: var(--red); transform: scale(1.05); }
+  46%  { box-shadow: 0 0 0 2px rgba(255, 51, 64, .20), 0 0 12px 2px rgba(255, 51, 64, .28); border-color: var(--red); transform: scale(1); }
+  62%  { box-shadow: 0 0 0 3px rgba(255, 51, 64, .38), 0 0 22px 4px rgba(255, 51, 64, .54); border-color: var(--red); transform: scale(1.05); }
+  74%  { box-shadow: 0 0 0 2px rgba(255, 51, 64, .18), 0 0 10px 2px rgba(255, 51, 64, .24); border-color: var(--red); transform: scale(1); }
+  88%  { box-shadow: 0 0 0 2px rgba(255, 51, 64, .30), 0 0 16px 3px rgba(255, 51, 64, .4);  border-color: var(--red); transform: scale(1.03); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 51, 64, 0);    border-color: var(--brd); transform: scale(1); }
 }
 
-/* vertical "roll" of the language label inside the pill (slot-machine feel) */
+/* soft vertical "roll" of the language label inside the pill */
 .lt-view { display: inline-flex; align-items: center; overflow: hidden; }
 .lt-label { display: inline-flex; align-items: center; gap: 8px; }
-.lt-label.roll { animation: ltRoll .2s var(--ease); }
+.lt-label.roll { animation: ltRoll .36s cubic-bezier(.22, .9, .3, 1); }
 @keyframes ltRoll {
-  0%   { transform: translateY(115%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0%   { transform: translateY(85%);  opacity: 0; }
+  55%  { opacity: 1; }
+  100% { transform: translateY(0);    opacity: 1; }
 }
 .lt-flag { font-size: 15px; line-height: 1; }
 .lt-chev { font-size: 10px; color: var(--muted); transition: transform .25s var(--ease); }
