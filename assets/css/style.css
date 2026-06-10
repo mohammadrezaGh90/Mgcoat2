@@ -515,13 +515,16 @@ footer { background: rgba(7, 9, 16, .6); color: var(--muted); text-align: center
 /* ---------- Back to top ---------- */
 #to-top {
   position: fixed; inset-block-end: 22px; inset-inline-end: 22px; z-index: 90;
-  width: 46px; height: 46px; border: 1px solid var(--brd); border-radius: 50%;
-  background: rgba(7, 9, 16, .75); color: var(--cyan); font-size: 20px; cursor: pointer;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  opacity: 0; transform: translateY(10px); transition: opacity .3s var(--ease), transform .3s var(--ease);
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(84, 216, 236, .4); color: var(--cyan); font-size: 20px; cursor: pointer;
+  background: rgba(255, 255, 255, .06);
+  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .3), 0 0 14px rgba(84, 216, 236, .28), inset 0 1px 0 rgba(255, 255, 255, .12);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
 }
 #to-top.show { opacity: 1; transform: translateY(0); }
-#to-top:hover { color: #fff; border-color: var(--brd-2); }
+#to-top:hover { color: #fff; background: rgba(84, 216, 236, .14); box-shadow: 0 10px 28px rgba(0, 0, 0, .35), 0 0 22px rgba(84, 216, 236, .5); }
 
 /* ============================================================
    SCROLL REVEAL
@@ -649,8 +652,8 @@ footer { background: rgba(7, 9, 16, .6); color: var(--muted); text-align: center
   width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
   background: rgba(255, 255, 255, .07);
   backdrop-filter: blur(14px) saturate(150%); -webkit-backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, .18);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  border: 1px solid rgba(46, 224, 106, .4);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .3), 0 0 16px rgba(46, 224, 106, .3), inset 0 1px 0 rgba(255, 255, 255, .12);
   text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s, border-color .25s, background .25s;
   animation: wapulse 2.8s ease-out infinite;
 }
@@ -914,20 +917,23 @@ body::after {
 #assist-fab {
   position: fixed; inset-block-end: 88px; inset-inline-start: 22px; z-index: 95;
   width: 58px; height: 58px; border-radius: 50%; cursor: pointer; isolation: isolate;
-  border: 0; color: #fff;
-  background: radial-gradient(120% 120% at 30% 20%, #ff5b66 0%, var(--red) 45%, #c5121f 100%);
+  color: var(--red);
+  /* frosted glass + red neon */
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 90, 100, .5);
+  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 10px 26px rgba(229, 6, 19, .42), 0 0 0 1px rgba(255, 120, 130, .35) inset;
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .3), 0 0 18px rgba(255, 51, 64, .4), inset 0 1px 0 rgba(255, 255, 255, .14);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
 }
-#assist-fab svg { width: 27px; height: 27px; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .25)); }
+#assist-fab svg { width: 27px; height: 27px; filter: drop-shadow(0 0 6px rgba(255, 51, 64, .6)); }
 /* soft pulsing ring to draw the eye */
 #assist-fab::after {
   content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: -1;
   border: 2px solid var(--red); animation: fabPing 2.4s var(--ease) infinite;
 }
 @keyframes fabPing { 0% { opacity: .55; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.7); } }
-#assist-fab:hover { transform: scale(1.07) translateY(-1px); box-shadow: 0 14px 32px rgba(229, 6, 19, .55); }
+#assist-fab:hover { transform: scale(1.07) translateY(-1px); background: rgba(255, 51, 64, .14); box-shadow: 0 12px 32px rgba(0, 0, 0, .35), 0 0 26px rgba(255, 51, 64, .6); }
 .fab-dot {
   position: absolute; inset-block-start: 5px; inset-inline-end: 5px;
   width: 11px; height: 11px; border-radius: 50%; background: #2ee06a;
