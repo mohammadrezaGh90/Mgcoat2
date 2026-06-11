@@ -647,27 +647,74 @@ footer { background: rgba(7, 9, 16, .6); color: var(--muted); text-align: center
 @media (max-width: 360px) { .stats .container { grid-template-columns: 1fr; } .stat::before { display: none !important; } }
 
 /* ---------- Floating WhatsApp ---------- */
-.wa-float {
+/* ============================================================
+   Speed-dial: one button → WhatsApp + Chat (glass + neon)
+   ============================================================ */
+.fab-stack {
   position: fixed; inset-block-end: 22px; inset-inline-start: 22px; z-index: 95;
-  width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
-  background: rgba(255, 255, 255, .07);
-  backdrop-filter: blur(14px) saturate(150%); -webkit-backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(46, 224, 106, .4);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, .3), 0 0 16px rgba(46, 224, 106, .3), inset 0 1px 0 rgba(255, 255, 255, .12);
-  text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s, border-color .25s, background .25s;
-  animation: wapulse 2.8s ease-out infinite;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 13px;
 }
-.wa-float:hover {
-  transform: scale(1.08); background: rgba(37, 211, 102, .16);
-  border-color: rgba(37, 211, 102, .55); box-shadow: 0 16px 40px rgba(37, 211, 102, .35);
+.fab-main {
+  position: relative; width: 58px; height: 58px; border-radius: 50%; cursor: pointer; isolation: isolate;
+  color: var(--red); border: 1px solid rgba(255, 90, 100, .5);
+  background: rgba(255, 255, 255, .06);
+  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .3), 0 0 18px rgba(255, 51, 64, .4), inset 0 1px 0 rgba(255, 255, 255, .14);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
 }
-.wa-float svg { width: 28px; height: 28px; fill: #2ee06a; filter: drop-shadow(0 0 6px rgba(37, 211, 102, .5)); }
-@keyframes wapulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .35), 0 10px 30px rgba(0, 0, 0, .35); }
-  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0), 0 10px 30px rgba(0, 0, 0, .35); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 10px 30px rgba(0, 0, 0, .35); }
+.fab-main:hover { transform: scale(1.07); background: rgba(255, 51, 64, .14); box-shadow: 0 12px 32px rgba(0, 0, 0, .35), 0 0 26px rgba(255, 51, 64, .6); }
+.fab-i { position: absolute; display: grid; place-items: center; transition: opacity .25s var(--ease), transform .3s var(--ease); }
+.fab-i svg { width: 26px; height: 26px; filter: drop-shadow(0 0 6px rgba(255, 51, 64, .55)); }
+.fab-i-close { font-size: 21px; line-height: 1; color: #fff; opacity: 0; transform: rotate(-90deg) scale(.5); }
+.fab-stack.open .fab-i-chat { opacity: 0; transform: rotate(90deg) scale(.5); }
+.fab-stack.open .fab-i-close { opacity: 1; transform: none; }
+.fab-main::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: -1;
+  border: 2px solid var(--red); animation: fabPing 2.4s var(--ease) infinite;
 }
-@media (max-width: 600px) { .wa-float { width: 50px; height: 50px; inset-block-end: 18px; inset-inline-start: 16px; } }
+.fab-stack.open .fab-main::after { animation: none; opacity: 0; }
+@keyframes fabPing { 0% { opacity: .55; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.7); } }
+.fab-dot {
+  position: absolute; inset-block-start: 5px; inset-inline-end: 5px;
+  width: 11px; height: 11px; border-radius: 50%; background: #2ee06a;
+  border: 2px solid #0b0e16; box-shadow: 0 0 8px rgba(46, 224, 106, .7); transition: opacity .2s var(--ease);
+}
+.fab-stack.open .fab-dot { opacity: 0; }
+/* action rows (icon + label) — hidden until the stack is open */
+.fab-action {
+  display: inline-flex; align-items: center; gap: 11px; text-decoration: none;
+  border: 0; background: none; padding: 0; cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(14px) scale(.6); transform-origin: center;
+  pointer-events: none; transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+}
+.fab-stack.open .fab-action { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+.fab-stack.open .fab-chat { transition-delay: .04s; }
+.fab-stack.open .fab-wa { transition-delay: .09s; }
+.fab-ico {
+  order: 0; width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: rgba(255, 255, 255, .06);
+  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .14);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.fab-ico svg { width: 24px; height: 24px; }
+.fab-action:hover .fab-ico { transform: scale(1.09); }
+.fab-label {
+  order: 1; white-space: nowrap; font-size: 12px; font-weight: 600; color: #fff;
+  padding: 6px 13px; border-radius: 999px;
+  background: rgba(10, 13, 21, .82); border: 1px solid rgba(255, 255, 255, .14);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+}
+.fab-wa { color: #2ee06a; }
+.fab-wa .fab-ico { border-color: rgba(46, 224, 106, .5); box-shadow: 0 6px 18px rgba(0, 0, 0, .3), 0 0 16px rgba(46, 224, 106, .35), inset 0 1px 0 rgba(255, 255, 255, .14); }
+.fab-chat { color: var(--red); }
+.fab-chat .fab-ico { border-color: rgba(255, 90, 100, .5); box-shadow: 0 6px 18px rgba(0, 0, 0, .3), 0 0 16px rgba(255, 51, 64, .35), inset 0 1px 0 rgba(255, 255, 255, .14); }
+.fab-ico svg { fill: currentColor; }
+@media (max-width: 600px) { .fab-stack { inset-block-end: 18px; inset-inline-start: 16px; } .fab-main { width: 54px; height: 54px; } .fab-ico { width: 46px; height: 46px; } }
+@media (prefers-reduced-motion: reduce) { .fab-main::after { animation: none; } }
 
 /* slightly tighter, more corporate headings */
 h1, .intro-title, .section-title, .statement h2 { font-feature-settings: "ss01" 1, "cv01" 1; }
@@ -914,32 +961,6 @@ body::after {
 /* ============================================================
    Site assistant — premium chat widget
    ============================================================ */
-#assist-fab {
-  position: fixed; inset-block-end: 88px; inset-inline-start: 22px; z-index: 95;
-  width: 58px; height: 58px; border-radius: 50%; cursor: pointer; isolation: isolate;
-  color: var(--red);
-  /* frosted glass + red neon */
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(255, 90, 100, .5);
-  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 26px rgba(0, 0, 0, .3), 0 0 18px rgba(255, 51, 64, .4), inset 0 1px 0 rgba(255, 255, 255, .14);
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
-}
-#assist-fab svg { width: 27px; height: 27px; filter: drop-shadow(0 0 6px rgba(255, 51, 64, .6)); }
-/* soft pulsing ring to draw the eye */
-#assist-fab::after {
-  content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: -1;
-  border: 2px solid var(--red); animation: fabPing 2.4s var(--ease) infinite;
-}
-@keyframes fabPing { 0% { opacity: .55; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.7); } }
-#assist-fab:hover { transform: scale(1.07) translateY(-1px); background: rgba(255, 51, 64, .14); box-shadow: 0 12px 32px rgba(0, 0, 0, .35), 0 0 26px rgba(255, 51, 64, .6); }
-.fab-dot {
-  position: absolute; inset-block-start: 5px; inset-inline-end: 5px;
-  width: 11px; height: 11px; border-radius: 50%; background: #2ee06a;
-  border: 2px solid #0b0e16; box-shadow: 0 0 8px rgba(46, 224, 106, .7);
-}
-@media (max-width: 600px) { #assist-fab { width: 52px; height: 52px; inset-block-end: 82px; inset-inline-start: 16px; } }
 
 .assist {
   position: fixed; z-index: 96; inset-block-end: 156px; inset-inline-start: 22px;
@@ -1058,7 +1079,7 @@ body::after {
 .assist-typing span:nth-child(2) { animation-delay: .15s; }
 .assist-typing span:nth-child(3) { animation-delay: .3s; }
 @keyframes assistType { 0%, 60%, 100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
-@media (prefers-reduced-motion: reduce) { #assist-fab::after, .assist-status::before { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .assist-status::before { animation: none; } }
 
 /* tilt-to-scroll toggle (mobile/tablet only; injected by JS when sensors exist) */
 .tilt-toggle {

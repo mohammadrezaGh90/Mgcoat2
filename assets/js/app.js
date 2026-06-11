@@ -592,7 +592,9 @@
       { k: ["آدرس", "مکان", "کجا", "کجاست", "شهر", "کشور", "استانبول", "ترکیه", "دفتر", "محل"], a: "ما در استانبولِ ترکیه هستیم و به مشتریان آنجا، ایران و سراسر دنیا خدمت می‌دهیم.", l: [{ s: "contact", t: "تماس ←" }, { h: WA_URL, t: "واتساپ" }] }
     ]
   };
-  var assistFab = document.getElementById("assist-fab");
+  var fabStack = document.getElementById("fab-stack");
+  var fabMain = document.getElementById("fab-main");
+  var assistFab = document.getElementById("fab-chat");   // chat action opens the panel
   var assistPanel = document.getElementById("assist");
   var assistBody = document.getElementById("assist-body");
   var assistChips = document.getElementById("assist-chips");
@@ -604,6 +606,8 @@
     en: "Online · replies in seconds", ru: "Онлайн · ответит за секунды",
     tr: "Çevrimiçi · saniyede yanıt", ar: "متصل · يرد خلال ثوانٍ", fa: "آنلاین · پاسخ در چند ثانیه"
   };
+  var FAB_CHAT_LABEL = { en: "Chat", ru: "Чат", tr: "Sohbet", ar: "محادثة", fa: "گفتگو" };
+  var fabChatLabelEl = document.querySelector(".fab-chat-label");
   function assistNorm(s) {
     return (s || "").toLowerCase().replace(/[ي]/g, "ی").replace(/[ك]/g, "ک").replace(/[ًٌٍَُِّْ]/g, "");
   }
@@ -687,6 +691,7 @@
     var ui = ASSIST_UI[lang] || ASSIST_UI.en;
     if (assistTitle) assistTitle.textContent = ui.title;
     if (assistStatus) assistStatus.textContent = ASSIST_STATUS[lang] || ASSIST_STATUS.en;
+    if (fabChatLabelEl) { var cl = FAB_CHAT_LABEL[lang] || FAB_CHAT_LABEL.en; fabChatLabelEl.textContent = cl; if (assistFab) assistFab.setAttribute("aria-label", cl); }
     if (assistInput) assistInput.placeholder = ui.ph;
     assistHistory = [];   // a language switch starts a fresh conversation
     assistBody.innerHTML = "";
@@ -699,17 +704,40 @@
       assistChips.appendChild(b);
     });
   }
+  /* ---------- speed-dial (one button → WhatsApp + Chat) ---------- */
+  function openFabStack() {
+    if (!fabStack) return;
+    fabStack.classList.add("open");
+    if (fabMain) fabMain.setAttribute("aria-expanded", "true");
+  }
+  function closeFabStack() {
+    if (!fabStack) return;
+    fabStack.classList.remove("open");
+    if (fabMain) fabMain.setAttribute("aria-expanded", "false");
+  }
+  if (fabMain && fabStack) {
+    fabMain.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (fabStack.classList.contains("open")) closeFabStack();
+      else { hideAssist(); openFabStack(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (fabStack.classList.contains("open") && !fabStack.contains(e.target)) closeFabStack();
+    });
+  }
+
   function showAssist() {
     if (!assistPanel) return;
+    closeFabStack();
     assistPanel.hidden = false;
     requestAnimationFrame(function () { assistPanel.classList.add("show"); });
-    assistFab.setAttribute("aria-expanded", "true");
+    if (assistFab) assistFab.setAttribute("aria-expanded", "true");
     if (assistInput && window.innerWidth > 700) assistInput.focus();
   }
   function hideAssist() {
     if (!assistPanel) return;
     assistPanel.classList.remove("show");
-    assistFab.setAttribute("aria-expanded", "false");
+    if (assistFab) assistFab.setAttribute("aria-expanded", "false");
     setTimeout(function () { assistPanel.hidden = true; }, 250);
   }
   if (assistFab && assistPanel) {
@@ -727,9 +755,9 @@
       assistAnswer(q);
     });
     document.addEventListener("click", function (e) {
-      if (!assistPanel.hidden && !assistPanel.contains(e.target) && e.target !== assistFab && !assistFab.contains(e.target)) hideAssist();
+      if (!assistPanel.hidden && !assistPanel.contains(e.target) && (!fabStack || !fabStack.contains(e.target))) hideAssist();
     });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideAssist(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { hideAssist(); closeFabStack(); } });
   }
 
   /* ============================================================
