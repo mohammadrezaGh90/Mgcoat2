@@ -974,6 +974,9 @@ body::after {
   transition: opacity .28s var(--ease), transform .28s var(--ease);
 }
 .assist.show { opacity: 1; transform: none; }
+/* must beat ".assist { display:flex }" so the panel is truly removed when closed
+   (otherwise the invisible panel overlaps and steals clicks from the speed-dial) */
+.assist[hidden] { display: none; }
 @media (max-width: 600px) { .assist { inset-block-end: 142px; inset-inline-start: 16px; } }
 
 /* header */
