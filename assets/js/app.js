@@ -850,6 +850,13 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fixLangPillWidth);
   else setTimeout(fixLangPillWidth, 400);
 
+  // let inner scroll areas (wide tables, chat body, language menu) scroll natively
+  // instead of being hijacked by Lenis smooth-scroll.
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".table-wrap, .assist-body, .lang-menu"),
+    function (el) { el.setAttribute("data-lenis-prevent", ""); }
+  );
+
   /* ---------- Scroll progress + header state + back-to-top ---------- */
   var bar = document.getElementById("scroll-progress");
   var header = document.querySelector(".site-header");
