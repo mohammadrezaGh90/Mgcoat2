@@ -502,6 +502,7 @@ def article_page(a):
 <meta name="keywords" content="{html.escape(a['kw'])}"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="{SITE}/blog/{a['slug']}.html"/>
+{"".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}/blog/{a["slug"]}.html?lang={l}"/>' for l in LANGS)}<link rel="alternate" hreflang="x-default" href="{SITE}/blog/{a['slug']}.html"/>
 <meta property="og:type" content="article"/><meta property="og:title" content="{html.escape(en['title'])}"/>
 <meta property="og:description" content="{html.escape(en['desc'])}"/><meta property="og:url" content="{SITE}/blog/{a['slug']}.html"/>
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
@@ -539,6 +540,7 @@ idx=f"""<!DOCTYPE html>
 <meta name="description" content="Guides on waterproofing PCBs, conformal vs plastic coatings and protecting electronics — in English, Russian, Turkish, Arabic and Persian."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="{SITE}/blog/"/>
+{"".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}/blog/?lang={l}"/>' for l in LANGS)}<link rel="alternate" hreflang="x-default" href="{SITE}/blog/"/>
 <meta property="og:type" content="website"/><meta property="og:title" content="MGCoat Blog"/>
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
