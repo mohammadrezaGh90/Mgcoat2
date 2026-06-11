@@ -81,7 +81,7 @@
   var LANG_INFO = {};
   buttons.forEach(function (b) {
     var sp = b.querySelectorAll("span");
-    LANG_INFO[b.dataset.lang] = { flag: sp[0] ? sp[0].textContent : "", name: sp[1] ? sp[1].textContent : b.dataset.lang };
+    LANG_INFO[b.dataset.lang] = { flag: sp[0] ? sp[0].textContent : "", flagHTML: sp[0] ? sp[0].innerHTML : "", name: sp[1] ? sp[1].textContent : b.dataset.lang };
   });
   function closeLangMenu() {
     if (langSelect) langSelect.classList.remove("open");
@@ -119,7 +119,7 @@
     if (langSelect) langSelect.classList.remove("attract");
     if (ltLabel) ltLabel.classList.remove("roll");
     var info = LANG_INFO[curLang] || LANG_INFO.en;
-    if (info && ltFlag && ltName) { ltFlag.textContent = info.flag; ltName.textContent = info.name; }
+    if (info && ltFlag && ltName) { ltFlag.innerHTML = info.flagHTML; ltName.textContent = info.name; }
   }
   function flashLangSwitcher() {
     if (attractShown || reduceMotion) return;
@@ -132,7 +132,7 @@
     var seq = others.concat(others).concat(curLang);
     function rollTo(lang) {
       var info = LANG_INFO[lang];
-      if (info) { ltFlag.textContent = info.flag; ltName.textContent = info.name; }
+      if (info) { ltFlag.innerHTML = info.flagHTML; ltName.textContent = info.name; }
       ltLabel.classList.remove("roll");
       void ltLabel.offsetWidth;   // force reflow so the roll animation restarts
       ltLabel.classList.add("roll");
@@ -152,13 +152,13 @@
   function fixLangPillWidth() {
     var view = document.querySelector(".lt-view");
     if (!view || !ltLabel || !ltFlag || !ltName) return;
-    var keepF = ltFlag.textContent, keepN = ltName.textContent, max = 0;
+    var keepF = ltFlag.innerHTML, keepN = ltName.textContent, max = 0;
     LANGS.forEach(function (l) {
       var info = LANG_INFO[l]; if (!info) return;
-      ltFlag.textContent = info.flag; ltName.textContent = info.name;
+      ltFlag.innerHTML = info.flagHTML; ltName.textContent = info.name;
       if (ltLabel.offsetWidth > max) max = ltLabel.offsetWidth;
     });
-    ltFlag.textContent = keepF; ltName.textContent = keepN;
+    ltFlag.innerHTML = keepF; ltName.textContent = keepN;
     if (max) view.style.minWidth = max + "px";
   }
 
@@ -206,7 +206,7 @@
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
     var info = LANG_INFO[lang];
-    if (info) { if (ltFlag) ltFlag.textContent = info.flag; if (ltName) ltName.textContent = info.name; }
+    if (info) { if (ltFlag) ltFlag.innerHTML = info.flagHTML; if (ltName) ltName.textContent = info.name; }
 
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
@@ -516,7 +516,7 @@
     en: [
       { k: ["what is", "about", "product", "mg coat", "mgcoat", "coating", "liquid"], a: "MG COAT Liquid PCB Plastic Coating is an industrial, plastic-based nano protective coating that waterproofs PCBs, sensors and electronic circuits — a strong, non-transparent, mechanically resistant layer, with no heat needed.", l: [{ s: "overview", t: "About →" }, { s: "technology", t: "Technology →" }] },
       { k: ["heat", "oven", "cure", "curing", "temperature", "bake"], a: "No heat at all — it applies and fully cures at room temperature, so it's safe for heat-sensitive components and field repair.", l: [{ s: "technology", t: "Technology →" }] },
-      { k: ["water", "underwater", "immersion", "depth", "waterproof", "100", "sea", "rain", "humidity", "moisture", "ip68"], a: "Yes — with correct sealing and full curing the system can be engineered for continuous immersion at 100 m and beyond. We show real water tests on the site.", l: [{ s: "tests", t: "Tests →" }, { s: "video", t: "Watch the test →" }] },
+      { k: ["water", "underwater", "immersion", "depth", "waterproof", "100", "sea", "rain", "humidity", "moisture", "ip68"], a: "Yes — with correct sealing and full curing the system can be engineered for continuous immersion at 100 m and beyond. We show real water tests on the site.", l: [{ s: "tests", t: "Tests →" }, { h: "/catalog/", t: "Watch the test →" }] },
       { k: ["apply", "spray", "dip", "brush", "how to use", "install", "masking"], a: "Three methods: dipping for full coverage, spraying for even layers, and brush for local reinforcement (edges, cable entries, repair zones). Connectors and serviceable parts should be masked first.", l: [{ s: "technology", t: "Technology →" }, { h: "/blog/how-to-waterproof-a-pcb.html", t: "Guide: waterproof a PCB" }] },
       { k: ["price", "cost", "quote", "order", "buy", "purchase", "payment", "ship"], a: "Send your request via the order form or WhatsApp — we reply quickly with pricing and details for your exact use case.", l: [{ s: "contact", t: "Order form →" }, { h: WA_URL, t: "WhatsApp" }] },
       { k: ["ecu", "car", "automotive", "drone", "fpv", "cctv", "camera", "led", "marine", "boat", "solar", "ev", "bms", "telecom", "motorcycle", "use case"], a: "It protects automotive ECUs, drones/FPV, CCTV, LED boards, marine sensors, EV/BMS, solar inverters, telecom units, power supplies and repair-shop work.", l: [{ s: "applications", t: "Applications →" }] },
@@ -545,14 +545,14 @@
       { k: ["antenna", "signal", "wifi", "wi-fi", "gps", "bluetooth", "reception", "rf"], a: "The coating is non-metallic and insulating, so at normal thickness it doesn't noticeably affect WiFi/GPS/Bluetooth. As best practice, mask antenna elements before coating.", l: [{ s: "technology", t: "Technology →" }] },
       { k: ["guarantee", "certificate", "quality assurance", "conformity"], a: "Quality is engineered in: a 10-year-plus design target, a documented application process and real water tests. For commercial terms and conformity documents, contact our team.", l: [{ s: "tests", t: "Tests →" }, { h: WA_URL, t: "WhatsApp" }] },
       { k: ["weight", "heavy", "grams", "mass"], a: "A thin, even layer adds almost no weight — that's why it's used on drones and weight-sensitive electronics (unlike potting, which can multiply a module's weight).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Coating vs potting" }] },
-      { k: ["video", "watch", "demo", "test video", "footage"], a: "Yes — the real water-protection test plays right on the site, with more on our YouTube channel.", l: [{ s: "video", t: "Watch the test →" }, { s: "tests", t: "Tests →" }] },
+      { k: ["video", "watch", "demo", "test video", "footage"], a: "Yes — the real water-protection test plays right on the site, with more on our YouTube channel.", l: [{ h: "/catalog/", t: "Watch the test →" }, { s: "tests", t: "Tests →" }] },
       { k: ["blog", "article", "guide", "tutorial", "learn more", "read more"], a: "Our blog has 9 practical guides — waterproofing PCBs, drones, CCTV, ECUs, coating removal, the potting comparison and more, in 5 languages.", l: [{ h: "/blog/", t: "Open the blog →" }] },
       { k: ["potting", "epoxy", "resin", "encapsulation"], a: "Compared with potting, MG COAT gives much of the robustness without the weight, trapped heat or lost repairability — boards stay serviceable.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Read the comparison" }] }
     ],
     ru: [
       { k: ["что такое", "о продукте", "mg coat", "mgcoat", "покрытие", "продукт"], a: "MG COAT Liquid PCB Plastic Coating — промышленное наноз­ащитное покрытие на пластиковой основе: гидроизолирует платы, датчики и схемы, образуя прочный непрозрачный механически стойкий слой без нагрева.", l: [{ s: "overview", t: "О нас →" }, { s: "technology", t: "Технология →" }] },
       { k: ["нагрев", "печь", "температур", "отвержд", "запек"], a: "Нагрев не нужен — наносится и полностью отверждается при комнатной температуре. Безопасно для термочувствительных компонентов.", l: [{ s: "technology", t: "Технология →" }] },
-      { k: ["вода", "под водой", "погружен", "глубин", "гидроизоляц", "влага", "дожд", "море", "100"], a: "Да — при правильной герметизации и полном отверждении система рассчитана на постоянное погружение на 100 м и более. На сайте есть реальные тесты с водой.", l: [{ s: "tests", t: "Тесты →" }, { s: "video", t: "Смотреть тест →" }] },
+      { k: ["вода", "под водой", "погружен", "глубин", "гидроизоляц", "влага", "дожд", "море", "100"], a: "Да — при правильной герметизации и полном отверждении система рассчитана на постоянное погружение на 100 м и более. На сайте есть реальные тесты с водой.", l: [{ s: "tests", t: "Тесты →" }, { h: "/catalog/", t: "Смотреть тест →" }] },
       { k: ["нанес", "распыл", "окунан", "кист", "как использ", "примен", "маскир"], a: "Три способа: окунание для полного покрытия, распыление для равномерных слоёв, кисть для локального усиления (кромки, кабельные вводы, зоны ремонта). Разъёмы предварительно маскируются.", l: [{ s: "technology", t: "Технология →" }] },
       { k: ["цена", "стоимост", "заказ", "купить", "оплат", "прайс", "доставк"], a: "Отправьте запрос через форму заказа или WhatsApp — мы быстро ответим с ценой и деталями под вашу задачу.", l: [{ s: "contact", t: "Форма заказа →" }, { h: WA_URL, t: "WhatsApp" }] },
       { k: ["эбу", "ecu", "авто", "дрон", "fpv", "камер", "светодиод", "led", "морск", "солнечн", "телеком", "мото"], a: "Защищает автомобильные ЭБУ, дроны/FPV, камеры видеонаблюдения, LED-платы, морские датчики, EV/BMS, солнечные инверторы, телеком-блоки и ремонтные работы.", l: [{ s: "applications", t: "Применение →" }] },
@@ -581,14 +581,14 @@
       { k: ["антенн", "сигнал", "wifi", "вай фай", "gps", "bluetooth", "приём"], a: "Покрытие неметаллическое и изоляционное; при обычной толщине заметно не влияет на WiFi/GPS/Bluetooth. Антенные элементы лучше замаскировать перед нанесением.", l: [{ s: "technology", t: "Технология →" }] },
       { k: ["гарант", "сертифик", "качеств", "соответств"], a: "Качество заложено в продукт: расчётный срок 10+ лет, документированный процесс нанесения и реальные водные тесты. По коммерческим условиям и документам напишите команде.", l: [{ s: "tests", t: "Тесты →" }, { h: WA_URL, t: "WhatsApp" }] },
       { k: ["вес", "тяжел", "грамм"], a: "Тонкий слой почти не добавляет веса — поэтому его используют на дронах и весочувствительной электронике (в отличие от заливки, утяжеляющей модуль).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Покрытие или заливка" }] },
-      { k: ["видео", "ролик", "посмотреть", "запись"], a: "Да — реальный тест водозащиты воспроизводится прямо на сайте, и ещё примеры на нашем YouTube.", l: [{ s: "video", t: "Смотреть тест →" }, { s: "tests", t: "Тесты →" }] },
+      { k: ["видео", "ролик", "посмотреть", "запись"], a: "Да — реальный тест водозащиты воспроизводится прямо на сайте, и ещё примеры на нашем YouTube.", l: [{ h: "/catalog/", t: "Смотреть тест →" }, { s: "tests", t: "Тесты →" }] },
       { k: ["блог", "стать", "руководств", "гайд", "почитать"], a: "В блоге 9 практических руководств — гидроизоляция плат, дроны, камеры, ЭБУ, удаление покрытия, сравнение с заливкой и другое, на 5 языках.", l: [{ h: "/blog/", t: "Открыть блог →" }] },
       { k: ["заливк", "поттинг", "potting", "эпоксид", "смол", "компаунд"], a: "По сравнению с заливкой MG COAT даёт большую часть прочности без веса, перегрева и потери ремонтопригодности — платы остаются обслуживаемыми.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Читать сравнение" }] }
     ],
     tr: [
       { k: ["nedir", "hakkında", "mg coat", "mgcoat", "kaplama", "ürün"], a: "MG COAT Liquid PCB Plastic Coating; PCB'leri, sensörleri ve devreleri su geçirmez yapan, plastik esaslı endüstriyel bir nano koruyucu kaplamadır — ısı gerektirmeyen, güçlü, opak ve mekanik dirençli bir katman.", l: [{ s: "overview", t: "Hakkında →" }, { s: "technology", t: "Teknoloji →" }] },
       { k: ["ısı", "fırın", "sıcaklık", "kürlen", "pişir"], a: "Hiç ısı gerekmez — oda sıcaklığında uygulanır ve tamamen kürlenir. Isıya duyarlı bileşenler için bile güvenlidir.", l: [{ s: "technology", t: "Teknoloji →" }] },
-      { k: ["su", "su altı", "daldırma", "derinlik", "su geçirmez", "nem", "yağmur", "deniz", "100"], a: "Evet — doğru sızdırmazlık ve tam kürlenmeyle sistem 100 m ve üzeri sürekli daldırma için tasarlanabilir. Sitede gerçek su testleri var.", l: [{ s: "tests", t: "Testler →" }, { s: "video", t: "Testi izle →" }] },
+      { k: ["su", "su altı", "daldırma", "derinlik", "su geçirmez", "nem", "yağmur", "deniz", "100"], a: "Evet — doğru sızdırmazlık ve tam kürlenmeyle sistem 100 m ve üzeri sürekli daldırma için tasarlanabilir. Sitede gerçek su testleri var.", l: [{ s: "tests", t: "Testler →" }, { h: "/catalog/", t: "Testi izle →" }] },
       { k: ["uygula", "püskürt", "daldır", "fırça", "nasıl kullan", "maskele"], a: "Üç yöntem: tam kaplama için daldırma, eşit katmanlar için püskürtme, lokal güçlendirme için fırça (kenarlar, kablo girişleri, onarım bölgeleri). Konektörler önce maskelenmeli.", l: [{ s: "technology", t: "Teknoloji →" }] },
       { k: ["fiyat", "maliyet", "teklif", "sipariş", "satın", "ödeme", "kargo"], a: "Talebinizi sipariş formundan veya WhatsApp'tan gönderin — kullanım senaryonuza göre fiyat ve detaylarla hızla dönüyoruz.", l: [{ s: "contact", t: "Sipariş formu →" }, { h: WA_URL, t: "WhatsApp" }] },
       { k: ["ecu", "araç", "araba", "drone", "fpv", "kamera", "led", "deniz", "güneş", "telekom", "motosiklet"], a: "Araç ECU'ları, drone/FPV, güvenlik kameraları, LED kartları, deniz sensörleri, EV/BMS, güneş inverterleri, telekom üniteleri ve tamirhane işlerini korur.", l: [{ s: "applications", t: "Uygulamalar →" }] },
@@ -617,14 +617,14 @@
       { k: ["anten", "sinyal", "wifi", "gps", "bluetooth", "çekim"], a: "Kaplama metalik değildir ve yalıtkandır; normal kalınlıkta WiFi/GPS/Bluetooth'u belirgin etkilemez. Yine de anten elemanlarını maskelemek en iyi uygulamadır.", l: [{ s: "technology", t: "Teknoloji →" }] },
       { k: ["sertifika", "kalite belgesi", "uygunluk", "belge"], a: "Kalite ürünün içinde: 10+ yıl hedef ömür, belgelenmiş uygulama süreci ve gerçek su testleri. Ticari şartlar ve belgeler için ekibimize yazın.", l: [{ s: "tests", t: "Testler →" }, { h: WA_URL, t: "WhatsApp" }] },
       { k: ["ağırlık", "ağır mı", "gram"], a: "İnce ve düzgün bir katman neredeyse hiç ağırlık eklemez — bu yüzden drone'larda ve ağırlığa duyarlı elektronikte kullanılır (modülü ağırlaştıran potting'in aksine).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Kaplama vs potting" }] },
-      { k: ["video", "izle", "tanıtım", "çekim videosu"], a: "Evet — gerçek su koruma testi sitede oynuyor, daha fazlası YouTube kanalımızda.", l: [{ s: "video", t: "Testi izle →" }, { s: "tests", t: "Testler →" }] },
+      { k: ["video", "izle", "tanıtım", "çekim videosu"], a: "Evet — gerçek su koruma testi sitede oynuyor, daha fazlası YouTube kanalımızda.", l: [{ h: "/catalog/", t: "Testi izle →" }, { s: "tests", t: "Testler →" }] },
       { k: ["blog", "makale", "rehber", "kılavuz", "okumak"], a: "Blogumuzda 9 pratik rehber var — PCB su yalıtımı, drone, kamera, ECU, kaplama sökümü, potting karşılaştırması ve dahası, 5 dilde.", l: [{ h: "/blog/", t: "Blogu aç →" }] },
       { k: ["potting", "reçine", "epoksi", "dolgu", "kapsülleme"], a: "Potting'e kıyasla MG COAT; ağırlık, hapsolan ısı veya kaybolan onarılabilirlik olmadan dayanıklılığın çoğunu verir — kartlar servis edilebilir kalır.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Karşılaştırmayı oku" }] }
     ],
     ar: [
       { k: ["ما هو", "عن المنتج", "mg coat", "mgcoat", "طلاء", "منتج"], a: "‏MG COAT Liquid PCB Plastic Coating طلاء حماية نانوي صناعي قائم على البلاستيك يعزل لوحات PCB والحساسات والدوائر عن الماء — طبقة قوية غير شفافة مقاومة ميكانيكياً وبدون حرارة.", l: [{ s: "overview", t: "من نحن ←" }, { s: "technology", t: "التقنية ←" }] },
       { k: ["حرارة", "فرن", "تسخين", "تجفيف", "درجة"], a: "لا حاجة لأي حرارة — يُطبَّق ويجفّ تماماً في درجة حرارة الغرفة، فهو آمن للمكوّنات الحسّاسة للحرارة والإصلاح الميداني.", l: [{ s: "technology", t: "التقنية ←" }] },
-      { k: ["ماء", "تحت الماء", "غمر", "عمق", "عازل", "رطوبة", "مطر", "بحر", "100"], a: "نعم — مع الإحكام الصحيح والجفاف الكامل يمكن هندسة النظام للغمر المستمر حتى 100 متر وأكثر. على الموقع اختبارات ماء حقيقية.", l: [{ s: "tests", t: "الاختبارات ←" }, { s: "video", t: "شاهد الاختبار ←" }] },
+      { k: ["ماء", "تحت الماء", "غمر", "عمق", "عازل", "رطوبة", "مطر", "بحر", "100"], a: "نعم — مع الإحكام الصحيح والجفاف الكامل يمكن هندسة النظام للغمر المستمر حتى 100 متر وأكثر. على الموقع اختبارات ماء حقيقية.", l: [{ s: "tests", t: "الاختبارات ←" }, { h: "/catalog/", t: "شاهد الاختبار ←" }] },
       { k: ["تطبيق", "رش", "غمس", "فرشاة", "كيف يستخدم", "إخفاء", "تقنيع"], a: "ثلاث طرق: الغمس لتغطية كاملة، الرش لطبقات متساوية، والفرشاة للتقوية الموضعية (الحواف ومداخل الكابلات ومناطق الإصلاح). يجب تقنيع الموصلات أولاً.", l: [{ s: "technology", t: "التقنية ←" }] },
       { k: ["سعر", "تكلفة", "عرض", "طلب", "شراء", "دفع", "شحن"], a: "أرسل طلبك عبر نموذج الطلب أو واتساب — نرد سريعاً بالسعر والتفاصيل حسب حالتك.", l: [{ s: "contact", t: "نموذج الطلب ←" }, { h: WA_URL, t: "واتساب" }] },
       { k: ["سيارة", "ecu", "درون", "طائرة", "كاميرا", "مراقبة", "led", "بحري", "شمسي", "اتصالات", "دراجة"], a: "يحمي وحدات ECU للسيارات، الدرونز/FPV، كاميرات المراقبة، لوحات LED، الحساسات البحرية، EV/BMS، عواكس الطاقة الشمسية، وحدات الاتصالات وأعمال الورش.", l: [{ s: "applications", t: "التطبيقات ←" }] },
@@ -653,14 +653,14 @@
       { k: ["هوائي", "إشارة", "اشارة", "واي فاي", "wifi", "gps", "بلوتوث", "استقبال"], a: "الطلاء غير معدني وعازل؛ بالسماكة المعتادة لا يؤثر بشكل ملحوظ على WiFi/GPS/البلوتوث. ومع ذلك يُفضَّل تقنيع عناصر الهوائي قبل الطلاء.", l: [{ s: "technology", t: "التقنية ←" }] },
       { k: ["شهادة", "جودة", "مطابقة", "وثائق"], a: "الجودة في صميم المنتج: هدف متانة يتجاوز 10 سنوات، وعملية تطبيق موثّقة واختبارات ماء حقيقية. للشروط التجارية والوثائق راسل فريقنا.", l: [{ s: "tests", t: "الاختبارات ←" }, { h: WA_URL, t: "واتساب" }] },
       { k: ["وزن", "ثقيل", "غرام"], a: "الطبقة الرقيقة المتساوية لا تضيف وزناً يُذكر — لذلك تُستخدم في الدرون والإلكترونيات الحساسة للوزن (بعكس التغليف بالراتنج الذي يضاعف وزن الوحدة).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "الطلاء مقابل التغليف" }] },
-      { k: ["فيديو", "شاهد", "مشاهدة", "فلم", "عرض"], a: "نعم — اختبار الحماية من الماء الحقيقي يُعرض في الموقع مباشرة، والمزيد على قناتنا في يوتيوب.", l: [{ s: "video", t: "شاهد الاختبار ←" }, { s: "tests", t: "الاختبارات ←" }] },
+      { k: ["فيديو", "شاهد", "مشاهدة", "فلم", "عرض"], a: "نعم — اختبار الحماية من الماء الحقيقي يُعرض في الموقع مباشرة، والمزيد على قناتنا في يوتيوب.", l: [{ h: "/catalog/", t: "شاهد الاختبار ←" }, { s: "tests", t: "الاختبارات ←" }] },
       { k: ["مدونة", "مقال", "دليل", "تعلم", "شرح"], a: "مدونتنا تضم 9 أدلة عملية — عزل PCB، الدرون، الكاميرات، ECU، إزالة الطلاء، مقارنة التغليف وغيرها، بخمس لغات.", l: [{ h: "/blog/", t: "افتح المدونة ←" }] },
       { k: ["تغليف", "راتنج", "ايبوكسي", "إيبوكسي", "بوتينغ", "potting"], a: "مقارنةً بالتغليف بالراتنج، يمنح MG COAT معظم المتانة دون الوزن أو حبس الحرارة أو فقدان قابلية الإصلاح — تبقى اللوحات قابلة للصيانة.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "اقرأ المقارنة" }] }
     ],
     fa: [
       { k: ["چیست", "چیه", "درباره", "mg coat", "mgcoat", "محصول", "پوشش چ"], a: "‏MG COAT Liquid PCB Plastic Coating یک پوشش محافظ نانویی صنعتی بر پایهٔ پلاستیک است که بردها، سنسورها و مدارها را ضدآب می‌کند — لایه‌ای قوی، غیرشفاف و مقاوم مکانیکی، بدون نیاز به حرارت.", l: [{ s: "overview", t: "درباره ←" }, { s: "technology", t: "تکنولوژی ←" }] },
       { k: ["حرارت", "گرما", "دما", "کوره", "پخت", "خشک"], a: "اصلاً حرارت نمی‌خواهد — در دمای اتاق اجرا و کاملاً خشک می‌شود؛ برای قطعات حساس به گرما و تعمیر میدانی امن است.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
-      { k: ["آب", "ضدآب", "ضد آب", "غوطه", "عمق", "دریا", "باران", "رطوبت", "زیر آب", "100", "۱۰۰"], a: "بله — با آب‌بندی صحیح و خشک‌شدن کامل، سیستم برای غوطه‌وری دائم تا عمق ۱۰۰ متر و بیشتر قابل مهندسی است. تست‌های واقعی آب در سایت هست.", l: [{ s: "tests", t: "تست‌ها ←" }, { s: "video", t: "دیدن تست ←" }] },
+      { k: ["آب", "ضدآب", "ضد آب", "غوطه", "عمق", "دریا", "باران", "رطوبت", "زیر آب", "100", "۱۰۰"], a: "بله — با آب‌بندی صحیح و خشک‌شدن کامل، سیستم برای غوطه‌وری دائم تا عمق ۱۰۰ متر و بیشتر قابل مهندسی است. تست‌های واقعی آب در سایت هست.", l: [{ s: "tests", t: "تست‌ها ←" }, { h: "/catalog/", t: "دیدن تست ←" }] },
       { k: ["اجرا", "اعمال", "اسپری", "غوطه‌وری", "قلم", "نحوه", "روش", "استفاده", "ماسک"], a: "سه روش: غوطه‌وری برای پوشش کامل، اسپری برای لایه‌های یکنواخت، و قلم‌مو برای تقویت موضعی (لبه‌ها، ورودی کابل، نقاط تعمیر). کانکتورها اول باید ماسک شوند.", l: [{ s: "technology", t: "تکنولوژی ←" }, { h: "/blog/how-to-waterproof-a-pcb.html", t: "راهنما: ضدآب‌کردن PCB" }] },
       { k: ["قیمت", "هزینه", "خرید", "سفارش", "فاکتور", "پرداخت", "ارسال", "تهیه"], a: "درخواستت را از فرم سفارش یا واتساپ بفرست — سریع با قیمت و جزئیاتِ متناسب با کاربردت جواب می‌دهیم.", l: [{ s: "contact", t: "فرم سفارش ←" }, { h: WA_URL, t: "واتساپ" }] },
       { k: ["ایسیو", "ecu", "خودرو", "ماشین", "پهپاد", "درون", "دوربین", "مداربسته", "ال‌ای‌دی", "led", "دریایی", "خورشیدی", "مخابرات", "موتور"], a: "از ایسیوی خودرو، پهپاد/FPV، دوربین مداربسته، بردهای LED، سنسورهای دریایی، EV/BMS، اینورتر خورشیدی، تجهیزات مخابراتی و کارهای تعمیرگاهی محافظت می‌کند.", l: [{ s: "applications", t: "کاربردها ←" }] },
@@ -689,7 +689,7 @@
       { k: ["آنتن", "سیگنال", "وای فای", "wifi", "gps", "بلوتوث", "گیرنده"], a: "پوشش غیرفلزی و عایق است؛ در ضخامت معمول تأثیر محسوسی روی WiFi/GPS/بلوتوث ندارد. طبق بهترین روش، المان‌های آنتن را قبل از اجرا ماسک کن.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
       { k: ["گارانتی", "ضمانت", "تضمین", "گواهی", "مدرک"], a: "کیفیت در طراحی محصول است: هدف دوام ۱۰+ سال، فرایند اجرای مستند و تست‌های واقعی آب. برای شرایط تجاری و مدارک انطباق با تیم ما صحبت کن.", l: [{ s: "tests", t: "تست‌ها ←" }, { h: WA_URL, t: "واتساپ" }] },
       { k: ["وزن", "سنگین", "گرم میشه"], a: "یک لایهٔ نازک و یکنواخت تقریباً وزنی اضافه نمی‌کند — برای همین روی پهپاد و الکترونیک حساس به وزن استفاده می‌شود (برخلاف Potting که وزن ماژول را چند برابر می‌کند).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "پوشش در برابر Potting" }] },
-      { k: ["ویدئو", "فیلم", "ویدیو", "کلیپ", "نمایش"], a: "بله — ویدئوی واقعی تست محافظت در برابر آب در خود سایت پخش می‌شود و نمونه‌های بیشتر در یوتیوب ما هست.", l: [{ s: "video", t: "دیدن تست ←" }, { s: "tests", t: "تست‌ها ←" }] },
+      { k: ["ویدئو", "فیلم", "ویدیو", "کلیپ", "نمایش"], a: "بله — ویدئوی واقعی تست محافظت در برابر آب در خود سایت پخش می‌شود و نمونه‌های بیشتر در یوتیوب ما هست.", l: [{ h: "/catalog/", t: "دیدن تست ←" }, { s: "tests", t: "تست‌ها ←" }] },
       { k: ["مقاله", "بلاگ", "راهنما", "آموزش", "یاد بگیرم"], a: "بلاگ ما ۹ راهنمای کاربردی دارد — ضدآب‌سازی PCB، پهپاد، دوربین، ECU، برداشتن پوشش، مقایسه با Potting و بیشتر، به ۵ زبان.", l: [{ h: "/blog/", t: "باز کردن بلاگ ←" }] },
       { k: ["پاتینگ", "potting", "رزین", "اپوکسی", "تغلیف"], a: "در مقایسه با Potting، MG COAT بخش زیادی از استحکام را می‌دهد بدون وزن، حبس گرما یا ازدست‌رفتن تعمیرپذیری — برد قابل‌سرویس می‌ماند.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "خواندن مقایسه" }] }
     ]
@@ -917,7 +917,11 @@
   }
   (function () {
     var isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-    if (!isTouch || !window.DeviceOrientationEvent) return;   // desktop / no sensors → skip
+    // Touch-primary device only: this hides it on desktops and touchscreen laptops
+    // (which expose DeviceOrientationEvent + touch but have no usable tilt sensor).
+    var touchPrimary = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    var isMobileUA = /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(navigator.userAgent || "");
+    if (!isTouch || !touchPrimary || !isMobileUA || !window.DeviceOrientationEvent) return;  // desktop/no real sensors → skip
 
     tiltBtn = document.createElement("button");
     tiltBtn.type = "button";
