@@ -8,13 +8,13 @@
   var trigger = document.querySelector(".lang-trigger");
   var ltFlag = document.querySelector(".lt-flag"), ltName = document.querySelector(".lt-name");
   var INFO = {};
-  buttons.forEach(function (b) { var s = b.querySelectorAll("span"); INFO[b.dataset.lang] = { flag: s[0] ? s[0].textContent : "", name: s[1] ? s[1].textContent : b.dataset.lang }; });
+  buttons.forEach(function (b) { var s = b.querySelectorAll("span"); INFO[b.dataset.lang] = { flag: s[0] ? s[0].textContent : "", flagHTML: s[0] ? s[0].innerHTML : "", name: s[1] ? s[1].textContent : b.dataset.lang }; });
 
   function setLang(lang, push) {
     if (LANGS.indexOf(lang) === -1) lang = "en";
     posts.forEach(function (p) { p.hidden = (p.getAttribute("data-lang") !== lang); });
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
-    var i = INFO[lang]; if (i) { if (ltFlag) ltFlag.textContent = i.flag; if (ltName) ltName.textContent = i.name; }
+    var i = INFO[lang]; if (i) { if (ltFlag) ltFlag.innerHTML = i.flagHTML; if (ltName) ltName.textContent = i.name; }
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
     try { localStorage.setItem(KEY, lang); } catch (e) {}
