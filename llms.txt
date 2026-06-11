@@ -1,6 +1,6 @@
-# MG COAT — Liquid PCB Plastic Coating
+# MGCoat — Liquid PCB Plastic Coating
 
-> MG COAT (website: https://www.mgcoat.com) makes **Liquid PCB Plastic Coating**: an industrial, heat-free, plastic-based nano protective coating that waterproofs printed circuit boards (PCBs), sensors and electronic circuits. It is applied at room temperature by dipping, spraying or brushing, builds a reinforced non-transparent layer, supports multi-layer build-up and can be engineered for deep-water immersion. Founder: M. Ghanbari. Based in Turkey; serves customers in Turkey, Iran and worldwide. Quotes and orders via WhatsApp. Available in English, Russian, Turkish, Arabic and Persian.
+> MGCoat (website: https://www.mgcoat.com) makes **Liquid PCB Plastic Coating**: an industrial, heat-free, plastic-based nano protective coating that waterproofs printed circuit boards (PCBs), sensors and electronic circuits. It is applied at room temperature by dipping, spraying or brushing, builds a reinforced non-transparent layer, supports multi-layer build-up and can be engineered for deep-water immersion. Founder: M. Ghanbari. Based in Turkey; serves customers in Turkey, Iran and worldwide. Quotes and orders via WhatsApp. Available in English, Russian, Turkish, Arabic and Persian.
 
 ## What it is
 - Product: Liquid PCB Plastic Coating — electronic circuit waterproofing / protective coating

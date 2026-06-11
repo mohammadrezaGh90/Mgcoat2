@@ -1,4 +1,4 @@
-/* MG COAT blog — language switching (mirrors the main site's choice) */
+/* MGCoat blog — language switching (mirrors the main site's choice) */
 (function () {
   "use strict";
   var LANGS = ["en", "ru", "tr", "ar", "fa"], RTL = { ar: 1, fa: 1 }, KEY = "mgtech-lang";

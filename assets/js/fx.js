@@ -1,5 +1,5 @@
 /* ============================================================
-   MG COAT — WebGL cosmic welcome intro (scroll-driven)
+   MGCoat — WebGL cosmic welcome intro (scroll-driven)
    Thousands of GPU particles form a luminous duotone (cyan / red)
    accretion disk swirling around a dark core (the MG lockup sits
    in the eye), over a parallax starfield. Additive blending gives

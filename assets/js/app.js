@@ -1,5 +1,5 @@
 /* ============================================================
-   MG COAT — interactive layer
+   MGCoat — interactive layer
    Language switching (lang/dir + URL + storage), scroll reveal,
    progress bar, sticky header state, back-to-top.
    ============================================================ */
@@ -495,26 +495,26 @@
   var assistHistory = [];   // [{role:"user"|"assistant", content:"..."}]
   var assistBusy = false;
   var ASSIST_UI = {
-    en: { title: "MG COAT Assistant", hi: "Hi! 👋 I'm the MG COAT assistant. Ask me anything about the coating — or tap a question below.",
+    en: { title: "MGCoat Assistant", hi: "Hi! 👋 I'm the MGCoat assistant. Ask me anything about the coating — or tap a question below.",
           ph: "Ask or search…", no: "I don't have an exact answer for that yet — our team replies fast on WhatsApp!", wa: "Chat on WhatsApp",
-          chips: ["What is MG COAT?", "Does it work underwater?", "How is it applied?", "How can I order?"] },
-    ru: { title: "Ассистент MG COAT", hi: "Здравствуйте! 👋 Я ассистент MG COAT. Спросите что угодно о покрытии — или нажмите на вопрос ниже.",
+          chips: ["What is MGCoat?", "Does it work underwater?", "How is it applied?", "How can I order?"] },
+    ru: { title: "Ассистент MGCoat", hi: "Здравствуйте! 👋 Я ассистент MGCoat. Спросите что угодно о покрытии — или нажмите на вопрос ниже.",
           ph: "Спросите или найдите…", no: "Точного ответа пока нет — наша команда быстро отвечает в WhatsApp!", wa: "Написать в WhatsApp",
-          chips: ["Что такое MG COAT?", "Работает под водой?", "Как наносится?", "Как заказать?"] },
-    tr: { title: "MG COAT Asistanı", hi: "Merhaba! 👋 MG COAT asistanıyım. Kaplama hakkında her şeyi sorabilirsiniz — veya aşağıdaki sorulara dokunun.",
+          chips: ["Что такое MGCoat?", "Работает под водой?", "Как наносится?", "Как заказать?"] },
+    tr: { title: "MGCoat Asistanı", hi: "Merhaba! 👋 MGCoat asistanıyım. Kaplama hakkında her şeyi sorabilirsiniz — veya aşağıdaki sorulara dokunun.",
           ph: "Sorun veya arayın…", no: "Bunun için net bir cevabım yok — ekibimiz WhatsApp'tan hızla yanıtlıyor!", wa: "WhatsApp'tan yazın",
-          chips: ["MG COAT nedir?", "Su altında çalışır mı?", "Nasıl uygulanır?", "Nasıl sipariş verilir?"] },
-    ar: { title: "مساعد MG COAT", hi: "مرحباً! 👋 أنا مساعد MG COAT. اسألني أي شيء عن الطلاء — أو اضغط على سؤال أدناه.",
+          chips: ["MGCoat nedir?", "Su altında çalışır mı?", "Nasıl uygulanır?", "Nasıl sipariş verilir?"] },
+    ar: { title: "مساعد MGCoat", hi: "مرحباً! 👋 أنا مساعد MGCoat. اسألني أي شيء عن الطلاء — أو اضغط على سؤال أدناه.",
           ph: "اسأل أو ابحث…", no: "ليس لديّ إجابة دقيقة بعد — فريقنا يرد سريعاً على واتساب!", wa: "تواصل عبر واتساب",
-          chips: ["ما هو MG COAT؟", "هل يعمل تحت الماء؟", "كيف يُطبَّق؟", "كيف أطلب؟"] },
-    fa: { title: "دستیار MG COAT", hi: "سلام! 👋 من دستیار MG COAT هستم. هر سؤالی دربارهٔ پوشش داری بپرس — یا یکی از سؤال‌های زیر را لمس کن.",
+          chips: ["ما هو MGCoat؟", "هل يعمل تحت الماء؟", "كيف يُطبَّق؟", "كيف أطلب؟"] },
+    fa: { title: "دستیار MGCoat", hi: "سلام! 👋 من دستیار MGCoat هستم. هر سؤالی دربارهٔ پوشش داری بپرس — یا یکی از سؤال‌های زیر را لمس کن.",
           ph: "بپرس یا جستجو کن…", no: "هنوز جواب دقیقی برای این ندارم — تیم ما در واتساپ سریع پاسخ می‌دهد!", wa: "گفتگو در واتساپ",
-          chips: ["MG COAT چیست؟", "زیر آب کار می‌کند؟", "چطور اجرا می‌شود؟", "چطور سفارش بدهم؟"] }
+          chips: ["MGCoat چیست؟", "زیر آب کار می‌کند؟", "چطور اجرا می‌شود؟", "چطور سفارش بدهم؟"] }
   };
   /* entries: k = keywords (substring match), a = answer, l = links [{s:sectionId}|{h:href}, t:label] */
   var ASSIST_KB = {
     en: [
-      { k: ["what is", "about", "product", "mg coat", "mgcoat", "coating", "liquid"], a: "MG COAT Liquid PCB Plastic Coating is an industrial, plastic-based nano protective coating that waterproofs PCBs, sensors and electronic circuits — a strong, non-transparent, mechanically resistant layer, with no heat needed.", l: [{ s: "overview", t: "About →" }, { s: "technology", t: "Technology →" }] },
+      { k: ["what is", "about", "product", "mg coat", "mgcoat", "coating", "liquid"], a: "MGCoat Liquid PCB Plastic Coating is an industrial, plastic-based nano protective coating that waterproofs PCBs, sensors and electronic circuits — a strong, non-transparent, mechanically resistant layer, with no heat needed.", l: [{ s: "overview", t: "About →" }, { s: "technology", t: "Technology →" }] },
       { k: ["heat", "oven", "cure", "curing", "temperature", "bake"], a: "No heat at all — it applies and fully cures at room temperature, so it's safe for heat-sensitive components and field repair.", l: [{ s: "technology", t: "Technology →" }] },
       { k: ["water", "underwater", "immersion", "depth", "waterproof", "100", "sea", "rain", "humidity", "moisture", "ip68"], a: "Yes — with correct sealing and full curing the system can be engineered for continuous immersion at 100 m and beyond. We show real water tests on the site.", l: [{ s: "tests", t: "Tests →" }, { h: "/catalog/", t: "Watch the test →" }] },
       { k: ["apply", "spray", "dip", "brush", "how to use", "install", "masking"], a: "Three methods: dipping for full coverage, spraying for even layers, and brush for local reinforcement (edges, cable entries, repair zones). Connectors and serviceable parts should be masked first.", l: [{ s: "technology", t: "Technology →" }, { h: "/blog/how-to-waterproof-a-pcb.html", t: "Guide: waterproof a PCB" }] },
@@ -524,13 +524,13 @@
       { k: ["color", "colour", "black", "white", "gray", "grey"], a: "Black, white and gray are standard; custom colors are available for industrial and private-label orders. The layer is non-transparent by design.", l: [{ s: "technology", t: "Technology →" }] },
       { k: ["catalog", "catalogue", "brochure", "pdf", "download"], a: "The full catalogue is available in 5 languages as PDF:", l: [{ h: "/catalog/", t: "Catalogue ↓" }] },
       { k: ["white paper", "whitepaper", "datasheet", "technical doc", "specification", "spec", "paper"], a: "Our technical white paper (EN/RU/TR/AR/FA) covers the science, comparisons and test framework:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
-      { k: ["partner", "reseller", "distributor", "wholesale", "agency", "represent"], a: "We welcome partners in sales, repair and industry — become the MG COAT reseller in your region.", l: [{ s: "partners", t: "Partnership →" }] },
+      { k: ["partner", "reseller", "distributor", "wholesale", "agency", "represent"], a: "We welcome partners in sales, repair and industry — become the MGCoat reseller in your region.", l: [{ s: "partners", t: "Partnership →" }] },
       { k: ["durab", "year", "lifetime", "long", "warranty", "scratch", "strength", "mechanical", "hard"], a: "After full curing it forms a hard, scratch-resistant layer with a 10-year-plus design target under correct application and conditions.", l: [{ s: "tests", t: "Tests →" }] },
       { k: ["phone", "call", "number", "contact", "reach", "telephone", "whatsapp"], a: "You can reach us directly — our phone is the same as our WhatsApp: +90 552 876 7973. Tap to chat:", l: [{ h: WA_URL, t: "WhatsApp / Call" }, { s: "contact", t: "Contact →" }] },
       { k: ["address", "location", "where", "based", "office", "country", "city", "istanbul", "turkey"], a: "We're based in Istanbul, Turkey, and serve customers there, in Iran and worldwide.", l: [{ s: "contact", t: "Contact →" }, { h: WA_URL, t: "WhatsApp" }] },
-      { k: ["hi", "hello", "hey", "good morning", "good evening", "greetings", "how are you"], a: "Hello! 👋 Welcome to MG COAT. Ask me about pricing, application, water resistance, durability, colors, shipping — anything about the coating.", l: [] },
+      { k: ["hi", "hello", "hey", "good morning", "good evening", "greetings", "how are you"], a: "Hello! 👋 Welcome to MGCoat. Ask me about pricing, application, water resistance, durability, colors, shipping — anything about the coating.", l: [] },
       { k: ["thanks", "thank you", "thx", "appreciate", "perfect", "awesome", "great answer"], a: "You're very welcome! If anything else comes up I'm right here — and our team is one tap away on WhatsApp. 🌟", l: [{ h: WA_URL, t: "WhatsApp" }] },
-      { k: ["bye", "goodbye", "see you", "see ya"], a: "Thanks for visiting MG COAT — see you soon! 👋", l: [] },
+      { k: ["bye", "goodbye", "see you", "see ya"], a: "Thanks for visiting MGCoat — see you soon! 👋", l: [] },
       { k: ["human", "agent", "operator", "real person", "sales team", "talk to someone", "support team"], a: "Of course — our team replies fast on WhatsApp (same number as our phone): +90 552 876 7973.", l: [{ h: WA_URL, t: "Chat on WhatsApp" }] },
       { k: ["safe", "safety", "toxic", "smell", "odor", "fumes", "health", "voc", "skin", "msds", "sds"], a: "Once fully cured the layer is stable and safe to handle. During application work in a ventilated area and avoid skin/eye contact — standard practice for liquid coatings. The safety data sheet (SDS) is available on request.", l: [{ h: WA_URL, t: "Request SDS" }] },
       { k: ["chemical", "acid", "fuel", "petrol", "gasoline", "oils", "alcohol", "salt", "corrosion", "detergent", "cleaning agent"], a: "The cured layer resists common workshop chemicals — oils, fuels, cleaning agents — plus salt spray and corrosion. That's why it suits marine and automotive electronics so well.", l: [{ s: "tests", t: "Tests →" }] },
@@ -547,10 +547,10 @@
       { k: ["weight", "heavy", "grams", "mass"], a: "A thin, even layer adds almost no weight — that's why it's used on drones and weight-sensitive electronics (unlike potting, which can multiply a module's weight).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Coating vs potting" }] },
       { k: ["video", "watch", "demo", "test video", "footage"], a: "Yes — the real water-protection test plays right on the site, with more on our YouTube channel.", l: [{ h: "/catalog/", t: "Watch the test →" }, { s: "tests", t: "Tests →" }] },
       { k: ["blog", "article", "guide", "tutorial", "learn more", "read more"], a: "Our blog has 9 practical guides — waterproofing PCBs, drones, CCTV, ECUs, coating removal, the potting comparison and more, in 5 languages.", l: [{ h: "/blog/", t: "Open the blog →" }] },
-      { k: ["potting", "epoxy", "resin", "encapsulation"], a: "Compared with potting, MG COAT gives much of the robustness without the weight, trapped heat or lost repairability — boards stay serviceable.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Read the comparison" }] }
+      { k: ["potting", "epoxy", "resin", "encapsulation"], a: "Compared with potting, MGCoat gives much of the robustness without the weight, trapped heat or lost repairability — boards stay serviceable.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Read the comparison" }] }
     ],
     ru: [
-      { k: ["что такое", "о продукте", "mg coat", "mgcoat", "покрытие", "продукт"], a: "MG COAT Liquid PCB Plastic Coating — промышленное наноз­ащитное покрытие на пластиковой основе: гидроизолирует платы, датчики и схемы, образуя прочный непрозрачный механически стойкий слой без нагрева.", l: [{ s: "overview", t: "О нас →" }, { s: "technology", t: "Технология →" }] },
+      { k: ["что такое", "о продукте", "mg coat", "mgcoat", "покрытие", "продукт"], a: "MGCoat Liquid PCB Plastic Coating — промышленное наноз­ащитное покрытие на пластиковой основе: гидроизолирует платы, датчики и схемы, образуя прочный непрозрачный механически стойкий слой без нагрева.", l: [{ s: "overview", t: "О нас →" }, { s: "technology", t: "Технология →" }] },
       { k: ["нагрев", "печь", "температур", "отвержд", "запек"], a: "Нагрев не нужен — наносится и полностью отверждается при комнатной температуре. Безопасно для термочувствительных компонентов.", l: [{ s: "technology", t: "Технология →" }] },
       { k: ["вода", "под водой", "погружен", "глубин", "гидроизоляц", "влага", "дожд", "море", "100"], a: "Да — при правильной герметизации и полном отверждении система рассчитана на постоянное погружение на 100 м и более. На сайте есть реальные тесты с водой.", l: [{ s: "tests", t: "Тесты →" }, { h: "/catalog/", t: "Смотреть тест →" }] },
       { k: ["нанес", "распыл", "окунан", "кист", "как использ", "примен", "маскир"], a: "Три способа: окунание для полного покрытия, распыление для равномерных слоёв, кисть для локального усиления (кромки, кабельные вводы, зоны ремонта). Разъёмы предварительно маскируются.", l: [{ s: "technology", t: "Технология →" }] },
@@ -560,13 +560,13 @@
       { k: ["цвет", "чёрн", "черн", "бел", "сер"], a: "Стандартные цвета: чёрный, белый, серый; для промышленных и private-label заказов возможны свои цвета. Слой непрозрачный по дизайну.", l: [{ s: "technology", t: "Технология →" }] },
       { k: ["каталог", "брошюр", "pdf", "скачать"], a: "Полный каталог доступен на 5 языках в PDF:", l: [{ h: "/catalog/", t: "Каталог ↓" }] },
       { k: ["white paper", "технич", "документ", "даташит", "спецификац"], a: "Наш технический white paper (EN/RU/TR/AR/FA) — наука, сравнения и методика испытаний:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
-      { k: ["партн", "дилер", "дистриб", "опт", "представит"], a: "Мы открыты к партнёрству в продажах, ремонте и промышленности — станьте реселлером MG COAT в своём регионе.", l: [{ s: "partners", t: "Партнёрам →" }] },
+      { k: ["партн", "дилер", "дистриб", "опт", "представит"], a: "Мы открыты к партнёрству в продажах, ремонте и промышленности — станьте реселлером MGCoat в своём регионе.", l: [{ s: "partners", t: "Партнёрам →" }] },
       { k: ["долговечн", "срок", "лет", "гарант", "царапин", "прочн", "механ"], a: "После полного отверждения образуется твёрдый, стойкий к царапинам слой с расчётным сроком службы 10+ лет при правильном нанесении.", l: [{ s: "tests", t: "Тесты →" }] },
       { k: ["телефон", "звон", "номер", "контакт", "связ", "whatsapp", "ватсап"], a: "Свяжитесь с нами напрямую — телефон совпадает с WhatsApp: +90 552 876 7973. Нажмите, чтобы написать:", l: [{ h: WA_URL, t: "WhatsApp / Звонок" }, { s: "contact", t: "Контакты →" }] },
       { k: ["адрес", "где наход", "локац", "город", "страна", "стамбул", "турци", "офис"], a: "Мы находимся в Стамбуле (Турция) и работаем с клиентами там, в Иране и по всему миру.", l: [{ s: "contact", t: "Контакты →" }, { h: WA_URL, t: "WhatsApp" }] },
-      { k: ["привет", "здравств", "добрый день", "добрый вечер", "доброе утро", "как дела", "хай"], a: "Здравствуйте! 👋 Добро пожаловать в MG COAT. Спросите о цене, нанесении, водостойкости, долговечности, цветах или доставке — о чём угодно.", l: [] },
+      { k: ["привет", "здравств", "добрый день", "добрый вечер", "доброе утро", "как дела", "хай"], a: "Здравствуйте! 👋 Добро пожаловать в MGCoat. Спросите о цене, нанесении, водостойкости, долговечности, цветах или доставке — о чём угодно.", l: [] },
       { k: ["спасибо", "благодар", "отлично", "супер", "класс"], a: "Пожалуйста! 🌟 Если появятся ещё вопросы — я здесь, а наша команда на связи в WhatsApp.", l: [{ h: WA_URL, t: "WhatsApp" }] },
-      { k: ["пока", "до свидан", "до встречи"], a: "Спасибо, что заглянули в MG COAT — до встречи! 👋", l: [] },
+      { k: ["пока", "до свидан", "до встречи"], a: "Спасибо, что заглянули в MGCoat — до встречи! 👋", l: [] },
       { k: ["оператор", "человек", "менеджер", "живой", "поддержк", "консультант"], a: "Конечно — наша команда быстро отвечает в WhatsApp (номер совпадает с телефоном): +90 552 876 7973.", l: [{ h: WA_URL, t: "Написать в WhatsApp" }] },
       { k: ["безопасн", "токсичн", "запах", "здоров", "пары", "кожа", "вредн", "sds", "msds"], a: "После полного отверждения слой стабилен и безопасен. При нанесении работайте в проветриваемом месте и избегайте контакта с кожей и глазами — стандартная практика для жидких покрытий. Паспорт безопасности (SDS) — по запросу.", l: [{ h: WA_URL, t: "Запросить SDS" }] },
       { k: ["химич", "кислот", "бензин", "топлив", "масло", "спирт", "соль", "коррози", "моющ"], a: "Отверждённый слой устойчив к обычной химии — маслам, топливу, моющим средствам, а также к соляному туману и коррозии. Поэтому он отлично подходит для морской и автомобильной электроники.", l: [{ s: "tests", t: "Тесты →" }] },
@@ -583,10 +583,10 @@
       { k: ["вес", "тяжел", "грамм"], a: "Тонкий слой почти не добавляет веса — поэтому его используют на дронах и весочувствительной электронике (в отличие от заливки, утяжеляющей модуль).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Покрытие или заливка" }] },
       { k: ["видео", "ролик", "посмотреть", "запись"], a: "Да — реальный тест водозащиты воспроизводится прямо на сайте, и ещё примеры на нашем YouTube.", l: [{ h: "/catalog/", t: "Смотреть тест →" }, { s: "tests", t: "Тесты →" }] },
       { k: ["блог", "стать", "руководств", "гайд", "почитать"], a: "В блоге 9 практических руководств — гидроизоляция плат, дроны, камеры, ЭБУ, удаление покрытия, сравнение с заливкой и другое, на 5 языках.", l: [{ h: "/blog/", t: "Открыть блог →" }] },
-      { k: ["заливк", "поттинг", "potting", "эпоксид", "смол", "компаунд"], a: "По сравнению с заливкой MG COAT даёт большую часть прочности без веса, перегрева и потери ремонтопригодности — платы остаются обслуживаемыми.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Читать сравнение" }] }
+      { k: ["заливк", "поттинг", "potting", "эпоксид", "смол", "компаунд"], a: "По сравнению с заливкой MGCoat даёт большую часть прочности без веса, перегрева и потери ремонтопригодности — платы остаются обслуживаемыми.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Читать сравнение" }] }
     ],
     tr: [
-      { k: ["nedir", "hakkında", "mg coat", "mgcoat", "kaplama", "ürün"], a: "MG COAT Liquid PCB Plastic Coating; PCB'leri, sensörleri ve devreleri su geçirmez yapan, plastik esaslı endüstriyel bir nano koruyucu kaplamadır — ısı gerektirmeyen, güçlü, opak ve mekanik dirençli bir katman.", l: [{ s: "overview", t: "Hakkında →" }, { s: "technology", t: "Teknoloji →" }] },
+      { k: ["nedir", "hakkında", "mg coat", "mgcoat", "kaplama", "ürün"], a: "MGCoat Liquid PCB Plastic Coating; PCB'leri, sensörleri ve devreleri su geçirmez yapan, plastik esaslı endüstriyel bir nano koruyucu kaplamadır — ısı gerektirmeyen, güçlü, opak ve mekanik dirençli bir katman.", l: [{ s: "overview", t: "Hakkında →" }, { s: "technology", t: "Teknoloji →" }] },
       { k: ["ısı", "fırın", "sıcaklık", "kürlen", "pişir"], a: "Hiç ısı gerekmez — oda sıcaklığında uygulanır ve tamamen kürlenir. Isıya duyarlı bileşenler için bile güvenlidir.", l: [{ s: "technology", t: "Teknoloji →" }] },
       { k: ["su", "su altı", "daldırma", "derinlik", "su geçirmez", "nem", "yağmur", "deniz", "100"], a: "Evet — doğru sızdırmazlık ve tam kürlenmeyle sistem 100 m ve üzeri sürekli daldırma için tasarlanabilir. Sitede gerçek su testleri var.", l: [{ s: "tests", t: "Testler →" }, { h: "/catalog/", t: "Testi izle →" }] },
       { k: ["uygula", "püskürt", "daldır", "fırça", "nasıl kullan", "maskele"], a: "Üç yöntem: tam kaplama için daldırma, eşit katmanlar için püskürtme, lokal güçlendirme için fırça (kenarlar, kablo girişleri, onarım bölgeleri). Konektörler önce maskelenmeli.", l: [{ s: "technology", t: "Teknoloji →" }] },
@@ -596,13 +596,13 @@
       { k: ["renk", "siyah", "beyaz", "gri"], a: "Standart renkler siyah, beyaz ve gri; endüstriyel ve private-label siparişler için özel renkler üretilebilir. Katman tasarım gereği opaktır.", l: [{ s: "technology", t: "Teknoloji →" }] },
       { k: ["katalog", "broşür", "pdf", "indir"], a: "Tam katalog 5 dilde PDF olarak mevcut:", l: [{ h: "/catalog/", t: "Katalog ↓" }] },
       { k: ["white paper", "teknik dok", "datasheet", "şartname"], a: "Teknik white paper'ımız (EN/RU/TR/AR/FA) bilimi, karşılaştırmaları ve test çerçevesini kapsar:", l: [{ h: "/whitepaper/", t: "White paper ↓" }] },
-      { k: ["bayi", "partner", "distribütör", "toptan", "temsilci", "iş ortak"], a: "Satış, tamir ve sanayide iş ortaklarına açığız — bölgenizin MG COAT bayisi olun.", l: [{ s: "partners", t: "İş Ortaklığı →" }] },
+      { k: ["bayi", "partner", "distribütör", "toptan", "temsilci", "iş ortak"], a: "Satış, tamir ve sanayide iş ortaklarına açığız — bölgenizin MGCoat bayisi olun.", l: [{ s: "partners", t: "İş Ortaklığı →" }] },
       { k: ["dayanıklı", "yıl", "ömür", "garanti", "çizik", "mukavemet", "mekanik", "sert"], a: "Tam kürlenmeden sonra sert, çizilmeye dayanıklı bir katman oluşur; doğru uygulamayla 10+ yıl hedef dayanım.", l: [{ s: "tests", t: "Testler →" }] },
       { k: ["telefon", "ara", "numara", "iletişim", "ulaş", "whatsapp"], a: "Bize doğrudan ulaşın — telefonumuz WhatsApp ile aynı: +90 552 876 7973. Yazmak için dokunun:", l: [{ h: WA_URL, t: "WhatsApp / Ara" }, { s: "contact", t: "İletişim →" }] },
       { k: ["adres", "konum", "nerede", "şehir", "ülke", "istanbul", "türkiye", "ofis"], a: "İstanbul, Türkiye'deyiz; Türkiye, İran ve tüm dünyaya hizmet veriyoruz.", l: [{ s: "contact", t: "İletişim →" }, { h: WA_URL, t: "WhatsApp" }] },
-      { k: ["merhaba", "selam", "günaydın", "iyi akşamlar", "iyi günler", "nasılsın"], a: "Merhaba! 👋 MG COAT'a hoş geldiniz. Fiyat, uygulama, su dayanımı, ömür, renkler veya kargo — ne isterseniz sorun.", l: [] },
+      { k: ["merhaba", "selam", "günaydın", "iyi akşamlar", "iyi günler", "nasılsın"], a: "Merhaba! 👋 MGCoat'a hoş geldiniz. Fiyat, uygulama, su dayanımı, ömür, renkler veya kargo — ne isterseniz sorun.", l: [] },
       { k: ["teşekkür", "sağol", "sağ ol", "harika", "süper", "mükemmel", "eyvallah"], a: "Rica ederim! 🌟 Başka bir sorunuz olursa buradayım — ekibimiz de WhatsApp'ta bir dokunuş uzağınızda.", l: [{ h: WA_URL, t: "WhatsApp" }] },
-      { k: ["hoşça kal", "hoşçakal", "görüşürüz", "bay bay", "güle güle"], a: "MG COAT'a uğradığınız için teşekkürler — görüşmek üzere! 👋", l: [] },
+      { k: ["hoşça kal", "hoşçakal", "görüşürüz", "bay bay", "güle güle"], a: "MGCoat'a uğradığınız için teşekkürler — görüşmek üzere! 👋", l: [] },
       { k: ["operatör", "insan", "yetkili", "müşteri temsilcisi", "destek", "danışman"], a: "Tabii — ekibimiz WhatsApp'ta hızla yanıtlıyor (telefonla aynı numara): +90 552 876 7973.", l: [{ h: WA_URL, t: "WhatsApp'tan yazın" }] },
       { k: ["güvenli", "zehirli", "koku", "sağlık", "buhar", "cilt", "zararlı", "sds", "msds"], a: "Tam kürlendikten sonra katman stabil ve güvenlidir. Uygulama sırasında havalandırılan yerde çalışın, cilt ve göz temasından kaçının — sıvı kaplamalarda standart uygulama. Güvenlik bilgi formu (SDS) talep üzerine verilir.", l: [{ h: WA_URL, t: "SDS isteyin" }] },
       { k: ["kimyasal", "asit", "benzin", "yakıt", "yağa", "alkol", "tuz", "korozyon", "deterjan"], a: "Kürlenmiş katman yaygın kimyasallara — yağ, yakıt, temizlik maddeleri — ayrıca tuz sisi ve korozyona dayanıklıdır; bu yüzden denizcilik ve otomotiv elektroniğinde idealdir.", l: [{ s: "tests", t: "Testler →" }] },
@@ -619,10 +619,10 @@
       { k: ["ağırlık", "ağır mı", "gram"], a: "İnce ve düzgün bir katman neredeyse hiç ağırlık eklemez — bu yüzden drone'larda ve ağırlığa duyarlı elektronikte kullanılır (modülü ağırlaştıran potting'in aksine).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Kaplama vs potting" }] },
       { k: ["video", "izle", "tanıtım", "çekim videosu"], a: "Evet — gerçek su koruma testi sitede oynuyor, daha fazlası YouTube kanalımızda.", l: [{ h: "/catalog/", t: "Testi izle →" }, { s: "tests", t: "Testler →" }] },
       { k: ["blog", "makale", "rehber", "kılavuz", "okumak"], a: "Blogumuzda 9 pratik rehber var — PCB su yalıtımı, drone, kamera, ECU, kaplama sökümü, potting karşılaştırması ve dahası, 5 dilde.", l: [{ h: "/blog/", t: "Blogu aç →" }] },
-      { k: ["potting", "reçine", "epoksi", "dolgu", "kapsülleme"], a: "Potting'e kıyasla MG COAT; ağırlık, hapsolan ısı veya kaybolan onarılabilirlik olmadan dayanıklılığın çoğunu verir — kartlar servis edilebilir kalır.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Karşılaştırmayı oku" }] }
+      { k: ["potting", "reçine", "epoksi", "dolgu", "kapsülleme"], a: "Potting'e kıyasla MGCoat; ağırlık, hapsolan ısı veya kaybolan onarılabilirlik olmadan dayanıklılığın çoğunu verir — kartlar servis edilebilir kalır.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Karşılaştırmayı oku" }] }
     ],
     ar: [
-      { k: ["ما هو", "عن المنتج", "mg coat", "mgcoat", "طلاء", "منتج"], a: "‏MG COAT Liquid PCB Plastic Coating طلاء حماية نانوي صناعي قائم على البلاستيك يعزل لوحات PCB والحساسات والدوائر عن الماء — طبقة قوية غير شفافة مقاومة ميكانيكياً وبدون حرارة.", l: [{ s: "overview", t: "من نحن ←" }, { s: "technology", t: "التقنية ←" }] },
+      { k: ["ما هو", "عن المنتج", "mg coat", "mgcoat", "طلاء", "منتج"], a: "‏MGCoat Liquid PCB Plastic Coating طلاء حماية نانوي صناعي قائم على البلاستيك يعزل لوحات PCB والحساسات والدوائر عن الماء — طبقة قوية غير شفافة مقاومة ميكانيكياً وبدون حرارة.", l: [{ s: "overview", t: "من نحن ←" }, { s: "technology", t: "التقنية ←" }] },
       { k: ["حرارة", "فرن", "تسخين", "تجفيف", "درجة"], a: "لا حاجة لأي حرارة — يُطبَّق ويجفّ تماماً في درجة حرارة الغرفة، فهو آمن للمكوّنات الحسّاسة للحرارة والإصلاح الميداني.", l: [{ s: "technology", t: "التقنية ←" }] },
       { k: ["ماء", "تحت الماء", "غمر", "عمق", "عازل", "رطوبة", "مطر", "بحر", "100"], a: "نعم — مع الإحكام الصحيح والجفاف الكامل يمكن هندسة النظام للغمر المستمر حتى 100 متر وأكثر. على الموقع اختبارات ماء حقيقية.", l: [{ s: "tests", t: "الاختبارات ←" }, { h: "/catalog/", t: "شاهد الاختبار ←" }] },
       { k: ["تطبيق", "رش", "غمس", "فرشاة", "كيف يستخدم", "إخفاء", "تقنيع"], a: "ثلاث طرق: الغمس لتغطية كاملة، الرش لطبقات متساوية، والفرشاة للتقوية الموضعية (الحواف ومداخل الكابلات ومناطق الإصلاح). يجب تقنيع الموصلات أولاً.", l: [{ s: "technology", t: "التقنية ←" }] },
@@ -632,13 +632,13 @@
       { k: ["لون", "ألوان", "الوان", "أسود", "اسود", "أبيض", "ابيض", "رمادي"], a: "الألوان القياسية: أسود وأبيض ورمادي؛ وتتوفر ألوان مخصّصة للطلبات الصناعية والعلامات الخاصة. الطبقة غير شفافة بالتصميم.", l: [{ s: "technology", t: "التقنية ←" }] },
       { k: ["كتالوج", "كتيب", "pdf", "تحميل", "تنزيل"], a: "الكتالوج الكامل متاح بخمس لغات بصيغة PDF:", l: [{ h: "/catalog/", t: "الكتالوج ↓" }] },
       { k: ["white paper", "ورقة", "وثيقة", "مواصفات", "تقني"], a: "ورقتنا التقنية (EN/RU/TR/AR/FA) تغطي العلم والمقارنات وإطار الاختبار:", l: [{ h: "/whitepaper/", t: "الورقة التقنية ↓" }] },
-      { k: ["وكيل", "موزع", "شراكة", "جملة", "ممثل"], a: "نرحّب بالشركاء في البيع والإصلاح والصناعة — كن موزّع MG COAT في منطقتك.", l: [{ s: "partners", t: "الشراكة ←" }] },
+      { k: ["وكيل", "موزع", "شراكة", "جملة", "ممثل"], a: "نرحّب بالشركاء في البيع والإصلاح والصناعة — كن موزّع MGCoat في منطقتك.", l: [{ s: "partners", t: "الشراكة ←" }] },
       { k: ["متانة", "سنوات", "عمر", "ضمان", "خدش", "قوة", "ميكانيك", "صلب"], a: "بعد الجفاف الكامل تتكوّن طبقة صلبة مقاومة للخدش بهدف تصميمي يتجاوز 10 سنوات مع التطبيق الصحيح.", l: [{ s: "tests", t: "الاختبارات ←" }] },
       { k: ["هاتف", "اتصال", "رقم", "تواصل", "واتساب", "واتس"], a: "تواصل معنا مباشرة — هاتفنا هو نفسه واتساب: ‎+90 552 876 7973. اضغط للمحادثة:", l: [{ h: WA_URL, t: "واتساب / اتصال" }, { s: "contact", t: "اتصل بنا ←" }] },
       { k: ["عنوان", "موقع", "أين", "اين", "مدينة", "دولة", "إسطنبول", "اسطنبول", "تركيا", "مكتب"], a: "مقرّنا في إسطنبول، تركيا، ونخدم العملاء هناك وفي إيران وحول العالم.", l: [{ s: "contact", t: "اتصل بنا ←" }, { h: WA_URL, t: "واتساب" }] },
-      { k: ["مرحبا", "اهلا", "أهلا", "السلام عليكم", "صباح الخير", "مساء الخير", "كيف حالك", "هاي"], a: "مرحباً! 👋 أهلاً بك في MG COAT. اسألني عن السعر أو التطبيق أو مقاومة الماء أو المتانة أو الألوان أو الشحن — أي شيء.", l: [] },
+      { k: ["مرحبا", "اهلا", "أهلا", "السلام عليكم", "صباح الخير", "مساء الخير", "كيف حالك", "هاي"], a: "مرحباً! 👋 أهلاً بك في MGCoat. اسألني عن السعر أو التطبيق أو مقاومة الماء أو المتانة أو الألوان أو الشحن — أي شيء.", l: [] },
       { k: ["شكرا", "شكراً", "ممتاز", "رائع", "تسلم", "جزاك"], a: "على الرحب والسعة! 🌟 إن كان لديك سؤال آخر فأنا هنا — وفريقنا على بعد نقرة في واتساب.", l: [{ h: WA_URL, t: "واتساب" }] },
-      { k: ["وداعا", "مع السلامة", "الى اللقاء", "إلى اللقاء", "باي"], a: "شكراً لزيارتك MG COAT — إلى اللقاء! 👋", l: [] },
+      { k: ["وداعا", "مع السلامة", "الى اللقاء", "إلى اللقاء", "باي"], a: "شكراً لزيارتك MGCoat — إلى اللقاء! 👋", l: [] },
       { k: ["موظف", "انسان", "إنسان", "مندوب", "دعم", "مستشار", "بشري"], a: "بالتأكيد — فريقنا يرد سريعاً على واتساب (نفس رقم الهاتف): ‎+90 552 876 7973.", l: [{ h: WA_URL, t: "تواصل عبر واتساب" }] },
       { k: ["آمن", "امن", "سام", "رائحة", "صحة", "أبخرة", "ابخرة", "بشرة", "ضرر", "sds", "msds"], a: "بعد الجفاف الكامل تكون الطبقة مستقرة وآمنة. أثناء التطبيق اعمل في مكان جيد التهوية وتجنّب ملامسة الجلد والعينين — ممارسة قياسية للطلاءات السائلة. صحيفة السلامة (SDS) متاحة عند الطلب.", l: [{ h: WA_URL, t: "اطلب SDS" }] },
       { k: ["كيماويات", "كيميائي", "حمض", "بنزين", "وقود", "زيت", "كحول", "ملح", "منظف"], a: "الطبقة المجففة تقاوم الكيماويات الشائعة — الزيوت والوقود والمنظفات — وكذلك رذاذ الملح والتآكل؛ لذلك تناسب الإلكترونيات البحرية والسيارات.", l: [{ s: "tests", t: "الاختبارات ←" }] },
@@ -655,10 +655,10 @@
       { k: ["وزن", "ثقيل", "غرام"], a: "الطبقة الرقيقة المتساوية لا تضيف وزناً يُذكر — لذلك تُستخدم في الدرون والإلكترونيات الحساسة للوزن (بعكس التغليف بالراتنج الذي يضاعف وزن الوحدة).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "الطلاء مقابل التغليف" }] },
       { k: ["فيديو", "شاهد", "مشاهدة", "فلم", "عرض"], a: "نعم — اختبار الحماية من الماء الحقيقي يُعرض في الموقع مباشرة، والمزيد على قناتنا في يوتيوب.", l: [{ h: "/catalog/", t: "شاهد الاختبار ←" }, { s: "tests", t: "الاختبارات ←" }] },
       { k: ["مدونة", "مقال", "دليل", "تعلم", "شرح"], a: "مدونتنا تضم 9 أدلة عملية — عزل PCB، الدرون، الكاميرات، ECU، إزالة الطلاء، مقارنة التغليف وغيرها، بخمس لغات.", l: [{ h: "/blog/", t: "افتح المدونة ←" }] },
-      { k: ["تغليف", "راتنج", "ايبوكسي", "إيبوكسي", "بوتينغ", "potting"], a: "مقارنةً بالتغليف بالراتنج، يمنح MG COAT معظم المتانة دون الوزن أو حبس الحرارة أو فقدان قابلية الإصلاح — تبقى اللوحات قابلة للصيانة.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "اقرأ المقارنة" }] }
+      { k: ["تغليف", "راتنج", "ايبوكسي", "إيبوكسي", "بوتينغ", "potting"], a: "مقارنةً بالتغليف بالراتنج، يمنح MGCoat معظم المتانة دون الوزن أو حبس الحرارة أو فقدان قابلية الإصلاح — تبقى اللوحات قابلة للصيانة.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "اقرأ المقارنة" }] }
     ],
     fa: [
-      { k: ["چیست", "چیه", "درباره", "mg coat", "mgcoat", "محصول", "پوشش چ"], a: "‏MG COAT Liquid PCB Plastic Coating یک پوشش محافظ نانویی صنعتی بر پایهٔ پلاستیک است که بردها، سنسورها و مدارها را ضدآب می‌کند — لایه‌ای قوی، غیرشفاف و مقاوم مکانیکی، بدون نیاز به حرارت.", l: [{ s: "overview", t: "درباره ←" }, { s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["چیست", "چیه", "درباره", "mg coat", "mgcoat", "محصول", "پوشش چ"], a: "‏MGCoat Liquid PCB Plastic Coating یک پوشش محافظ نانویی صنعتی بر پایهٔ پلاستیک است که بردها، سنسورها و مدارها را ضدآب می‌کند — لایه‌ای قوی، غیرشفاف و مقاوم مکانیکی، بدون نیاز به حرارت.", l: [{ s: "overview", t: "درباره ←" }, { s: "technology", t: "تکنولوژی ←" }] },
       { k: ["حرارت", "گرما", "دما", "کوره", "پخت", "خشک"], a: "اصلاً حرارت نمی‌خواهد — در دمای اتاق اجرا و کاملاً خشک می‌شود؛ برای قطعات حساس به گرما و تعمیر میدانی امن است.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
       { k: ["آب", "ضدآب", "ضد آب", "غوطه", "عمق", "دریا", "باران", "رطوبت", "زیر آب", "100", "۱۰۰"], a: "بله — با آب‌بندی صحیح و خشک‌شدن کامل، سیستم برای غوطه‌وری دائم تا عمق ۱۰۰ متر و بیشتر قابل مهندسی است. تست‌های واقعی آب در سایت هست.", l: [{ s: "tests", t: "تست‌ها ←" }, { h: "/catalog/", t: "دیدن تست ←" }] },
       { k: ["اجرا", "اعمال", "اسپری", "غوطه‌وری", "قلم", "نحوه", "روش", "استفاده", "ماسک"], a: "سه روش: غوطه‌وری برای پوشش کامل، اسپری برای لایه‌های یکنواخت، و قلم‌مو برای تقویت موضعی (لبه‌ها، ورودی کابل، نقاط تعمیر). کانکتورها اول باید ماسک شوند.", l: [{ s: "technology", t: "تکنولوژی ←" }, { h: "/blog/how-to-waterproof-a-pcb.html", t: "راهنما: ضدآب‌کردن PCB" }] },
@@ -668,13 +668,13 @@
       { k: ["رنگ", "مشکی", "سفید", "خاکستری"], a: "رنگ‌های استاندارد: مشکی، سفید و خاکستری؛ برای سفارش‌های صنعتی و برند اختصاصی رنگ سفارشی هم تولید می‌شود. لایه عمداً غیرشفاف است.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
       { k: ["کاتالوگ", "بروشور", "pdf", "دانلود"], a: "کاتالوگ کامل به ۵ زبان به‌صورت PDF موجود است:", l: [{ h: "/catalog/", t: "کاتالوگ ↓" }] },
       { k: ["وایت", "white paper", "دیتاشیت", "سند فنی", "مشخصات", "مقاله فنی"], a: "وایت‌پیپر فنی ما (EN/RU/TR/AR/FA) علم، مقایسه‌ها و چارچوب تست را پوشش می‌دهد:", l: [{ h: "/whitepaper/", t: "وایت‌پیپر ↓" }] },
-      { k: ["نمایندگی", "همکاری", "پخش", "عاملیت", "عمده", "نماینده"], a: "در فروش، تعمیر و صنعت از شریک استقبال می‌کنیم — نمایندهٔ MG COAT در منطقهٔ خودت باش.", l: [{ s: "partners", t: "همکاری با ما ←" }] },
+      { k: ["نمایندگی", "همکاری", "پخش", "عاملیت", "عمده", "نماینده"], a: "در فروش، تعمیر و صنعت از شریک استقبال می‌کنیم — نمایندهٔ MGCoat در منطقهٔ خودت باش.", l: [{ s: "partners", t: "همکاری با ما ←" }] },
       { k: ["ماندگاری", "دوام", "سال", "عمر", "خش", "مقاومت", "گارانتی", "سخت"], a: "بعد از خشک‌شدن کامل، لایه‌ای سخت و مقاوم به خش تشکیل می‌شود با هدف طراحی ۱۰ سال+ در شرایط اجرای صحیح.", l: [{ s: "tests", t: "تست‌ها ←" }] },
       { k: ["تلفن", "شماره", "تماس", "زنگ", "واتساپ", "واتس", "ارتباط"], a: "مستقیم با ما در تماس باش — شماره تلفن همان واتساپ است: ‎+90 552 876 7973. برای گفتگو بزن:", l: [{ h: WA_URL, t: "واتساپ / تماس" }, { s: "contact", t: "تماس ←" }] },
       { k: ["آدرس", "مکان", "کجا", "کجاست", "شهر", "کشور", "استانبول", "ترکیه", "دفتر", "محل"], a: "ما در استانبولِ ترکیه هستیم و به مشتریان آنجا، ایران و سراسر دنیا خدمت می‌دهیم.", l: [{ s: "contact", t: "تماس ←" }, { h: WA_URL, t: "واتساپ" }] },
-      { k: ["سلام", "درود", "صبح بخیر", "عصر بخیر", "شب بخیر", "خوبی", "چطوری", "هلو"], a: "سلام! 👋 به MG COAT خوش آمدی. دربارهٔ قیمت، روش اجرا، مقاومت در برابر آب، دوام، رنگ‌ها یا ارسال — هر چیزی بپرس.", l: [] },
+      { k: ["سلام", "درود", "صبح بخیر", "عصر بخیر", "شب بخیر", "خوبی", "چطوری", "هلو"], a: "سلام! 👋 به MGCoat خوش آمدی. دربارهٔ قیمت، روش اجرا، مقاومت در برابر آب، دوام، رنگ‌ها یا ارسال — هر چیزی بپرس.", l: [] },
       { k: ["مرسی", "ممنون", "تشکر", "سپاس", "دمت گرم", "عالی بود", "لطف کردی"], a: "خواهش می‌کنم! 🌟 اگر سؤال دیگری بود همین‌جا هستم — تیم ما هم در واتساپ یک کلیک فاصله دارد.", l: [{ h: WA_URL, t: "واتساپ" }] },
-      { k: ["خداحافظ", "بای", "فعلا", "خدانگهدار"], a: "ممنون که به MG COAT سر زدی — به امید دیدار! 👋", l: [] },
+      { k: ["خداحافظ", "بای", "فعلا", "خدانگهدار"], a: "ممنون که به MGCoat سر زدی — به امید دیدار! 👋", l: [] },
       { k: ["اپراتور", "کارشناس", "انسان", "پشتیبانی", "مشاور", "صحبت با", "ادم واقعی", "آدم واقعی"], a: "حتماً — تیم ما در واتساپ سریع جواب می‌دهد (همان شمارهٔ تلفن): ‎+90 552 876 7973.", l: [{ h: WA_URL, t: "گفتگو در واتساپ" }] },
       { k: ["سمی", "بو", "ایمنی", "سلامتی", "تنفس", "خطرناک", "پوست", "ضرر", "sds", "msds"], a: "بعد از خشک‌شدن کامل، لایه پایدار و بی‌خطر است. هنگام اجرا در فضای تهویه‌دار کار کن و از تماس با پوست و چشم پرهیز کن — مثل هر پوشش مایع صنعتی. برگهٔ ایمنی (SDS) هم در صورت درخواست ارائه می‌شود.", l: [{ h: WA_URL, t: "درخواست SDS" }] },
       { k: ["اسید", "بنزین", "روغن", "شیمیایی", "الکل", "نمک", "سوخت", "شوینده"], a: "لایهٔ خشک‌شده در برابر مواد شیمیایی رایج — روغن، سوخت، شوینده‌ها — و همچنین مه‌نمکی و خوردگی مقاوم است؛ برای همین در کاربرد دریایی و خودرویی عالی است.", l: [{ s: "tests", t: "تست‌ها ←" }] },
@@ -691,7 +691,7 @@
       { k: ["وزن", "سنگین", "گرم میشه"], a: "یک لایهٔ نازک و یکنواخت تقریباً وزنی اضافه نمی‌کند — برای همین روی پهپاد و الکترونیک حساس به وزن استفاده می‌شود (برخلاف Potting که وزن ماژول را چند برابر می‌کند).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "پوشش در برابر Potting" }] },
       { k: ["ویدئو", "فیلم", "ویدیو", "کلیپ", "نمایش"], a: "بله — ویدئوی واقعی تست محافظت در برابر آب در خود سایت پخش می‌شود و نمونه‌های بیشتر در یوتیوب ما هست.", l: [{ h: "/catalog/", t: "دیدن تست ←" }, { s: "tests", t: "تست‌ها ←" }] },
       { k: ["مقاله", "بلاگ", "راهنما", "آموزش", "یاد بگیرم"], a: "بلاگ ما ۹ راهنمای کاربردی دارد — ضدآب‌سازی PCB، پهپاد، دوربین، ECU، برداشتن پوشش، مقایسه با Potting و بیشتر، به ۵ زبان.", l: [{ h: "/blog/", t: "باز کردن بلاگ ←" }] },
-      { k: ["پاتینگ", "potting", "رزین", "اپوکسی", "تغلیف"], a: "در مقایسه با Potting، MG COAT بخش زیادی از استحکام را می‌دهد بدون وزن، حبس گرما یا ازدست‌رفتن تعمیرپذیری — برد قابل‌سرویس می‌ماند.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "خواندن مقایسه" }] }
+      { k: ["پاتینگ", "potting", "رزین", "اپوکسی", "تغلیف"], a: "در مقایسه با Potting، MGCoat بخش زیادی از استحکام را می‌دهد بدون وزن، حبس گرما یا ازدست‌رفتن تعمیرپذیری — برد قابل‌سرویس می‌ماند.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "خواندن مقایسه" }] }
     ]
   };
   var fabStack = document.getElementById("fab-stack");
