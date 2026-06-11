@@ -2,49 +2,164 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MGCoat — Admin / Webmail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>MGCoat Studio — Admin</title>
 <meta name="robots" content="noindex, nofollow"/>
 <meta name="theme-color" content="#070910"/>
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon-180.png"/>
+<link rel="manifest" href="/admin/manifest.webmanifest"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="MGCoat"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"/>
 <style>
-  :root{--red:#ff3340;--red-deep:#e30613;--cyan:#54d8ec;--bg:#070910;--bg-2:#0a0d15;--ink:#f2f4f9;--text:#b7bfce;--muted:#7b8597;--glass:rgba(255,255,255,.045);--glass-2:rgba(255,255,255,.07);--brd:rgba(255,255,255,.1);--brd-2:rgba(255,255,255,.18)}
+  :root{--red:#ff3340;--red-deep:#e30613;--cyan:#54d8ec;--bg:#070910;--bg-2:#0a0d15;--ink:#f2f4f9;--text:#c3cad6;--muted:#7b8597;--glass:rgba(255,255,255,.045);--glass-2:rgba(255,255,255,.08);--brd:rgba(255,255,255,.11);--brd-2:rgba(255,255,255,.2);--ok:#3ddc84;--rad:16px}
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
-    font-family:Inter,"Segoe UI",system-ui,sans-serif;color:var(--text);
-    background:radial-gradient(700px 480px at 20% 0%,rgba(255,51,64,.1),transparent 60%),radial-gradient(680px 560px at 90% 12%,rgba(84,216,236,.09),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg-2))}
-  .card{width:min(420px,100%);background:rgba(10,13,21,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-    border:1px solid var(--brd);border-radius:22px;padding:38px 32px;box-shadow:0 30px 80px rgba(0,0,0,.5);text-align:center}
-  .logo{width:88px;height:auto;margin:0 auto 18px;display:block;filter:drop-shadow(0 8px 30px rgba(84,216,236,.2))}
-  h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--ink);margin:0 0 4px}
-  .sub{font-family:"Space Grotesk",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:22px}
-  p{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 22px}
-  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;text-decoration:none;
-    padding:14px 18px;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;border:1px solid var(--brd);
-    background:transparent;color:var(--ink);transition:.2s ease;margin-bottom:11px}
-  .btn:hover{transform:translateY(-2px);border-color:var(--brd-2);background:var(--glass)}
+  html,body{margin:0}
+  body{min-height:100vh;font-family:Inter,"Segoe UI",system-ui,sans-serif;color:var(--text);
+    background:radial-gradient(700px 480px at 18% -4%,rgba(255,51,64,.1),transparent 60%),radial-gradient(680px 560px at 92% 8%,rgba(84,216,236,.08),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg-2));
+    padding:max(16px,env(safe-area-inset-top)) 16px calc(96px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+  .wrap{max-width:560px;margin:0 auto}
+  .top{display:flex;align-items:center;gap:12px;margin:6px 2px 20px}
+  .top img{width:38px;height:38px}
+  .top h1{font-family:"Space Grotesk",sans-serif;font-size:18px;letter-spacing:.04em;color:var(--ink);margin:0}
+  .top small{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-top:2px}
+  .top .who{margin-left:auto;font-size:11px;color:var(--muted);text-align:right;max-width:46%;overflow:hidden;text-overflow:ellipsis}
+  .card{background:rgba(10,13,21,.66);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border:1px solid var(--brd);border-radius:var(--rad);padding:20px;margin-bottom:16px}
+  .card h2{font-family:"Space Grotesk",sans-serif;font-size:15px;color:var(--ink);margin:0 0 4px}
+  .card .hint{font-size:12.5px;color:var(--muted);margin:0 0 14px;line-height:1.6}
+  label{display:block;font-size:12px;color:var(--muted);margin:14px 0 6px;font-weight:600}
+  input,textarea,select{width:100%;background:var(--glass);border:1px solid var(--brd);border-radius:11px;
+    color:var(--ink);font:500 15px Inter,sans-serif;padding:12px 13px;outline:none}
+  input:focus,textarea:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(84,216,236,.14)}
+  .switch{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .switch input{width:auto;transform:scale(1.2)}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:1px solid var(--brd);
+    background:var(--glass-2);color:var(--ink);font:600 15px Inter,sans-serif;padding:13px 16px;border-radius:12px;cursor:pointer;transition:.18s;text-decoration:none}
+  .btn:hover{border-color:var(--brd-2)}
   .btn.red{background:var(--red);border-color:var(--red);color:#fff}
   .btn.red:hover{background:var(--red-deep);border-color:var(--red-deep)}
-  .foot{margin-top:18px;font-size:11.5px;color:var(--muted)}
-  .foot a{color:var(--cyan);text-decoration:none}
-  .back{position:fixed;top:18px;left:18px;color:var(--muted);text-decoration:none;font-size:13px}
-  .back:hover{color:var(--ink)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:rgba(8,10,18,.93);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--brd);
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom));z-index:40}
+  .tab{flex:1;background:none;border:0;color:var(--muted);font:600 11px Inter,sans-serif;padding:8px 4px;border-radius:10px;cursor:pointer}
+  .tab .ic{display:block;font-size:19px;margin-bottom:3px}
+  .tab.on{color:var(--ink);background:var(--glass)}
+  .hide{display:none!important}
+  .pill{display:inline-block;font-size:11px;padding:3px 9px;border-radius:99px;border:1px solid var(--brd)}
+  .pill.ok{color:var(--ok);border-color:rgba(61,220,132,.4);background:rgba(61,220,132,.08)}
+  .pill.warn{color:#ffd166;border-color:rgba(255,209,102,.4);background:rgba(255,209,102,.08)}
+  .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:92px;z-index:60;max-width:90%;
+    padding:12px 18px;border-radius:12px;font-size:13.5px;font-weight:600;color:#fff;opacity:0;pointer-events:none;transition:.25s}
+  .toast.show{opacity:1}.toast.ok{background:#14794a}.toast.err{background:#9a1d28}
+  .muted{color:var(--muted);font-size:12.5px;line-height:1.7}
+  .commit{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--brd);font-size:12.5px}
+  .commit:last-child{border-bottom:0}.commit .when{color:var(--muted);white-space:nowrap}
+  a.link{color:var(--cyan);text-decoration:none}
+  .prev{max-width:100%;max-height:200px;border-radius:10px;margin-top:12px;display:none}
+  details{margin-top:12px}summary{cursor:pointer;color:var(--cyan);font-size:12.5px}
+  code{background:var(--glass);padding:1px 6px;border-radius:6px;font-size:12px;word-break:break-word}
+  .center{text-align:center}
+  #gbtn{display:flex;justify-content:center;margin:18px 0 6px;min-height:44px}
 </style>
 </head>
 <body>
-<a class="back" href="/">← mgcoat.com</a>
-<main class="card">
-<img class="logo" src="../assets/img/logo-mark.png" alt="MGCoat"/>
-<h1>MGCoat Admin</h1>
-<div class="sub">Secure Webmail</div>
-<p>Mail sent to <b>admin@mgcoat.com</b> is delivered to your inbox. Sign in to read and reply. Authentication is handled securely by Google.</p>
-<a class="btn red" href="https://mail.google.com/mail/u/0/" rel="noopener" target="_blank">Open Inbox (Gmail)</a>
-<a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1" rel="noopener" target="_blank">Compose new message</a>
-<div class="foot">Routed free via Cloudflare Email Routing → Gmail.</div>
-</main>
+<div class="wrap">
+  <div class="top">
+    <img src="/assets/img/logo-mark.png" alt="MGCoat"/>
+    <div><h1>MGCoat&nbsp;Studio</h1><small>Site control panel</small></div>
+    <div class="who" id="who"></div>
+  </div>
+
+  <!-- SIGN IN -->
+  <section id="view-login">
+    <div class="card center">
+      <h2>Sign in</h2>
+      <p class="hint">Only the authorised management account can sign in and publish changes.</p>
+      <div id="gbtn"></div>
+      <p class="muted" id="login-note"></p>
+      <details>
+        <summary>First-time setup (one time)</summary>
+        <p class="muted">This panel needs a Google sign-in client and a few secret keys set in Vercel. See <code>STUDIO-SETUP.md</code> in the repository for the 10-minute guide. Until that is done, sign-in will not appear.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="view-settings" class="hide">
+    <div class="card">
+      <h2>Contact details</h2>
+      <p class="hint">Updates apply across the whole site after publishing.</p>
+      <label>WhatsApp number (digits only)</label>
+      <input id="s-wa" inputmode="numeric" placeholder="905528767973"/>
+      <label>Phone</label>
+      <input id="s-phone" placeholder="+90 552 876 7973"/>
+      <label>Email (optional)</label>
+      <input id="s-email" inputmode="email" autocapitalize="off" placeholder="info@mgcoat.com"/>
+      <label>Instagram handle</label>
+      <input id="s-ig" autocapitalize="off" placeholder="mgcoatcom"/>
+    </div>
+    <div class="card">
+      <h2>Announcement bar</h2>
+      <p class="hint">An optional red bar at the top of the homepage.</p>
+      <div class="switch"><input type="checkbox" id="s-an-on"/><label for="s-an-on" style="margin:0">Show announcement</label></div>
+      <label>Text</label>
+      <input id="s-an-text" placeholder="New: industrial bulk supply available"/>
+      <label>Link (optional)</label>
+      <input id="s-an-link" autocapitalize="off" placeholder="https://wa.me/…"/>
+    </div>
+    <button class="btn red" id="btn-save-settings">Publish changes</button>
+  </section>
+
+  <!-- MEDIA -->
+  <section id="view-media" class="hide">
+    <div class="card">
+      <h2>Upload image or video</h2>
+      <p class="hint">Replace or add a picture/video, then publish.</p>
+      <label>Destination folder</label>
+      <select id="m-folder">
+        <option value="assets/img">assets/img (pictures)</option>
+        <option value="assets/video">assets/video (videos)</option>
+      </select>
+      <label>Choose file</label>
+      <input id="m-file" type="file" accept="image/*,video/*"/>
+      <img id="m-prev" class="prev" alt="preview"/>
+      <label>Save as (file name)</label>
+      <input id="m-name" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="my-photo.jpg"/>
+      <p class="muted" style="margin-top:8px">To replace an existing image, use its exact name (e.g. <code>render-chip.jpg</code>).</p>
+      <div style="height:14px"></div>
+      <button class="btn red" id="btn-upload">Publish file</button>
+    </div>
+  </section>
+
+  <!-- STATUS -->
+  <section id="view-status" class="hide">
+    <div class="card">
+      <h2>Status <span id="st-pill" class="pill">…</span></h2>
+      <p class="hint">Recent changes published to the site. The live site refreshes 1–2 minutes after publishing.</p>
+      <div id="st-commits"><p class="muted">Loading…</p></div>
+      <div style="height:14px"></div>
+      <a class="btn" href="https://www.mgcoat.com/" target="_blank" rel="noopener">Open live site ↗</a>
+      <div style="height:10px"></div>
+      <button class="btn" id="btn-signout">Sign out</button>
+    </div>
+  </section>
+</div>
+
+<nav class="tabs hide" id="tabs">
+  <button class="tab on" data-view="settings"><span class="ic">⚙️</span>Settings</button>
+  <button class="tab" data-view="media"><span class="ic">🖼️</span>Media</button>
+  <button class="tab" data-view="status"><span class="ic">📡</span>Status</button>
+</nav>
+
+<div id="toast" class="toast"></div>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/admin/sw.js").catch(function(){});}</script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="/admin/admin.js?v=1"></script>
 </body>
 </html>
