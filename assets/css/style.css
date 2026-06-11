@@ -1078,6 +1078,8 @@ body::after {
   background: radial-gradient(120% 120% at 30% 20%, #ff5b66, var(--red) 60%, #c5121f);
   box-shadow: 0 6px 16px rgba(229, 6, 19, .4); transition: transform .2s var(--ease), box-shadow .2s var(--ease);
 }
+.assist-send { display: grid; place-items: center; }
+.assist-send svg { width: 18px; height: 18px; }
 .assist-send:hover { transform: scale(1.06); box-shadow: 0 8px 20px rgba(229, 6, 19, .55); }
 [dir=rtl] .assist-send { transform: scaleX(-1); }
 [dir=rtl] .assist-send:hover { transform: scaleX(-1) scale(1.06); }

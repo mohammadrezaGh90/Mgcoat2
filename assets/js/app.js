@@ -220,6 +220,8 @@
     navLinks.forEach(function (a) {
       var label = nv[a.dataset.sec];
       if (label) a.textContent = label;
+      // real anchors (not href="#") — correct fallback/SEO and a11y
+      if (a.dataset.sec) a.setAttribute("href", "#" + lang + "-" + a.dataset.sec);
     });
     var catLink = document.querySelector('.nav-ext[data-ext="catalog"]');
     if (catLink) catLink.textContent = CATW[lang] || CATW.en;
