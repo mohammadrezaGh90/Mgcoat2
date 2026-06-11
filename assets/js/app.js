@@ -527,7 +527,27 @@
       { k: ["partner", "reseller", "distributor", "wholesale", "agency", "represent"], a: "We welcome partners in sales, repair and industry — become the MG COAT reseller in your region.", l: [{ s: "partners", t: "Partnership →" }] },
       { k: ["durab", "year", "lifetime", "long", "warranty", "scratch", "strength", "mechanical", "hard"], a: "After full curing it forms a hard, scratch-resistant layer with a 10-year-plus design target under correct application and conditions.", l: [{ s: "tests", t: "Tests →" }] },
       { k: ["phone", "call", "number", "contact", "reach", "telephone", "whatsapp"], a: "You can reach us directly — our phone is the same as our WhatsApp: +90 552 876 7973. Tap to chat:", l: [{ h: WA_URL, t: "WhatsApp / Call" }, { s: "contact", t: "Contact →" }] },
-      { k: ["address", "location", "where", "based", "office", "country", "city", "istanbul", "turkey"], a: "We're based in Istanbul, Turkey, and serve customers there, in Iran and worldwide.", l: [{ s: "contact", t: "Contact →" }, { h: WA_URL, t: "WhatsApp" }] }
+      { k: ["address", "location", "where", "based", "office", "country", "city", "istanbul", "turkey"], a: "We're based in Istanbul, Turkey, and serve customers there, in Iran and worldwide.", l: [{ s: "contact", t: "Contact →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["hi", "hello", "hey", "good morning", "good evening", "greetings", "how are you"], a: "Hello! 👋 Welcome to MG COAT. Ask me about pricing, application, water resistance, durability, colors, shipping — anything about the coating.", l: [] },
+      { k: ["thanks", "thank you", "thx", "appreciate", "perfect", "awesome", "great answer"], a: "You're very welcome! If anything else comes up I'm right here — and our team is one tap away on WhatsApp. 🌟", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["bye", "goodbye", "see you", "see ya"], a: "Thanks for visiting MG COAT — see you soon! 👋", l: [] },
+      { k: ["human", "agent", "operator", "real person", "sales team", "talk to someone", "support team"], a: "Of course — our team replies fast on WhatsApp (same number as our phone): +90 552 876 7973.", l: [{ h: WA_URL, t: "Chat on WhatsApp" }] },
+      { k: ["safe", "safety", "toxic", "smell", "odor", "fumes", "health", "voc", "skin", "msds", "sds"], a: "Once fully cured the layer is stable and safe to handle. During application work in a ventilated area and avoid skin/eye contact — standard practice for liquid coatings. The safety data sheet (SDS) is available on request.", l: [{ h: WA_URL, t: "Request SDS" }] },
+      { k: ["chemical", "acid", "fuel", "petrol", "gasoline", "oils", "alcohol", "salt", "corrosion", "detergent", "cleaning agent"], a: "The cured layer resists common workshop chemicals — oils, fuels, cleaning agents — plus salt spray and corrosion. That's why it suits marine and automotive electronics so well.", l: [{ s: "tests", t: "Tests →" }] },
+      { k: ["temperature range", "cold", "freez", "frost", "heat resist", "hot environment", "operating temperature"], a: "It's engineered for a wide operating range — from freezing outdoor cold to hot under-hood environments. Exact per-grade data is in the catalogue.", l: [{ h: "/catalog/", t: "Catalogue ↓" }] },
+      { k: ["insulat", "dielectric", "voltage", "short circuit", "conductive", "conductivity"], a: "The layer is electrically insulating (non-conductive), so it also guards against shorts caused by dust, condensation and accidental contact.", l: [{ s: "technology", t: "Technology →" }] },
+      { k: ["dry time", "drying time", "how long", "cure time", "curing time", "how fast", "minutes", "hours to dry"], a: "Fast: roughly 8–10 minutes between layers, and about 12 hours to reach full mechanical strength — all at room temperature, no oven needed.", l: [{ s: "technology", t: "Technology →" }] },
+      { k: ["coverage", "consumption", "how much do i need", "per liter", "per litre", "quantity needed", "how many boards"], a: "Consumption depends on board size, method and layer count (2–4 layers is typical). Send your board dimensions and monthly volume on WhatsApp and we'll calculate it for you.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["packaging", "pack size", "bottle", "can size", "container", "gallon", "bulk"], a: "We supply multiple pack sizes — from repair-shop packs up to industrial bulk. Tell us your usage and we'll recommend the right size.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["minimum order", "moq", "small order", "sample", "trial", "test batch"], a: "We serve everyone — from a single trial/sample pack to recurring industrial volumes, with tiered pricing for larger orders.", l: [{ s: "contact", t: "Order form →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["shipping", "deliver", "delivery", "export", "send to", "iran", "europe", "worldwide", "dhl", "cargo"], a: "We ship from Istanbul worldwide — including Iran, the Middle East and Europe. Time and cost depend on the destination; message us for a quick quote.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["transparent", "see through", "invisible", "appearance", "glossy", "matte finish"], a: "The layer is intentionally non-transparent — it protects the circuit AND conceals your board design from copying. Standard finishes: black, white, gray.", l: [{ s: "technology", t: "Technology →" }] },
+      { k: ["antenna", "signal", "wifi", "wi-fi", "gps", "bluetooth", "reception", "rf"], a: "The coating is non-metallic and insulating, so at normal thickness it doesn't noticeably affect WiFi/GPS/Bluetooth. As best practice, mask antenna elements before coating.", l: [{ s: "technology", t: "Technology →" }] },
+      { k: ["guarantee", "certificate", "quality assurance", "conformity"], a: "Quality is engineered in: a 10-year-plus design target, a documented application process and real water tests. For commercial terms and conformity documents, contact our team.", l: [{ s: "tests", t: "Tests →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["weight", "heavy", "grams", "mass"], a: "A thin, even layer adds almost no weight — that's why it's used on drones and weight-sensitive electronics (unlike potting, which can multiply a module's weight).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Coating vs potting" }] },
+      { k: ["video", "watch", "demo", "test video", "footage"], a: "Yes — the real water-protection test plays right on the site, with more on our YouTube channel.", l: [{ s: "video", t: "Watch the test →" }, { s: "tests", t: "Tests →" }] },
+      { k: ["blog", "article", "guide", "tutorial", "learn more", "read more"], a: "Our blog has 9 practical guides — waterproofing PCBs, drones, CCTV, ECUs, coating removal, the potting comparison and more, in 5 languages.", l: [{ h: "/blog/", t: "Open the blog →" }] },
+      { k: ["potting", "epoxy", "resin", "encapsulation"], a: "Compared with potting, MG COAT gives much of the robustness without the weight, trapped heat or lost repairability — boards stay serviceable.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Read the comparison" }] }
     ],
     ru: [
       { k: ["что такое", "о продукте", "mg coat", "mgcoat", "покрытие", "продукт"], a: "MG COAT Liquid PCB Plastic Coating — промышленное наноз­ащитное покрытие на пластиковой основе: гидроизолирует платы, датчики и схемы, образуя прочный непрозрачный механически стойкий слой без нагрева.", l: [{ s: "overview", t: "О нас →" }, { s: "technology", t: "Технология →" }] },
@@ -543,7 +563,27 @@
       { k: ["партн", "дилер", "дистриб", "опт", "представит"], a: "Мы открыты к партнёрству в продажах, ремонте и промышленности — станьте реселлером MG COAT в своём регионе.", l: [{ s: "partners", t: "Партнёрам →" }] },
       { k: ["долговечн", "срок", "лет", "гарант", "царапин", "прочн", "механ"], a: "После полного отверждения образуется твёрдый, стойкий к царапинам слой с расчётным сроком службы 10+ лет при правильном нанесении.", l: [{ s: "tests", t: "Тесты →" }] },
       { k: ["телефон", "звон", "номер", "контакт", "связ", "whatsapp", "ватсап"], a: "Свяжитесь с нами напрямую — телефон совпадает с WhatsApp: +90 552 876 7973. Нажмите, чтобы написать:", l: [{ h: WA_URL, t: "WhatsApp / Звонок" }, { s: "contact", t: "Контакты →" }] },
-      { k: ["адрес", "где наход", "локац", "город", "страна", "стамбул", "турци", "офис"], a: "Мы находимся в Стамбуле (Турция) и работаем с клиентами там, в Иране и по всему миру.", l: [{ s: "contact", t: "Контакты →" }, { h: WA_URL, t: "WhatsApp" }] }
+      { k: ["адрес", "где наход", "локац", "город", "страна", "стамбул", "турци", "офис"], a: "Мы находимся в Стамбуле (Турция) и работаем с клиентами там, в Иране и по всему миру.", l: [{ s: "contact", t: "Контакты →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["привет", "здравств", "добрый день", "добрый вечер", "доброе утро", "как дела", "хай"], a: "Здравствуйте! 👋 Добро пожаловать в MG COAT. Спросите о цене, нанесении, водостойкости, долговечности, цветах или доставке — о чём угодно.", l: [] },
+      { k: ["спасибо", "благодар", "отлично", "супер", "класс"], a: "Пожалуйста! 🌟 Если появятся ещё вопросы — я здесь, а наша команда на связи в WhatsApp.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["пока", "до свидан", "до встречи"], a: "Спасибо, что заглянули в MG COAT — до встречи! 👋", l: [] },
+      { k: ["оператор", "человек", "менеджер", "живой", "поддержк", "консультант"], a: "Конечно — наша команда быстро отвечает в WhatsApp (номер совпадает с телефоном): +90 552 876 7973.", l: [{ h: WA_URL, t: "Написать в WhatsApp" }] },
+      { k: ["безопасн", "токсичн", "запах", "здоров", "пары", "кожа", "вредн", "sds", "msds"], a: "После полного отверждения слой стабилен и безопасен. При нанесении работайте в проветриваемом месте и избегайте контакта с кожей и глазами — стандартная практика для жидких покрытий. Паспорт безопасности (SDS) — по запросу.", l: [{ h: WA_URL, t: "Запросить SDS" }] },
+      { k: ["химич", "кислот", "бензин", "топлив", "масло", "спирт", "соль", "коррози", "моющ"], a: "Отверждённый слой устойчив к обычной химии — маслам, топливу, моющим средствам, а также к соляному туману и коррозии. Поэтому он отлично подходит для морской и автомобильной электроники.", l: [{ s: "tests", t: "Тесты →" }] },
+      { k: ["диапазон температур", "мороз", "холод", "жара", "рабочая температура"], a: "Рассчитан на широкий диапазон — от уличного мороза до жары под капотом. Точные данные по маркам — в каталоге.", l: [{ h: "/catalog/", t: "Каталог ↓" }] },
+      { k: ["изоляц", "диэлектр", "напряжен", "замыкан", "проводим", "токопровод"], a: "Слой электроизоляционный (не проводит ток), поэтому защищает и от замыканий из-за пыли, конденсата и случайных касаний.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["сколько сохнет", "время сушки", "когда высохнет", "быстро сохнет", "сколько ждать"], a: "Быстро: около 8–10 минут между слоями и ~12 часов до полной механической прочности — всё при комнатной температуре, без печи.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["расход", "сколько нужно", "литр", "площад", "хватит на"], a: "Расход зависит от размеров платы, метода и числа слоёв (обычно 2–4). Напишите размеры платы и месячный объём в WhatsApp — посчитаем точно.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["упаковк", "фасовк", "банка", "канистр", "тара"], a: "Поставляем в разной фасовке — от ремонтной упаковки до промышленных объёмов. Сообщите ваш расход, подберём размер.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["минимальный заказ", "мелкий опт", "образец", "пробн", "партия"], a: "Работаем с любыми объёмами — от пробного образца до регулярных промышленных партий; для крупных заказов действуют ступенчатые цены.", l: [{ s: "contact", t: "Форма заказа →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["доставк", "отправ", "экспорт", "иран", "росси", "снг", "логистик"], a: "Отправляем из Стамбула по всему миру — включая Иран, Ближний Восток, Европу и СНГ. Сроки и стоимость зависят от направления; напишите нам для расчёта.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["прозрачн", "видно ли", "внешний вид", "глянц", "матов", "незаметн"], a: "Слой намеренно непрозрачный — он защищает схему и скрывает дизайн платы от копирования. Стандартные цвета: чёрный, белый, серый.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["антенн", "сигнал", "wifi", "вай фай", "gps", "bluetooth", "приём"], a: "Покрытие неметаллическое и изоляционное; при обычной толщине заметно не влияет на WiFi/GPS/Bluetooth. Антенные элементы лучше замаскировать перед нанесением.", l: [{ s: "technology", t: "Технология →" }] },
+      { k: ["гарант", "сертифик", "качеств", "соответств"], a: "Качество заложено в продукт: расчётный срок 10+ лет, документированный процесс нанесения и реальные водные тесты. По коммерческим условиям и документам напишите команде.", l: [{ s: "tests", t: "Тесты →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["вес", "тяжел", "грамм"], a: "Тонкий слой почти не добавляет веса — поэтому его используют на дронах и весочувствительной электронике (в отличие от заливки, утяжеляющей модуль).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Покрытие или заливка" }] },
+      { k: ["видео", "ролик", "посмотреть", "запись"], a: "Да — реальный тест водозащиты воспроизводится прямо на сайте, и ещё примеры на нашем YouTube.", l: [{ s: "video", t: "Смотреть тест →" }, { s: "tests", t: "Тесты →" }] },
+      { k: ["блог", "стать", "руководств", "гайд", "почитать"], a: "В блоге 9 практических руководств — гидроизоляция плат, дроны, камеры, ЭБУ, удаление покрытия, сравнение с заливкой и другое, на 5 языках.", l: [{ h: "/blog/", t: "Открыть блог →" }] },
+      { k: ["заливк", "поттинг", "potting", "эпоксид", "смол", "компаунд"], a: "По сравнению с заливкой MG COAT даёт большую часть прочности без веса, перегрева и потери ремонтопригодности — платы остаются обслуживаемыми.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Читать сравнение" }] }
     ],
     tr: [
       { k: ["nedir", "hakkında", "mg coat", "mgcoat", "kaplama", "ürün"], a: "MG COAT Liquid PCB Plastic Coating; PCB'leri, sensörleri ve devreleri su geçirmez yapan, plastik esaslı endüstriyel bir nano koruyucu kaplamadır — ısı gerektirmeyen, güçlü, opak ve mekanik dirençli bir katman.", l: [{ s: "overview", t: "Hakkında →" }, { s: "technology", t: "Teknoloji →" }] },
@@ -559,7 +599,27 @@
       { k: ["bayi", "partner", "distribütör", "toptan", "temsilci", "iş ortak"], a: "Satış, tamir ve sanayide iş ortaklarına açığız — bölgenizin MG COAT bayisi olun.", l: [{ s: "partners", t: "İş Ortaklığı →" }] },
       { k: ["dayanıklı", "yıl", "ömür", "garanti", "çizik", "mukavemet", "mekanik", "sert"], a: "Tam kürlenmeden sonra sert, çizilmeye dayanıklı bir katman oluşur; doğru uygulamayla 10+ yıl hedef dayanım.", l: [{ s: "tests", t: "Testler →" }] },
       { k: ["telefon", "ara", "numara", "iletişim", "ulaş", "whatsapp"], a: "Bize doğrudan ulaşın — telefonumuz WhatsApp ile aynı: +90 552 876 7973. Yazmak için dokunun:", l: [{ h: WA_URL, t: "WhatsApp / Ara" }, { s: "contact", t: "İletişim →" }] },
-      { k: ["adres", "konum", "nerede", "şehir", "ülke", "istanbul", "türkiye", "ofis"], a: "İstanbul, Türkiye'deyiz; Türkiye, İran ve tüm dünyaya hizmet veriyoruz.", l: [{ s: "contact", t: "İletişim →" }, { h: WA_URL, t: "WhatsApp" }] }
+      { k: ["adres", "konum", "nerede", "şehir", "ülke", "istanbul", "türkiye", "ofis"], a: "İstanbul, Türkiye'deyiz; Türkiye, İran ve tüm dünyaya hizmet veriyoruz.", l: [{ s: "contact", t: "İletişim →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["merhaba", "selam", "günaydın", "iyi akşamlar", "iyi günler", "nasılsın"], a: "Merhaba! 👋 MG COAT'a hoş geldiniz. Fiyat, uygulama, su dayanımı, ömür, renkler veya kargo — ne isterseniz sorun.", l: [] },
+      { k: ["teşekkür", "sağol", "sağ ol", "harika", "süper", "mükemmel", "eyvallah"], a: "Rica ederim! 🌟 Başka bir sorunuz olursa buradayım — ekibimiz de WhatsApp'ta bir dokunuş uzağınızda.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["hoşça kal", "hoşçakal", "görüşürüz", "bay bay", "güle güle"], a: "MG COAT'a uğradığınız için teşekkürler — görüşmek üzere! 👋", l: [] },
+      { k: ["operatör", "insan", "yetkili", "müşteri temsilcisi", "destek", "danışman"], a: "Tabii — ekibimiz WhatsApp'ta hızla yanıtlıyor (telefonla aynı numara): +90 552 876 7973.", l: [{ h: WA_URL, t: "WhatsApp'tan yazın" }] },
+      { k: ["güvenli", "zehirli", "koku", "sağlık", "buhar", "cilt", "zararlı", "sds", "msds"], a: "Tam kürlendikten sonra katman stabil ve güvenlidir. Uygulama sırasında havalandırılan yerde çalışın, cilt ve göz temasından kaçının — sıvı kaplamalarda standart uygulama. Güvenlik bilgi formu (SDS) talep üzerine verilir.", l: [{ h: WA_URL, t: "SDS isteyin" }] },
+      { k: ["kimyasal", "asit", "benzin", "yakıt", "yağa", "alkol", "tuz", "korozyon", "deterjan"], a: "Kürlenmiş katman yaygın kimyasallara — yağ, yakıt, temizlik maddeleri — ayrıca tuz sisi ve korozyona dayanıklıdır; bu yüzden denizcilik ve otomotiv elektroniğinde idealdir.", l: [{ s: "tests", t: "Testler →" }] },
+      { k: ["sıcaklık aralığı", "soğuk", "don", "aşırı sıcak", "çalışma sıcaklığı"], a: "Geniş bir çalışma aralığı için tasarlandı — dış mekân ayazından kaput altı sıcağına. Kesin değerler katalogda.", l: [{ h: "/catalog/", t: "Katalog ↓" }] },
+      { k: ["yalıtkan", "yalıtım", "dielektrik", "gerilim", "kısa devre", "iletken"], a: "Katman elektriksel olarak yalıtkandır (iletken değildir); toz, yoğuşma ve temas kaynaklı kısa devrelere karşı da korur.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["ne kadar sürede kurur", "kuruma süresi", "kaç saatte", "çabuk kurur", "ne zaman kurur"], a: "Hızlı: katmanlar arası yaklaşık 8–10 dakika, tam mekanik dayanım için ~12 saat — hepsi oda sıcaklığında, fırınsız.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["sarfiyat", "tüketim", "ne kadar gerek", "litre", "kaç kart", "yeter mi"], a: "Sarfiyat kart boyutuna, yönteme ve katman sayısına (genelde 2–4) bağlıdır. Kart ölçülerinizi ve aylık adedi WhatsApp'tan yazın, sizin için hesaplayalım.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["ambalaj", "kutu", "şişe", "bidon", "litrelik"], a: "Tamirhane boyundan endüstriyel hacme kadar farklı ambalajlar sunuyoruz. Kullanımınızı söyleyin, doğru boyutu önerelim.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["minimum sipariş", "en az", "numune", "deneme paketi", "toptan alım"], a: "Tek deneme/numune paketinden düzenli endüstriyel hacimlere kadar çalışıyoruz; büyük siparişlerde kademeli fiyat uygulanır.", l: [{ s: "contact", t: "Sipariş formu →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["gönderim", "teslimat", "ihracat", "iran", "avrupa", "hangi ülke", "kargoya"], a: "İstanbul'dan tüm dünyaya gönderiyoruz — İran, Orta Doğu ve Avrupa dahil. Süre ve ücret hedefe göre değişir; yazın, hemen bildirelim.", l: [{ h: WA_URL, t: "WhatsApp" }] },
+      { k: ["şeffaf", "görünüm", "parlak", "görünmez", "saydam"], a: "Katman bilerek opaktır — devreyi korur VE kart tasarımınızı kopyalanmaya karşı gizler. Standart renkler: siyah, beyaz, gri.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["anten", "sinyal", "wifi", "gps", "bluetooth", "çekim"], a: "Kaplama metalik değildir ve yalıtkandır; normal kalınlıkta WiFi/GPS/Bluetooth'u belirgin etkilemez. Yine de anten elemanlarını maskelemek en iyi uygulamadır.", l: [{ s: "technology", t: "Teknoloji →" }] },
+      { k: ["sertifika", "kalite belgesi", "uygunluk", "belge"], a: "Kalite ürünün içinde: 10+ yıl hedef ömür, belgelenmiş uygulama süreci ve gerçek su testleri. Ticari şartlar ve belgeler için ekibimize yazın.", l: [{ s: "tests", t: "Testler →" }, { h: WA_URL, t: "WhatsApp" }] },
+      { k: ["ağırlık", "ağır mı", "gram"], a: "İnce ve düzgün bir katman neredeyse hiç ağırlık eklemez — bu yüzden drone'larda ve ağırlığa duyarlı elektronikte kullanılır (modülü ağırlaştıran potting'in aksine).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Kaplama vs potting" }] },
+      { k: ["video", "izle", "tanıtım", "çekim videosu"], a: "Evet — gerçek su koruma testi sitede oynuyor, daha fazlası YouTube kanalımızda.", l: [{ s: "video", t: "Testi izle →" }, { s: "tests", t: "Testler →" }] },
+      { k: ["blog", "makale", "rehber", "kılavuz", "okumak"], a: "Blogumuzda 9 pratik rehber var — PCB su yalıtımı, drone, kamera, ECU, kaplama sökümü, potting karşılaştırması ve dahası, 5 dilde.", l: [{ h: "/blog/", t: "Blogu aç →" }] },
+      { k: ["potting", "reçine", "epoksi", "dolgu", "kapsülleme"], a: "Potting'e kıyasla MG COAT; ağırlık, hapsolan ısı veya kaybolan onarılabilirlik olmadan dayanıklılığın çoğunu verir — kartlar servis edilebilir kalır.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "Karşılaştırmayı oku" }] }
     ],
     ar: [
       { k: ["ما هو", "عن المنتج", "mg coat", "mgcoat", "طلاء", "منتج"], a: "‏MG COAT Liquid PCB Plastic Coating طلاء حماية نانوي صناعي قائم على البلاستيك يعزل لوحات PCB والحساسات والدوائر عن الماء — طبقة قوية غير شفافة مقاومة ميكانيكياً وبدون حرارة.", l: [{ s: "overview", t: "من نحن ←" }, { s: "technology", t: "التقنية ←" }] },
@@ -575,7 +635,27 @@
       { k: ["وكيل", "موزع", "شراكة", "جملة", "ممثل"], a: "نرحّب بالشركاء في البيع والإصلاح والصناعة — كن موزّع MG COAT في منطقتك.", l: [{ s: "partners", t: "الشراكة ←" }] },
       { k: ["متانة", "سنوات", "عمر", "ضمان", "خدش", "قوة", "ميكانيك", "صلب"], a: "بعد الجفاف الكامل تتكوّن طبقة صلبة مقاومة للخدش بهدف تصميمي يتجاوز 10 سنوات مع التطبيق الصحيح.", l: [{ s: "tests", t: "الاختبارات ←" }] },
       { k: ["هاتف", "اتصال", "رقم", "تواصل", "واتساب", "واتس"], a: "تواصل معنا مباشرة — هاتفنا هو نفسه واتساب: ‎+90 552 876 7973. اضغط للمحادثة:", l: [{ h: WA_URL, t: "واتساب / اتصال" }, { s: "contact", t: "اتصل بنا ←" }] },
-      { k: ["عنوان", "موقع", "أين", "اين", "مدينة", "دولة", "إسطنبول", "اسطنبول", "تركيا", "مكتب"], a: "مقرّنا في إسطنبول، تركيا، ونخدم العملاء هناك وفي إيران وحول العالم.", l: [{ s: "contact", t: "اتصل بنا ←" }, { h: WA_URL, t: "واتساب" }] }
+      { k: ["عنوان", "موقع", "أين", "اين", "مدينة", "دولة", "إسطنبول", "اسطنبول", "تركيا", "مكتب"], a: "مقرّنا في إسطنبول، تركيا، ونخدم العملاء هناك وفي إيران وحول العالم.", l: [{ s: "contact", t: "اتصل بنا ←" }, { h: WA_URL, t: "واتساب" }] },
+      { k: ["مرحبا", "اهلا", "أهلا", "السلام عليكم", "صباح الخير", "مساء الخير", "كيف حالك", "هاي"], a: "مرحباً! 👋 أهلاً بك في MG COAT. اسألني عن السعر أو التطبيق أو مقاومة الماء أو المتانة أو الألوان أو الشحن — أي شيء.", l: [] },
+      { k: ["شكرا", "شكراً", "ممتاز", "رائع", "تسلم", "جزاك"], a: "على الرحب والسعة! 🌟 إن كان لديك سؤال آخر فأنا هنا — وفريقنا على بعد نقرة في واتساب.", l: [{ h: WA_URL, t: "واتساب" }] },
+      { k: ["وداعا", "مع السلامة", "الى اللقاء", "إلى اللقاء", "باي"], a: "شكراً لزيارتك MG COAT — إلى اللقاء! 👋", l: [] },
+      { k: ["موظف", "انسان", "إنسان", "مندوب", "دعم", "مستشار", "بشري"], a: "بالتأكيد — فريقنا يرد سريعاً على واتساب (نفس رقم الهاتف): ‎+90 552 876 7973.", l: [{ h: WA_URL, t: "تواصل عبر واتساب" }] },
+      { k: ["آمن", "امن", "سام", "رائحة", "صحة", "أبخرة", "ابخرة", "بشرة", "ضرر", "sds", "msds"], a: "بعد الجفاف الكامل تكون الطبقة مستقرة وآمنة. أثناء التطبيق اعمل في مكان جيد التهوية وتجنّب ملامسة الجلد والعينين — ممارسة قياسية للطلاءات السائلة. صحيفة السلامة (SDS) متاحة عند الطلب.", l: [{ h: WA_URL, t: "اطلب SDS" }] },
+      { k: ["كيماويات", "كيميائي", "حمض", "بنزين", "وقود", "زيت", "كحول", "ملح", "منظف"], a: "الطبقة المجففة تقاوم الكيماويات الشائعة — الزيوت والوقود والمنظفات — وكذلك رذاذ الملح والتآكل؛ لذلك تناسب الإلكترونيات البحرية والسيارات.", l: [{ s: "tests", t: "الاختبارات ←" }] },
+      { k: ["نطاق الحرارة", "برد", "صقيع", "حر شديد", "حرارة التشغيل"], a: "مصمّم لنطاق تشغيل واسع — من صقيع الخارج إلى حرارة ما تحت غطاء المحرك. البيانات الدقيقة لكل درجة في الكتالوج.", l: [{ h: "/catalog/", t: "الكتالوج ↓" }] },
+      { k: ["عازل", "عزل كهربائي", "جهد", "قصر", "ماس كهربائي", "موصل"], a: "الطبقة عازلة كهربائياً (غير موصلة)، فتحمي أيضاً من القصر الناتج عن الغبار والتكثّف والتلامس العرضي.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["كم يستغرق", "وقت الجفاف", "متى يجف", "يجف بسرعة", "مدة التجفيف"], a: "سريع: نحو 8–10 دقائق بين الطبقات، ونحو 12 ساعة للوصول إلى أقصى قوة ميكانيكية — كل ذلك في حرارة الغرفة دون فرن.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["استهلاك", "كم أحتاج", "كم احتاج", "لتر", "مساحة", "كم لوحة"], a: "يعتمد الاستهلاك على حجم اللوحة والطريقة وعدد الطبقات (عادة 2–4). أرسل أبعاد لوحتك وحجمك الشهري على واتساب لنحسبه لك بدقة.", l: [{ h: WA_URL, t: "واتساب" }] },
+      { k: ["تعبئة", "عبوة", "علبة", "غالون", "لترية"], a: "نوفر عبوات متعددة — من عبوة الورشة إلى الأحجام الصناعية. أخبرنا باستهلاكك لنقترح الحجم المناسب.", l: [{ h: WA_URL, t: "واتساب" }] },
+      { k: ["الحد الأدنى", "الحد الادنى", "كمية صغيرة", "عينة", "تجربة", "بالجملة"], a: "نخدم الجميع — من عبوة تجريبية واحدة إلى أحجام صناعية منتظمة، مع أسعار متدرجة للطلبات الكبيرة.", l: [{ s: "contact", t: "نموذج الطلب ←" }, { h: WA_URL, t: "واتساب" }] },
+      { k: ["الشحن", "توصيل", "تصدير", "ايران", "إيران", "اوروبا", "أوروبا", "اي دولة", "أي دولة"], a: "نشحن من إسطنبول إلى كل العالم — بما في ذلك إيران والشرق الأوسط وأوروبا. المدة والتكلفة حسب الوجهة؛ راسلنا لعرض سريع.", l: [{ h: WA_URL, t: "واتساب" }] },
+      { k: ["شفاف", "مظهر", "لامع", "مطفي", "غير مرئي"], a: "الطبقة غير شفافة عمداً — تحمي الدائرة وتخفي تصميم لوحتك عن النسخ. الألوان القياسية: أسود وأبيض ورمادي.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["هوائي", "إشارة", "اشارة", "واي فاي", "wifi", "gps", "بلوتوث", "استقبال"], a: "الطلاء غير معدني وعازل؛ بالسماكة المعتادة لا يؤثر بشكل ملحوظ على WiFi/GPS/البلوتوث. ومع ذلك يُفضَّل تقنيع عناصر الهوائي قبل الطلاء.", l: [{ s: "technology", t: "التقنية ←" }] },
+      { k: ["شهادة", "جودة", "مطابقة", "وثائق"], a: "الجودة في صميم المنتج: هدف متانة يتجاوز 10 سنوات، وعملية تطبيق موثّقة واختبارات ماء حقيقية. للشروط التجارية والوثائق راسل فريقنا.", l: [{ s: "tests", t: "الاختبارات ←" }, { h: WA_URL, t: "واتساب" }] },
+      { k: ["وزن", "ثقيل", "غرام"], a: "الطبقة الرقيقة المتساوية لا تضيف وزناً يُذكر — لذلك تُستخدم في الدرون والإلكترونيات الحساسة للوزن (بعكس التغليف بالراتنج الذي يضاعف وزن الوحدة).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "الطلاء مقابل التغليف" }] },
+      { k: ["فيديو", "شاهد", "مشاهدة", "فلم", "عرض"], a: "نعم — اختبار الحماية من الماء الحقيقي يُعرض في الموقع مباشرة، والمزيد على قناتنا في يوتيوب.", l: [{ s: "video", t: "شاهد الاختبار ←" }, { s: "tests", t: "الاختبارات ←" }] },
+      { k: ["مدونة", "مقال", "دليل", "تعلم", "شرح"], a: "مدونتنا تضم 9 أدلة عملية — عزل PCB، الدرون، الكاميرات، ECU، إزالة الطلاء، مقارنة التغليف وغيرها، بخمس لغات.", l: [{ h: "/blog/", t: "افتح المدونة ←" }] },
+      { k: ["تغليف", "راتنج", "ايبوكسي", "إيبوكسي", "بوتينغ", "potting"], a: "مقارنةً بالتغليف بالراتنج، يمنح MG COAT معظم المتانة دون الوزن أو حبس الحرارة أو فقدان قابلية الإصلاح — تبقى اللوحات قابلة للصيانة.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "اقرأ المقارنة" }] }
     ],
     fa: [
       { k: ["چیست", "چیه", "درباره", "mg coat", "mgcoat", "محصول", "پوشش چ"], a: "‏MG COAT Liquid PCB Plastic Coating یک پوشش محافظ نانویی صنعتی بر پایهٔ پلاستیک است که بردها، سنسورها و مدارها را ضدآب می‌کند — لایه‌ای قوی، غیرشفاف و مقاوم مکانیکی، بدون نیاز به حرارت.", l: [{ s: "overview", t: "درباره ←" }, { s: "technology", t: "تکنولوژی ←" }] },
@@ -591,7 +671,27 @@
       { k: ["نمایندگی", "همکاری", "پخش", "عاملیت", "عمده", "نماینده"], a: "در فروش، تعمیر و صنعت از شریک استقبال می‌کنیم — نمایندهٔ MG COAT در منطقهٔ خودت باش.", l: [{ s: "partners", t: "همکاری با ما ←" }] },
       { k: ["ماندگاری", "دوام", "سال", "عمر", "خش", "مقاومت", "گارانتی", "سخت"], a: "بعد از خشک‌شدن کامل، لایه‌ای سخت و مقاوم به خش تشکیل می‌شود با هدف طراحی ۱۰ سال+ در شرایط اجرای صحیح.", l: [{ s: "tests", t: "تست‌ها ←" }] },
       { k: ["تلفن", "شماره", "تماس", "زنگ", "واتساپ", "واتس", "ارتباط"], a: "مستقیم با ما در تماس باش — شماره تلفن همان واتساپ است: ‎+90 552 876 7973. برای گفتگو بزن:", l: [{ h: WA_URL, t: "واتساپ / تماس" }, { s: "contact", t: "تماس ←" }] },
-      { k: ["آدرس", "مکان", "کجا", "کجاست", "شهر", "کشور", "استانبول", "ترکیه", "دفتر", "محل"], a: "ما در استانبولِ ترکیه هستیم و به مشتریان آنجا، ایران و سراسر دنیا خدمت می‌دهیم.", l: [{ s: "contact", t: "تماس ←" }, { h: WA_URL, t: "واتساپ" }] }
+      { k: ["آدرس", "مکان", "کجا", "کجاست", "شهر", "کشور", "استانبول", "ترکیه", "دفتر", "محل"], a: "ما در استانبولِ ترکیه هستیم و به مشتریان آنجا، ایران و سراسر دنیا خدمت می‌دهیم.", l: [{ s: "contact", t: "تماس ←" }, { h: WA_URL, t: "واتساپ" }] },
+      { k: ["سلام", "درود", "صبح بخیر", "عصر بخیر", "شب بخیر", "خوبی", "چطوری", "هلو"], a: "سلام! 👋 به MG COAT خوش آمدی. دربارهٔ قیمت، روش اجرا، مقاومت در برابر آب، دوام، رنگ‌ها یا ارسال — هر چیزی بپرس.", l: [] },
+      { k: ["مرسی", "ممنون", "تشکر", "سپاس", "دمت گرم", "عالی بود", "لطف کردی"], a: "خواهش می‌کنم! 🌟 اگر سؤال دیگری بود همین‌جا هستم — تیم ما هم در واتساپ یک کلیک فاصله دارد.", l: [{ h: WA_URL, t: "واتساپ" }] },
+      { k: ["خداحافظ", "بای", "فعلا", "خدانگهدار"], a: "ممنون که به MG COAT سر زدی — به امید دیدار! 👋", l: [] },
+      { k: ["اپراتور", "کارشناس", "انسان", "پشتیبانی", "مشاور", "صحبت با", "ادم واقعی", "آدم واقعی"], a: "حتماً — تیم ما در واتساپ سریع جواب می‌دهد (همان شمارهٔ تلفن): ‎+90 552 876 7973.", l: [{ h: WA_URL, t: "گفتگو در واتساپ" }] },
+      { k: ["سمی", "بو", "ایمنی", "سلامتی", "تنفس", "خطرناک", "پوست", "ضرر", "sds", "msds"], a: "بعد از خشک‌شدن کامل، لایه پایدار و بی‌خطر است. هنگام اجرا در فضای تهویه‌دار کار کن و از تماس با پوست و چشم پرهیز کن — مثل هر پوشش مایع صنعتی. برگهٔ ایمنی (SDS) هم در صورت درخواست ارائه می‌شود.", l: [{ h: WA_URL, t: "درخواست SDS" }] },
+      { k: ["اسید", "بنزین", "روغن", "شیمیایی", "الکل", "نمک", "سوخت", "شوینده"], a: "لایهٔ خشک‌شده در برابر مواد شیمیایی رایج — روغن، سوخت، شوینده‌ها — و همچنین مه‌نمکی و خوردگی مقاوم است؛ برای همین در کاربرد دریایی و خودرویی عالی است.", l: [{ s: "tests", t: "تست‌ها ←" }] },
+      { k: ["دمای کار", "سرما", "یخ", "گرمای زیاد", "تحمل دما", "محدوده دما", "داغ"], a: "برای محدودهٔ دمایی وسیعی مهندسی شده — از سرمای یخ‌زدهٔ فضای باز تا گرمای زیر کاپوت. اطلاعات دقیق هر گرید در کاتالوگ هست.", l: [{ h: "/catalog/", t: "کاتالوگ ↓" }] },
+      { k: ["عایق", "ولتاژ", "اتصالی", "اتصال کوتاه", "رسانا", "دی الکتریک", "برق میگیره"], a: "لایه عایق الکتریکی است (رسانا نیست)؛ بنابراین در برابر اتصالیِ ناشی از گردوغبار، میعان و تماس تصادفی هم محافظت می‌کند.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["زمان خشک", "چقدر طول", "کی خشک", "چند ساعت", "مدت زمان", "سریع خشک"], a: "خیلی سریع: حدود ۸ تا ۱۰ دقیقه بین لایه‌ها، و حدود ۱۲ ساعت تا رسیدن به حداکثر استحکام مکانیکی — همه در دمای اتاق و بدون کوره.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["مصرف", "پوشش دهی", "چند برد", "لیتر", "متراژ", "چقدر لازم"], a: "مصرف به ابعاد برد، روش اجرا و تعداد لایه (معمولاً ۲ تا ۴) بستگی دارد. ابعاد برد و حجم ماهانه‌ات را در واتساپ بگو تا دقیق برایت محاسبه کنیم.", l: [{ h: WA_URL, t: "واتساپ" }] },
+      { k: ["بسته بندی", "حجم بسته", "قوطی", "گالن", "ظرف"], a: "در بسته‌بندی‌های مختلف عرضه می‌شود — از بستهٔ تعمیرگاهی تا حجم صنعتی. میزان مصرفت را بگو تا اندازهٔ مناسب را پیشنهاد بدهیم.", l: [{ h: WA_URL, t: "واتساپ" }] },
+      { k: ["حداقل سفارش", "عمده", "تعداد کم", "نمونه", "تست اولیه"], a: "از یک بستهٔ نمونه/آزمایشی تا حجم‌های صنعتیِ مستمر — همه را پوشش می‌دهیم؛ برای سفارش‌های بزرگ‌تر قیمت پلکانی داریم.", l: [{ s: "contact", t: "فرم سفارش ←" }, { h: WA_URL, t: "واتساپ" }] },
+      { k: ["ارسال", "ایران", "پست", "حمل", "صادرات", "کشورها", "تحویل", "میفرستید"], a: "از استانبول به سراسر دنیا ارسال می‌کنیم — از جمله ایران، خاورمیانه و اروپا. زمان و هزینه به مقصد بستگی دارد؛ پیام بده تا سریع اعلام کنیم.", l: [{ h: WA_URL, t: "واتساپ" }] },
+      { k: ["شفاف", "براق", "مات", "ظاهر", "دیده میشود", "نامرئی"], a: "لایه عمداً غیرشفاف است — هم مدار را محافظت می‌کند و هم طراحی بردت را از کپی‌برداری پنهان نگه می‌دارد. رنگ‌های استاندارد: مشکی، سفید، خاکستری.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["آنتن", "سیگنال", "وای فای", "wifi", "gps", "بلوتوث", "گیرنده"], a: "پوشش غیرفلزی و عایق است؛ در ضخامت معمول تأثیر محسوسی روی WiFi/GPS/بلوتوث ندارد. طبق بهترین روش، المان‌های آنتن را قبل از اجرا ماسک کن.", l: [{ s: "technology", t: "تکنولوژی ←" }] },
+      { k: ["گارانتی", "ضمانت", "تضمین", "گواهی", "مدرک"], a: "کیفیت در طراحی محصول است: هدف دوام ۱۰+ سال، فرایند اجرای مستند و تست‌های واقعی آب. برای شرایط تجاری و مدارک انطباق با تیم ما صحبت کن.", l: [{ s: "tests", t: "تست‌ها ←" }, { h: WA_URL, t: "واتساپ" }] },
+      { k: ["وزن", "سنگین", "گرم میشه"], a: "یک لایهٔ نازک و یکنواخت تقریباً وزنی اضافه نمی‌کند — برای همین روی پهپاد و الکترونیک حساس به وزن استفاده می‌شود (برخلاف Potting که وزن ماژول را چند برابر می‌کند).", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "پوشش در برابر Potting" }] },
+      { k: ["ویدئو", "فیلم", "ویدیو", "کلیپ", "نمایش"], a: "بله — ویدئوی واقعی تست محافظت در برابر آب در خود سایت پخش می‌شود و نمونه‌های بیشتر در یوتیوب ما هست.", l: [{ s: "video", t: "دیدن تست ←" }, { s: "tests", t: "تست‌ها ←" }] },
+      { k: ["مقاله", "بلاگ", "راهنما", "آموزش", "یاد بگیرم"], a: "بلاگ ما ۹ راهنمای کاربردی دارد — ضدآب‌سازی PCB، پهپاد، دوربین، ECU، برداشتن پوشش، مقایسه با Potting و بیشتر، به ۵ زبان.", l: [{ h: "/blog/", t: "باز کردن بلاگ ←" }] },
+      { k: ["پاتینگ", "potting", "رزین", "اپوکسی", "تغلیف"], a: "در مقایسه با Potting، MG COAT بخش زیادی از استحکام را می‌دهد بدون وزن، حبس گرما یا ازدست‌رفتن تعمیرپذیری — برد قابل‌سرویس می‌ماند.", l: [{ h: "/blog/conformal-coating-vs-potting-encapsulation.html", t: "خواندن مقایسه" }] }
     ]
   };
   var fabStack = document.getElementById("fab-stack");
@@ -611,7 +711,14 @@
   var FAB_CHAT_LABEL = { en: "Chat", ru: "Чат", tr: "Sohbet", ar: "محادثة", fa: "گفتگو" };
   var fabChatLabelEl = document.querySelector(".fab-chat-label");
   function assistNorm(s) {
-    return (s || "").toLowerCase().replace(/[ي]/g, "ی").replace(/[ك]/g, "ک").replace(/[ًٌٍَُِّْ]/g, "");
+    return (s || "").toLowerCase()
+      .replace(/[ي]/g, "ی").replace(/[ك]/g, "ک").replace(/[ة]/g, "ه").replace(/[أإآٱ]/g, "ا")
+      .replace(/[ًٌٍَُِّْٰ]/g, "")
+      .replace(/[۰-۹]/g, function (d) { return String("۰۱۲۳۴۵۶۷۸۹".indexOf(d)); })
+      .replace(/[٠-٩]/g, function (d) { return String("٠١٢٣٤٥٦٧٨٩".indexOf(d)); })
+      .replace(/‌/g, " ")
+      .replace(/[.,!?؟،؛;:"'`()\[\]{}«»<>\-_=+*\/\\|~@#$%^&]+/g, " ")
+      .replace(/\s+/g, " ").trim();
   }
   function assistMsg(kind, text, links) {
     var m = document.createElement("div");
@@ -636,19 +743,52 @@
     assistBody.appendChild(m);
     assistBody.scrollTop = assistBody.scrollHeight;
   }
+  // topics hint shown with the fallback answer
+  var ASSIST_TOPICS = {
+    en: "You can ask me about: price & ordering, how it's applied, water/chemical resistance, drying time, colors, removal & repair, shipping, packaging, safety, or partnership.",
+    ru: "Можно спросить о: цене и заказе, нанесении, водо- и химстойкости, времени сушки, цветах, снятии и ремонте, доставке, фасовке, безопасности или партнёрстве.",
+    tr: "Şunları sorabilirsiniz: fiyat ve sipariş, uygulama, su/kimyasal dayanımı, kuruma süresi, renkler, söküm ve onarım, kargo, ambalaj, güvenlik veya bayilik.",
+    ar: "يمكنك أن تسألني عن: السعر والطلب، طريقة التطبيق، مقاومة الماء والكيماويات، وقت الجفاف، الألوان، الإزالة والإصلاح، الشحن، التعبئة، السلامة أو الشراكة.",
+    fa: "می‌توانی درباره‌ی این‌ها بپرسی: قیمت و سفارش، روش اجرا، مقاومت آب و مواد شیمیایی، زمان خشک‌شدن، رنگ‌ها، برداشتن و تعمیر، ارسال، بسته‌بندی، ایمنی یا نمایندگی."
+  };
+  // language of the typed question (so an EN question on the FA page still gets a good answer)
+  function assistDetectLang(nq) {
+    if (/[Ѐ-ӿ]/.test(nq)) return "ru";
+    if (/[؀-ۿ]/.test(nq)) return /[پچژگ]/.test(nq) ? "fa" : (curLang === "fa" || curLang === "ar" ? curLang : "ar");
+    return null; // Latin script → could be EN or TR
+  }
+  // word-boundary-aware keyword score (stems still match: boundary required at the start only)
+  function assistKwScore(nq, kw) {
+    var k = assistNorm(kw); if (!k) return 0;
+    var i = nq.indexOf(k); if (i === -1) return 0;
+    var ws = i === 0 || nq.charAt(i - 1) === " ";
+    var we = i + k.length === nq.length || nq.charAt(i + k.length) === " ";
+    if (!ws && k.length <= 3) return 0;     // short keywords must start a word ("hi" ≠ "this")
+    var s = k.length >= 5 ? 3 : (k.length >= 3 ? 2 : 1);
+    if (ws) s += 1; if (ws && we) s += 1;
+    if (k.indexOf(" ") !== -1) s += 2;      // multi-word phrases are strong signals
+    return s;
+  }
   // keyword knowledge base — used as the offline fallback and when no AI backend
   function assistAnswerKB(q) {
     var ui = ASSIST_UI[curLang] || ASSIST_UI.en;
-    var kb = ASSIST_KB[curLang] || ASSIST_KB.en;
     var nq = assistNorm(q);
+    var det = assistDetectLang(nq);
+    var langs = [curLang];
+    if (det && det !== curLang) langs.push(det);
+    if (!det) { if (langs.indexOf("en") === -1) langs.push("en"); if (langs.indexOf("tr") === -1) langs.push("tr"); }
     var best = null, bestScore = 0;
-    kb.forEach(function (e) {
-      var score = 0;
-      e.k.forEach(function (kw) { if (nq.indexOf(assistNorm(kw)) !== -1) score += kw.length > 4 ? 2 : 1; });
-      if (score > bestScore) { bestScore = score; best = e; }
+    langs.forEach(function (lg, li) {
+      (ASSIST_KB[lg] || []).forEach(function (e) {
+        var score = 0;
+        e.k.forEach(function (kw) { score += assistKwScore(nq, kw); });
+        if (score > 0 && li === 0) score += 1;   // prefer the page's active language on ties
+        if (score > bestScore) { bestScore = score; best = e; }
+      });
     });
-    if (best) assistMsg("bot", best.a, best.l);
-    else assistMsg("bot", ui.no, [{ h: WA_URL, t: ui.wa }]);
+    if (best && bestScore >= 3) { assistMsg("bot", best.a, best.l); return; }
+    assistMsg("bot", ui.no, [{ h: WA_URL, t: ui.wa }]);
+    assistMsg("bot", ASSIST_TOPICS[curLang] || ASSIST_TOPICS.en);
   }
   // typing indicator
   function assistTyping(on) {
