@@ -694,7 +694,7 @@
     if (assistTitle) assistTitle.textContent = ui.title;
     if (assistStatus) assistStatus.textContent = ASSIST_STATUS[lang] || ASSIST_STATUS.en;
     if (fabChatLabelEl) { var cl = FAB_CHAT_LABEL[lang] || FAB_CHAT_LABEL.en; fabChatLabelEl.textContent = cl; if (assistFab) assistFab.setAttribute("aria-label", cl); }
-    if (assistInput) assistInput.placeholder = ui.ph;
+    if (assistInput) { assistInput.placeholder = ui.ph; assistInput.setAttribute("aria-label", ui.ph); }
     assistHistory = [];   // a language switch starts a fresh conversation
     assistBody.innerHTML = "";
     assistMsg("bot", ui.hi);
