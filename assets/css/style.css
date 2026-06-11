@@ -460,6 +460,8 @@ h1 {
 .video-frame { position: relative; display: block; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 10; border: 1px solid var(--brd); }
 .video-frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease); }
 .video-frame:hover img { transform: scale(1.04); }
+.video-frame.test-video { aspect-ratio: 9 / 16; max-height: 78vh; background: #000; }
+.video-frame.test-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .play-circle {
   position: absolute; inset: 0; margin: auto; width: 70px; height: 70px; border-radius: 50%;
   background: var(--red); color: #fff; display: grid; place-items: center; font-size: 24px;

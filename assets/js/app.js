@@ -339,7 +339,7 @@
      + inline, play when scrolled into view, pause when out, and retry on the
      first user gesture and on tab refocus. Honors reduced-motion. */
   (function () {
-    var vids = Array.prototype.slice.call(document.querySelectorAll(".visual-video video"));
+    var vids = Array.prototype.slice.call(document.querySelectorAll(".visual-video video, .test-video video"));
     if (!vids.length) return;
 
     vids.forEach(function (v) {
