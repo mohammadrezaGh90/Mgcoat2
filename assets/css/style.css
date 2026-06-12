@@ -403,7 +403,9 @@ h1 {
   border: 1px solid var(--brd); background: var(--glass); box-shadow: var(--shadow);
 }
 .visual-card img { display: block; width: 100%; height: auto; }
-.visual-video video { display: block; width: 100%; height: auto; background: #05070d; }
+/* hero video, 20% glassy: 80% video + 20% of the cosmic background showing through */
+.visual-card.visual-video { background: transparent; }
+.visual-video video { display: block; width: 100%; height: auto; opacity: .8; }
 
 /* cinematic image backdrop for selected sections (dark overlay keeps text legible) */
 .has-bg { position: relative; isolation: isolate; }
@@ -416,6 +418,9 @@ h1 {
 }
 /* extra readability scrim only behind the text column of the contact CTA */
 .has-bg.contact-section::before { background: linear-gradient(rgba(5, 7, 13, .55), rgba(5, 7, 13, .72)), var(--bg-img) center / cover no-repeat; }
+/* let the cosmic background glimmer through the image sections so the animation
+   stays present all the way down the page */
+.has-bg::before { opacity: .86; }
 
 /* ============================================================
    CONTENT SECTIONS (clean / minimal)

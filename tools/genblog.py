@@ -34,7 +34,7 @@ def header(active_back):
       '<div class="lang-menu" role="listbox">'+''.join(f'<button class="lang-btn" type="button" data-lang="{l}"><span>{LBL[l][0]}</span><span>{LBL[l][1]}</span></button>' for l in LANGS)+'</div></div>'
       '</div></header>')
 
-BLOGJS='''<script src="/assets/js/flow-bg.js?v=4" defer></script><script src="/assets/js/site-content.js?v=1" defer></script><script src="/assets/js/blog.js?v=202606141"></script>'''
+BLOGJS='''<script src="/assets/js/flow-bg.js?v=6" defer></script><script src="/assets/js/site-content.js?v=1" defer></script><script src="/assets/js/blog.js?v=202606141"></script>'''
 
 def article_page(a):
     posts=""
@@ -65,7 +65,7 @@ def article_page(a):
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
 {FONTS}
-<link rel="stylesheet" href="/assets/css/style.css?v=202606141"/>
+<link rel="stylesheet" href="/assets/css/style.css?v=202606147"/>
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@graph":lds},ensure_ascii=False,separators=(',',':'))}</script>
 </head>
 <body>
@@ -102,7 +102,7 @@ idx=f"""<!DOCTYPE html>
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
 {FONTS}
-<link rel="stylesheet" href="/assets/css/style.css?v=202606141"/>
+<link rel="stylesheet" href="/assets/css/style.css?v=202606147"/>
 </head>
 <body>
 {header(True)}

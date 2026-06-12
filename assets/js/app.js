@@ -1020,7 +1020,7 @@
     document.body.appendChild(tiltBtn);
     updateTiltLabel(curLang);
 
-    var active = false, base = null, vel = 0, rafId = null;
+    var active = false, base = null, vel = 0, rafId = null, targetY = 0;
     var DEAD = 3, SCALE = 1.4, MAXV = 46;   // dead-zone (deg), speed divisor, px/frame cap
 
     function read(e) {
@@ -1035,15 +1035,21 @@
       if (vel) {
         var de = document.documentElement;
         var max = (document.body.scrollHeight || de.scrollHeight) - window.innerHeight;
-        var y = (window.pageYOffset || de.scrollTop || 0) + vel;
-        window.scrollTo(0, y < 0 ? 0 : (y > max ? max : y));   // native scroll (Lenis is paused below)
+        targetY += vel; if (targetY < 0) targetY = 0; else if (targetY > max) targetY = max;
+        // drive the smooth-scroll engine itself (an accumulated target — not the
+        // lagging current value) so it works *with* Lenis instead of fighting it.
+        if (typeof lenis !== "undefined" && lenis && typeof lenis.scrollTo === "function") {
+          lenis.scrollTo(targetY, { immediate: true, force: true, lock: true });
+        } else {
+          window.scrollTo(0, targetY);
+        }
       }
       rafId = requestAnimationFrame(tick);
     }
     function enable() {
       if (active) return;
       active = true; base = null; vel = 0;
-      try { if (typeof lenis !== "undefined" && lenis && lenis.stop) lenis.stop(); } catch (e) {}
+      targetY = window.pageYOffset || document.documentElement.scrollTop || 0;
       window.addEventListener("deviceorientation", read, true);
       window.addEventListener("deviceorientationabsolute", read, true);  // some Android browsers
       rafId = requestAnimationFrame(tick);
@@ -1054,7 +1060,6 @@
       window.removeEventListener("deviceorientation", read, true);
       window.removeEventListener("deviceorientationabsolute", read, true);
       if (rafId) cancelAnimationFrame(rafId);
-      try { if (typeof lenis !== "undefined" && lenis && lenis.start) lenis.start(); } catch (e) {}
       tiltBtn.classList.remove("on"); tiltBtn.setAttribute("aria-pressed", "false");
     }
     function flashDenied() {
