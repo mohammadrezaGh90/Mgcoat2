@@ -770,6 +770,56 @@
     return s;
   }
   // keyword knowledge base — used as the offline fallback and when no AI backend
+  // ---- live site-content search (answers from the actual page text) ----
+  var ASSIST_READ = { en: "Read this section →", ru: "Читать раздел →", tr: "Bölümü oku →", ar: "اقرأ القسم ←", fa: "خواندن این بخش ←" };
+  var ASSIST_STOP = (" the and for with that this what how does can are you your from into our its about tell explain please give know want need would could should which when where why who " +
+    " ile için bir bu ve mi nasil ne daha nedir hakkinda anlat " + " что как для или это под при про расскажи " +
+    " هل كيف من في على عن هذا ما اخبرني " + " که از این برای با را های یک می در به ایا چه چطور هم یا تا روی چیست چیه بگو توضیح درباره میخوام ").split(/\s+/);
+  function assistBuildIndex(lang) {
+    assistBuildIndex._c = assistBuildIndex._c || {};
+    if (assistBuildIndex._c[lang]) return assistBuildIndex._c[lang];
+    var root = document.getElementById("content-" + lang);
+    var out = [];
+    if (root) {
+      var heading = "", sec = "";
+      var els = root.querySelectorAll("section[id], h2.section-title, h3, summary, p");
+      Array.prototype.forEach.call(els, function (el) {
+        var tag = el.tagName.toLowerCase();
+        if (tag === "section") { sec = (el.id || "").replace(lang + "-", ""); return; }
+        var txt = (el.textContent || "").replace(/\s+/g, " ").trim();
+        if (!txt) return;
+        if (tag === "h2" || tag === "h3") { heading = txt; return; }
+        if (tag === "summary") { var a = el.nextElementSibling ? el.nextElementSibling.textContent : ""; out.push({ sec: sec, heading: txt, text: (a || txt).replace(/\s+/g, " ").trim() }); return; }
+        if (tag === "p" && txt.length > 30) out.push({ sec: sec, heading: heading || txt.slice(0, 40), text: txt });
+      });
+      out.forEach(function (p) { p.norm = assistNorm(p.heading + " " + p.text); });
+    }
+    assistBuildIndex._c[lang] = out;
+    return out;
+  }
+  function assistSiteSearch(q) {
+    var nq = assistNorm(q);
+    var words = nq.split(" ").filter(function (w) { return w.length >= 3 && ASSIST_STOP.indexOf(w) === -1; });
+    if (!words.length) return null;
+    var langs = [curLang]; var det = assistDetectLang(nq); if (det && det !== curLang) langs.push(det);
+    var best = null, bs = 0, bestHeadHit = false;
+    langs.forEach(function (lg) {
+      assistBuildIndex(lg).forEach(function (p) {
+        var s = 0, hit = 0, hh = false, hnorm = assistNorm(p.heading);
+        words.forEach(function (w) { if (p.norm.indexOf(w) !== -1) { hit++; if (hnorm.indexOf(w) !== -1) { hh = true; s += 2; } else s += 1; } });
+        if (hit >= Math.min(2, words.length) && s > bs) { bs = s; best = p; bestHeadHit = hh; }
+      });
+    });
+    if (!best || bs < 2) return null;
+    return { p: best, words: words, bs: bs, headingHit: bestHeadHit };
+  }
+  function assistSnippet(text, words) {
+    if (text.length <= 230) return text;
+    var parts = text.split(/[.!?؟\n،]+/); var bestS = parts[0] || text, bsc = -1;
+    parts.forEach(function (s) { if (s.trim().length < 24) return; var ns = assistNorm(s), c = 0; words.forEach(function (w) { if (ns.indexOf(w) !== -1) c++; }); if (c > bsc) { bsc = c; bestS = s; } });
+    bestS = bestS.trim();
+    return bestS.length > 230 ? bestS.slice(0, 228).trim() + "…" : bestS + ".";
+  }
   function assistAnswerKB(q) {
     var ui = ASSIST_UI[curLang] || ASSIST_UI.en;
     var nq = assistNorm(q);
@@ -786,7 +836,16 @@
         if (score > bestScore) { bestScore = score; best = e; }
       });
     });
+    // a specific section-heading match in the site text beats a generic KB answer
+    var sr = assistSiteSearch(q);
+    function answerFromSite(s) {
+      var head = s.p.heading, body = assistSnippet(s.p.text, s.words);
+      var text = (head && assistNorm(head) !== assistNorm(body)) ? head + " — " + body : body;
+      assistMsg("bot", text, s.p.sec ? [{ s: s.p.sec, t: ASSIST_READ[curLang] || ASSIST_READ.en }] : []);
+    }
+    if (sr && sr.headingHit && sr.bs >= 3) { answerFromSite(sr); return; }
     if (best && bestScore >= 3) { assistMsg("bot", best.a, best.l); return; }
+    if (sr) { answerFromSite(sr); return; }
     assistMsg("bot", ui.no, [{ h: WA_URL, t: ui.wa }]);
     assistMsg("bot", ASSIST_TOPICS[curLang] || ASSIST_TOPICS.en);
   }
