@@ -171,6 +171,7 @@ module.exports = async function handler(req, res) {
         { path: "content/blog/" + art.slug + ".json", content: jsonStr },
         { path: "blog/" + art.slug + ".html", content: blog.articlePage(art) },
         { path: "blog/index.html", content: blog.indexPage(all) },
+        { path: "content/blog-search.json", content: blog.searchIndex(all) },
       ];
       var smr = await gh(repoBase() + "/contents/sitemap.xml?ref=" + branch());
       if (smr.status === 200) {
@@ -191,6 +192,7 @@ module.exports = async function handler(req, res) {
         { path: "content/blog/" + body.slug + ".json", del: true },
         { path: "blog/" + body.slug + ".html", del: true },
         { path: "blog/index.html", content: blog.indexPage(keep) },
+        { path: "content/blog-search.json", content: blog.searchIndex(keep) },
       ];
       var sm2 = await gh(repoBase() + "/contents/sitemap.xml?ref=" + branch());
       if (sm2.status === 200) {

@@ -100,4 +100,13 @@ function indexPage(articles) {
     BLOGJS + "\n</body></html>";
 }
 
-module.exports = { articlePage: articlePage, indexPage: indexPage, LANGS: LANGS };
+// compact index the on-site assistant fetches to answer from blog articles
+function searchIndex(articles) {
+  return JSON.stringify(articles.map(function (a) {
+    var e = { u: "/blog/" + a.slug + ".html", L: {} };
+    LANGS.forEach(function (l) { var d = a.L[l] || a.L.en; e.L[l] = { t: d.title, d: d.desc, s: (d.secs || []).map(function (x) { return [x[0], x[1]]; }) }; });
+    return e;
+  }));
+}
+
+module.exports = { articlePage: articlePage, indexPage: indexPage, searchIndex: searchIndex, LANGS: LANGS };

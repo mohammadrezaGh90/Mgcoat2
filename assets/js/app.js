@@ -772,6 +772,31 @@
   // keyword knowledge base — used as the offline fallback and when no AI backend
   // ---- live site-content search (answers from the actual page text) ----
   var ASSIST_READ = { en: "Read this section →", ru: "Читать раздел →", tr: "Bölümü oku →", ar: "اقرأ القسم ←", fa: "خواندن این بخش ←" };
+  var ASSIST_READART = { en: "Read the article →", ru: "Читать статью →", tr: "Makaleyi oku →", ar: "اقرأ المقال ←", fa: "خواندن مقاله ←" };
+  // blog articles index (fetched once, lazily, so the bot can answer from the blog too)
+  var ASSIST_BLOG = null, ASSIST_BLOG_TRIED = false;
+  function assistLoadBlog() {
+    if (ASSIST_BLOG_TRIED) return; ASSIST_BLOG_TRIED = true;
+    try {
+      fetch("/content/blog-search.json", { cache: "no-cache" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) { ASSIST_BLOG = d; assistBlogPassages._c = {}; } })
+        .catch(function () {});
+    } catch (e) {}
+  }
+  function assistBlogPassages(lang) {
+    if (!ASSIST_BLOG) return [];
+    assistBlogPassages._c = assistBlogPassages._c || {};
+    if (assistBlogPassages._c[lang]) return assistBlogPassages._c[lang];
+    var out = [];
+    ASSIST_BLOG.forEach(function (a) {
+      var d = a.L[lang] || a.L.en; if (!d) return;
+      out.push({ url: a.u, heading: d.t, text: d.d, norm: assistNorm(d.t + " " + d.d) });
+      (d.s || []).forEach(function (s) { out.push({ url: a.u, heading: s[0], text: s[1], norm: assistNorm(s[0] + " " + s[1]) }); });
+    });
+    assistBlogPassages._c[lang] = out;
+    return out;
+  }
   var ASSIST_STOP = (" the and for with that this what how does can are you your from into our its about tell explain please give know want need would could should which when where why who " +
     " ile için bir bu ve mi nasil ne daha nedir hakkinda anlat " + " что как для или это под при про расскажи " +
     " هل كيف من في على عن هذا ما اخبرني " + " که از این برای با را های یک می در به ایا چه چطور هم یا تا روی چیست چیه بگو توضیح درباره میخوام ").split(/\s+/);
@@ -804,7 +829,7 @@
     var langs = [curLang]; var det = assistDetectLang(nq); if (det && det !== curLang) langs.push(det);
     var best = null, bs = 0, bestHeadHit = false;
     langs.forEach(function (lg) {
-      assistBuildIndex(lg).forEach(function (p) {
+      assistBuildIndex(lg).concat(assistBlogPassages(lg)).forEach(function (p) {
         var s = 0, hit = 0, hh = false, hnorm = assistNorm(p.heading);
         words.forEach(function (w) { if (p.norm.indexOf(w) !== -1) { hit++; if (hnorm.indexOf(w) !== -1) { hh = true; s += 2; } else s += 1; } });
         if (hit >= Math.min(2, words.length) && s > bs) { bs = s; best = p; bestHeadHit = hh; }
@@ -821,6 +846,7 @@
     return bestS.length > 230 ? bestS.slice(0, 228).trim() + "…" : bestS + ".";
   }
   function assistAnswerKB(q) {
+    assistLoadBlog();
     var ui = ASSIST_UI[curLang] || ASSIST_UI.en;
     var nq = assistNorm(q);
     var det = assistDetectLang(nq);
@@ -841,7 +867,9 @@
     function answerFromSite(s) {
       var head = s.p.heading, body = assistSnippet(s.p.text, s.words);
       var text = (head && assistNorm(head) !== assistNorm(body)) ? head + " — " + body : body;
-      assistMsg("bot", text, s.p.sec ? [{ s: s.p.sec, t: ASSIST_READ[curLang] || ASSIST_READ.en }] : []);
+      var link = s.p.url ? [{ h: s.p.url, t: ASSIST_READART[curLang] || ASSIST_READART.en }]
+        : (s.p.sec ? [{ s: s.p.sec, t: ASSIST_READ[curLang] || ASSIST_READ.en }] : []);
+      assistMsg("bot", text, link);
     }
     if (sr && sr.headingHit && sr.bs >= 3) { answerFromSite(sr); return; }
     if (best && bestScore >= 3) { assistMsg("bot", best.a, best.l); return; }
@@ -929,6 +957,7 @@
 
   function showAssist() {
     if (!assistPanel) return;
+    assistLoadBlog();
     closeFabStack();
     assistPanel.hidden = false;
     requestAnimationFrame(function () { assistPanel.classList.add("show"); });

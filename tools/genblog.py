@@ -114,3 +114,14 @@ idx=f"""<!DOCTYPE html>
 </body></html>"""
 open("blog/index.html","w",encoding='utf-8').write(idx)
 print("wrote blog/index.html")
+
+# compact search index for the on-site assistant
+search=[]
+for a in ARTICLES:
+    e={"u":f"/blog/{a['slug']}.html","L":{}}
+    for l in LANGS:
+        d=a["L"][l]
+        e["L"][l]={"t":d["title"],"d":d["desc"],"s":[[h,p] for h,p in d["secs"]]}
+    search.append(e)
+json.dump(search, open("content/blog-search.json","w",encoding='utf-8'), ensure_ascii=False, separators=(',',':'))
+print("wrote content/blog-search.json")
