@@ -33,6 +33,14 @@ async function ghJson(path, method, body) {
 }
 function repoBase() { return "/repos/" + owner() + "/" + repo(); }
 
+// editable text pages (data-mg marked) the panel may write to
+var EDITABLE_PAGES = { "index.html": 1, "catalog/index.html": 1, "whitepaper/index.html": 1 };
+function escHtml(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function replaceMarked(htmlText, key, newText) {
+  var re = new RegExp('(<[a-zA-Z0-9]+[^>]*\\sdata-mg="' + key.replace(/[^a-zA-Z0-9]/g, "") + '"[^>]*>)([^<]*)(<)');
+  return htmlText.replace(re, function (m, a, b, c) { return a + escHtml(newText) + c; });
+}
+
 // --- atomic multi-file commit via the Git Data API ---
 async function commitFiles(changes, message) {
   var ref = await ghJson("/repos/" + owner() + "/" + repo() + "/git/ref/heads/" + branch());
@@ -192,6 +200,26 @@ module.exports = async function handler(req, res) {
       }
       var u2 = await commitFiles(ch, "Studio: delete article " + body.slug);
       return res.status(200).json({ ok: true, commit: u2 });
+    }
+
+    if (action === "saveTexts") {
+      var page = body.path || "index.html";
+      if (!EDITABLE_PAGES[page]) return res.status(400).json({ error: "page not editable" });
+      var edits = body.edits || {};
+      var keys = Object.keys(edits);
+      if (!keys.length) return res.status(200).json({ ok: true, unchanged: true });
+      var fr = await gh(repoBase() + "/contents/" + enc(page) + "?ref=" + branch());
+      if (fr.status !== 200) return res.status(404).json({ error: "page not found" });
+      var fj = await fr.json();
+      var htmlText = Buffer.from(fj.content, "base64").toString("utf8");
+      keys.forEach(function (k) { htmlText = replaceMarked(htmlText, k, edits[k]); });
+      var pr2 = await gh(repoBase() + "/contents/" + enc(page), {
+        method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: "Studio: edit texts on " + page, content: Buffer.from(htmlText, "utf8").toString("base64"), sha: fj.sha, branch: branch() }),
+      });
+      var pj2 = await pr2.json();
+      if (pr2.ok) return res.status(200).json({ ok: true, edited: keys.length, commit: pj2.commit && pj2.commit.html_url });
+      return res.status(pr2.status).json({ error: (pj2 && pj2.message) || "github error" });
     }
 
     return res.status(400).json({ error: "unknown action" });

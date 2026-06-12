@@ -172,6 +172,18 @@
     <div id="blog-editor" class="hide"></div>
   </section>
 
+  <!-- TEXTS -->
+  <section id="view-texts" class="hide">
+    <div class="card">
+      <h2 data-i18n="texts.title">متن‌های صفحهٔ اصلی</h2>
+      <span class="where" data-i18n="texts.where">📍 متنِ همهٔ بخش‌های صفحهٔ اصلی، به‌تفکیک</span>
+      <p class="hint" data-i18n="texts.hint">زبان را انتخاب کن، بخش را باز کن و هر متنی را ویرایش کن. فقط متن‌های تغییرکرده منتشر می‌شوند.</p>
+      <div class="langtabs" id="texts-langtabs"></div>
+    </div>
+    <div id="texts-groups"><p class="muted" data-i18n="blog.loading">در حال بارگذاری…</p></div>
+    <button class="btn red" id="btn-save-texts" data-i18n="texts.save">انتشار تغییرات</button>
+  </section>
+
   <!-- STATUS -->
   <section id="view-status" class="hide">
     <div class="card">
@@ -188,12 +200,13 @@
   <button class="tab on" data-view="settings"><span class="ic">⚙️</span><span data-i18n="tab.settings">تنظیمات</span></button>
   <button class="tab" data-view="media"><span class="ic">🖼️</span><span data-i18n="tab.media">رسانه</span></button>
   <button class="tab" data-view="blog"><span class="ic">📝</span><span data-i18n="tab.blog">وبلاگ</span></button>
+  <button class="tab" data-view="texts"><span class="ic">📄</span><span data-i18n="tab.texts">متن‌ها</span></button>
   <button class="tab" data-view="status"><span class="ic">📡</span><span data-i18n="tab.status">وضعیت</span></button>
 </nav>
 
 <div id="toast" class="toast"></div>
 <script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/admin/sw.js").catch(function(){});}</script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="/admin/admin.js?v=2"></script>
+<script src="/admin/admin.js?v=3"></script>
 </body>
 </html>

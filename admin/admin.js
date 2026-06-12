@@ -36,6 +36,11 @@
       "msg.choosefile": "اول یک فایل انتخاب کن", "msg.needname": "نام فایل را وارد کن", "msg.toobig": "فایل خیلی بزرگ است (حداکثر ~۲۴ مگابایت)",
       "msg.expired": "نشست منقضی شد — دوباره وارد شو", "msg.deleted": "حذف شد ✓", "blog.none": "هنوز مقاله‌ای نیست.",
       "st.connected": "متصل", "st.error": "خطا", "edit": "ویرایش", "del": "حذف",
+      "tab.texts": "متن‌ها", "texts.title": "متن‌های صفحهٔ اصلی", "texts.where": "📍 متنِ همهٔ بخش‌های صفحهٔ اصلی، به‌تفکیک",
+      "texts.hint": "زبان را انتخاب کن، بخش را باز کن و هر متنی را ویرایش کن. فقط متن‌های تغییرکرده منتشر می‌شوند.",
+      "texts.save": "انتشار تغییرات", "texts.nochange": "تغییری برای انتشار نیست", "group.hero": "بخش معرفی (بالای صفحه)",
+      "role.title": "عنوان اصلی", "role.sectitle": "عنوان بخش", "role.heading": "زیرعنوان", "role.question": "سؤال متداول",
+      "role.intro": "متن معرفی", "role.seccopy": "توضیح بخش", "role.stat": "برچسب آمار", "role.text": "متن",
     },
     en: {
       "login.title": "Sign in", "login.hint": "Only the authorised management account can sign in and publish changes.",
@@ -62,6 +67,11 @@
       "msg.choosefile": "Choose a file first", "msg.needname": "Enter a file name", "msg.toobig": "File too large (max ~24 MB)",
       "msg.expired": "Session expired — sign in again", "msg.deleted": "Deleted ✓", "blog.none": "No articles yet.",
       "st.connected": "Connected", "st.error": "Error", "edit": "Edit", "del": "Delete",
+      "tab.texts": "Texts", "texts.title": "Homepage texts", "texts.where": "📍 The text of every homepage section, organised",
+      "texts.hint": "Pick a language, open a section and edit any text. Only changed texts are published.",
+      "texts.save": "Publish changes", "texts.nochange": "Nothing changed to publish", "group.hero": "Intro (top of page)",
+      "role.title": "Main title", "role.sectitle": "Section title", "role.heading": "Sub-heading", "role.question": "FAQ question",
+      "role.intro": "Intro text", "role.seccopy": "Section intro", "role.stat": "Stat label", "role.text": "Text",
     },
     tr: {
       "login.title": "Giriş", "login.hint": "Yalnızca yetkili yönetim hesabı giriş yapıp yayınlayabilir.",
@@ -88,6 +98,11 @@
       "msg.choosefile": "Önce bir dosya seçin", "msg.needname": "Dosya adı girin", "msg.toobig": "Dosya çok büyük (en fazla ~24 MB)",
       "msg.expired": "Oturum doldu — tekrar giriş yapın", "msg.deleted": "Silindi ✓", "blog.none": "Henüz yazı yok.",
       "st.connected": "Bağlı", "st.error": "Hata", "edit": "Düzenle", "del": "Sil",
+      "tab.texts": "Metinler", "texts.title": "Ana sayfa metinleri", "texts.where": "📍 Her ana sayfa bölümünün metni, düzenli",
+      "texts.hint": "Bir dil seçin, bir bölümü açın ve herhangi bir metni düzenleyin. Yalnızca değişen metinler yayınlanır.",
+      "texts.save": "Değişiklikleri yayınla", "texts.nochange": "Yayınlanacak değişiklik yok", "group.hero": "Giriş (sayfanın üstü)",
+      "role.title": "Ana başlık", "role.sectitle": "Bölüm başlığı", "role.heading": "Alt başlık", "role.question": "SSS sorusu",
+      "role.intro": "Giriş metni", "role.seccopy": "Bölüm girişi", "role.stat": "İstatistik etiketi", "role.text": "Metin",
     },
   };
   function t(k) { return (T[ui] && T[ui][k]) || (T.en[k]) || k; }
@@ -105,7 +120,7 @@
 
   // ---------- view nav ----------
   function show(view) {
-    ["login", "settings", "media", "blog", "status"].forEach(function (v) {
+    ["login", "settings", "media", "blog", "texts", "status"].forEach(function (v) {
       var el = $("view-" + v); if (el) el.classList.toggle("hide", v !== view);
     });
     var tabs = $("tabs");
@@ -271,6 +286,75 @@
   }
   function openEdit(slug) { call("getArticle", { slug: slug }).then(function (r) { if (r.exists) { var a = r.article; ALL.forEach(function (l) { if (!a.L[l]) a.L[l] = { title: "", desc: "", intro: "", secs: [["", ""]], close: "" }; }); renderEditor(a, false); } }).catch(function (e) { toast(t("msg.loadfail") + e.message, false); }); }
 
+  // ---------- Texts (homepage sections) ----------
+  var textsData = null, textsLang = "fa", textsPath = "index.html";
+  function roleOf(el) {
+    var tag = el.tagName.toLowerCase(), cl = el.className || "";
+    if (tag === "h1") return "title";
+    if (tag === "h2" && /section-title/.test(cl)) return "sectitle";
+    if (tag === "h3") return "heading";
+    if (tag === "summary") return "question";
+    if (tag === "div" && /stat-label/.test(cl)) return "stat";
+    if (tag === "p" && /(lead|hero-text)/.test(cl)) return "intro";
+    if (tag === "p" && /section-copy/.test(cl)) return "seccopy";
+    return "text";
+  }
+  function loadTexts() {
+    var box = $("texts-groups"); box.innerHTML = '<p class="muted">' + t("blog.loading") + "</p>";
+    renderTextsLangtabs();
+    call("get", { path: textsPath }).then(function (r) {
+      if (!r.exists) { box.innerHTML = "—"; return; }
+      var doc = new DOMParser().parseFromString(r.text, "text/html");
+      textsData = {}; ALL.forEach(function (l) { textsData[l] = []; });
+      var els = doc.querySelectorAll("[data-mg]");
+      var lastLang = null, grp = "__hero__";
+      Array.prototype.forEach.call(els, function (el) {
+        var ls = el.closest("[data-lang]"); var lang = ls ? ls.getAttribute("data-lang") : null;
+        if (!lang || ALL.indexOf(lang) === -1) return;
+        if (lang !== lastLang) { grp = "__hero__"; lastLang = lang; }
+        var role = roleOf(el);
+        if (role === "sectitle") { grp = (el.textContent || "").trim() || grp; }
+        var txt = el.textContent || "";
+        textsData[lang].push({ key: el.getAttribute("data-mg"), role: role, group: grp, orig: txt, cur: txt });
+      });
+      renderTextsGroups();
+    }).catch(function (e) { box.innerHTML = '<p class="muted">' + esc(e.message) + "</p>"; });
+  }
+  function renderTextsLangtabs() {
+    var c = $("texts-langtabs");
+    c.innerHTML = ALL.map(function (l) { return '<button data-tl="' + l + '"' + (l === textsLang ? ' class="on"' : "") + ">" + LANGNAME[l] + "</button>"; }).join("");
+    c.onclick = function (e) { var b = e.target.closest("button[data-tl]"); if (!b) return; collectTexts(); textsLang = b.dataset.tl; renderTextsLangtabs(); renderTextsGroups(); };
+  }
+  function renderTextsGroups() {
+    if (!textsData) return;
+    var fields = textsData[textsLang] || [];
+    var groups = [], map = {};
+    fields.forEach(function (f) { if (!map[f.group]) { map[f.group] = { name: f.group, items: [] }; groups.push(map[f.group]); } map[f.group].items.push(f); });
+    $("texts-groups").innerHTML = groups.map(function (g, gi) {
+      var gname = g.name === "__hero__" ? t("group.hero") : g.name;
+      return '<details class="card"' + (gi === 0 ? " open" : "") + '><summary style="font-weight:600;color:var(--ink);cursor:pointer">' + esc(gname) + "</summary>" +
+        g.items.map(function (f) { return '<label>' + t("role." + f.role) + "</label><textarea data-tk=\"" + f.key + "\">" + esc(f.cur) + "</textarea>"; }).join("") + "</details>";
+    }).join("");
+  }
+  function collectTexts() {
+    if (!textsData) return;
+    Array.prototype.forEach.call(document.querySelectorAll("#texts-groups [data-tk]"), function (ta) {
+      var k = ta.getAttribute("data-tk"), arr = textsData[textsLang] || [];
+      for (var i = 0; i < arr.length; i++) { if (arr[i].key === k) { arr[i].cur = ta.value; break; } }
+    });
+  }
+  function saveTexts() {
+    collectTexts();
+    var edits = {};
+    ALL.forEach(function (l) { (textsData[l] || []).forEach(function (f) { if (f.cur !== f.orig) edits[f.key] = f.cur; }); });
+    if (!Object.keys(edits).length) { toast(t("texts.nochange"), true); return; }
+    var b = $("btn-save-texts"); busy(b, true, "…");
+    call("saveTexts", { path: textsPath, edits: edits }).then(function () {
+      ALL.forEach(function (l) { (textsData[l] || []).forEach(function (f) { f.orig = f.cur; }); });
+      toast(t("msg.published"), true);
+    }).catch(function (e) { toast(t("msg.failed") + e.message, false); }).then(function () { busy(b, false); });
+  }
+
   // ---------- wire ----------
   document.addEventListener("DOMContentLoaded", function () {
     applyI18n();
@@ -278,12 +362,13 @@
       b.onclick = function () { ui = b.dataset.ui; localStorage.setItem("mg_ui", ui); applyI18n(); };
     });
     Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (tb) {
-      tb.onclick = function () { var v = tb.dataset.view; show(v); if (v === "status") loadStatus(); if (v === "blog") { closeEditor(); loadBlogList(); } };
+      tb.onclick = function () { var v = tb.dataset.view; show(v); if (v === "status") loadStatus(); if (v === "blog") { closeEditor(); loadBlogList(); } if (v === "texts") loadTexts(); };
     });
     $("btn-save-settings").onclick = saveSettings;
     $("btn-upload").onclick = uploadFile;
     $("btn-signout").onclick = signOut;
     $("btn-new-article").onclick = function () { renderEditor(blankArticle(), true); };
+    $("btn-save-texts").onclick = saveTexts;
     $("blog-list").onclick = function (e) {
       var ed = e.target.closest("button[data-edit]"), dl = e.target.closest("button[data-del]");
       if (ed) openEdit(ed.dataset.edit);
