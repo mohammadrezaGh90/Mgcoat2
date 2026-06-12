@@ -1004,12 +1004,11 @@
     if (span) span.textContent = TILT_LABEL[lang] || TILT_LABEL.en;
   }
   (function () {
-    var isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-    // Touch-primary device only: this hides it on desktops and touchscreen laptops
-    // (which expose DeviceOrientationEvent + touch but have no usable tilt sensor).
-    var touchPrimary = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-    var isMobileUA = /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(navigator.userAgent || "");
-    if (!isTouch || !touchPrimary || !isMobileUA || !window.DeviceOrientationEvent) return;  // desktop/no real sensors → skip
+    // Show only on real phones/tablets (hidden on desktop); needs the motion sensor API.
+    var ua = navigator.userAgent || "";
+    var isMobile = /Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(ua);
+    var hasTouch = ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
+    if (!isMobile || !hasTouch || !("DeviceOrientationEvent" in window)) return;
 
     tiltBtn = document.createElement("button");
     tiltBtn.type = "button";
@@ -1021,62 +1020,56 @@
     document.body.appendChild(tiltBtn);
     updateTiltLabel(curLang);
 
-    var active = false, baseline = null, speed = 0, rafId = null;
-    var DEAD = 3;        // degrees of neutral dead-zone
-    var SCALE = 1.5;     // larger = slower
-    var MAXV = 42;       // max pixels per frame
+    var active = false, base = null, vel = 0, rafId = null;
+    var DEAD = 3, SCALE = 1.4, MAXV = 46;   // dead-zone (deg), speed divisor, px/frame cap
 
-    function onTilt(e) {
-      var beta = (e.beta != null) ? e.beta : e.gamma;    // front-back tilt (gamma as a fallback)
-      if (beta == null) return;
-      if (baseline === null) baseline = beta;            // capture neutral on first reading
-      var d = beta - baseline;
-      var mag = Math.abs(d) - DEAD;
-      if (mag <= 0) { speed = 0; return; }
-      var v = Math.min(mag / SCALE, MAXV);
-      speed = (d > 0 ? 1 : -1) * v;                      // tilt forward → scroll down
+    function read(e) {
+      var b = (e.beta != null) ? e.beta : e.gamma;   // front-back tilt (gamma fallback)
+      if (b == null) return;
+      if (base === null) base = b;                    // neutral captured on first reading
+      var d = b - base, m = Math.abs(d) - DEAD;
+      vel = m <= 0 ? 0 : (d > 0 ? 1 : -1) * Math.min(m / SCALE, MAXV);
     }
-    function loop() {
+    function tick() {
       if (!active) return;
-      // Lenis is paused while tilting (see start/stop), so native scrolling here
-      // moves the page reliably without fighting the smooth-scroll loop.
-      if (speed) {
-        var doc = document.documentElement;
-        var max = (document.body.scrollHeight || doc.scrollHeight) - window.innerHeight;
-        var next = Math.max(0, Math.min(max, (window.pageYOffset || doc.scrollTop || 0) + speed));
-        window.scrollTo(0, next);
+      if (vel) {
+        var de = document.documentElement;
+        var max = (document.body.scrollHeight || de.scrollHeight) - window.innerHeight;
+        var y = (window.pageYOffset || de.scrollTop || 0) + vel;
+        window.scrollTo(0, y < 0 ? 0 : (y > max ? max : y));   // native scroll (Lenis is paused below)
       }
-      rafId = requestAnimationFrame(loop);
+      rafId = requestAnimationFrame(tick);
     }
-    function start() {
-      active = true; baseline = null; speed = 0;
-      try { if (lenis && typeof lenis.stop === "function") lenis.stop(); } catch (e) {}   // hand scrolling to native
-      window.addEventListener("deviceorientation", onTilt, true);
-      // some Android browsers only emit the absolute event
-      window.addEventListener("deviceorientationabsolute", onTilt, true);
-      rafId = requestAnimationFrame(loop);
-      tiltBtn.classList.add("on");
-      tiltBtn.setAttribute("aria-pressed", "true");
+    function enable() {
+      if (active) return;
+      active = true; base = null; vel = 0;
+      try { if (typeof lenis !== "undefined" && lenis && lenis.stop) lenis.stop(); } catch (e) {}
+      window.addEventListener("deviceorientation", read, true);
+      window.addEventListener("deviceorientationabsolute", read, true);  // some Android browsers
+      rafId = requestAnimationFrame(tick);
+      tiltBtn.classList.add("on"); tiltBtn.setAttribute("aria-pressed", "true");
     }
-    function stop() {
-      active = false; speed = 0;
-      window.removeEventListener("deviceorientation", onTilt, true);
-      window.removeEventListener("deviceorientationabsolute", onTilt, true);
+    function disable() {
+      active = false; vel = 0;
+      window.removeEventListener("deviceorientation", read, true);
+      window.removeEventListener("deviceorientationabsolute", read, true);
       if (rafId) cancelAnimationFrame(rafId);
-      try { if (lenis && typeof lenis.start === "function") lenis.start(); } catch (e) {}
-      tiltBtn.classList.remove("on");
-      tiltBtn.setAttribute("aria-pressed", "false");
+      try { if (typeof lenis !== "undefined" && lenis && lenis.start) lenis.start(); } catch (e) {}
+      tiltBtn.classList.remove("on"); tiltBtn.setAttribute("aria-pressed", "false");
+    }
+    function flashDenied() {
+      var s = tiltBtn.querySelector(".tt-text"); if (!s) return;
+      var prev = s.textContent; s.textContent = "✕";
+      setTimeout(function () { s.textContent = prev; }, 1500);
     }
     tiltBtn.addEventListener("click", function () {
-      if (active) { stop(); return; }
-      // iOS 13+: must request permission inside the user gesture
+      if (active) { disable(); return; }
       var DOE = window.DeviceOrientationEvent;
+      // iOS 13+ requires permission, asked inside this tap (user gesture)
       if (DOE && typeof DOE.requestPermission === "function") {
-        DOE.requestPermission().then(function (res) {
-          if (res === "granted") start();
-        }).catch(function () {});
+        DOE.requestPermission().then(function (res) { if (res === "granted") enable(); else flashDenied(); }).catch(flashDenied);
       } else {
-        start();
+        enable();
       }
     });
   })();

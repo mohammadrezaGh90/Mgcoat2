@@ -37,20 +37,20 @@
     build();
   }
   function build() {
-    var N = mobile ? 9 : 15;                       // several sine lines layered over each other
+    var N = mobile ? 13 : 22;                      // several sine lines layered for depth
     lines = [];
     for (var i = 0; i < N; i++) {
       var t = i / (N - 1);                          // 0..1 across the set
-      var red = Math.random() < 0.06;
+      var red = Math.random() < 0.05;
       lines.push({
-        amp: (0.05 + Math.random() * 0.13) * (0.7 + 0.5 * Math.sin(t * 3.14)),  // varied sweep sizes
-        cyc: 1.2 + Math.random() * 1.8,             // waves across the width
+        amp: (0.08 + Math.random() * 0.20) * (0.65 + 0.55 * Math.sin(t * 3.14)),  // wider, varied sweeps
+        cyc: 1.1 + Math.random() * 1.9,             // waves across the width
         ph: Math.random() * 6.283,
-        sp: (Math.random() < 0.5 ? 1 : -1) * (0.12 + Math.random() * 0.22),     // drift speed/dir
-        yoff: (t - 0.5) * 0.06 + (Math.random() - 0.5) * 0.03,                   // vertical spread around centre
-        wob: 0.4 + Math.random() * 0.8, wsp: 0.2 + Math.random() * 0.4,         // slow amplitude breathing
-        w: (0.8 + Math.random() * (red ? 0.8 : 1.6)),
-        al: red ? 0.12 : (0.10 + Math.random() * 0.16),
+        sp: (Math.random() < 0.5 ? 1 : -1) * (0.10 + Math.random() * 0.22),       // drift speed/dir
+        yoff: (t - 0.5) * 0.14 + (Math.random() - 0.5) * 0.05,                    // broader vertical spread (volume/depth)
+        wob: 0.4 + Math.random() * 0.8, wsp: 0.18 + Math.random() * 0.4,         // slow amplitude breathing
+        w: (0.8 + Math.random() * (red ? 0.8 : 1.7)),
+        al: red ? 0.11 : (0.09 + Math.random() * 0.15),
         rgb: red ? RED : (i % 5 === 0 ? WHITE : (Math.random() < 0.08 ? WARM : COOL))
       });
       lines[i].g = grad(lines[i].rgb);
@@ -62,9 +62,9 @@
     return 0.5 + L.yoff + amp * Math.sin(xf * 6.2832 * L.cyc + L.ph + time * L.sp)
                 + 0.012 * Math.sin(xf * 13 + time * L.wob);          // fine ripple
   }
-  function drawLines(c, time, scale) {
+  function drawLines(c, time, scale, doClear) {
     var steps = mobile ? 48 : 70, sx = c.canvas.width / W, sy = c.canvas.height / H;
-    c.clearRect(0, 0, c.canvas.width, c.canvas.height);
+    if (doClear !== false) c.clearRect(0, 0, c.canvas.width, c.canvas.height);
     c.globalCompositeOperation = "lighter";
     for (var i = 0; i < lines.length; i++) {
       var L = lines[i];
@@ -86,15 +86,21 @@
     if (!running || now - last < 22) return;        // ~45fps
     last = now;
     var time = (now - t0) / 1000, par = (scrollY || 0) * DPR * 0.03;
-    ctx.setTransform(1, 0, 0, 1, 0, -par);
-    drawLines(ctx, time, 1);                         // crisp lines
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    // light additive bloom for a luminous glow (kept subtle so lines stay crisp)
+    ctx.clearRect(0, 0, W, H);
+    // luminous halo: two additive bloom passes (tight core glow + wide soft halo)
     drawLines(gctx, time, 0.25);
-    ctx.globalCompositeOperation = "lighter"; ctx.globalAlpha = 0.5;
-    if (canFilter) ctx.filter = "blur(" + (3 * DPR) + "px)";
-    ctx.drawImage(glowC, 0, -par, W, H);
-    if (canFilter) ctx.filter = "none";
+    ctx.globalCompositeOperation = "lighter";
+    if (canFilter) {
+      ctx.globalAlpha = 0.75; ctx.filter = "blur(" + (4 * DPR) + "px)"; ctx.drawImage(glowC, 0, -par, W, H);
+      ctx.globalAlpha = 0.55; ctx.filter = "blur(" + (13 * DPR) + "px)"; ctx.drawImage(glowC, 0, -par, W, H);
+      ctx.filter = "none";
+    } else {
+      ctx.globalAlpha = 0.8; ctx.drawImage(glowC, 0, -par, W, H);
+    }
+    // crisp cores on top of the glow (do NOT clear — keep the bloom underneath)
+    ctx.globalAlpha = 1; ctx.setTransform(1, 0, 0, 1, 0, -par);
+    drawLines(ctx, time, 1, false);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
   }
   function start() { requestAnimationFrame(function () { cv.style.opacity = "1"; }); raf = requestAnimationFrame(frame); }
