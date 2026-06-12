@@ -1,10 +1,10 @@
-/* MGCoat — flowing silk-ribbon background.
-   Two translucent ribbons of fine silky fibers that weave like a slow double
-   helix, converging at the edges, broad at the humps and pinched + luminous
-   where they cross — matching the reference. Organic fiber turbulence (noise),
-   soft end-fade, crossing glow, a few drifting glints. Cool blue/white with a
-   faint warm tint and a whisper of red. Lightweight additive canvas; ~40fps,
-   pauses when hidden, honors reduced-motion, fades in softly after the intro. */
+/* MGCoat — twisted silk veils background (matched to the reference video).
+   Three independent, irregular ribbons of fine silky fibers, each twisting like
+   smoky cloth: broad and dim where the sheet faces us, pinched and bright where
+   seen edge-on. Crossings and highlights fall at organic, asymmetric spots.
+   Cool steel-blue/white with faint warm hints and a whisper of red, on near-black.
+   Additive canvas, ~40fps, soft end-fade, intro-aware fade-in, scroll parallax,
+   pauses when hidden, honors reduced-motion. */
 (function () {
   "use strict";
   if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -16,10 +16,9 @@
   var ctx = cv.getContext("2d", { alpha: true });
 
   var W, H, DPR, mobile, running = true, raf = 0, scrollY = 0, introEl = null, faded = false;
-  var threads = [], sparks = [], gCool, gWarm, gWhite, gRed, glow;
-  var COOL = "176,206,255", WHITE = "230,240,255", WARM = "232,190,176", RED = "255,96,104";
+  var ribbons = [], gCool, gWarm, gWhite, gRed, glow;
+  var COOL = "172,202,250", WHITE = "230,240,255", WARM = "234,196,186", RED = "255,96,104";
 
-  // value-noise for organic silk fibers
   function hash(x, y) { var n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return n - Math.floor(n); }
   function vnoise(x, y) {
     var xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
@@ -31,16 +30,18 @@
 
   function lineGrad(rgb) {
     var g = ctx.createLinearGradient(0, 0, W, 0);
-    g.addColorStop(0.00, "rgba(" + rgb + ",0)"); g.addColorStop(0.14, "rgba(" + rgb + ",0.55)");
-    g.addColorStop(0.50, "rgba(" + rgb + ",1)"); g.addColorStop(0.86, "rgba(" + rgb + ",0.55)"); g.addColorStop(1.00, "rgba(" + rgb + ",0)");
+    g.addColorStop(0.00, "rgba(" + rgb + ",0)"); g.addColorStop(0.13, "rgba(" + rgb + ",0.5)");
+    g.addColorStop(0.50, "rgba(" + rgb + ",1)"); g.addColorStop(0.87, "rgba(" + rgb + ",0.5)"); g.addColorStop(1.00, "rgba(" + rgb + ",0)");
     return g;
   }
   function makeGlow() {
     var s = 256, c = document.createElement("canvas"); c.width = c.height = s;
     var x = c.getContext("2d"), g = x.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
-    g.addColorStop(0, "rgba(232,242,255,0.85)"); g.addColorStop(0.3, "rgba(180,206,255,0.28)"); g.addColorStop(1, "rgba(180,206,255,0)");
+    g.addColorStop(0, "rgba(230,240,255,0.8)"); g.addColorStop(0.3, "rgba(178,205,255,0.25)"); g.addColorStop(1, "rgba(178,205,255,0)");
     x.fillStyle = g; x.fillRect(0, 0, s, s); glow = c;
   }
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+
   function resize() {
     DPR = Math.min(window.devicePixelRatio || 1, 1.5); mobile = innerWidth < 640;
     W = cv.width = Math.round(innerWidth * DPR); H = cv.height = Math.round(innerHeight * DPR);
@@ -49,64 +50,77 @@
     build();
   }
   function build() {
-    var K = mobile ? 30 : 64;                      // fibers per ribbon (dense silky sheet)
-    threads = [];
-    for (var rib = 0; rib < 2; rib++) {
+    var R = 3, K = mobile ? 20 : 38;                 // ribbons × fibers per ribbon
+    var offs = [-0.085, 0.01, 0.09];                  // vertical placement (overlapping mid band)
+    ribbons = [];
+    for (var r = 0; r < R; r++) {
+      var rb = {
+        yoff: offs[r] + rnd(-0.015, 0.015),
+        // irregular path: two sine components, unrelated frequencies/phases/speeds
+        a1: rnd(0.08, 0.12), f1: rnd(8.0, 11.0), p1: rnd(0, 6.283), s1: rnd(0.16, 0.30) * (r % 2 ? -1 : 1),
+        a2: rnd(0.025, 0.045), f2: rnd(15.0, 21.0), p2: rnd(0, 6.283), s2: rnd(0.3, 0.5),
+        // independent twist (pinch) wave → highlights at organic spots
+        ft: rnd(9.0, 13.0), pt: rnd(0, 6.283), st: rnd(0.18, 0.3),
+        seed: rnd(0, 50), fibers: []
+      };
       for (var k = 0; k < K; k++) {
         var o = (k / (K - 1)) * 2 - 1;
-        var red = Math.random() < 0.012;
-        threads.push({
-          rib: rib, o: o,
-          f: 1.6 + Math.random() * 4.4, ph: Math.random() * 30, sp: 0.5 + Math.random() * 0.8,  // fiber turbulence
-          amp: 0.016 + Math.random() * 0.03,
-          al: (0.03 + 0.06 * (1 - Math.abs(o))) * (0.7 + Math.random() * 0.5),
-          col: red ? gRed : (Math.abs(o) < 0.1 ? gWhite : (Math.random() < 0.09 ? gWarm : gCool))
+        var red = Math.random() < 0.01;
+        rb.fibers.push({
+          o: o,
+          f: rnd(1.8, 5.6), ph: rnd(0, 30), sp: rnd(0.5, 1.2),
+          amp: rnd(0.012, 0.026),
+          al: (0.05 + 0.07 * (1 - Math.abs(o) * 0.6)) * rnd(0.65, 1.2) * (Math.abs(o) > 0.86 ? 1.5 : 1), // membrane edges a touch brighter
+          col: red ? gRed : (Math.abs(o) < 0.12 ? gWhite : (Math.random() < 0.10 ? gWarm : gCool))
         });
       }
+      ribbons.push(rb);
     }
-    var n = mobile ? 60 : 130;
-    sparks = [];
-    for (var i = 0; i < n; i++) sparks.push({ t: Math.random(), rib: i % 2, sp: 0.012 + Math.random() * 0.022, o: Math.random() * 2.2 - 1.1, al: 0.12 + Math.random() * 0.4, sz: (0.5 + Math.random() * 1.5) * DPR, warm: Math.random() < 0.12 });
   }
-  function wave(xf, t) { return Math.sin(xf * 6.2832 * 1.5 + 0.5 * Math.sin(t * 0.4)); }   // ~1.5 weaves, slow breathing
-  function ribbonY(rib, xf, t) { var s = rib ? -1 : 1; return 0.5 + s * 0.17 * wave(xf, t); }
-  function spread(xf, t) { return 0.055 * Math.abs(wave(xf, t)) + 0.006; }                 // broad at humps, pinched at crossings
+  function centerY(rb, xf, t) {
+    return 0.5 + rb.yoff
+      + rb.a1 * Math.sin(xf * rb.f1 + rb.p1 + t * rb.s1)
+      + rb.a2 * Math.sin(xf * rb.f2 + rb.p2 - t * rb.s2);
+  }
+  function twist(rb, xf, t) {                          // sheet width: broad faces, pinched edges
+    var w = Math.abs(Math.sin(xf * rb.ft + rb.pt + t * rb.st));
+    return 0.012 + 0.052 * Math.pow(w, 1.25);
+  }
 
   var t0 = performance.now(), last = 0;
   function frame(now) {
     raf = requestAnimationFrame(frame);
-    if (!running || now - last < 24) return;        // ~40fps
+    if (!running || now - last < 24) return;          // ~40fps
     last = now;
     var time = (now - t0) / 1000, par = (scrollY || 0) * DPR * 0.025;
-    var steps = mobile ? 42 : 60, i, j;
+    var steps = mobile ? 44 : 62, r, i, j;
     ctx.clearRect(0, 0, W, H);
     ctx.globalCompositeOperation = "lighter";
-    ctx.lineWidth = Math.max(1, DPR * 0.85);
-    for (i = 0; i < threads.length; i++) {
-      var th = threads[i];
-      ctx.beginPath();
-      for (j = 0; j <= steps; j++) {
-        var xf = j / steps, x = xf * W, w = wave(xf, time);
-        var fray = (fbm(xf * th.f + th.ph, time * 0.16 * th.sp + th.ph) - 0.5) * th.amp * (0.4 + 0.95 * Math.abs(w));
-        var y = (ribbonY(th.rib, xf, time) + th.o * spread(xf, time) + fray) * H - par;
-        if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    ctx.lineWidth = Math.max(1, DPR * 0.8);
+    for (r = 0; r < ribbons.length; r++) {
+      var rb = ribbons[r];
+      for (i = 0; i < rb.fibers.length; i++) {
+        var fb = rb.fibers[i];
+        ctx.beginPath();
+        for (j = 0; j <= steps; j++) {
+          var xf = j / steps, x = xf * W;
+          var sp = twist(rb, xf, time);
+          var fray = (fbm(xf * fb.f + fb.ph, time * 0.15 * fb.sp + fb.ph) - 0.5) * fb.amp * (0.5 + 8 * sp);
+          var y = (centerY(rb, xf, time) + fb.o * sp + fray) * H - par;
+          if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.globalAlpha = fb.al; ctx.strokeStyle = fb.col; ctx.stroke();
       }
-      ctx.globalAlpha = th.al; ctx.strokeStyle = th.col; ctx.stroke();
-    }
-    // luminous crossings where the ribbons meet
-    for (j = 0; j < steps; j++) {
-      var cxf = j / steps;
-      if (Math.abs(ribbonY(0, cxf, time) - ribbonY(1, cxf, time)) < 0.012) {
-        var gx = cxf * W, gy = ribbonY(0, cxf, time) * H - par, gs = (90 + 55 * Math.sin(time * 1.2 + j)) * DPR, e = Math.sin(Math.PI * cxf);
-        ctx.globalAlpha = 0.5 * e * e; ctx.drawImage(glow, gx - gs / 2, gy - gs / 2, gs, gs);
+      // soft highlights where this ribbon pinches (edge-on cloth catches the light)
+      for (j = 2; j < steps - 2; j++) {
+        var pxf = j / steps;
+        if (twist(rb, pxf, time) < 0.017) {
+          var gx = pxf * W, gy = centerY(rb, pxf, time) * H - par, e = Math.sin(Math.PI * pxf);
+          var gs = (70 + 40 * Math.sin(time * 1.1 + j + r * 2)) * DPR;
+          ctx.globalAlpha = 0.34 * e * e;
+          ctx.drawImage(glow, gx - gs / 2, gy - gs / 2, gs, gs);
+        }
       }
-    }
-    // fine drifting glints
-    for (i = 0; i < sparks.length; i++) {
-      var p = sparks[i]; p.t += p.sp / 60; if (p.t > 1) p.t -= 1;
-      var sx = p.t * W, sy = (ribbonY(p.rib, p.t, time) + p.o * spread(p.t, time)) * H - par, se = Math.sin(Math.PI * p.t); se *= se;
-      ctx.globalAlpha = p.al * se; ctx.fillStyle = p.warm ? "rgba(236,200,182,1)" : "rgba(228,240,255,1)";
-      ctx.beginPath(); ctx.arc(sx, sy, p.sz, 0, 6.283); ctx.fill();
     }
     ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
   }
