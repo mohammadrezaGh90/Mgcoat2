@@ -1037,23 +1037,22 @@
     }
     function loop() {
       if (!active) return;
+      // Lenis is paused while tilting (see start/stop), so native scrolling here
+      // moves the page reliably without fighting the smooth-scroll loop.
       if (speed) {
-        // Lenis owns the scroll; when it's running, drive it directly so the
-        // page actually moves. Otherwise fall back to native scrolling.
-        if (lenis && typeof lenis.scrollTo === "function") {
-          var cur = (typeof lenis.actualScroll === "number") ? lenis.actualScroll
-                  : (typeof lenis.scroll === "number") ? lenis.scroll
-                  : (window.pageYOffset || 0);
-          lenis.scrollTo(cur + speed, { immediate: true, force: true });
-        } else {
-          window.scrollBy(0, speed);
-        }
+        var doc = document.documentElement;
+        var max = (document.body.scrollHeight || doc.scrollHeight) - window.innerHeight;
+        var next = Math.max(0, Math.min(max, (window.pageYOffset || doc.scrollTop || 0) + speed));
+        window.scrollTo(0, next);
       }
       rafId = requestAnimationFrame(loop);
     }
     function start() {
       active = true; baseline = null; speed = 0;
+      try { if (lenis && typeof lenis.stop === "function") lenis.stop(); } catch (e) {}   // hand scrolling to native
       window.addEventListener("deviceorientation", onTilt, true);
+      // some Android browsers only emit the absolute event
+      window.addEventListener("deviceorientationabsolute", onTilt, true);
       rafId = requestAnimationFrame(loop);
       tiltBtn.classList.add("on");
       tiltBtn.setAttribute("aria-pressed", "true");
@@ -1061,7 +1060,9 @@
     function stop() {
       active = false; speed = 0;
       window.removeEventListener("deviceorientation", onTilt, true);
+      window.removeEventListener("deviceorientationabsolute", onTilt, true);
       if (rafId) cancelAnimationFrame(rafId);
+      try { if (lenis && typeof lenis.start === "function") lenis.start(); } catch (e) {}
       tiltBtn.classList.remove("on");
       tiltBtn.setAttribute("aria-pressed", "false");
     }
