@@ -41,6 +41,12 @@
     x.fillStyle = g; x.fillRect(0, 0, s, s); glow = c;
   }
   function rnd(a, b) { return a + Math.random() * (b - a); }
+  function pickInt(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  // one shared slow period → every motion speed is an integer multiple, so the
+  // whole animation is a perfect seamless loop
+  var LOOP = 110, OM = 6.2832 / LOOP;
+  // looping noise: sample 2D noise along a circle instead of a straight time axis
+  function loopNoise(x, ang, ph) { return fbm(x + 2.5 * Math.cos(ang), 2.5 * Math.sin(ang) + ph); }
 
   function resize() {
     DPR = Math.min(window.devicePixelRatio || 1, 1.5); mobile = innerWidth < 640;
@@ -57,10 +63,10 @@
       var rb = {
         yoff: offs[r] + rnd(-0.015, 0.015),
         // irregular path: two sine components, unrelated frequencies/phases/speeds
-        a1: rnd(0.08, 0.12), f1: rnd(8.0, 11.0), p1: rnd(0, 6.283), s1: rnd(0.16, 0.30) * (r % 2 ? -1 : 1),
-        a2: rnd(0.025, 0.045), f2: rnd(15.0, 21.0), p2: rnd(0, 6.283), s2: rnd(0.3, 0.5),
+        a1: rnd(0.08, 0.12), f1: rnd(8.0, 11.0), p1: rnd(0, 6.283), s1: pickInt([2, 3]) * OM * (r % 2 ? -1 : 1),
+        a2: rnd(0.025, 0.045), f2: rnd(15.0, 21.0), p2: rnd(0, 6.283), s2: pickInt([3, 4]) * OM,
         // independent twist (pinch) wave → highlights at organic spots
-        ft: rnd(9.0, 13.0), pt: rnd(0, 6.283), st: rnd(0.18, 0.3),
+        ft: rnd(9.0, 13.0), pt: rnd(0, 6.283), st: pickInt([2, 3]) * OM,
         seed: rnd(0, 50), fibers: []
       };
       for (var k = 0; k < K; k++) {
@@ -68,7 +74,7 @@
         var red = Math.random() < 0.01;
         rb.fibers.push({
           o: o,
-          f: rnd(1.8, 5.6), ph: rnd(0, 30), sp: rnd(0.5, 1.2),
+          f: rnd(1.8, 5.6), ph: rnd(0, 30), kn: pickInt([1, 2]),
           amp: rnd(0.012, 0.026),
           al: (0.05 + 0.07 * (1 - Math.abs(o) * 0.6)) * rnd(0.65, 1.2) * (Math.abs(o) > 0.86 ? 1.5 : 1), // membrane edges a touch brighter
           col: red ? gRed : (Math.abs(o) < 0.12 ? gWhite : (Math.random() < 0.10 ? gWarm : gCool))
@@ -105,7 +111,7 @@
         for (j = 0; j <= steps; j++) {
           var xf = j / steps, x = xf * W;
           var sp = twist(rb, xf, time);
-          var fray = (fbm(xf * fb.f + fb.ph, time * 0.15 * fb.sp + fb.ph) - 0.5) * fb.amp * (0.5 + 8 * sp);
+          var fray = (loopNoise(xf * fb.f + fb.ph, OM * time * fb.kn, fb.ph) - 0.5) * fb.amp * (0.5 + 8 * sp);
           var y = (centerY(rb, xf, time) + fb.o * sp + fray) * H - par;
           if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
         }
@@ -116,7 +122,7 @@
         var pxf = j / steps;
         if (twist(rb, pxf, time) < 0.017) {
           var gx = pxf * W, gy = centerY(rb, pxf, time) * H - par, e = Math.sin(Math.PI * pxf);
-          var gs = (70 + 40 * Math.sin(time * 1.1 + j + r * 2)) * DPR;
+          var gs = (70 + 40 * Math.sin(OM * 12 * time + j + r * 2)) * DPR;
           ctx.globalAlpha = 0.34 * e * e;
           ctx.drawImage(glow, gx - gs / 2, gy - gs / 2, gs, gs);
         }
