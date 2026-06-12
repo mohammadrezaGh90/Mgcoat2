@@ -34,7 +34,7 @@ def header(active_back):
       '<div class="lang-menu" role="listbox">'+''.join(f'<button class="lang-btn" type="button" data-lang="{l}"><span>{LBL[l][0]}</span><span>{LBL[l][1]}</span></button>' for l in LANGS)+'</div></div>'
       '</div></header>')
 
-BLOGJS='''<script src="/assets/js/flow-bg.js?v=2" defer></script><script src="/assets/js/site-content.js?v=1" defer></script><script src="/assets/js/blog.js?v=202606141"></script>'''
+BLOGJS='''<script src="/assets/js/flow-bg.js?v=3" defer></script><script src="/assets/js/site-content.js?v=1" defer></script><script src="/assets/js/blog.js?v=202606141"></script>'''
 
 def article_page(a):
     posts=""

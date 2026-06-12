@@ -1022,14 +1022,15 @@
     updateTiltLabel(curLang);
 
     var active = false, baseline = null, speed = 0, rafId = null;
-    var DEAD = 5;        // degrees of neutral dead-zone
-    var SCALE = 2.2;     // larger = slower
-    var MAXV = 30;       // max pixels per frame
+    var DEAD = 3;        // degrees of neutral dead-zone
+    var SCALE = 1.5;     // larger = slower
+    var MAXV = 42;       // max pixels per frame
 
     function onTilt(e) {
-      if (e.beta == null) return;
-      if (baseline === null) baseline = e.beta;          // capture neutral on first reading
-      var d = e.beta - baseline;
+      var beta = (e.beta != null) ? e.beta : e.gamma;    // front-back tilt (gamma as a fallback)
+      if (beta == null) return;
+      if (baseline === null) baseline = beta;            // capture neutral on first reading
+      var d = beta - baseline;
       var mag = Math.abs(d) - DEAD;
       if (mag <= 0) { speed = 0; return; }
       var v = Math.min(mag / SCALE, MAXV);
