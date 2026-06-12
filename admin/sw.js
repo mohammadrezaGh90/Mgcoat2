@@ -2,7 +2,7 @@
    Caches only the app shell so the panel installs and opens like an app.
    It never caches API calls (always live) — only static shell files. */
 var SHELL = "mg-studio-v1";
-var FILES = ["/admin/", "/admin/index.html", "/admin/admin.js?v=1", "/assets/img/logo-mark.png"];
+var FILES = ["/admin/", "/admin/index.html", "/admin/admin.js?v=2", "/assets/img/logo-mark.png"];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(SHELL).then(function (c) { return c.addAll(FILES).catch(function () {}); }));

@@ -1,0 +1,128 @@
+{
+ "slug": "waterproofing-cctv-outdoor-camera-electronics",
+ "kw": "waterproof CCTV camera, outdoor camera coating, security camera PCB protection",
+ "order": 40,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Waterproofing CCTV and Outdoor Camera Electronics",
+   "desc": "How to protect outdoor security camera boards, connectors and IR modules from rain, fog and humidity with a protective coating.",
+   "intro": "Outdoor security cameras live in rain, fog, temperature swings and condensation. Even IP-rated housings can let moisture in through cable entries and aging seals. Coating the internal board adds a second line of defense.",
+   "secs": [
+    [
+     "Where moisture gets in",
+     "Most outdoor cameras fail not because the lens floods, but because humid air enters through cable glands and worn gaskets and then condenses on the board. A coating protects the electronics even when the housing seal weakens."
+    ],
+    [
+     "Coat the board, mask the optics",
+     "Apply the coating to the main PCB, power section and connector pads. Mask the image sensor, lens, IR LEDs and microphone so image and audio performance stay unchanged."
+    ],
+    [
+     "Protect connectors and cable entries",
+     "Corrosion at the RJ45 or power connector is a common failure point. Reinforce these areas and the cable entry with a brushed layer for extra moisture and salt resistance."
+    ],
+    [
+     "Result: fewer field failures",
+     "A coated board survives fog, light leaks and condensation far better, which means fewer service visits and longer camera life in outdoor and coastal installations."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating by MGCoat is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."
+  },
+  "fa": {
+   "title": "ضدآب‌کردن الکترونیک دوربین مداربسته و دوربین‌های فضای باز",
+   "desc": "چطور برد، کانکتورها و ماژول‌های IR دوربین‌های امنیتی فضای باز را با پوشش محافظ در برابر باران، مه و رطوبت محافظت کنیم.",
+   "intro": "دوربین‌های امنیتی فضای باز با باران، مه، تغییرات دما و میعان دست‌وپنجه نرم می‌کنند. حتی محفظه‌های دارای استاندارد IP هم می‌توانند از مسیر ورودی کابل و آب‌بندهای فرسوده رطوبت را به داخل راه دهند. پوشش‌دادن برد داخلی یک خط دفاعی دوم اضافه می‌کند.",
+   "secs": [
+    [
+     "رطوبت از کجا وارد می‌شود",
+     "بیشتر دوربین‌های فضای باز نه به‌خاطر نفوذ آب به لنز، بلکه به این دلیل خراب می‌شوند که هوای مرطوب از گلَند کابل و واشرهای فرسوده وارد و روی برد میعان می‌کند. پوشش حتی وقتی آب‌بندی محفظه ضعیف شود از الکترونیک محافظت می‌کند."
+    ],
+    [
+     "برد را بپوشانید، اپتیک را ماسک کنید",
+     "پوشش را روی برد اصلی، بخش تغذیه و پدهای کانکتور اجرا کنید. سنسور تصویر، لنز، LEDهای مادون‌قرمز و میکروفون را ماسک کنید تا کیفیت تصویر و صدا تغییر نکند."
+    ],
+    [
+     "محافظت از کانکتورها و ورودی کابل",
+     "خوردگی در کانکتور RJ45 یا تغذیه یکی از نقاط رایج خرابی است. این نواحی و ورودی کابل را با یک لایهٔ قلم‌مویی برای مقاومت بیشتر در برابر رطوبت و نمک تقویت کنید."
+    ],
+    [
+     "نتیجه: خرابی کمتر در محل",
+     "بردِ پوشش‌داده‌شده در برابر مه، نفوذ نور و میعان بسیار بهتر دوام می‌آورد؛ یعنی مراجعهٔ سرویس کمتر و عمر بیشتر دوربین در نصب‌های فضای باز و ساحلی."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating محصول MGCoat یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."
+  },
+  "ru": {
+   "title": "Гидроизоляция электроники камер видеонаблюдения и уличных камер",
+   "desc": "Как защитить платы, разъёмы и ИК-модули уличных камер видеонаблюдения от дождя, тумана и влаги защитным покрытием.",
+   "intro": "Уличные камеры видеонаблюдения работают в дожде, тумане, при перепадах температуры и конденсате. Даже корпуса со степенью защиты IP могут пропускать влагу через кабельные вводы и стареющие уплотнения. Покрытие внутренней платы добавляет второй рубеж защиты.",
+   "secs": [
+    [
+     "Где проникает влага",
+     "Большинство уличных камер выходят из строя не из-за затопления объектива, а потому что влажный воздух проникает через кабельные вводы и изношенные прокладки и конденсируется на плате. Покрытие защищает электронику даже при ослаблении уплотнения корпуса."
+    ],
+    [
+     "Покройте плату, замаскируйте оптику",
+     "Нанесите покрытие на основную плату, блок питания и площадки разъёмов. Замаскируйте матрицу, объектив, ИК-светодиоды и микрофон, чтобы качество изображения и звука не изменилось."
+    ],
+    [
+     "Защитите разъёмы и кабельные вводы",
+     "Коррозия на разъёме RJ45 или питания — частая точка отказа. Усилите эти зоны и кабельный ввод нанесённым кистью слоем для дополнительной стойкости к влаге и соли."
+    ],
+    [
+     "Итог: меньше отказов на объекте",
+     "Покрытая плата гораздо лучше переносит туман, протечки света и конденсат, а значит — меньше выездов сервиса и больше срок службы камеры на уличных и прибрежных объектах."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating от MGCoat — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."
+  },
+  "tr": {
+   "title": "CCTV ve Dış Mekân Kamera Elektroniğini Su Geçirmez Yapmak",
+   "desc": "Dış mekân güvenlik kamerası kartlarını, konnektörleri ve IR modüllerini koruyucu kaplamayla yağmurdan, sisten ve nemden koruma.",
+   "intro": "Dış mekân güvenlik kameraları yağmur, sis, sıcaklık değişimleri ve yoğuşma içinde yaşar. IP korumalı muhafazalar bile kablo girişlerinden ve eskiyen contalardan nem alabilir. İç kartı kaplamak ikinci bir savunma hattı ekler.",
+   "secs": [
+    [
+     "Nem nereden girer",
+     "Çoğu dış mekân kamerası lens su aldığı için değil, nemli hava kablo rakorlarından ve yıpranmış contalardan girip kart üzerinde yoğuştuğu için arızalanır. Kaplama, muhafaza contası zayıfladığında bile elektroniği korur."
+    ],
+    [
+     "Kartı kaplayın, optiği maskeleyin",
+     "Kaplamayı ana karta, güç bölümüne ve konnektör padlerine uygulayın. Görüntü ve ses performansının değişmemesi için görüntü sensörünü, lensi, IR LED'leri ve mikrofonu maskeleyin."
+    ],
+    [
+     "Konnektörleri ve kablo girişlerini koruyun",
+     "RJ45 veya güç konnektöründeki korozyon yaygın bir arıza noktasıdır. Neme ve tuza karşı ekstra direnç için bu bölgeleri ve kablo girişini fırçayla bir katmanla güçlendirin."
+    ],
+    [
+     "Sonuç: sahada daha az arıza",
+     "Kaplı bir kart sisi, ışık sızıntısını ve yoğuşmayı çok daha iyi atlatır; bu da dış mekân ve kıyı kurulumlarında daha az servis ziyareti ve daha uzun kamera ömrü demektir."
+    ]
+   ],
+   "close": "MGCoat'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."
+  },
+  "ar": {
+   "title": "عزل إلكترونيات كاميرات المراقبة والكاميرات الخارجية ضد الماء",
+   "desc": "كيف تحمي لوحات كاميرات المراقبة الخارجية وموصلاتها ووحدات الأشعة تحت الحمراء من المطر والضباب والرطوبة بطلاء واقٍ.",
+   "intro": "تعيش كاميرات المراقبة الخارجية في المطر والضباب وتقلّبات الحرارة والتكثّف. حتى الصناديق ذات تصنيف IP قد تسمح بدخول الرطوبة عبر مداخل الكابلات والحشوات المتقادمة. طلاء اللوحة الداخلية يضيف خط دفاع ثانياً.",
+   "secs": [
+    [
+     "من أين تدخل الرطوبة",
+     "معظم الكاميرات الخارجية لا تتعطّل لأن العدسة غُمرت بالماء، بل لأن الهواء الرطب يدخل عبر مداخل الكابلات والحشوات البالية ثم يتكثّف على اللوحة. يحمي الطلاء الإلكترونيات حتى عند ضعف عزل الصندوق."
+    ],
+    [
+     "اطلِ اللوحة وغطِّ البصريات",
+     "طبّق الطلاء على اللوحة الرئيسية وقسم الطاقة وأطراف الموصلات. غطِّ مستشعر الصورة والعدسة ومصابيح الأشعة تحت الحمراء والميكروفون لئلا يتغيّر أداء الصورة والصوت."
+    ],
+    [
+     "احمِ الموصلات ومداخل الكابلات",
+     "التآكل عند موصل RJ45 أو الطاقة نقطة عطل شائعة. قوِّ هذه المناطق ومدخل الكابل بطبقة بالفرشاة لمقاومة أكبر للرطوبة والملح."
+    ],
+    [
+     "النتيجة: أعطال أقل في الميدان",
+     "تتحمّل اللوحة المطلية الضباب وتسرّب الضوء والتكثّف أفضل بكثير، ما يعني زيارات صيانة أقل وعمراً أطول للكاميرا في التركيبات الخارجية والساحلية."
+    ]
+   ],
+   "close": "إن Liquid PCB Plastic Coating من MGCoat طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."
+  }
+ }
+}

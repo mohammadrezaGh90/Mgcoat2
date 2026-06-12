@@ -1,0 +1,188 @@
+{
+ "slug": "waterproofing-led-boards-drivers-outdoor-signage",
+ "kw": "LED driver waterproof coating, LED board protection, outdoor signage waterproofing, LED strip PCB coating, waterproof LED electronics, sign board moisture protection",
+ "order": 120,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Waterproofing LED Boards, LED Drivers and Outdoor Signage Electronics",
+   "desc": "How to protect LED boards, LED drivers and outdoor sign electronics from moisture, condensation and corrosion with a protective coating.",
+   "intro": "Outdoor LED signs, channel letters, displays and architectural lighting run for years in rain, humidity and temperature swings. The LED boards and driver electronics inside are a frequent failure point — moisture creeps in through housings and corrodes the board long before the LEDs themselves wear out. A protective coating helps the electronics survive the weather.",
+   "secs": [
+    [
+     "Why outdoor LED electronics fail",
+     "Most LED sign failures are not the LEDs — they are the board and driver. Humid air and rain enter through seams, cable entries and vents, then condense on the PCB. Over time moisture corrodes tracks, bridges pads and kills LED strings or whole sections of a sign. Coating the board adds a moisture barrier that targets the real weak point."
+    ],
+    [
+     "Moisture, condensation and corrosion in signage",
+     "A sign heats up when lit and cools at night, breathing humid air in and out. That daily cycle leaves condensation on the board even when no rain gets in. Salt and pollution make the film conductive, causing flicker, dimming and dead pixels. A coating seals the copper and solder joints against this slow damage."
+    ],
+    [
+     "What to coat on an LED board",
+     "Coat the driver and power section, the control and data lines, the solder joints and the areas around connectors and cable entries. On LED modules and strips, coat the conductor tracks and joints. The goal is a continuous moisture barrier across the parts that corrode."
+    ],
+    [
+     "LEDs, optics and connectors to mask",
+     "Mask the light-emitting surface of each LED, any lens or diffuser contact area, photosensors and the mating surfaces of connectors. A thin coating over the rest of the board does not change light output when the emitting surfaces are left clear."
+    ],
+    [
+     "Heat and the driver stage",
+     "LED drivers run warm, so do not coat over heatsinks, thermal pads or components that depend on direct cooling. Mask the cooling path, then coat the rest of the board in thin even layers. A thin layer barely affects driver temperature while protecting it from moisture."
+    ],
+    [
+     "Applying the coating to LED electronics",
+     "Clean and dry the board, mask the LEDs and serviceable points, then build thin even layers by dip, spray or brush. Brush is handy for long LED strips and for reinforcing cable entries; several thin layers cover edges and tall parts better than one thick coat."
+    ],
+    [
+     "Maintenance and realistic limits",
+     "Because the coating is removable with a dedicated solvent, a failed driver or LED section can be repaired and re-coated rather than scrapping the whole sign. A coating greatly slows weather damage but does not replace a sound housing and good sealing. Performance depends on coating thickness, surface preparation, curing, sealing quality, geometry, voltage and temperature."
+    ]
+   ],
+   "close": "MGCoat is a heat-free, plastic-based protective coating applied by dip, spray or brush and removable for repair — designed to protect LED boards, LED drivers and outdoor signage electronics against moisture and condensation in long-term outdoor use."
+  },
+  "fa": {
+   "title": "ضدآب‌کردن بردهای LED، درایورها و الکترونیک تابلوهای فضای باز",
+   "desc": "چطور بردهای LED، درایورهای LED و الکترونیک تابلوهای بیرونی را با پوشش محافظ در برابر رطوبت، میعان و خوردگی محافظت کنیم.",
+   "intro": "تابلوهای LED بیرونی، حروف برجسته، نمایشگرها و نورپردازی معماری سال‌ها در باران، رطوبت و نوسان دما کار می‌کنند. بردهای LED و الکترونیک درایور داخلشان نقطهٔ خرابی پرتکرارند — رطوبت از محفظه نفوذ می‌کند و خیلی پیش از فرسودگی خودِ LEDها برد را می‌خورد. یک پوشش محافظ کمک می‌کند الکترونیک از آب‌وهوا جان سالم به‌در ببرد.",
+   "secs": [
+    [
+     "چرا الکترونیک LED بیرونی خراب می‌شود",
+     "بیشتر خرابی تابلوهای LED خودِ LED نیست — برد و درایور است. هوای مرطوب و باران از درزها، ورودی کابل و دریچه‌ها وارد می‌شود و روی PCB میعان می‌کند. به‌مرور رطوبت مسیرها را می‌خورد، پدها را پل می‌زند و رشته‌های LED یا کل بخشی از تابلو را از کار می‌اندازد. پوشش‌دادن برد یک سد رطوبتی روی نقطهٔ ضعف واقعی می‌گذارد."
+    ],
+    [
+     "رطوبت، میعان و خوردگی در تابلو",
+     "تابلو وقتی روشن است گرم و شب سرد می‌شود و هوای مرطوب را به داخل و بیرون می‌کشد. این چرخهٔ روزانه حتی بدون نفوذ باران میعان روی برد می‌گذارد. نمک و آلودگی این لایه را رسانا می‌کند و باعث چشمک‌زدن، کم‌نوری و پیکسل مرده می‌شود. پوشش، مس و نقاط لحیم را در برابر این آسیب آرام آب‌بندی می‌کند."
+    ],
+    [
+     "روی برد LED چه چیزی را بپوشانیم",
+     "بخش درایور و تغذیه، خطوط کنترل و دیتا، نقاط لحیم و نواحی دور کانکتورها و ورودی کابل را بپوشان. روی ماژول‌ها و نوارهای LED، مسیرهای رسانا و نقاط اتصال را بپوشان. هدف یک سد رطوبتی پیوسته روی قطعاتی است که می‌خورند."
+    ],
+    [
+     "LEDها، اپتیک و کانکتورهایی که باید ماسک شوند",
+     "سطح نورده هر LED، هر ناحیهٔ تماس لنز یا دیفیوزر، فتوسنسورها و سطوح تماس کانکتورها را ماسک کن. یک پوشش نازک روی بقیهٔ برد وقتی سطوح نورده باز بمانند خروجی نور را تغییر نمی‌دهد."
+    ],
+    [
+     "گرما و طبقهٔ درایور",
+     "درایورهای LED گرم کار می‌کنند، پس روی هیت‌سینک، پدهای حرارتی یا قطعاتی که به خنک‌کاری مستقیم متکی‌اند پوشش نزن. مسیر خنک‌کاری را ماسک کن، بعد بقیهٔ برد را در لایه‌های نازک و یکنواخت بپوشان. لایهٔ نازک تقریباً دمای درایور را تغییر نمی‌دهد و در عین حال از رطوبت محافظتش می‌کند."
+    ],
+    [
+     "اجرای پوشش روی الکترونیک LED",
+     "برد را تمیز و خشک کن، LEDها و نقاط قابل‌سرویس را ماسک کن، سپس با غوطه‌وری، اسپری یا قلم‌مو لایه‌های نازک و یکنواخت بساز. قلم‌مو برای نوارهای بلند LED و تقویت ورودی کابل مفید است؛ چند لایهٔ نازک لبه‌ها و قطعات بلند را بهتر از یک لایهٔ ضخیم می‌پوشاند."
+    ],
+    [
+     "نگهداری و محدودیت‌های واقع‌بینانه",
+     "چون پوشش با حلال مخصوص برداشتنی است، درایور یا بخش LEDِ خراب را می‌توان تعمیر و دوباره پوشش داد به‌جای دورانداختن کل تابلو. پوشش آسیب آب‌وهوا را به‌شدت کند می‌کند اما جایگزین محفظهٔ سالم و آب‌بندی خوب نیست. کارایی به ضخامت پوشش، آماده‌سازی سطح، خشک‌شدن، کیفیت آب‌بندی، هندسه، ولتاژ و دما بستگی دارد."
+    ]
+   ],
+   "close": "MGCoat یک پوشش محافظ بدون حرارت و بر پایه پلاستیک است که با غوطه‌وری، اسپری یا قلم‌مو اجرا و برای تعمیر برداشته می‌شود — برای محافظت از بردهای LED، درایورهای LED و الکترونیک تابلوهای فضای باز در برابر رطوبت و میعان در کاربرد بلندمدت بیرونی طراحی شده است."
+  },
+  "ru": {
+   "title": "Гидроизоляция LED-плат, LED-драйверов и электроники наружных вывесок",
+   "desc": "Как защитить LED-платы, LED-драйверы и электронику наружных вывесок от влаги, конденсата и коррозии защитным покрытием.",
+   "intro": "Наружные LED-вывески, объёмные буквы, экраны и архитектурная подсветка годами работают в дожде, влаге и перепадах температуры. LED-платы и электроника драйверов внутри — частая точка отказа: влага проникает через корпуса и корродирует плату задолго до износа самих светодиодов. Защитное покрытие помогает электронике пережить погоду.",
+   "secs": [
+    [
+     "Почему наружная LED-электроника выходит из строя",
+     "Большинство отказов LED-вывесок — не светодиоды, а плата и драйвер. Влажный воздух и дождь проникают через швы, кабельные вводы и вентиляцию и конденсируются на плате. Со временем влага корродирует дорожки, перемыкает площадки и гасит цепочки светодиодов или целые секции вывески. Покрытие платы добавляет барьер от влаги в реальном слабом месте."
+    ],
+    [
+     "Влага, конденсат и коррозия в вывесках",
+     "Вывеска нагревается при включении и остывает ночью, прогоняя влажный воздух внутрь и наружу. Этот суточный цикл оставляет конденсат на плате даже без дождя. Соль и загрязнение делают плёнку проводящей, вызывая мерцание, потускнение и мёртвые пиксели. Покрытие изолирует медь и пайки от этого медленного разрушения."
+    ],
+    [
+     "Что покрывать на LED-плате",
+     "Покрывайте драйвер и блок питания, линии управления и данных, пайки и зоны вокруг разъёмов и кабельных вводов. На LED-модулях и лентах покрывайте проводящие дорожки и соединения. Цель — сплошной барьер от влаги на корродирующих частях."
+    ],
+    [
+     "Светодиоды, оптика и разъёмы для маскирования",
+     "Замаскируйте светоизлучающую поверхность каждого светодиода, зоны контакта линз и рассеивателей, фотодатчики и контактные поверхности разъёмов. Тонкое покрытие на остальной плате не меняет световой поток, если излучающие поверхности оставлены чистыми."
+    ],
+    [
+     "Тепло и каскад драйвера",
+     "LED-драйверы греются, поэтому не покрывайте радиаторы, термопрокладки и компоненты, зависящие от прямого охлаждения. Замаскируйте путь охлаждения, затем нанесите тонкие ровные слои на остальную плату. Тонкий слой почти не влияет на температуру драйвера, защищая его от влаги."
+    ],
+    [
+     "Нанесение покрытия на LED-электронику",
+     "Очистите и высушите плату, замаскируйте светодиоды и обслуживаемые точки, затем наносите тонкие ровные слои окунанием, распылением или кистью. Кисть удобна для длинных LED-лент и усиления кабельных вводов; несколько тонких слоёв лучше покрывают края и высокие детали, чем один толстый."
+    ],
+    [
+     "Обслуживание и реалистичные пределы",
+     "Поскольку покрытие снимается специальным растворителем, отказавший драйвер или секцию светодиодов можно отремонтировать и снова покрыть, а не выбрасывать всю вывеску. Покрытие сильно замедляет погодные повреждения, но не заменяет надёжный корпус и хорошее уплотнение. Результат зависит от толщины покрытия, подготовки поверхности, отверждения, качества герметизации, геометрии, напряжения и температуры."
+    ]
+   ],
+   "close": "MGCoat — защитное покрытие на пластиковой основе без нагрева, наносимое окунанием, распылением или кистью и снимаемое для ремонта — создано для защиты LED-плат, LED-драйверов и электроники наружных вывесок от влаги и конденсата при длительной уличной эксплуатации."
+  },
+  "tr": {
+   "title": "LED Kartlarını, LED Sürücülerini ve Dış Mekân Tabela Elektroniğini Su Geçirmez Yapmak",
+   "desc": "LED kartlarını, LED sürücülerini ve dış mekân tabela elektroniğini nem, yoğuşma ve korozyona karşı koruyucu kaplamayla koruma.",
+   "intro": "Dış mekân LED tabelaları, kutu harfler, ekranlar ve mimari aydınlatma yıllarca yağmurda, nemde ve sıcaklık değişimlerinde çalışır. İçlerindeki LED kartları ve sürücü elektroniği sık bir arıza noktasıdır — nem muhafazalardan sızar ve LED'lerin kendisi yıpranmadan çok önce kartı aşındırır. Koruyucu bir kaplama elektroniğin hava koşullarına dayanmasına yardımcı olur.",
+   "secs": [
+    [
+     "Dış mekân LED elektroniği neden arızalanır",
+     "Çoğu LED tabela arızası LED'ler değil — kart ve sürücüdür. Nemli hava ve yağmur eklerden, kablo girişlerinden ve havalandırmadan girip PCB üzerinde yoğuşur. Zamanla nem hatları aşındırır, padleri köprüler ve LED dizilerini veya tabelanın tüm bölümlerini söndürür. Kartı kaplamak gerçek zayıf noktaya nem bariyeri ekler."
+    ],
+    [
+     "Tabelada nem, yoğuşma ve korozyon",
+     "Tabela yanınca ısınır, gece soğur ve nemli havayı içeri dışarı solur. Bu günlük döngü, yağmur girmese bile kartta yoğuşma bırakır. Tuz ve kirlilik filmi iletken yapar; titreme, kararma ve ölü pikseller oluşur. Kaplama, bakırı ve lehim noktalarını bu yavaş hasara karşı yalıtır."
+    ],
+    [
+     "LED kartında ne kaplanmalı",
+     "Sürücü ve güç bölümünü, kontrol ve veri hatlarını, lehim noktalarını ve konnektörlerle kablo girişleri çevresini kaplayın. LED modüllerinde ve şeritlerinde iletken hatları ve birleşimleri kaplayın. Amaç, aşınan parçalarda sürekli bir nem bariyeridir."
+    ],
+    [
+     "Maskelenecek LED'ler, optik ve konnektörler",
+     "Her LED'in ışık yayan yüzeyini, lens veya difüzör temas alanlarını, ışık sensörlerini ve konnektörlerin temas yüzeylerini maskeleyin. Yayan yüzeyler açık bırakıldığında, kartın geri kalanındaki ince kaplama ışık çıkışını değiştirmez."
+    ],
+    [
+     "Isı ve sürücü katı",
+     "LED sürücüler ısınır, bu yüzden soğutucuları, termal pedleri veya doğrudan soğutmaya dayanan bileşenleri kaplamayın. Soğutma yolunu maskeleyin, sonra kartın geri kalanını ince eşit katmanlarla kaplayın. İnce katman sürücü sıcaklığını neredeyse etkilemezken onu nemden korur."
+    ],
+    [
+     "LED elektroniğine kaplama uygulama",
+     "Kartı temizleyip kurutun, LED'leri ve servis edilebilir noktaları maskeleyin, sonra daldırma, püskürtme veya fırçayla ince eşit katmanlar oluşturun. Fırça, uzun LED şeritleri ve kablo girişlerini güçlendirmek için kullanışlıdır; birkaç ince katman kenarları ve yüksek parçaları tek kalın katmandan daha iyi kaplar."
+    ],
+    [
+     "Bakım ve gerçekçi sınırlar",
+     "Kaplama özel bir çözücüyle sökülebildiği için arızalı bir sürücü veya LED bölümü, tüm tabelayı hurdaya çıkarmak yerine onarılıp yeniden kaplanabilir. Kaplama hava hasarını büyük ölçüde yavaşlatır ama sağlam bir muhafaza ve iyi sızdırmazlığın yerini tutmaz. Performans; kaplama kalınlığına, yüzey hazırlığına, kürlenmeye, sızdırmazlık kalitesine, geometriye, gerilime ve sıcaklığa bağlıdır."
+    ]
+   ],
+   "close": "MGCoat; daldırma, püskürtme veya fırçayla uygulanan ve onarım için sökülebilen, ısı gerektirmeyen plastik esaslı bir koruyucu kaplamadır — LED kartlarını, LED sürücülerini ve dış mekân tabela elektroniğini uzun süreli dış mekân kullanımında nem ve yoğuşmaya karşı korumak için tasarlanmıştır."
+  },
+  "ar": {
+   "title": "عزل لوحات LED ومشغّلات LED وإلكترونيات اللافتات الخارجية ضد الماء",
+   "desc": "كيف تحمي لوحات LED ومشغّلات LED وإلكترونيات اللافتات الخارجية من الرطوبة والتكثّف والتآكل بطلاء واقٍ.",
+   "intro": "تعمل لافتات LED الخارجية والحروف المجسّمة والشاشات والإضاءة المعمارية سنوات في المطر والرطوبة وتقلبات الحرارة. لوحات LED وإلكترونيات المشغّل في داخلها نقطة عطل متكررة — تتسلل الرطوبة عبر الصناديق وتأكل اللوحة قبل أن تبلى مصابيح LED نفسها بوقت طويل. يساعد الطلاء الواقي الإلكترونيات على الصمود أمام الطقس.",
+   "secs": [
+    [
+     "لماذا تتعطّل إلكترونيات LED الخارجية",
+     "معظم أعطال لافتات LED ليست المصابيح — بل اللوحة والمشغّل. يدخل الهواء الرطب والمطر عبر الوصلات ومداخل الكابلات والفتحات ويتكثّف على PCB. مع الوقت تأكل الرطوبة المسارات وتجسر النقاط وتطفئ سلاسل LED أو أقساماً كاملة من اللافتة. طلاء اللوحة يضيف حاجز رطوبة عند نقطة الضعف الحقيقية."
+    ],
+    [
+     "الرطوبة والتكثّف والتآكل في اللافتات",
+     "تسخن اللافتة عند الإضاءة وتبرد ليلاً، فتتنفّس الهواء الرطب داخلاً وخارجاً. هذه الدورة اليومية تترك تكثّفاً على اللوحة حتى دون دخول مطر. الملح والتلوث يجعلان الغشاء موصلاً فيسبّب وميضاً وخفوتاً وبكسلات ميتة. يعزل الطلاء النحاس ونقاط اللحام عن هذا الضرر البطيء."
+    ],
+    [
+     "ماذا تطلي على لوحة LED",
+     "اطلِ قسم المشغّل والطاقة وخطوط التحكم والبيانات ونقاط اللحام والمناطق حول الموصلات ومداخل الكابلات. على وحدات وشرائط LED اطلِ المسارات الموصلة والوصلات. الهدف حاجز رطوبة متصل على الأجزاء التي تتآكل."
+    ],
+    [
+     "مصابيح LED والبصريات والموصلات التي تُقنّع",
+     "غطِّ السطح الباعث للضوء لكل مصباح LED، ومناطق تلامس العدسة أو الناشر، والحساسات الضوئية، وأسطح تلامس الموصلات. الطلاء الرقيق على باقي اللوحة لا يغيّر خرج الضوء عندما تُترك الأسطح الباعثة مكشوفة."
+    ],
+    [
+     "الحرارة ومرحلة المشغّل",
+     "تسخن مشغّلات LED، لذا لا تطلِ المشتتات الحرارية أو الوسائد الحرارية أو المكوّنات المعتمدة على التبريد المباشر. غطِّ مسار التبريد ثم اطلِ باقي اللوحة بطبقات رقيقة متساوية. الطبقة الرقيقة لا تكاد تؤثر على حرارة المشغّل بينما تحميه من الرطوبة."
+    ],
+    [
+     "تطبيق الطلاء على إلكترونيات LED",
+     "نظّف اللوحة وجفّفها، وغطِّ مصابيح LED والنقاط القابلة للصيانة، ثم ابنِ طبقات رقيقة متساوية بالغمس أو الرش أو الفرشاة. الفرشاة مفيدة لشرائط LED الطويلة ولتقوية مداخل الكابلات؛ عدة طبقات رقيقة تغطّي الحواف والأجزاء العالية أفضل من طبقة سميكة واحدة."
+    ],
+    [
+     "الصيانة والحدود الواقعية",
+     "لأن الطلاء قابل للإزالة بمذيب خاص، يمكن إصلاح مشغّل أو قسم LED معطّل وإعادة طلائه بدل إهدار اللافتة كلها. يبطّئ الطلاء ضرر الطقس كثيراً لكنه لا يحل محل صندوق سليم وإحكام جيد. يعتمد الأداء على سماكة الطلاء وتحضير السطح والجفاف وجودة الإحكام والهندسة والجهد والحرارة."
+    ]
+   ],
+   "close": "إن MGCoat طلاء واقٍ بدون حرارة قائم على البلاستيك، يُطبَّق بالغمس أو الرش أو الفرشاة ويُزال للإصلاح — مصمَّم لحماية لوحات LED ومشغّلات LED وإلكترونيات اللافتات الخارجية من الرطوبة والتكثّف في الاستخدام الخارجي الطويل."
+  }
+ }
+}

@@ -1,0 +1,188 @@
+{
+ "slug": "protecting-industrial-control-plc-automation-electronics",
+ "kw": "industrial electronics protection, PLC board coating, automation electronics waterproofing, control panel PCB protection, industrial sensor coating, factory electronics moisture",
+ "order": 130,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Protecting Industrial Control, PLC and Automation Electronics from Moisture and Dust",
+   "desc": "How to protect PLC boards, control-panel electronics and industrial sensors from humidity, dust, coolant mist and corrosion with a protective coating.",
+   "intro": "Factory-floor electronics face a tough mix of humidity, dust, coolant and cleaning mist, vibration and chemical fumes. PLC boards, drives, I/O modules and control-panel electronics control expensive processes, so unplanned downtime is costly. A protective coating on the board adds resilience against the conditions that cause intermittent faults and corrosion.",
+   "secs": [
+    [
+     "Why industrial electronics need protection",
+     "On the factory floor, electronics rarely fail from a single event — they degrade from constant exposure. Humid air, conductive dust, oil mist and washdown spray settle on boards and slowly create leakage paths and corrosion. The result is intermittent faults that are hard to trace and expensive to diagnose on a running line."
+    ],
+    [
+     "Humidity, dust, coolant and chemicals",
+     "Coolant mist from machining, humid washdown areas and airborne metal or carbon dust are especially harsh because the contamination is often conductive. It bridges pins and tracks, causing false signals and resets. A coating seals the board so this contamination sits on an inert surface instead of the live copper."
+    ],
+    [
+     "What to coat in a control system",
+     "Good candidates include PLC CPU and I/O boards, motor-drive control electronics, HMI boards, communication and fieldbus modules, power supplies and sensor electronics. Coat the tracks, components and solder joints; the goal is a continuous barrier across the board."
+    ],
+    [
+     "Terminals, relays and field wiring to mask",
+     "Mask screw terminals, plug-in connectors, relay contacts, programming and diagnostic ports, DIP switches and any user-serviceable points. These must stay accessible and conductive, so the coating goes around them, not over them."
+    ],
+    [
+     "Vibration and mechanical reinforcement",
+     "Machines vibrate, and vibration fatigues solder joints and connectors over time. A reinforced coating that hardens after curing supports joints and resists abrasion from dust, adding mechanical durability on top of moisture protection."
+    ],
+    [
+     "Applying the coating in an industrial workflow",
+     "Clean off oil and flux, dry the board, mask the serviceable points, then build thin even layers by dip, spray or brush. For repair shops and panel builders, brush application is practical for local reinforcement and field touch-ups; full boards can be dipped or sprayed in batches."
+    ],
+    [
+     "Serviceability and realistic limits",
+     "Because the coating is removable with a dedicated solvent, a coated control board stays serviceable — a technician can rework a point and re-coat without scrapping the module. A coating greatly reduces moisture and dust faults but does not replace a properly rated enclosure. Performance depends on coating thickness, surface preparation, curing, sealing quality, geometry, voltage, temperature and mechanical stress."
+    ]
+   ],
+   "close": "MGCoat is a heat-free, plastic-based protective coating applied by dip, spray or brush and removable for repair — designed to protect PLC, control-panel and automation electronics against humidity, dust and corrosion in demanding industrial environments."
+  },
+  "fa": {
+   "title": "محافظت از الکترونیک کنترل صنعتی، PLC و اتوماسیون در برابر رطوبت و گردوغبار",
+   "desc": "چطور بردهای PLC، الکترونیک تابلوی کنترل و سنسورهای صنعتی را با پوشش محافظ در برابر رطوبت، گردوغبار، مه روان‌کار و خوردگی محافظت کنیم.",
+   "intro": "الکترونیک کف کارخانه با ترکیب سختی از رطوبت، گردوغبار، مه روان‌کار و شست‌وشو، لرزش و بخار شیمیایی روبه‌روست. بردهای PLC، درایوها، ماژول‌های I/O و الکترونیک تابلوی کنترل فرایندهای گران‌قیمت را کنترل می‌کنند، پس توقف ناخواسته پرهزینه است. یک پوشش محافظ روی برد در برابر شرایطی که خطای متناوب و خوردگی می‌سازد مقاومت اضافه می‌کند.",
+   "secs": [
+    [
+     "چرا الکترونیک صنعتی به محافظت نیاز دارد",
+     "در کف کارخانه، الکترونیک به‌ندرت با یک رویداد خراب می‌شود — با مواجههٔ دائم تخریب می‌شود. هوای مرطوب، گردوغبار رسانا، مه روغن و پاشش شست‌وشو روی بردها می‌نشیند و آرام‌آرام مسیر نشتی و خوردگی می‌سازد. نتیجه خطای متناوبی است که ردیابی‌اش سخت و تشخیصش روی خط در حال کار گران است."
+    ],
+    [
+     "رطوبت، گردوغبار، روان‌کار و مواد شیمیایی",
+     "مه روان‌کارِ ماشین‌کاری، نواحی مرطوبِ شست‌وشو و گردوغبار معلق فلزی یا کربنی به‌ویژه سخت‌اند چون آلودگی اغلب رساناست. پین‌ها و مسیرها را پل می‌زند و سیگنال غلط و ری‌ست می‌سازد. پوشش برد را آب‌بندی می‌کند تا این آلودگی روی یک سطح خنثی بنشیند نه روی مسِ زنده."
+    ],
+    [
+     "در یک سیستم کنترل چه چیزی را بپوشانیم",
+     "گزینه‌های خوب: بردهای CPU و I/O پی‌ال‌سی، الکترونیک کنترل درایو موتور، بردهای HMI، ماژول‌های ارتباط و فیلدباس، منابع تغذیه و الکترونیک سنسور. مسیرها، قطعات و نقاط لحیم را بپوشان؛ هدف یک سد پیوسته روی برد است."
+    ],
+    [
+     "ترمینال‌ها، رله‌ها و سیم‌کشی میدانی که باید ماسک شوند",
+     "ترمینال‌های پیچی، کانکتورهای پلاگین، کنتاکت رله‌ها، پورت‌های برنامه‌ریزی و عیب‌یابی، دیپ‌سوییچ‌ها و هر نقطهٔ قابل‌سرویس را ماسک کن. این‌ها باید در دسترس و رسانا بمانند، پس پوشش دورشان می‌رود نه رویشان."
+    ],
+    [
+     "لرزش و تقویت مکانیکی",
+     "ماشین‌ها می‌لرزند و لرزش به‌مرور نقاط لحیم و کانکتورها را خسته می‌کند. پوششی که بعد خشک‌شدن سخت می‌شود اتصالات را پشتیبانی و در برابر سایش گردوغبار مقاومت می‌کند و روی محافظت رطوبتی، دوام مکانیکی هم اضافه می‌کند."
+    ],
+    [
+     "اجرای پوشش در گردش‌کار صنعتی",
+     "روغن و فلاکس را پاک کن، برد را خشک کن، نقاط قابل‌سرویس را ماسک کن، سپس با غوطه‌وری، اسپری یا قلم‌مو لایه‌های نازک و یکنواخت بساز. برای تعمیرگاه‌ها و سازندگان تابلو، اجرای قلم‌مویی برای تقویت موضعی و ترمیم میدانی کاربردی است؛ بردهای کامل را می‌توان دسته‌ای غوطه‌ور یا اسپری کرد."
+    ],
+    [
+     "قابلیت سرویس و محدودیت‌های واقع‌بینانه",
+     "چون پوشش با حلال مخصوص برداشتنی است، برد کنترلِ پوشش‌داده قابل‌سرویس می‌ماند — تکنسین می‌تواند یک نقطه را بازکاری و دوباره پوشش بدهد بدون دورانداختن ماژول. پوشش خطاهای رطوبت و گردوغبار را خیلی کم می‌کند اما جایگزین محفظهٔ با درجه‌بندی مناسب نیست. کارایی به ضخامت پوشش، آماده‌سازی سطح، خشک‌شدن، کیفیت آب‌بندی، هندسه، ولتاژ، دما و تنش مکانیکی بستگی دارد."
+    ]
+   ],
+   "close": "MGCoat یک پوشش محافظ بدون حرارت و بر پایه پلاستیک است که با غوطه‌وری، اسپری یا قلم‌مو اجرا و برای تعمیر برداشته می‌شود — برای محافظت از الکترونیک PLC، تابلوی کنترل و اتوماسیون در برابر رطوبت، گردوغبار و خوردگی در محیط‌های صنعتی سخت طراحی شده است."
+  },
+  "ru": {
+   "title": "Защита промышленной автоматики, ПЛК и электроники управления от влаги и пыли",
+   "desc": "Как защитить платы ПЛК, электронику шкафов управления и промышленные датчики от влаги, пыли, тумана СОЖ и коррозии защитным покрытием.",
+   "intro": "Электроника в цехе сталкивается с тяжёлым сочетанием влаги, пыли, тумана СОЖ и моющих средств, вибрации и химических испарений. Платы ПЛК, приводы, модули ввода-вывода и электроника шкафов управляют дорогими процессами, поэтому незапланированный простой дорог. Защитное покрытие на плате повышает устойчивость к условиям, вызывающим периодические сбои и коррозию.",
+   "secs": [
+    [
+     "Зачем промышленной электронике защита",
+     "В цехе электроника редко отказывает от одного события — она деградирует от постоянного воздействия. Влажный воздух, проводящая пыль, масляный туман и брызги мойки оседают на платах и медленно создают пути утечки и коррозию. Результат — периодические сбои, которые трудно отследить и дорого диагностировать на работающей линии."
+    ],
+    [
+     "Влага, пыль, СОЖ и химия",
+     "Туман СОЖ от обработки, влажные зоны мойки и взвешенная металлическая или угольная пыль особенно агрессивны, потому что загрязнение часто проводящее. Оно перемыкает выводы и дорожки, вызывая ложные сигналы и сбросы. Покрытие изолирует плату, и это загрязнение оседает на инертной поверхности, а не на живой меди."
+    ],
+    [
+     "Что покрывать в системе управления",
+     "Хорошие кандидаты: платы CPU и ввода-вывода ПЛК, электроника управления приводами, платы HMI, модули связи и полевых шин, блоки питания и электроника датчиков. Покрывайте дорожки, компоненты и пайки — нужен сплошной барьер по плате."
+    ],
+    [
+     "Клеммы, реле и полевую проводку маскировать",
+     "Замаскируйте винтовые клеммы, штекерные разъёмы, контакты реле, программные и диагностические порты, DIP-переключатели и все обслуживаемые точки. Они должны оставаться доступными и проводящими, поэтому покрытие наносят вокруг них, а не поверх."
+    ],
+    [
+     "Вибрация и механическое усиление",
+     "Машины вибрируют, и вибрация со временем утомляет пайки и разъёмы. Усиленное покрытие, твердеющее после отверждения, поддерживает соединения и сопротивляется истиранию пылью, добавляя механическую прочность поверх защиты от влаги."
+    ],
+    [
+     "Нанесение покрытия в промышленном процессе",
+     "Удалите масло и флюс, высушите плату, замаскируйте обслуживаемые точки, затем наносите тонкие ровные слои окунанием, распылением или кистью. Для ремонтных служб и сборщиков шкафов кисть удобна для локального усиления и полевых подкрасок; полные платы можно окунать или напылять партиями."
+    ],
+    [
+     "Ремонтопригодность и реалистичные пределы",
+     "Поскольку покрытие снимается специальным растворителем, покрытая плата управления остаётся ремонтопригодной — техник может доработать точку и снова покрыть, не выбрасывая модуль. Покрытие сильно снижает сбои от влаги и пыли, но не заменяет корпус с нужной степенью защиты. Результат зависит от толщины покрытия, подготовки поверхности, отверждения, качества герметизации, геометрии, напряжения, температуры и механических нагрузок."
+    ]
+   ],
+   "close": "MGCoat — защитное покрытие на пластиковой основе без нагрева, наносимое окунанием, распылением или кистью и снимаемое для ремонта — создано для защиты ПЛК, электроники шкафов управления и автоматики от влаги, пыли и коррозии в тяжёлых промышленных условиях."
+  },
+  "tr": {
+   "title": "Endüstriyel Kontrol, PLC ve Otomasyon Elektroniğini Nem ve Toza Karşı Koruma",
+   "desc": "PLC kartlarını, pano elektroniğini ve endüstriyel sensörleri nem, toz, soğutma sıvısı sisi ve korozyona karşı koruyucu kaplamayla koruma.",
+   "intro": "Fabrika sahasındaki elektronik; nem, toz, soğutma sıvısı ve temizlik sisi, titreşim ve kimyasal buharların zorlu karışımıyla karşılaşır. PLC kartları, sürücüler, I/O modülleri ve pano elektroniği pahalı süreçleri yönetir, bu yüzden plansız duruş maliyetlidir. Kart üzerindeki koruyucu kaplama, kesintili arızalara ve korozyona yol açan koşullara karşı dayanıklılık ekler.",
+   "secs": [
+    [
+     "Endüstriyel elektronik neden koruma ister",
+     "Fabrika sahasında elektronik nadiren tek bir olaydan arızalanır — sürekli maruz kalmadan bozulur. Nemli hava, iletken toz, yağ sisi ve yıkama serpintisi kartlara çöker ve yavaşça kaçak yolları ve korozyon oluşturur. Sonuç, izi zor sürülen ve çalışan bir hatta teşhisi pahalı olan kesintili arızalardır."
+    ],
+    [
+     "Nem, toz, soğutma sıvısı ve kimyasallar",
+     "İşlemeden gelen soğutma sıvısı sisi, nemli yıkama alanları ve havadaki metal veya karbon tozu özellikle zorludur çünkü kirlilik çoğu zaman iletkendir. Pinleri ve hatları köprüler, yanlış sinyallere ve resetlere yol açar. Kaplama kartı yalıtır, böylece bu kirlilik canlı bakır yerine inert bir yüzeyde oturur."
+    ],
+    [
+     "Bir kontrol sisteminde ne kaplanmalı",
+     "İyi adaylar: PLC CPU ve I/O kartları, motor sürücü kontrol elektroniği, HMI kartları, haberleşme ve fieldbus modülleri, güç kaynakları ve sensör elektroniği. Hatları, bileşenleri ve lehim noktalarını kaplayın; amaç kart boyunca sürekli bir bariyerdir."
+    ],
+    [
+     "Maskelenecek klemensler, röleler ve saha kablajı",
+     "Vidalı klemensleri, geçmeli konnektörleri, röle kontaklarını, programlama ve tanı portlarını, DIP anahtarları ve kullanıcının servis edebileceği noktaları maskeleyin. Bunlar erişilebilir ve iletken kalmalı, bu yüzden kaplama üzerlerine değil etraflarına uygulanır."
+    ],
+    [
+     "Titreşim ve mekanik güçlendirme",
+     "Makineler titrer ve titreşim zamanla lehim noktalarını ve konnektörleri yorar. Kürlendikten sonra sertleşen güçlendirilmiş bir kaplama bağlantıları destekler ve toz aşınmasına direnir; nem korumasının üstüne mekanik dayanıklılık ekler."
+    ],
+    [
+     "Endüstriyel akışta kaplama uygulama",
+     "Yağ ve flux'ı temizleyin, kartı kurutun, servis edilebilir noktaları maskeleyin, sonra daldırma, püskürtme veya fırçayla ince eşit katmanlar oluşturun. Tamir atölyeleri ve pano üreticileri için fırça uygulaması yerel güçlendirme ve saha rötuşları için pratiktir; tam kartlar partiler hâlinde daldırılabilir veya püskürtülebilir."
+    ],
+    [
+     "Servis edilebilirlik ve gerçekçi sınırlar",
+     "Kaplama özel bir çözücüyle sökülebildiği için kaplı bir kontrol kartı servis edilebilir kalır — teknisyen bir noktayı reworkleyip modülü hurdaya çıkarmadan yeniden kaplayabilir. Kaplama nem ve toz arızalarını büyük ölçüde azaltır ama uygun koruma sınıfındaki bir muhafazanın yerini tutmaz. Performans; kaplama kalınlığına, yüzey hazırlığına, kürlenmeye, sızdırmazlık kalitesine, geometriye, gerilime, sıcaklığa ve mekanik gerilime bağlıdır."
+    ]
+   ],
+   "close": "MGCoat; daldırma, püskürtme veya fırçayla uygulanan ve onarım için sökülebilen, ısı gerektirmeyen plastik esaslı bir koruyucu kaplamadır — PLC, pano ve otomasyon elektroniğini zorlu endüstriyel ortamlarda nem, toz ve korozyona karşı korumak için tasarlanmıştır."
+  },
+  "ar": {
+   "title": "حماية إلكترونيات التحكم الصناعي و PLC والأتمتة من الرطوبة والغبار",
+   "desc": "كيف تحمي لوحات PLC وإلكترونيات لوحات التحكم والحساسات الصناعية من الرطوبة والغبار ورذاذ سائل التبريد والتآكل بطلاء واقٍ.",
+   "intro": "تواجه إلكترونيات أرضية المصنع مزيجاً قاسياً من الرطوبة والغبار ورذاذ سائل التبريد والتنظيف والاهتزاز والأبخرة الكيميائية. لوحات PLC والمشغّلات ووحدات الإدخال/الإخراج وإلكترونيات لوحات التحكم تدير عمليات باهظة، لذا فالتوقف غير المخطّط مكلف. الطلاء الواقي على اللوحة يضيف مرونة ضد الظروف التي تسبّب الأعطال المتقطعة والتآكل.",
+   "secs": [
+    [
+     "لماذا تحتاج الإلكترونيات الصناعية إلى حماية",
+     "على أرضية المصنع نادراً ما تتعطّل الإلكترونيات من حدث واحد — بل تتدهور من التعرّض المستمر. الهواء الرطب والغبار الموصل ورذاذ الزيت وبخّ التنظيف يستقر على اللوحات ويخلق ببطء مسارات تسرّب وتآكلاً. النتيجة أعطال متقطعة يصعب تتبّعها ويكلّف تشخيصها على خط يعمل."
+    ],
+    [
+     "الرطوبة والغبار وسائل التبريد والمواد الكيميائية",
+     "رذاذ سائل التبريد من التشغيل ومناطق الغسيل الرطبة والغبار المعدني أو الكربوني المحمول قاسٍ بشكل خاص لأن التلوث غالباً موصل. يجسر الأطراف والمسارات فيسبّب إشارات خاطئة وإعادة تشغيل. يعزل الطلاء اللوحة فيستقر هذا التلوث على سطح خامل بدل النحاس الحي."
+    ],
+    [
+     "ماذا تطلي في نظام تحكم",
+     "المرشحات الجيدة: لوحات CPU وI/O لـ PLC، إلكترونيات تحكم محركات السرعة، لوحات HMI، وحدات الاتصال والـ fieldbus، مزوّدات الطاقة وإلكترونيات الحساسات. اطلِ المسارات والمكوّنات ونقاط اللحام؛ الهدف حاجز متصل عبر اللوحة."
+    ],
+    [
+     "الأطراف والمرحّلات وأسلاك الميدان التي تُقنّع",
+     "غطِّ الأطراف اللولبية والموصلات القابلة للتوصيل وملامسات المرحّلات ومنافذ البرمجة والتشخيص ومفاتيح DIP وأي نقاط قابلة للصيانة. يجب أن تبقى متاحة وموصلة، لذا يُطبَّق الطلاء حولها لا فوقها."
+    ],
+    [
+     "الاهتزاز والتقوية الميكانيكية",
+     "تهتز الآلات، والاهتزاز يُجهد نقاط اللحام والموصلات مع الوقت. الطلاء المعزّز الذي يتصلّب بعد الجفاف يدعم الوصلات ويقاوم التآكل بالغبار، مضيفاً متانة ميكانيكية فوق الحماية من الرطوبة."
+    ],
+    [
+     "تطبيق الطلاء في سير العمل الصناعي",
+     "نظّف الزيت والفلَكس، جفّف اللوحة، غطِّ النقاط القابلة للصيانة، ثم ابنِ طبقات رقيقة متساوية بالغمس أو الرش أو الفرشاة. لورش الإصلاح وبُناة اللوحات، التطبيق بالفرشاة عملي للتقوية الموضعية والترميم الميداني؛ ويمكن غمس أو رش اللوحات الكاملة على دفعات."
+    ],
+    [
+     "قابلية الصيانة والحدود الواقعية",
+     "لأن الطلاء قابل للإزالة بمذيب خاص، تبقى لوحة التحكم المطلية قابلة للصيانة — يمكن للفني إعادة العمل على نقطة وإعادة الطلاء دون إهدار الوحدة. يقلّل الطلاء أعطال الرطوبة والغبار كثيراً لكنه لا يحل محل صندوق بدرجة حماية مناسبة. يعتمد الأداء على سماكة الطلاء وتحضير السطح والجفاف وجودة الإحكام والهندسة والجهد والحرارة والإجهاد الميكانيكي."
+    ]
+   ],
+   "close": "إن MGCoat طلاء واقٍ بدون حرارة قائم على البلاستيك، يُطبَّق بالغمس أو الرش أو الفرشاة ويُزال للإصلاح — مصمَّم لحماية إلكترونيات PLC ولوحات التحكم والأتمتة من الرطوبة والغبار والتآكل في البيئات الصناعية الصعبة."
+  }
+ }
+}

@@ -1,0 +1,188 @@
+{
+ "slug": "waterproofing-marine-boat-electronics-salt-fog",
+ "kw": "marine electronics coating, salt fog protection, boat electronics waterproofing, corrosion protection PCB, salt spray coating, marine sensor protection",
+ "order": 100,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Waterproofing Marine and Boat Electronics Against Salt Fog and Corrosion",
+   "desc": "How to protect boat electronics, marine sensors and control boards from salt fog, humidity and corrosion with a protective coating.",
+   "intro": "Marine electronics live in one of the harshest environments for a circuit board: constant humidity, salt-laden air, spray, condensation and temperature swings. Salt fog accelerates corrosion on copper, pads and connectors long before a board is ever splashed. A protective coating adds a barrier that slows this damage and extends service life on the water.",
+   "secs": [
+    [
+     "Why marine electronics fail early",
+     "On a boat the enemy is rarely a single wave — it is the slow, continuous attack of salt-laden humid air. Salt settles on the board, attracts moisture and forms a conductive, corrosive film that eats tracks and creates leakage paths between pins. Failures often appear as drifting sensor readings, intermittent faults and green corrosion around connectors."
+    ],
+    [
+     "Salt fog and corrosion explained",
+     "Salt fog is a fine airborne mist of salt water that enters enclosures through vents, cable glands and seams. Once inside it condenses on cool surfaces and leaves a hygroscopic salt layer that stays damp even in dry air. A coating seals the copper and solder joints from this film, which is the main reason marine boards corrode."
+    ],
+    [
+     "What to coat on a boat",
+     "Good candidates include chartplotter and instrument boards, depth and wind sensor electronics, tank and bilge senders, VHF and AIS units, navigation and deck-lighting drivers, battery monitors and switch panels. Coat the tracks, components and solder joints; the goal is a continuous moisture barrier across the whole board."
+    ],
+    [
+     "Connectors, grounds and antenna points",
+     "Connectors and grounding points are where marine corrosion usually starts. Mask the mating surfaces of connectors so they stay conductive, but reinforce the surrounding area and the cable entry with an extra brushed layer. Leave antenna and bonding points masked where electrical contact is required."
+    ],
+    [
+     "Applying the coating for marine use",
+     "Clean every trace of salt and flux first — any salt left under the coating keeps corroding. Dry the board fully, mask serviceable points, then build the protection in thin even layers by dip, spray or brush. Several thin layers cover tall components and board edges better than one thick coat."
+    ],
+    [
+     "Maintenance and re-coating",
+     "Marine equipment is serviced and modified often. Because the coating is removable with a dedicated solvent, you can open a single area, repair or add a wire, and re-coat to restore protection — the board stays serviceable for the life of the boat."
+    ],
+    [
+     "Realistic expectations and limits",
+     "A coating dramatically slows salt-fog corrosion, but it is not a substitute for a sound enclosure and good cable sealing. Performance depends on coating thickness, surface preparation, curing, sealing quality, geometry, voltage and temperature. For full immersion, the whole assembly must be properly sealed and fully cured first."
+    ]
+   ],
+   "close": "MGCoat is a heat-free, plastic-based protective coating applied by dip, spray or brush and removable for repair — designed to slow salt-fog corrosion and protect marine and boat electronics in real on-water conditions."
+  },
+  "fa": {
+   "title": "ضدآب‌کردن الکترونیک دریایی و قایق در برابر مه‌نمکی و خوردگی",
+   "desc": "چطور الکترونیک قایق، سنسورهای دریایی و بردهای کنترل را با پوشش محافظ در برابر مه‌نمکی، رطوبت و خوردگی محافظت کنیم.",
+   "intro": "الکترونیک دریایی در یکی از سخت‌ترین محیط‌ها برای یک برد کار می‌کند: رطوبت دائم، هوای نمک‌آلود، پاشش آب، میعان و نوسان دما. مه‌نمکی خیلی پیش از آنکه بردی خیس شود، خوردگی مس، پدها و کانکتورها را شتاب می‌دهد. یک پوشش محافظ سدی می‌سازد که این آسیب را کند می‌کند و عمر کارکرد روی آب را بالا می‌برد.",
+   "secs": [
+    [
+     "چرا الکترونیک دریایی زود خراب می‌شود",
+     "روی قایق دشمن به‌ندرت یک موج است — حملهٔ آرام و پیوستهٔ هوای مرطوبِ نمک‌آلود است. نمک روی برد می‌نشیند، رطوبت جذب می‌کند و یک لایهٔ رسانا و خورنده می‌سازد که مسیرها را می‌خورد و بین پین‌ها مسیر نشتی ایجاد می‌کند. خرابی اغلب به‌صورت رانش مقادیر سنسور، خطای متناوب و خوردگی سبز دور کانکتورها ظاهر می‌شود."
+    ],
+    [
+     "مه‌نمکی و خوردگی",
+     "مه‌نمکی غبار ریزی از آب‌نمکِ معلق در هواست که از دریچه‌ها، گلَند کابل و درزها وارد محفظه می‌شود. داخل که شد روی سطوح خنک میعان می‌کند و یک لایهٔ نمکِ رطوبت‌گیر می‌گذارد که حتی در هوای خشک نمناک می‌ماند. پوشش، مس و نقاط لحیم را از این لایه آب‌بندی می‌کند — دلیل اصلی خوردگی بردهای دریایی."
+    ],
+    [
+     "روی قایق چه چیزی را بپوشانیم",
+     "گزینه‌های خوب: بردهای چارت‌پلاتر و نمایشگر، الکترونیک سنسور عمق و باد، فرستنده‌های مخزن و کفِ آب، واحدهای VHF و AIS، درایور چراغ‌های ناوبری و عرشه، مانیتور باتری و پنل کلیدها. مسیرها، قطعات و نقاط لحیم را بپوشان؛ هدف یک سد رطوبتی پیوسته روی کل برد است."
+    ],
+    [
+     "کانکتورها، اتصال‌زمین و نقاط آنتن",
+     "کانکتورها و نقاط اتصال‌زمین جایی‌اند که خوردگی دریایی معمولاً از آنجا شروع می‌شود. سطوح تماس کانکتورها را ماسک کن تا رسانا بمانند، اما ناحیهٔ اطراف و ورودی کابل را با یک لایهٔ قلم‌مویی اضافی تقویت کن. نقاط آنتن و باندینگ که تماس الکتریکی لازم دارند ماسک بمانند."
+    ],
+    [
+     "اجرای پوشش برای کاربرد دریایی",
+     "اول هر اثری از نمک و فلاکس را پاک کن — هر نمکی که زیر پوشش بماند به خوردن ادامه می‌دهد. برد را کامل خشک کن، نقاط قابل‌سرویس را ماسک کن، سپس محافظت را در لایه‌های نازک و یکنواخت با غوطه‌وری، اسپری یا قلم‌مو بساز. چند لایهٔ نازک، قطعات بلند و لبه‌های برد را بهتر از یک لایهٔ ضخیم می‌پوشاند."
+    ],
+    [
+     "نگهداری و پوشش مجدد",
+     "تجهیزات دریایی زیاد سرویس و تغییر داده می‌شوند. چون پوشش با حلال مخصوص برداشتنی است، می‌توانی یک ناحیه را باز کنی، تعمیر یا یک سیم اضافه کنی و دوباره پوشش بدهی تا محافظت برگردد — برد در تمام عمر قایق قابل‌سرویس می‌ماند."
+    ],
+    [
+     "انتظارات واقع‌بینانه و محدودیت‌ها",
+     "پوشش خوردگیِ مه‌نمکی را به‌شدت کند می‌کند، اما جایگزین محفظهٔ سالم و آب‌بندی خوب کابل نیست. کارایی به ضخامت پوشش، آماده‌سازی سطح، خشک‌شدن، کیفیت آب‌بندی، هندسه، ولتاژ و دما بستگی دارد. برای غوطه‌وری کامل، کل مجموعه باید اول درست آب‌بندی و کاملاً خشک شود."
+    ]
+   ],
+   "close": "MGCoat یک پوشش محافظ بدون حرارت و بر پایه پلاستیک است که با غوطه‌وری، اسپری یا قلم‌مو اجرا و برای تعمیر برداشته می‌شود — برای کندکردن خوردگی مه‌نمکی و محافظت از الکترونیک دریایی و قایق در شرایط واقعی روی آب طراحی شده است."
+  },
+  "ru": {
+   "title": "Гидроизоляция морской и судовой электроники от соляного тумана и коррозии",
+   "desc": "Как защитить электронику катера, морские датчики и платы управления от соляного тумана, влаги и коррозии защитным покрытием.",
+   "intro": "Морская электроника работает в одной из самых суровых сред для платы: постоянная влажность, насыщенный солью воздух, брызги, конденсат и перепады температуры. Соляной туман ускоряет коррозию меди, площадок и разъёмов задолго до того, как плату обрызгает водой. Защитное покрытие создаёт барьер, замедляющий это разрушение и продлевающий срок службы на воде.",
+   "secs": [
+    [
+     "Почему морская электроника выходит из строя рано",
+     "На судне враг — редко одна волна, а медленная непрерывная атака влажного солёного воздуха. Соль оседает на плате, притягивает влагу и образует проводящую коррозионную плёнку, которая разъедает дорожки и создаёт пути утечки между выводами. Отказы проявляются как уход показаний датчиков, периодические сбои и зелёная коррозия вокруг разъёмов."
+    ],
+    [
+     "Что такое соляной туман и коррозия",
+     "Соляной туман — мелкая взвесь солёной воды в воздухе, проникающая в корпуса через вентиляцию, кабельные вводы и швы. Внутри она конденсируется на холодных поверхностях и оставляет гигроскопичный солевой слой, который остаётся влажным даже в сухом воздухе. Покрытие изолирует медь и пайки от этой плёнки — главная причина коррозии морских плат."
+    ],
+    [
+     "Что покрывать на судне",
+     "Хорошие кандидаты: платы картплоттеров и приборов, электроника датчиков глубины и ветра, датчики танков и трюма, блоки VHF и AIS, драйверы навигационного и палубного освещения, мониторы батарей и панели переключателей. Покрывайте дорожки, компоненты и пайки — нужен сплошной барьер от влаги по всей плате."
+    ],
+    [
+     "Разъёмы, заземление и антенные точки",
+     "Разъёмы и точки заземления — там обычно начинается морская коррозия. Замаскируйте контактные поверхности разъёмов, чтобы они оставались проводящими, но усильте окружающую зону и кабельный ввод дополнительным слоем кистью. Антенные и соединительные точки, где нужен электрический контакт, оставьте замаскированными."
+    ],
+    [
+     "Нанесение покрытия для морского применения",
+     "Сначала удалите все следы соли и флюса — оставшаяся под покрытием соль продолжает корродировать. Полностью высушите плату, замаскируйте обслуживаемые точки, затем наносите защиту тонкими ровными слоями окунанием, распылением или кистью. Несколько тонких слоёв лучше покрывают высокие компоненты и края платы, чем один толстый."
+    ],
+    [
+     "Обслуживание и повторное покрытие",
+     "Морское оборудование часто обслуживают и дорабатывают. Поскольку покрытие снимается специальным растворителем, можно вскрыть одну зону, отремонтировать или добавить провод и снова покрыть, восстановив защиту — плата остаётся ремонтопригодной весь срок службы судна."
+    ],
+    [
+     "Реалистичные ожидания и пределы",
+     "Покрытие резко замедляет коррозию от соляного тумана, но не заменяет надёжный корпус и хорошее уплотнение кабелей. Результат зависит от толщины покрытия, подготовки поверхности, отверждения, качества герметизации, геометрии, напряжения и температуры. Для полного погружения весь узел должен быть сначала правильно загерметизирован и полностью отверждён."
+    ]
+   ],
+   "close": "MGCoat — защитное покрытие на пластиковой основе без нагрева, наносимое окунанием, распылением или кистью и снимаемое для ремонта — создано, чтобы замедлять коррозию от соляного тумана и защищать морскую и судовую электронику в реальных условиях на воде."
+  },
+  "tr": {
+   "title": "Deniz ve Tekne Elektroniğini Tuz Sisi ve Korozyona Karşı Su Geçirmez Yapmak",
+   "desc": "Tekne elektroniğini, deniz sensörlerini ve kontrol kartlarını tuz sisi, nem ve korozyona karşı koruyucu kaplamayla koruma.",
+   "intro": "Deniz elektroniği bir devre kartı için en zorlu ortamlardan birinde çalışır: sürekli nem, tuz yüklü hava, serpinti, yoğuşma ve sıcaklık değişimleri. Tuz sisi, kart ıslanmadan çok önce bakır, pad ve konnektörlerde korozyonu hızlandırır. Koruyucu bir kaplama, bu hasarı yavaşlatan ve suda hizmet ömrünü uzatan bir bariyer ekler.",
+   "secs": [
+    [
+     "Deniz elektroniği neden erken arızalanır",
+     "Teknede düşman nadiren tek bir dalgadır — tuz yüklü nemli havanın yavaş ve sürekli saldırısıdır. Tuz kartın üzerine çöker, nem çeker ve iletken, aşındırıcı bir film oluşturur; bu da hatları yer ve pinler arasında kaçak yolları yaratır. Arızalar genelde sensör değerlerinde kayma, kesintili hatalar ve konnektörler etrafında yeşil korozyon olarak görünür."
+    ],
+    [
+     "Tuz sisi ve korozyon",
+     "Tuz sisi, havada asılı ince tuzlu su zerreciğidir; muhafazalara havalandırma, kablo rakorları ve eklerden girer. İçeride soğuk yüzeylerde yoğuşur ve kuru havada bile nemli kalan higroskopik bir tuz katmanı bırakır. Kaplama, bakırı ve lehim noktalarını bu filmden yalıtır — deniz kartlarının korozyona uğramasının ana nedeni."
+    ],
+    [
+     "Teknede ne kaplanmalı",
+     "İyi adaylar: chartplotter ve gösterge kartları, derinlik ve rüzgâr sensörü elektroniği, tank ve sintine vericileri, VHF ve AIS üniteleri, seyir ve güverte aydınlatma sürücüleri, akü monitörleri ve anahtar panelleri. Hatları, bileşenleri ve lehim noktalarını kaplayın; amaç tüm kartta sürekli bir nem bariyeridir."
+    ],
+    [
+     "Konnektörler, topraklama ve anten noktaları",
+     "Konnektörler ve topraklama noktaları, deniz korozyonunun genelde başladığı yerdir. Konnektörlerin temas yüzeylerini maskeleyin ki iletken kalsın, ama çevresini ve kablo girişini fırçayla ek bir katmanla güçlendirin. Elektriksel temas gereken anten ve bonding noktalarını maskeli bırakın."
+    ],
+    [
+     "Deniz kullanımı için kaplama uygulaması",
+     "Önce tüm tuz ve flux izlerini temizleyin — kaplama altında kalan tuz korozyona devam eder. Kartı tamamen kurutun, servis edilebilir noktaları maskeleyin, sonra korumayı daldırma, püskürtme veya fırçayla ince ve eşit katmanlar hâlinde oluşturun. Birkaç ince katman, yüksek bileşenleri ve kart kenarlarını tek kalın katmandan daha iyi kaplar."
+    ],
+    [
+     "Bakım ve yeniden kaplama",
+     "Deniz ekipmanı sık servis edilir ve değiştirilir. Kaplama özel bir çözücüyle sökülebildiği için tek bir alanı açıp onarabilir veya kablo ekleyip yeniden kaplayarak korumayı geri getirebilirsiniz — kart teknenin ömrü boyunca servis edilebilir kalır."
+    ],
+    [
+     "Gerçekçi beklentiler ve sınırlar",
+     "Kaplama tuz sisi korozyonunu belirgin yavaşlatır ama sağlam bir muhafaza ve iyi kablo sızdırmazlığının yerini tutmaz. Performans; kaplama kalınlığına, yüzey hazırlığına, kürlenmeye, sızdırmazlık kalitesine, geometriye, gerilime ve sıcaklığa bağlıdır. Tam daldırma için tüm montaj önce düzgün sızdırmaz yapılmalı ve tamamen kürlenmelidir."
+    ]
+   ],
+   "close": "MGCoat; daldırma, püskürtme veya fırçayla uygulanan ve onarım için sökülebilen, ısı gerektirmeyen plastik esaslı bir koruyucu kaplamadır — tuz sisi korozyonunu yavaşlatmak ve deniz ile tekne elektroniğini gerçek su koşullarında korumak için tasarlanmıştır."
+  },
+  "ar": {
+   "title": "عزل إلكترونيات القوارب والإلكترونيات البحرية ضد الضباب الملحي والتآكل",
+   "desc": "كيف تحمي إلكترونيات القارب والحساسات البحرية ولوحات التحكم من الضباب الملحي والرطوبة والتآكل بطلاء واقٍ.",
+   "intro": "تعمل الإلكترونيات البحرية في واحدة من أقسى البيئات على لوحة الدائرة: رطوبة دائمة وهواء مشبع بالملح ورذاذ وتكثّف وتقلبات حرارة. يسرّع الضباب الملحي تآكل النحاس والنقاط والموصلات قبل أن تبتل اللوحة بوقت طويل. يضيف الطلاء الواقي حاجزاً يبطّئ هذا الضرر ويطيل عمر التشغيل على الماء.",
+   "secs": [
+    [
+     "لماذا تتعطّل الإلكترونيات البحرية مبكراً",
+     "على القارب نادراً ما يكون العدو موجة واحدة — بل الهجوم البطيء المستمر للهواء الرطب المالح. يستقر الملح على اللوحة ويجذب الرطوبة ويكوّن غشاءً موصلاً وآكلاً يأكل المسارات ويخلق مسارات تسرّب بين الأطراف. تظهر الأعطال غالباً كانحراف في قراءات الحساسات وأعطال متقطعة وتآكل أخضر حول الموصلات."
+    ],
+    [
+     "الضباب الملحي والتآكل",
+     "الضباب الملحي رذاذ دقيق من ماء البحر معلّق في الهواء يدخل الصناديق عبر الفتحات ومداخل الكابلات والوصلات. في الداخل يتكثّف على الأسطح الباردة ويترك طبقة ملح ماصّة للرطوبة تبقى رطبة حتى في الهواء الجاف. يعزل الطلاء النحاس ونقاط اللحام عن هذا الغشاء — وهو السبب الرئيسي لتآكل اللوحات البحرية."
+    ],
+    [
+     "ماذا تطلي على القارب",
+     "المرشحات الجيدة: لوحات أجهزة الملاحة والقياس، إلكترونيات حساسات العمق والرياح، مرسلات الخزانات والقعر، وحدات VHF و AIS، مشغّلات إضاءة الملاحة والسطح، مراقبات البطارية ولوحات المفاتيح. اطلِ المسارات والمكوّنات ونقاط اللحام؛ الهدف حاجز رطوبة متصل على كامل اللوحة."
+    ],
+    [
+     "الموصلات والتأريض ونقاط الهوائي",
+     "الموصلات ونقاط التأريض هي حيث يبدأ التآكل البحري عادةً. غطِّ أسطح تلامس الموصلات لتبقى موصلة، لكن قوِّ المنطقة المحيطة ومدخل الكابل بطبقة إضافية بالفرشاة. اترك نقاط الهوائي والربط التي تتطلب تلامساً كهربائياً مغطّاة."
+    ],
+    [
+     "تطبيق الطلاء للاستخدام البحري",
+     "نظّف أولاً كل أثر للملح والفلَكس — أي ملح يبقى تحت الطلاء يستمر في التآكل. جفّف اللوحة تماماً، وغطِّ النقاط القابلة للصيانة، ثم ابنِ الحماية بطبقات رقيقة متساوية بالغمس أو الرش أو الفرشاة. عدة طبقات رقيقة تغطّي المكوّنات العالية وحواف اللوحة أفضل من طبقة سميكة واحدة."
+    ],
+    [
+     "الصيانة وإعادة الطلاء",
+     "تُصان المعدات البحرية وتُعدّل كثيراً. ولأن الطلاء قابل للإزالة بمذيب خاص، يمكنك فتح منطقة واحدة وإصلاحها أو إضافة سلك ثم إعادة الطلاء لاستعادة الحماية — تبقى اللوحة قابلة للصيانة طوال عمر القارب."
+    ],
+    [
+     "توقعات واقعية وحدود",
+     "يبطّئ الطلاء تآكل الضباب الملحي بشكل كبير لكنه ليس بديلاً عن صندوق سليم وإحكام جيد للكابلات. يعتمد الأداء على سماكة الطلاء وتحضير السطح والجفاف وجودة الإحكام والهندسة والجهد والحرارة. وللغمر الكامل يجب أولاً إحكام عزل المجموعة كلها وتجفيفها تماماً."
+    ]
+   ],
+   "close": "إن MGCoat طلاء واقٍ بدون حرارة قائم على البلاستيك، يُطبَّق بالغمس أو الرش أو الفرشاة ويُزال للإصلاح — مصمَّم لإبطاء تآكل الضباب الملحي وحماية الإلكترونيات البحرية وإلكترونيات القوارب في ظروف الماء الحقيقية."
+  }
+ }
+}

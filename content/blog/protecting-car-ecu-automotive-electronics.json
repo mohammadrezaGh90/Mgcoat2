@@ -1,0 +1,128 @@
+{
+ "slug": "protecting-car-ecu-automotive-electronics",
+ "kw": "waterproof car ECU, automotive electronics coating, ECU moisture protection",
+ "order": 50,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Protecting Car ECUs and Automotive Electronics from Moisture",
+   "desc": "How to waterproof car ECUs, sensor boards and control modules against humidity, washing and corrosion with a protective coating.",
+   "intro": "Automotive electronics face humidity, temperature cycling, road salt, vibration and the occasional water ingress. A protective coating on the board helps ECUs, sensors and control modules survive years in a harsh under-hood or under-body environment.",
+   "secs": [
+    [
+     "Why automotive boards fail",
+     "Under-hood heat cycling pulls humid air in and out of modules; over time moisture and road salt corrode tracks and solder joints. A coating seals the copper and pads against this slow corrosion."
+    ],
+    [
+     "What to coat",
+     "Engine and body control modules, sensor boards, dashboard electronics and aftermarket modules all benefit. Apply an even layer over tracks, components and solder joints."
+    ],
+    [
+     "Mask connectors and grounds",
+     "Mask multi-pin connectors, programming and diagnostic pads, press-fit pins and chassis-ground contacts so electrical connections and serviceability are preserved."
+    ],
+    [
+     "Vibration and salt resistance",
+     "Constant vibration fatigues solder joints and salt accelerates corrosion. A reinforced coating that resists abrasion and chemicals helps modules last in real road conditions."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating by MGCoat is a heat-free, plastic-based nano coating made for waterproofing PCBs, sensors and electronic circuits with mechanical reinforcement."
+  },
+  "fa": {
+   "title": "محافظت از ECU خودرو و الکترونیک خودرو در برابر رطوبت",
+   "desc": "چطور ECU خودرو، بردهای سنسور و ماژول‌های کنترل را با پوشش محافظ در برابر رطوبت، شست‌وشو و خوردگی ضدآب کنیم.",
+   "intro": "الکترونیک خودرو با رطوبت، چرخهٔ دمایی، نمک جاده، لرزش و گاهی نفوذ آب روبه‌روست. یک پوشش محافظ روی برد کمک می‌کند ECUها، سنسورها و ماژول‌های کنترل سال‌ها در محیط سخت زیر کاپوت یا زیر بدنه دوام بیاورند.",
+   "secs": [
+    [
+     "چرا بردهای خودرو خراب می‌شوند",
+     "چرخهٔ گرمایی زیر کاپوت هوای مرطوب را به داخل و خارج ماژول می‌کشد؛ به‌مرور رطوبت و نمک جاده مسیرها و نقاط لحیم را می‌خورند. پوشش، مس و پدها را در برابر این خوردگی آرام آب‌بندی می‌کند."
+    ],
+    [
+     "چه چیزی را بپوشانیم",
+     "ماژول‌های کنترل موتور و بدنه، بردهای سنسور، الکترونیک داشبورد و ماژول‌های افترمارکت همگی سود می‌برند. یک لایهٔ یکنواخت روی مسیرها، قطعات و نقاط لحیم اجرا کنید."
+    ],
+    [
+     "کانکتورها و اتصال‌بدنه را ماسک کنید",
+     "کانکتورهای چندپین، پدهای برنامه‌ریزی و عیب‌یابی، پین‌های پرس‌فیت و کنتاکت‌های اتصال‌بدنه را ماسک کنید تا اتصالات الکتریکی و قابلیت سرویس حفظ شود."
+    ],
+    [
+     "مقاومت در برابر لرزش و نمک",
+     "لرزش دائم نقاط لحیم را خسته می‌کند و نمک خوردگی را تسریع می‌کند. یک پوشش تقویت‌شده که در برابر سایش و مواد شیمیایی مقاوم است به دوام ماژول‌ها در شرایط واقعی جاده کمک می‌کند."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating محصول MGCoat یک پوشش نانویی بر پایه پلاستیک و بدون حرارت است که برای ضدآب‌کردن بردها، سنسورها و مدارهای الکترونیکی همراه با تقویت مکانیکی ساخته شده است."
+  },
+  "ru": {
+   "title": "Защита автомобильных ЭБУ и электроники от влаги",
+   "desc": "Как сделать автомобильные ЭБУ, платы датчиков и модули управления водостойкими против влаги, мойки и коррозии защитным покрытием.",
+   "intro": "Автомобильная электроника сталкивается с влагой, температурными циклами, дорожной солью, вибрацией и иногда с попаданием воды. Защитное покрытие платы помогает ЭБУ, датчикам и модулям управления служить годами в суровых условиях под капотом или под днищем.",
+   "secs": [
+    [
+     "Почему автомобильные платы выходят из строя",
+     "Температурные циклы под капотом затягивают влажный воздух в модули и обратно; со временем влага и дорожная соль разъедают дорожки и пайки. Покрытие герметизирует медь и площадки от этой медленной коррозии."
+    ],
+    [
+     "Что покрывать",
+     "Модули управления двигателем и кузовом, платы датчиков, электроника приборной панели и дополнительные модули — все они выигрывают. Нанесите ровный слой на дорожки, компоненты и пайки."
+    ],
+    [
+     "Замаскируйте разъёмы и массу",
+     "Замаскируйте многоконтактные разъёмы, площадки программирования и диагностики, запрессованные контакты и точки массы кузова, чтобы сохранить электрические соединения и ремонтопригодность."
+    ],
+    [
+     "Стойкость к вибрации и соли",
+     "Постоянная вибрация утомляет пайки, а соль ускоряет коррозию. Усиленное покрытие, стойкое к истиранию и химии, помогает модулям выдерживать реальные дорожные условия."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating от MGCoat — это нанопокрытие на пластиковой основе без нагрева для гидроизоляции плат, датчиков и электронных схем с механическим усилением."
+  },
+  "tr": {
+   "title": "Araç ECU'larını ve Otomotiv Elektroniğini Nemden Koruma",
+   "desc": "Araç ECU'larını, sensör kartlarını ve kontrol modüllerini koruyucu kaplamayla neme, yıkamaya ve korozyona karşı su geçirmez yapma.",
+   "intro": "Otomotiv elektroniği nem, sıcaklık döngüsü, yol tuzu, titreşim ve zaman zaman su girişiyle karşılaşır. Kart üzerindeki koruyucu kaplama; ECU'ların, sensörlerin ve kontrol modüllerinin zorlu motor bölmesi veya alt gövde ortamında yıllarca dayanmasına yardımcı olur.",
+   "secs": [
+    [
+     "Otomotiv kartları neden arızalanır",
+     "Motor bölmesindeki sıcaklık döngüsü nemli havayı modüllerin içine ve dışına çeker; zamanla nem ve yol tuzu yolları ve lehim noktalarını aşındırır. Kaplama, bakırı ve padleri bu yavaş korozyona karşı sızdırmaz hâle getirir."
+    ],
+    [
+     "Ne kaplanmalı",
+     "Motor ve karoseri kontrol modülleri, sensör kartları, gösterge paneli elektroniği ve satış sonrası modüllerin hepsi fayda görür. Yollara, bileşenlere ve lehim noktalarına düzgün bir katman uygulayın."
+    ],
+    [
+     "Konnektörleri ve şasi topraklarını maskeleyin",
+     "Çok pinli konnektörleri, programlama ve teşhis padlerini, geçme pinleri ve şasi toprak kontaklarını maskeleyin; böylece elektriksel bağlantılar ve servis edilebilirlik korunur."
+    ],
+    [
+     "Titreşim ve tuz direnci",
+     "Sürekli titreşim lehim noktalarını yorar, tuz korozyonu hızlandırır. Aşınmaya ve kimyasallara dayanan güçlendirilmiş bir kaplama, modüllerin gerçek yol koşullarında dayanmasına yardımcı olur."
+    ]
+   ],
+   "close": "MGCoat'in Liquid PCB Plastic Coating ürünü; PCB'leri, sensörleri ve elektronik devreleri mekanik güçlendirmeyle su geçirmez yapmak için ısı gerektirmeyen, plastik esaslı bir nano kaplamadır."
+  },
+  "ar": {
+   "title": "حماية وحدات تحكم السيارة (ECU) وإلكترونياتها من الرطوبة",
+   "desc": "كيف تجعل وحدات تحكم السيارة ولوحات الحساسات ووحدات التحكم مقاومة للماء ضد الرطوبة والغسيل والتآكل بطلاء واقٍ.",
+   "intro": "تواجه إلكترونيات السيارات الرطوبة والدورات الحرارية وملح الطريق والاهتزاز وأحياناً دخول الماء. طلاء واقٍ على اللوحة يساعد وحدات التحكم والحساسات ووحدات التحكم على الصمود سنوات في بيئة حجرة المحرك أو أسفل الهيكل القاسية.",
+   "secs": [
+    [
+     "لماذا تتعطّل لوحات السيارات",
+     "تسحب الدورات الحرارية في حجرة المحرك الهواء الرطب إلى داخل الوحدات وخارجها؛ ومع الوقت تُتلف الرطوبة وملح الطريق المسارات ونقاط اللحام. يعزل الطلاء النحاس والأطراف ضد هذا التآكل البطيء."
+    ],
+    [
+     "ماذا تطلي",
+     "وحدات التحكم بالمحرك والهيكل، ولوحات الحساسات، وإلكترونيات لوحة العدادات، والوحدات الإضافية كلها تستفيد. طبّق طبقة متساوية على المسارات والمكوّنات ونقاط اللحام."
+    ],
+    [
+     "غطِّ الموصلات ونقاط التأريض",
+     "غطِّ الموصلات متعددة الأطراف وأطراف البرمجة والتشخيص والدبابيس المضغوطة ونقاط تأريض الهيكل للحفاظ على التوصيلات الكهربائية وقابلية الصيانة."
+    ],
+    [
+     "مقاومة الاهتزاز والملح",
+     "الاهتزاز المستمر يُجهد نقاط اللحام والملح يسرّع التآكل. طلاء معزّز يقاوم التآكل والمواد الكيميائية يساعد الوحدات على الصمود في ظروف الطريق الحقيقية."
+    ]
+   ],
+   "close": "إن Liquid PCB Plastic Coating من MGCoat طلاء نانوي قائم على البلاستيك وبدون حرارة، مصمّم لعزل لوحات PCB والحساسات والدوائر الإلكترونية مع تقوية ميكانيكية."
+  }
+ }
+}

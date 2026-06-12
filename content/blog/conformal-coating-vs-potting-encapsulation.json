@@ -1,0 +1,188 @@
+{
+ "slug": "conformal-coating-vs-potting-encapsulation",
+ "kw": "conformal coating vs potting, encapsulation, potting compound, PCB protection methods, which to choose, resin encapsulation",
+ "order": 90,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Conformal Coating vs. Potting and Encapsulation: Which to Choose",
+   "desc": "Compare conformal coating with potting and encapsulation for PCB protection: weight, thermal behaviour, repairability, cost and where a reinforced plastic coating fits.",
+   "intro": "When electronics must survive water, vibration and harsh chemicals, two strategies dominate: a thin conformal coating over the board, or fully potting it in resin. They protect very differently. Knowing the trade-offs helps you pick the right level of protection.",
+   "secs": [
+    [
+     "What conformal coating is",
+     "A conformal coating is a thin film that follows the board's contours, sealing tracks and components against moisture, dust and light corrosion while leaving the board essentially unchanged in shape and weight."
+    ],
+    [
+     "What potting is",
+     "Potting and encapsulation fill an enclosure with resin so the board is fully embedded in a solid block. This gives maximum protection against water, shock, vibration and tampering, but the assembly becomes heavy and sealed shut."
+    ],
+    [
+     "Weight and size",
+     "A coating adds almost no weight or volume, ideal for drones, wearables and dense assemblies. Potting can multiply the weight of a module and needs a cavity to hold the resin, which limits where it can be used."
+    ],
+    [
+     "Thermal behaviour",
+     "Potting can help conduct heat away in some designs but can also trap it around hot components and stress parts as the resin cures and cycles. A thin coating barely affects thermal paths, so components dissipate heat as designed."
+    ],
+    [
+     "Repair and rework",
+     "This is the biggest difference. A coated board can be opened locally, repaired and re-coated. A fully potted block is usually impossible to repair — a single failure means replacing the whole unit."
+    ],
+    [
+     "Cost and process",
+     "Coating is fast, low-material and easy to apply by dip, spray or brush. Potting needs more resin, moulds or cavities, longer cure and careful degassing, raising material and process cost per unit."
+    ],
+    [
+     "Where a reinforced plastic coating fits",
+     "A thicker plastic-based coating sits between the two: more mechanical and water protection than a thin conformal film, but without the weight, heat and lost repairability of full potting — a strong middle ground for harsh but serviceable electronics."
+    ]
+   ],
+   "close": "MGCoat's Liquid PCB Plastic Coating gives much of potting's robustness — water, abrasion and edge protection — while keeping boards light and repairable, applied heat-free by dip, spray or brush."
+  },
+  "fa": {
+   "title": "پوشش Conformal در برابر Potting و Encapsulation: کدام را انتخاب کنیم",
+   "desc": "مقایسهٔ پوشش Conformal با Potting و Encapsulation برای محافظت PCB: وزن، رفتار حرارتی، تعمیرپذیری، هزینه و جایگاه پوشش پلاستیکی تقویت‌شده.",
+   "intro": "وقتی الکترونیک باید در برابر آب، لرزش و مواد شیمیایی سخت دوام بیاورد، دو راهبرد غالب‌اند: یک پوشش نازک Conformal روی برد، یا غرق‌کردن کامل آن در رزین (Potting). این‌ها خیلی متفاوت محافظت می‌کنند. دانستن مزایا و معایب به انتخاب سطح درست محافظت کمک می‌کند.",
+   "secs": [
+    [
+     "پوشش Conformal چیست",
+     "پوشش Conformal یک فیلم نازک است که از کانتور برد پیروی می‌کند و مسیرها و قطعات را در برابر رطوبت، گردوغبار و خوردگی سبک آب‌بندی می‌کند، در حالی که شکل و وزن برد عملاً بدون تغییر می‌ماند."
+    ],
+    [
+     "Potting چیست",
+     "Potting و Encapsulation محفظه را با رزین پر می‌کنند تا برد کاملاً در یک بلوک جامد جاسازی شود. این بیشترین محافظت در برابر آب، ضربه، لرزش و دستکاری را می‌دهد، اما مجموعه سنگین و کاملاً مهر‌و‌موم می‌شود."
+    ],
+    [
+     "وزن و اندازه",
+     "پوشش تقریباً هیچ وزن یا حجمی اضافه نمی‌کند و برای دِرون، پوشیدنی و مجموعه‌های فشرده ایده‌آل است. Potting می‌تواند وزن ماژول را چند برابر کند و به یک حفره برای نگه‌داشتن رزین نیاز دارد که کاربردش را محدود می‌کند."
+    ],
+    [
+     "رفتار حرارتی",
+     "Potting در برخی طراحی‌ها به هدایت گرما کمک می‌کند اما می‌تواند گرما را دور قطعات داغ هم حبس کند و هنگام پخت و چرخهٔ رزین به قطعات تنش وارد کند. پوشش نازک تقریباً مسیرهای حرارتی را تغییر نمی‌دهد، پس قطعات طبق طراحی گرما را دفع می‌کنند."
+    ],
+    [
+     "تعمیر و بازکاری",
+     "این بزرگ‌ترین تفاوت است. بردِ پوشش‌داده‌شده را می‌توان به‌صورت موضعی باز کرد، تعمیر و دوباره پوشش داد. یک بلوک کاملاً Pot‌شده معمولاً غیرقابل‌تعمیر است — یک خرابی یعنی تعویض کل واحد."
+    ],
+    [
+     "هزینه و فرایند",
+     "پوشش سریع، کم‌مصرف و آسان است و با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود. Potting رزین بیشتر، قالب یا حفره، پخت طولانی‌تر و هواگیری دقیق می‌خواهد و هزینهٔ مواد و فرایند هر واحد را بالا می‌برد."
+    ],
+    [
+     "جایگاه پوشش پلاستیکی تقویت‌شده",
+     "پوشش ضخیم‌ترِ بر پایه پلاستیک میان این دو قرار می‌گیرد: محافظت مکانیکی و آبی بیشتر از فیلم نازک Conformal، اما بدون وزن، گرما و ازدست‌رفتن تعمیرپذیریِ Potting کامل — یک حد وسط قوی برای الکترونیک سخت اما قابل‌سرویس."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating محصول MGCoat بخش زیادی از استحکام Potting — محافظت در برابر آب، سایش و لبه — را می‌دهد و در عین حال برد را سبک و قابل‌تعمیر نگه می‌دارد، بدون حرارت با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود."
+  },
+  "ru": {
+   "title": "Конформное покрытие против заливки и герметизации: что выбрать",
+   "desc": "Сравнение конформного покрытия с заливкой и герметизацией для защиты плат: вес, тепловое поведение, ремонтопригодность, стоимость и место усиленного пластикового покрытия.",
+   "intro": "Когда электроника должна выдерживать воду, вибрацию и агрессивную химию, преобладают две стратегии: тонкое конформное покрытие платы или её полная заливка смолой. Защищают они очень по-разному. Понимание компромиссов помогает выбрать нужный уровень защиты.",
+   "secs": [
+    [
+     "Что такое конформное покрытие",
+     "Конформное покрытие — тонкая плёнка, повторяющая контуры платы, герметизирующая дорожки и компоненты от влаги, пыли и лёгкой коррозии, при этом форма и вес платы практически не меняются."
+    ],
+    [
+     "Что такое заливка",
+     "Заливка и герметизация заполняют корпус смолой, и плата полностью встроена в твёрдый блок. Это даёт максимальную защиту от воды, ударов, вибрации и вскрытия, но узел становится тяжёлым и наглухо запечатанным."
+    ],
+    [
+     "Вес и размер",
+     "Покрытие почти не добавляет вес или объём, идеально для дронов, носимых устройств и плотных сборок. Заливка может многократно увеличить вес модуля и требует полости для смолы, что ограничивает применение."
+    ],
+    [
+     "Тепловое поведение",
+     "Заливка в некоторых конструкциях помогает отводить тепло, но может и удерживать его вокруг горячих компонентов и нагружать детали при отверждении и циклах смолы. Тонкое покрытие почти не влияет на тепловые пути, и компоненты рассеивают тепло как задумано."
+    ],
+    [
+     "Ремонт и доработка",
+     "Это главное различие. Покрытую плату можно вскрыть локально, отремонтировать и заново покрыть. Полностью залитый блок обычно не ремонтируется — один отказ означает замену всего узла."
+    ],
+    [
+     "Стоимость и процесс",
+     "Покрытие быстрое, маломатериальное и простое в нанесении окунанием, распылением или кистью. Заливка требует больше смолы, форм или полостей, дольше отверждается и нуждается в дегазации, повышая стоимость материала и процесса на единицу."
+    ],
+    [
+     "Место усиленного пластикового покрытия",
+     "Более толстое покрытие на пластиковой основе находится между ними: больше механической и водной защиты, чем тонкая конформная плёнка, но без веса, нагрева и потери ремонтопригодности полной заливки — прочная золотая середина для тяжёлой, но ремонтопригодной электроники."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating от MGCoat даёт значительную часть прочности заливки — защиту от воды, истирания и по краям — сохраняя платы лёгкими и ремонтопригодными, наносится без нагрева окунанием, распылением или кистью."
+  },
+  "tr": {
+   "title": "Konformal Kaplama ile Potting ve Kapsülleme: Hangisini Seçmeli",
+   "desc": "PCB koruması için konformal kaplama ile potting ve kapsüllemeyi karşılaştırma: ağırlık, ısıl davranış, onarılabilirlik, maliyet ve güçlendirilmiş plastik kaplamanın yeri.",
+   "intro": "Elektroniğin suya, titreşime ve sert kimyasallara dayanması gerektiğinde iki strateji öne çıkar: kart üzerine ince bir konformal kaplama veya kartı reçineyle tamamen potting yapmak. Çok farklı korurlar. Ödünleşmeleri bilmek doğru koruma seviyesini seçmenize yardımcı olur.",
+   "secs": [
+    [
+     "Konformal kaplama nedir",
+     "Konformal kaplama, kartın hatlarını izleyen ince bir filmdir; hatları ve bileşenleri neme, toza ve hafif korozyona karşı sızdırmaz yapar, kartın şeklini ve ağırlığını neredeyse değiştirmez."
+    ],
+    [
+     "Potting nedir",
+     "Potting ve kapsülleme bir muhafazayı reçineyle doldurur, böylece kart katı bir bloğun içine tamamen gömülür. Bu, suya, darbeye, titreşime ve kurcalamaya karşı en yüksek korumayı verir; ama montaj ağırlaşır ve tamamen kapanır."
+    ],
+    [
+     "Ağırlık ve boyut",
+     "Kaplama neredeyse hiç ağırlık veya hacim eklemez; drone'lar, giyilebilirler ve yoğun montajlar için idealdir. Potting bir modülün ağırlığını katlayabilir ve reçineyi tutacak bir boşluk gerektirir, bu da kullanım yerini sınırlar."
+    ],
+    [
+     "Isıl davranış",
+     "Potting bazı tasarımlarda ısıyı uzaklaştırmaya yardımcı olabilir ama sıcak bileşenlerin etrafında ısıyı hapsedebilir ve reçine kürlenip çevrim yaptıkça parçaları zorlayabilir. İnce kaplama ısıl yolları neredeyse etkilemez, bileşenler tasarlandığı gibi ısı atar."
+    ],
+    [
+     "Onarım ve rework",
+     "En büyük fark budur. Kaplı bir kart yerel olarak açılıp onarılıp yeniden kaplanabilir. Tamamen potting edilmiş bir blok genelde onarılamaz — tek bir arıza tüm ünitenin değişmesi demektir."
+    ],
+    [
+     "Maliyet ve süreç",
+     "Kaplama hızlı, az malzemeli ve daldırma, püskürtme veya fırçayla kolayca uygulanır. Potting daha çok reçine, kalıp veya boşluk, daha uzun kürlenme ve dikkatli gaz alma gerektirir; birim başına malzeme ve süreç maliyetini artırır."
+    ],
+    [
+     "Güçlendirilmiş plastik kaplamanın yeri",
+     "Daha kalın plastik esaslı bir kaplama ikisinin arasında durur: ince konformal filmden daha çok mekanik ve su koruması, ama tam potting'in ağırlığı, ısısı ve kaybolan onarılabilirliği olmadan — sert ama servis edilebilir elektronik için güçlü bir orta yol."
+    ]
+   ],
+   "close": "MGCoat'in Liquid PCB Plastic Coating ürünü potting'in dayanıklılığının çoğunu — su, aşınma ve kenar koruması — verirken kartları hafif ve onarılabilir tutar; ısı gerektirmeden daldırma, püskürtme veya fırçayla uygulanır."
+  },
+  "ar": {
+   "title": "الطلاء المطابق مقابل التغليف بالراتنج (Potting): أيّهما تختار",
+   "desc": "مقارنة الطلاء المطابق بالتغليف بالراتنج لحماية لوحات PCB: الوزن والسلوك الحراري وقابلية الإصلاح والتكلفة وموضع الطلاء البلاستيكي المعزّز.",
+   "intro": "عندما يجب أن تصمد الإلكترونيات أمام الماء والاهتزاز والمواد الكيميائية القاسية، تسود استراتيجيتان: طلاء مطابق رقيق فوق اللوحة، أو تغليفها كاملاً بالراتنج. تحميان بشكل مختلف جداً. معرفة المفاضلات تساعدك على اختيار مستوى الحماية المناسب.",
+   "secs": [
+    [
+     "ما هو الطلاء المطابق",
+     "الطلاء المطابق غشاء رقيق يتبع تضاريس اللوحة ويعزل المسارات والمكوّنات ضد الرطوبة والغبار والتآكل الخفيف، بينما يبقى شكل اللوحة ووزنها دون تغيير تقريباً."
+    ],
+    [
+     "ما هو التغليف بالراتنج",
+     "التغليف بالراتنج يملأ الصندوق بالراتنج فتُغمر اللوحة كاملةً في كتلة صلبة. يمنح هذا أقصى حماية من الماء والصدمة والاهتزاز والعبث، لكن يصبح التجميع ثقيلاً ومغلقاً تماماً."
+    ],
+    [
+     "الوزن والحجم",
+     "لا يضيف الطلاء وزناً أو حجماً يُذكر، فهو مثالي للدرون والأجهزة القابلة للارتداء والتجميعات الكثيفة. أما التغليف فقد يضاعف وزن الوحدة ويحتاج تجويفاً لاحتواء الراتنج، ما يحدّ من مواضع استخدامه."
+    ],
+    [
+     "السلوك الحراري",
+     "قد يساعد التغليف على توصيل الحرارة بعيداً في بعض التصاميم لكنه قد يحبسها أيضاً حول المكوّنات الساخنة ويُجهد الأجزاء أثناء تصلّب الراتنج وتقلباته. الطلاء الرقيق لا يكاد يؤثر على المسارات الحرارية فتبدّد المكوّنات الحرارة كما صُمّمت."
+    ],
+    [
+     "الإصلاح وإعادة العمل",
+     "هذا أكبر فرق. يمكن فتح اللوحة المطلية موضعياً وإصلاحها وإعادة طلائها. أما الكتلة المغلّفة كاملاً فعادةً يتعذّر إصلاحها — عطل واحد يعني استبدال الوحدة كلها."
+    ],
+    [
+     "التكلفة والعملية",
+     "الطلاء سريع وقليل المواد وسهل التطبيق بالغمس أو الرش أو الفرشاة. التغليف يحتاج راتنجاً أكثر وقوالب أو تجاويف وتصلّباً أطول ونزع غاز بعناية، ما يرفع تكلفة المواد والعملية لكل وحدة."
+    ],
+    [
+     "موضع الطلاء البلاستيكي المعزّز",
+     "الطلاء الأسمك القائم على البلاستيك يقع بين الاثنين: حماية ميكانيكية ومائية أكثر من الغشاء المطابق الرقيق، لكن دون وزن وحرارة وفقدان قابلية الإصلاح في التغليف الكامل — حلٌّ وسط قوي للإلكترونيات القاسية والقابلة للصيانة في آن."
+    ]
+   ],
+   "close": "إن Liquid PCB Plastic Coating من MGCoat يمنح كثيراً من متانة التغليف — الحماية من الماء والتآكل والحواف — مع إبقاء اللوحات خفيفة وقابلة للإصلاح، ويُطبَّق بدون حرارة بالغمس أو الرش أو الفرشاة."
+  }
+ }
+}

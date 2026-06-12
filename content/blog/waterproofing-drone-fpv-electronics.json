@@ -1,0 +1,128 @@
+{
+ "slug": "waterproofing-drone-fpv-electronics",
+ "kw": "waterproof drone electronics, FPV waterproofing, flight controller coating",
+ "order": 30,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Waterproofing Drone and FPV Electronics",
+   "desc": "How to protect drone flight controllers, ESCs and FPV boards from rain, humidity and vibration with a protective coating.",
+   "intro": "Flight controllers, ESCs, receivers and FPV boards face rain, humidity, condensation and constant vibration. A thin coating lets you fly in more conditions and extends the life of sensitive electronics.",
+   "secs": [
+    [
+     "Why drones need coating",
+     "A few drops of water on a powered flight controller can cause a short and a crash. Coating creates a moisture barrier so light rain, fog and condensation are far less likely to cause damage."
+    ],
+    [
+     "What to coat and what to mask",
+     "Coat flight controllers, ESCs, receivers and VTX boards. Mask connectors, antenna pads, USB ports and any sensors that must stay exposed."
+    ],
+    [
+     "Keep it light",
+     "Drones are weight-sensitive. A thin, even layer protects without meaningfully changing weight or balance; reserve thicker layers for edges and repair points."
+    ],
+    [
+     "Vibration and durability",
+     "Vibration loosens solder joints over time. A coating that reinforces joints and resists abrasion helps the board survive repeated flights and handling."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating is applied at room temperature by dipping, spraying or brush — practical for protecting FPV and drone electronics in the workshop or the field."
+  },
+  "fa": {
+   "title": "ضدآب‌کردن الکترونیک دِرون و FPV",
+   "desc": "چطور کنترلر پرواز، ESC و بردهای FPV دِرون را با پوشش محافظ در برابر باران، رطوبت و لرزش محافظت کنیم.",
+   "intro": "کنترلرهای پرواز، ESCها، گیرنده‌ها و بردهای FPV در معرض باران، رطوبت، میعان و لرزش دائم‌اند. یک پوشش نازک اجازه می‌دهد در شرایط بیشتری پرواز کنی و عمر الکترونیک حساس را بالا می‌برد.",
+   "secs": [
+    [
+     "چرا دِرون به پوشش نیاز دارد",
+     "چند قطره آب روی کنترلر پروازِ روشن می‌تواند باعث اتصال‌کوتاه و سقوط شود. پوشش یک سد رطوبتی می‌سازد تا باران سبک، مه و میعان خیلی کمتر آسیب بزنند."
+    ],
+    [
+     "چه چیزی را بپوشانیم و چه چیزی را ماسک کنیم",
+     "کنترلر پرواز، ESC، گیرنده و بردهای VTX را پوشش بدهید. کانکتورها، پدهای آنتن، پورت USB و هر سنسوری که باید باز بماند را ماسک کنید."
+    ],
+    [
+     "سبک نگه‌اش دارید",
+     "دِرون به وزن حساس است. یک لایهٔ نازک و یکنواخت بدون تغییر محسوس وزن یا تعادل محافظت می‌کند؛ لایه‌های ضخیم‌تر را فقط برای لبه‌ها و نقاط تعمیر نگه دارید."
+    ],
+    [
+     "لرزش و دوام",
+     "لرزش به‌مرور نقاط لحیم را شل می‌کند. پوششی که اتصالات را تقویت و در برابر سایش مقاومت می‌کند به دوام برد در پروازهای مکرر کمک می‌کند."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating در دمای محیط با غوطه‌وری، اسپری یا قلم‌مو اجرا می‌شود — کاربردی برای محافظت از الکترونیک FPV و دِرون در کارگاه یا میدان."
+  },
+  "ru": {
+   "title": "Гидроизоляция электроники дронов и FPV",
+   "desc": "Как защитить полётные контроллеры, ESC и FPV-платы дрона от дождя, влаги и вибрации защитным покрытием.",
+   "intro": "Полётные контроллеры, ESC, приёмники и FPV-платы подвержены дождю, влаге, конденсату и постоянной вибрации. Тонкое покрытие позволяет летать в большем числе условий и продлевает срок службы электроники.",
+   "secs": [
+    [
+     "Зачем дронам покрытие",
+     "Несколько капель воды на работающем полётном контроллере могут вызвать короткое замыкание и падение. Покрытие создаёт барьер от влаги, и лёгкий дождь, туман и конденсат гораздо реже причиняют вред."
+    ],
+    [
+     "Что покрывать и что маскировать",
+     "Покрывайте полётные контроллеры, ESC, приёмники и VTX-платы. Маскируйте разъёмы, площадки антенн, порты USB и датчики, которые должны оставаться открытыми."
+    ],
+    [
+     "Сохраняйте лёгкость",
+     "Дроны чувствительны к весу. Тонкий ровный слой защищает, почти не меняя вес или баланс; более толстые слои оставьте для краёв и зон ремонта."
+    ],
+    [
+     "Вибрация и надёжность",
+     "Вибрация со временем ослабляет пайки. Покрытие, усиливающее соединения и стойкое к истиранию, помогает плате пережить многократные полёты."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating наносится при комнатной температуре окунанием, распылением или кистью — удобно для защиты FPV- и дрон-электроники в мастерской или в поле."
+  },
+  "tr": {
+   "title": "Drone ve FPV Elektroniğini Su Geçirmez Yapmak",
+   "desc": "Drone uçuş kontrolcülerini, ESC'leri ve FPV kartlarını koruyucu kaplamayla yağmurdan, nemden ve titreşimden koruma.",
+   "intro": "Uçuş kontrolcüleri, ESC'ler, alıcılar ve FPV kartları yağmura, neme, yoğuşmaya ve sürekli titreşime maruz kalır. İnce bir kaplama daha çok koşulda uçmanızı sağlar ve hassas elektroniğin ömrünü uzatır.",
+   "secs": [
+    [
+     "Drone neden kaplama ister",
+     "Çalışan bir uçuş kontrolcüsüne düşen birkaç damla su kısa devreye ve düşüşe yol açabilir. Kaplama bir nem bariyeri oluşturur; hafif yağmur, sis ve yoğuşmanın zarar verme olasılığı çok azalır."
+    ],
+    [
+     "Ne kaplanmalı, ne maskelenmeli",
+     "Uçuş kontrolcülerini, ESC'leri, alıcıları ve VTX kartlarını kaplayın. Konnektörleri, anten padlerini, USB portlarını ve açık kalması gereken sensörleri maskeleyin."
+    ],
+    [
+     "Hafif tutun",
+     "Drone'lar ağırlığa duyarlıdır. İnce, düzgün bir katman ağırlığı veya dengeyi belirgin değiştirmeden korur; daha kalın katmanları kenarlar ve onarım noktaları için saklayın."
+    ],
+    [
+     "Titreşim ve dayanıklılık",
+     "Titreşim zamanla lehim noktalarını gevşetir. Bağlantıları güçlendiren ve aşınmaya dayanan bir kaplama, kartın tekrarlı uçuşlara dayanmasına yardımcı olur."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating oda sıcaklığında daldırma, püskürtme veya fırçayla uygulanır — atölyede veya sahada FPV ve drone elektroniğini korumak için pratiktir."
+  },
+  "ar": {
+   "title": "عزل إلكترونيات الدرون و FPV ضد الماء",
+   "desc": "كيف تحمي وحدات تحكم طيران الدرون وأنظمة ESC ولوحات FPV من المطر والرطوبة والاهتزاز بطلاء واقٍ.",
+   "intro": "تتعرض وحدات تحكم الطيران وأنظمة ESC وأجهزة الاستقبال ولوحات FPV للمطر والرطوبة والتكثّف والاهتزاز المستمر. يتيح لك طلاء رقيق الطيران في ظروف أكثر ويطيل عمر الإلكترونيات الحساسة.",
+   "secs": [
+    [
+     "لماذا يحتاج الدرون إلى طلاء",
+     "بضع قطرات ماء على وحدة تحكم طيران تعمل قد تسبّب قصراً وسقوطاً. يُكوّن الطلاء حاجزاً ضد الرطوبة فيقل كثيراً احتمال ضرر المطر الخفيف والضباب والتكثّف."
+    ],
+    [
+     "ماذا تطلي وماذا تغطّي",
+     "اطلِ وحدات التحكم وأنظمة ESC وأجهزة الاستقبال ولوحات VTX. غطِّ الموصلات وأطراف الهوائي ومنافذ USB وأي حساسات يجب أن تبقى مكشوفة."
+    ],
+    [
+     "حافظ على الخفّة",
+     "الدرون حسّاس للوزن. طبقة رقيقة متساوية تحمي دون تغيير ملموس في الوزن أو التوازن؛ واترك الطبقات الأسمك للحواف ونقاط الإصلاح."
+    ],
+    [
+     "الاهتزاز والمتانة",
+     "يُرخي الاهتزاز نقاط اللحام مع الوقت. الطلاء الذي يقوّي الوصلات ويقاوم التآكل يساعد اللوحة على تحمّل الرحلات المتكررة."
+    ]
+   ],
+   "close": "يُطبَّق Liquid PCB Plastic Coating في درجة حرارة الغرفة بالغمس أو الرش أو الفرشاة — عمليٌّ لحماية إلكترونيات FPV والدرون في الورشة أو الميدان."
+  }
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "slug": "conformal-coating-vs-plastic-coating",
+ "kw": "conformal coating, PCB protective coating, acrylic coating",
+ "order": 20,
+ "date": "2026-06-04",
+ "L": {
+  "en": {
+   "title": "Conformal Coating vs. Liquid Plastic Protective Coating",
+   "desc": "The difference between thin conformal coatings (acrylic, varnish) and a thicker plastic-based protective coating for PCBs.",
+   "intro": "Many circuit-protection products are thin, transparent conformal coatings. Liquid PCB Plastic Coating takes a different approach. Understanding the difference helps you choose the right protection.",
+   "secs": [
+    [
+     "What conformal coatings do well",
+     "Thin acrylic or varnish-type coatings are good against humidity, dust and light corrosion. They are very thin and add minimal weight — ideal when only moisture protection is needed."
+    ],
+    [
+     "How a plastic-based coating differs",
+     "A plastic-based coating builds a thicker, harder, non-transparent layer. Beyond moisture protection it adds mechanical resistance, edge reinforcement and visual concealment, and can be built up in layers."
+    ],
+    [
+     "Mechanical protection",
+     "Thin coatings can be vulnerable to scratches and abrasion. A reinforced plastic-based layer is harder after curing and better for boards that are washed, handled or vibrated."
+    ],
+    [
+     "Which should you choose?",
+     "For light indoor moisture protection, a thin conformal coating may be enough. For harsh environments, immersion risk or mechanical stress, a thicker plastic-based coating is stronger."
+    ]
+   ],
+   "close": "MGCoat's Liquid PCB Plastic Coating is a reinforced, heat-free plastic-based coating that combines water protection, mechanical strength and non-transparent coverage."
+  },
+  "fa": {
+   "title": "پوشش Conformal در برابر پوشش محافظ پلاستیکی مایع",
+   "desc": "تفاوت پوشش‌های نازک Conformal (اکریلیک، وارنیش) با پوشش محافظ ضخیم‌ترِ بر پایه پلاستیک برای بردهای PCB.",
+   "intro": "بسیاری از محصولات محافظت مدار، پوشش‌های نازک و شفاف Conformal هستند. Liquid PCB Plastic Coating رویکرد متفاوتی دارد. درک این تفاوت به انتخاب محافظت درست کمک می‌کند.",
+   "secs": [
+    [
+     "پوشش‌های Conformal در چه چیزی خوب‌اند",
+     "پوشش‌های نازک اکریلیک یا وارنیش‌مانند در برابر رطوبت، گردوغبار و خوردگی سبک خوب‌اند. خیلی نازک‌اند و وزن کمی اضافه می‌کنند — مناسب جایی که فقط محافظت رطوبتی لازم است."
+    ],
+    [
+     "تفاوت پوشش بر پایه پلاستیک",
+     "پوشش بر پایه پلاستیک یک لایهٔ ضخیم‌تر، سخت‌تر و غیرشفاف می‌سازد. علاوه بر محافظت رطوبتی، مقاومت مکانیکی، تقویت لبه و پنهان‌سازی بصری اضافه می‌کند و می‌تواند لایه‌لایه ساخته شود."
+    ],
+    [
+     "محافظت مکانیکی",
+     "پوشش‌های نازک می‌توانند در برابر خراش و سایش آسیب‌پذیر باشند. یک لایهٔ تقویت‌شدهٔ پلاستیکی پس از خشک‌شدن سخت‌تر است و برای بردهایی که شسته، جابه‌جا یا دچار لرزش می‌شوند بهتر است."
+    ],
+    [
+     "کدام را انتخاب کنید؟",
+     "برای محافظت رطوبتی سبکِ داخل ساختمان، یک پوشش نازک Conformal کافی است. برای شرایط سخت، ریسک غوطه‌وری یا تنش مکانیکی، پوشش ضخیم‌تر پلاستیکی قوی‌تر است."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating محصول MGCoat یک پوشش تقویت‌شده، بدون حرارت و بر پایه پلاستیک است که محافظت در برابر آب، استحکام مکانیکی و پوشش غیرشفاف را با هم دارد."
+  },
+  "ru": {
+   "title": "Конформное покрытие против жидкого пластикового покрытия",
+   "desc": "Разница между тонкими конформными покрытиями (акрил, лак) и более толстым покрытием на пластиковой основе для плат.",
+   "intro": "Многие средства защиты плат — это тонкие прозрачные конформные покрытия. Liquid PCB Plastic Coating работает иначе. Понимание разницы помогает выбрать правильную защиту.",
+   "secs": [
+    [
+     "В чём хороши конформные покрытия",
+     "Тонкие акриловые или лаковые покрытия хороши против влаги, пыли и лёгкой коррозии. Они очень тонкие и почти не добавляют веса — идеальны, когда нужна только защита от влаги."
+    ],
+    [
+     "Чем отличается пластиковое покрытие",
+     "Покрытие на пластиковой основе образует более толстый, твёрдый, непрозрачный слой. Помимо защиты от влаги оно добавляет механическую стойкость, усиление краёв и визуальное скрытие, и наносится слоями."
+    ],
+    [
+     "Механическая защита",
+     "Тонкие покрытия уязвимы к царапинам и истиранию. Усиленный пластиковый слой твёрже после отверждения и лучше для плат, которые моют, берут в руки или подвергают вибрации."
+    ],
+    [
+     "Что выбрать?",
+     "Для лёгкой защиты от влаги в помещении достаточно тонкого конформного покрытия. Для тяжёлых условий, риска погружения или механических нагрузок прочнее покрытие на пластиковой основе."
+    ]
+   ],
+   "close": "Liquid PCB Plastic Coating от MGCoat — усиленное покрытие на пластиковой основе без нагрева, сочетающее водозащиту, механическую прочность и непрозрачность."
+  },
+  "tr": {
+   "title": "Konformal Kaplama ile Sıvı Plastik Koruyucu Kaplama",
+   "desc": "İnce konformal kaplamalar (akrilik, vernik) ile daha kalın plastik esaslı koruyucu kaplama arasındaki fark.",
+   "intro": "Birçok devre koruma ürünü ince, şeffaf konformal kaplamadır. Liquid PCB Plastic Coating farklı bir yaklaşım benimser. Farkı anlamak doğru korumayı seçmenize yardımcı olur.",
+   "secs": [
+    [
+     "Konformal kaplamalar neyde iyidir",
+     "İnce akrilik veya vernik tipi kaplamalar neme, toza ve hafif korozyona karşı iyidir. Çok incedir ve çok az ağırlık ekler — yalnızca nem koruması gerektiğinde idealdir."
+    ],
+    [
+     "Plastik esaslı kaplama nasıl farklıdır",
+     "Plastik esaslı kaplama daha kalın, daha sert, opak bir katman oluşturur. Nem korumasının ötesinde mekanik direnç, kenar güçlendirmesi ve görsel gizleme ekler ve katmanlı yapılabilir."
+    ],
+    [
+     "Mekanik koruma",
+     "İnce kaplamalar çizik ve aşınmaya karşı savunmasız olabilir. Güçlendirilmiş plastik katman kürlendikten sonra daha serttir; yıkanan, elle tutulan veya titreşen kartlar için daha iyidir."
+    ],
+    [
+     "Hangisini seçmelisiniz?",
+     "Hafif iç mekân nem koruması için ince bir konformal kaplama yeterli olabilir. Zorlu ortamlar, daldırma riski veya mekanik gerilim için daha kalın plastik esaslı kaplama daha güçlüdür."
+    ]
+   ],
+   "close": "MGCoat'in Liquid PCB Plastic Coating ürünü; su korumasını, mekanik dayanımı ve opak kaplamayı birleştiren, güçlendirilmiş, ısı gerektirmeyen plastik esaslı bir kaplamadır."
+  },
+  "ar": {
+   "title": "الطلاء المطابق مقابل الطلاء البلاستيكي السائل الواقي",
+   "desc": "الفرق بين الطلاءات المطابقة الرقيقة (أكريليك، ورنيش) والطلاء الواقي الأسمك القائم على البلاستيك للوحات PCB.",
+   "intro": "كثير من منتجات حماية الدوائر طلاءات مطابقة رقيقة وشفافة. يتبع Liquid PCB Plastic Coating نهجاً مختلفاً. فهم الفرق يساعدك على اختيار الحماية المناسبة.",
+   "secs": [
+    [
+     "فيمَ تتميّز الطلاءات المطابقة",
+     "الطلاءات الرقيقة من الأكريليك أو الورنيش جيدة ضد الرطوبة والغبار والتآكل الخفيف. رقيقة جداً وتضيف وزناً ضئيلاً — مثالية عند الحاجة للحماية من الرطوبة فقط."
+    ],
+    [
+     "كيف يختلف الطلاء البلاستيكي",
+     "يُكوّن الطلاء القائم على البلاستيك طبقة أسمك وأصلب وغير شفافة. إلى جانب الحماية من الرطوبة يضيف مقاومة ميكانيكية وتقوية للحواف وإخفاءً بصرياً، ويمكن بناؤه طبقات."
+    ],
+    [
+     "الحماية الميكانيكية",
+     "الطلاءات الرقيقة قد تكون عرضة للخدش والتآكل. الطبقة البلاستيكية المعزّزة أصلب بعد الجفاف وأفضل للوحات التي تُغسل أو تُمسك أو تتعرّض للاهتزاز."
+    ],
+    [
+     "أيّهما تختار؟",
+     "للحماية الخفيفة من الرطوبة داخل المباني قد يكفي طلاء مطابق رقيق. أما للبيئات القاسية أو خطر الغمر أو الإجهاد الميكانيكي فالطلاء البلاستيكي الأسمك أقوى."
+    ]
+   ],
+   "close": "إن Liquid PCB Plastic Coating من MGCoat طلاء معزّز بدون حرارة قائم على البلاستيك يجمع بين الحماية من الماء والقوة الميكانيكية والتغطية غير الشفافة."
+  }
+ }
+}
