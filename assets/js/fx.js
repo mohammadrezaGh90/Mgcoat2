@@ -55,11 +55,18 @@
     canvas.style.opacity = String(lerp(1, 0.05, k));
   }
 
+  // The intro is rendered with the universal Canvas-2D path on EVERY device so the
+  // look is identical worldwide — Canvas 2D is supported on every browser/OS, while
+  // WebGL is blocked or behaves differently on some (in-app browsers, locked-down
+  // phones, certain GPUs). The baked dust disk below looks the same everywhere.
+  var FORCE_2D = true;
   var gl = null;
-  try {
-    gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: false, antialias: true, depth: false })
-      || canvas.getContext("experimental-webgl", { alpha: true, premultipliedAlpha: false });
-  } catch (e) { gl = null; }
+  if (!FORCE_2D) {
+    try {
+      gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: false, antialias: true, depth: false })
+        || canvas.getContext("experimental-webgl", { alpha: true, premultipliedAlpha: false });
+    } catch (e) { gl = null; }
+  }
 
   // ---------------- 2-D fallback (no WebGL) ----------------
   // Some in-app browsers (e.g. Instagram / Facebook webview) refuse a WebGL
