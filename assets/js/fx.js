@@ -59,7 +59,7 @@
   // look is identical worldwide — Canvas 2D is supported on every browser/OS, while
   // WebGL is blocked or behaves differently on some (in-app browsers, locked-down
   // phones, certain GPUs). The baked dust disk below looks the same everywhere.
-  var FORCE_2D = true;
+  var FORCE_2D = false;
   var gl = null;
   if (!FORCE_2D) {
     try {
