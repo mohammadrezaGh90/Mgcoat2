@@ -24,7 +24,7 @@
       "media.publish": "انتشار فایل",
       "blog.title": "مقاله‌های وبلاگ", "blog.where": "📍 صفحهٔ /blog — هر مقاله یک صفحهٔ جدا با سئو", "blog.hint": "مقالهٔ جدید بساز یا یک مقالهٔ موجود را ویرایش/حذف کن. هر مقاله به ۵ زبان منتشر می‌شود.",
       "blog.new": "+ مقالهٔ جدید", "blog.loading": "در حال بارگذاری…",
-      "status.title": "وضعیت", "status.hint": "تغییرات اخیر منتشرشده. سایت ۱ تا ۲ دقیقه بعد از هر انتشار به‌روز می‌شود.", "status.open": "باز کردن سایت زنده ↗", "status.signout": "خروج",
+      "status.title": "وضعیت", "status.hint": "هر تغییر = یک نسخه. برای بازگشت به هر نسخهٔ قبلی، روی «بازگردانی» بزن. سایت ۱–۲ دقیقه بعد به‌روز می‌شود.", "status.open": "باز کردن سایت زنده ↗", "status.signout": "خروج",
       "tab.settings": "تنظیمات", "tab.media": "رسانه", "tab.blog": "وبلاگ", "tab.status": "وضعیت",
       // editor
       "ed.slug": "نشانی مقاله (انگلیسی، فقط a-z 0-9 -)", "ed.slughint": "بخشی از آدرس صفحه می‌شود و بعداً قابل تغییر نیست.",
@@ -35,7 +35,7 @@
       "msg.published": "منتشر شد ✓ تا ۱–۲ دقیقه دیگر زنده می‌شود", "msg.failed": "خطا: ", "msg.loadfail": "بارگذاری نشد: ",
       "msg.choosefile": "اول یک فایل انتخاب کن", "msg.needname": "نام فایل را وارد کن", "msg.toobig": "فایل خیلی بزرگ است (حداکثر ~۲۴ مگابایت)",
       "msg.expired": "نشست منقضی شد — دوباره وارد شو", "msg.deleted": "حذف شد ✓", "blog.none": "هنوز مقاله‌ای نیست.",
-      "st.connected": "متصل", "st.error": "خطا", "edit": "ویرایش", "del": "حذف",
+      "st.connected": "متصل", "st.error": "خطا", "edit": "ویرایش", "del": "حذف", "st.current": "نسخهٔ فعلی", "st.restore": "بازگردانی", "st.restored": "به نسخهٔ قبلی برگشت ✓ تا ۱–۲ دقیقه زنده می‌شود", "st.alreadythere": "همین الان روی این نسخه‌ای", "st.restoreconfirm": "سایت به این نسخه برگردد؟ یک نسخهٔ جدید ساخته می‌شود، پس همین کار هم قابل‌بازگشت است.",
       "tab.texts": "متن‌ها", "texts.title": "متن‌های صفحهٔ اصلی", "texts.where": "📍 متنِ همهٔ بخش‌های صفحهٔ اصلی، به‌تفکیک",
       "texts.hint": "زبان را انتخاب کن، بخش را باز کن و هر متنی را ویرایش کن. فقط متن‌های تغییرکرده منتشر می‌شوند.",
       "texts.save": "انتشار تغییرات", "texts.nochange": "تغییری برای انتشار نیست", "group.hero": "بخش معرفی (بالای صفحه)",
@@ -56,7 +56,7 @@
       "media.publish": "Publish file",
       "blog.title": "Blog articles", "blog.where": "📍 The /blog page — each article is its own SEO page", "blog.hint": "Create a new article, or edit/delete an existing one. Each is published in 5 languages.",
       "blog.new": "+ New article", "blog.loading": "Loading…",
-      "status.title": "Status", "status.hint": "Recent published changes. The live site updates 1–2 minutes after each publish.", "status.open": "Open live site ↗", "status.signout": "Sign out",
+      "status.title": "Status", "status.hint": "Each change is a version. Tap Restore on any earlier version to roll the site back. Live in 1–2 min.", "status.open": "Open live site ↗", "status.signout": "Sign out",
       "tab.settings": "Settings", "tab.media": "Media", "tab.blog": "Blog", "tab.status": "Status",
       "ed.slug": "Article URL (English, a-z 0-9 - only)", "ed.slughint": "Becomes part of the page address; cannot be changed later.",
       "ed.kw": "SEO keywords (comma separated)", "ed.lang": "Editing language", "ed.langhint": "Fill English at least; empty languages fall back to English.",
@@ -66,7 +66,7 @@
       "msg.published": "Published ✓ live in 1–2 min", "msg.failed": "Failed: ", "msg.loadfail": "Load failed: ",
       "msg.choosefile": "Choose a file first", "msg.needname": "Enter a file name", "msg.toobig": "File too large (max ~24 MB)",
       "msg.expired": "Session expired — sign in again", "msg.deleted": "Deleted ✓", "blog.none": "No articles yet.",
-      "st.connected": "Connected", "st.error": "Error", "edit": "Edit", "del": "Delete",
+      "st.connected": "Connected", "st.error": "Error", "edit": "Edit", "del": "Delete", "st.current": "current", "st.restore": "Restore", "st.restored": "Restored ✓ live in 1–2 min", "st.alreadythere": "Already on this version", "st.restoreconfirm": "Restore the site to this version? A new version is created, so this is undoable too.",
       "tab.texts": "Texts", "texts.title": "Homepage texts", "texts.where": "📍 The text of every homepage section, organised",
       "texts.hint": "Pick a language, open a section and edit any text. Only changed texts are published.",
       "texts.save": "Publish changes", "texts.nochange": "Nothing changed to publish", "group.hero": "Intro (top of page)",
@@ -87,7 +87,7 @@
       "media.publish": "Dosyayı yayınla",
       "blog.title": "Blog yazıları", "blog.where": "📍 /blog sayfası — her yazı kendi SEO sayfası", "blog.hint": "Yeni yazı oluştur veya mevcut bir yazıyı düzenle/sil. Her biri 5 dilde yayınlanır.",
       "blog.new": "+ Yeni yazı", "blog.loading": "Yükleniyor…",
-      "status.title": "Durum", "status.hint": "Son yayınlanan değişiklikler. Canlı site her yayından 1–2 dakika sonra güncellenir.", "status.open": "Canlı siteyi aç ↗", "status.signout": "Çıkış",
+      "status.title": "Durum", "status.hint": "Her değişiklik bir sürümdür. Eski bir sürümü geri yüklemek için Geri yükle'ye dokunun. 1–2 dk içinde canlı.", "status.open": "Canlı siteyi aç ↗", "status.signout": "Çıkış",
       "tab.settings": "Ayarlar", "tab.media": "Medya", "tab.blog": "Blog", "tab.status": "Durum",
       "ed.slug": "Yazı adresi (İngilizce, a-z 0-9 -)", "ed.slughint": "Sayfa adresinin parçası olur; sonradan değiştirilemez.",
       "ed.kw": "SEO anahtar kelimeleri (virgülle)", "ed.lang": "Düzenlenen dil", "ed.langhint": "En az İngilizceyi doldurun; boş diller İngilizceden alınır.",
@@ -97,7 +97,7 @@
       "msg.published": "Yayınlandı ✓ 1–2 dk içinde canlı", "msg.failed": "Hata: ", "msg.loadfail": "Yüklenemedi: ",
       "msg.choosefile": "Önce bir dosya seçin", "msg.needname": "Dosya adı girin", "msg.toobig": "Dosya çok büyük (en fazla ~24 MB)",
       "msg.expired": "Oturum doldu — tekrar giriş yapın", "msg.deleted": "Silindi ✓", "blog.none": "Henüz yazı yok.",
-      "st.connected": "Bağlı", "st.error": "Hata", "edit": "Düzenle", "del": "Sil",
+      "st.connected": "Bağlı", "st.error": "Hata", "edit": "Düzenle", "del": "Sil", "st.current": "güncel", "st.restore": "Geri yükle", "st.restored": "Geri yüklendi ✓ 1–2 dk içinde canlı", "st.alreadythere": "Zaten bu sürümdesin", "st.restoreconfirm": "Site bu sürüme geri yüklensin mi? Yeni bir sürüm oluşturulur, bu da geri alınabilir.",
       "tab.texts": "Metinler", "texts.title": "Ana sayfa metinleri", "texts.where": "📍 Her ana sayfa bölümünün metni, düzenli",
       "texts.hint": "Bir dil seçin, bir bölümü açın ve herhangi bir metni düzenleyin. Yalnızca değişen metinler yayınlanır.",
       "texts.save": "Değişiklikleri yayınla", "texts.nochange": "Yayınlanacak değişiklik yok", "group.hero": "Giriş (sayfanın üstü)",
@@ -186,8 +186,24 @@
     var box = $("st-commits"); box.innerHTML = '<p class="muted">…</p>';
     call("commits").then(function (r) {
       $("st-pill").textContent = t("st.connected"); $("st-pill").className = "pill ok";
-      box.innerHTML = (r.commits && r.commits.length) ? r.commits.map(function (c) { return '<div class="commit"><span>' + esc(c.msg) + '</span><span class="when">' + esc(new Date(c.when).toLocaleString()) + "</span></div>"; }).join("") : '<p class="muted">—</p>';
+      var cs = r.commits || [];
+      if (!cs.length) { box.innerHTML = '<p class="muted">—</p>'; return; }
+      box.innerHTML = cs.map(function (c, i) {
+        var when = new Date(c.when).toLocaleString();
+        var right = (i === 0)
+          ? '<span class="pill ok" style="white-space:nowrap">' + t("st.current") + "</span>"
+          : '<button class="btn sm" data-restore="' + esc(c.sha) + '" style="white-space:nowrap">↩ ' + t("st.restore") + "</button>";
+        return '<div class="commit"><span style="flex:1">' + esc(c.msg) + '<br><span class="when">' + esc(when) + "</span></span>" + right + "</div>";
+      }).join("");
     }).catch(function (e) { $("st-pill").textContent = t("st.error"); $("st-pill").className = "pill warn"; box.innerHTML = '<p class="muted">' + esc(e.message) + "</p>"; });
+  }
+  function restoreVersion(sha) {
+    if (!confirm(t("st.restoreconfirm"))) return;
+    var box = $("st-commits"); box.style.opacity = ".5";
+    call("restore", { sha: sha }).then(function (r) {
+      toast(r && r.noop ? t("st.alreadythere") : t("st.restored"), true);
+      setTimeout(loadStatus, 1200);
+    }).catch(function (e) { toast(t("msg.failed") + e.message, false); }).then(function () { box.style.opacity = "1"; });
   }
 
   // ---------- Blog CMS ----------
@@ -367,6 +383,7 @@
     $("btn-save-settings").onclick = saveSettings;
     $("btn-upload").onclick = uploadFile;
     $("btn-signout").onclick = signOut;
+    $("st-commits").onclick = function (e) { var b = e.target.closest("button[data-restore]"); if (b) restoreVersion(b.dataset.restore); };
     $("btn-new-article").onclick = function () { renderEditor(blankArticle(), true); };
     $("btn-save-texts").onclick = saveTexts;
     $("blog-list").onclick = function (e) {

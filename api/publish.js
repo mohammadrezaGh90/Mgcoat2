@@ -134,10 +134,24 @@ module.exports = async function handler(req, res) {
     }
 
     if (action === "commits") {
-      var cr = await gh(repoBase() + "/commits?sha=" + branch() + "&per_page=8");
+      var cr = await gh(repoBase() + "/commits?sha=" + branch() + "&per_page=12");
       var cj = await cr.json();
-      var list = Array.isArray(cj) ? cj.map(function (c) { return { msg: c.commit.message.split("\n")[0], when: c.commit.author.date, url: c.html_url }; }) : [];
+      var list = Array.isArray(cj) ? cj.map(function (c) { return { sha: c.sha, msg: c.commit.message.split("\n")[0], when: c.commit.author.date, url: c.html_url }; }) : [];
       return res.status(200).json({ commits: list });
+    }
+
+    // one-click rollback: re-publish an earlier version as a NEW forward commit
+    // (history is preserved, so this is itself undoable). Uses Git already as the
+    // version store — no extra storage.
+    if (action === "restore") {
+      if (!body.sha || !/^[0-9a-f]{7,40}$/.test(body.sha)) return res.status(400).json({ error: "bad version id" });
+      var ref0 = await ghJson("/repos/" + owner() + "/" + repo() + "/git/ref/heads/" + branch());
+      var head = ref0.object.sha;
+      if (head === body.sha) return res.status(200).json({ ok: true, noop: true });
+      var target = await ghJson(repoBase() + "/git/commits/" + body.sha);   // → its tree
+      var nc = await ghJson(repoBase() + "/git/commits", "POST", { message: "Studio: restore site to " + body.sha.slice(0, 7), tree: target.tree.sha, parents: [head] });
+      await ghJson(repoBase() + "/git/refs/heads/" + branch(), "PATCH", { sha: nc.sha });
+      return res.status(200).json({ ok: true, commit: nc.html_url });
     }
 
     // ---------------- Blog (CMS) ----------------
