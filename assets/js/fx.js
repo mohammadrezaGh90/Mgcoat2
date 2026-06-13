@@ -79,12 +79,12 @@
       x.fillStyle = g; x.fillRect(0, 0, 32, 32);
       return s;
     }
-    var spCyan = sprite("90,190,255"), spRed = sprite("255,95,72"), spWhite = sprite("220,235,255");
-    var NP = window.innerWidth < 760 ? 1200 : 2000, P = [];
+    var spCyan = sprite("150,196,255"), spRed = sprite("234,104,114"), spWhite = sprite("222,236,255");
+    var NP = window.innerWidth < 760 ? 1300 : 2200, P = [];
     for (var fi = 0; fi < NP; fi++) {
       var rr = 0.12 + Math.pow(Math.random(), 0.7) * 0.86;
       P.push({ rad: rr, base: Math.random() * 6.2831853, spd: 0.16 + 0.8 * (0.12 / rr),
-        side: Math.random() < 0.5, seed: Math.random(), sz: 0.6 + Math.random() * 1.7 });
+        side: Math.random() < 0.74, seed: Math.random(), sz: 0.28 + Math.random() * 0.8 });
     }
     var ST = [];
     for (var sj = 0; sj < 80; sj++) ST.push({ x: Math.random(), y: Math.random(), s: Math.random() });
@@ -119,10 +119,10 @@
         var p = P[i], ang = p.base + p.rad * 2.6 + t * p.spd + e * 1.6;
         var x = cx + Math.cos(ang) * p.rad * R, y = cy + Math.sin(ang) * p.rad * R * 0.5;
         var glow = clamp(1 - (p.rad - 0.12) / 0.86, 0, 1);
-        var al = (0.28 + 0.55 * glow) * (0.7 + 0.3 * Math.sin(t * 2 + p.seed * 6.2831853)) * (1 - e * 0.7);
+        var al = (0.13 + 0.32 * glow) * (0.7 + 0.3 * Math.sin(t * 2 + p.seed * 6.2831853)) * (1 - e * 0.7);
         if (al <= 0.01) continue;
         c2.globalAlpha = clamp(al, 0, 1);
-        var z = (p.sz + glow * 2.4) * DPR2 * 2;
+        var z = (p.sz + glow * 1.2) * DPR2 * 1.25;
         c2.drawImage(p.side ? spCyan : spRed, x - z, y - z, z * 2, z * 2);
       }
       c2.globalAlpha = 1; c2.globalCompositeOperation = "source-over";
