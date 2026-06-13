@@ -69,25 +69,37 @@
     var c2 = canvas.getContext("2d");
     var DPR2 = Math.min(1.5, window.devicePixelRatio || 1);
     var W2 = 0, H2 = 0;
-    function sprite(rgb) {
-      var s = document.createElement("canvas"); s.width = s.height = 32;
-      var x = s.getContext("2d");
-      var g = x.createRadialGradient(16, 16, 0, 16, 16, 16);
-      g.addColorStop(0, "rgba(" + rgb + ",1)");
-      g.addColorStop(0.45, "rgba(" + rgb + ",0.45)");
-      g.addColorStop(1, "rgba(" + rgb + ",0)");
-      x.fillStyle = g; x.fillRect(0, 0, 32, 32);
-      return s;
-    }
-    var spCyan = sprite("150,196,255"), spRed = sprite("234,104,114"), spWhite = sprite("222,236,255");
-    var NP = window.innerWidth < 760 ? 1300 : 2200, P = [];
-    for (var fi = 0; fi < NP; fi++) {
-      var rr = 0.12 + Math.pow(Math.random(), 0.7) * 0.86;
-      P.push({ rad: rr, base: Math.random() * 6.2831853, spd: 0.16 + 0.8 * (0.12 / rr),
-        side: Math.random() < 0.74, seed: Math.random(), sz: 0.28 + Math.random() * 0.8 });
-    }
-    var ST = [];
-    for (var sj = 0; sj < 80; sj++) ST.push({ x: Math.random(), y: Math.random(), s: Math.random() });
+
+    // Bake a DENSE, fine dust disk ONCE (tens of thousands of tiny points → a smooth
+    // luminous disk like the WebGL version) into an offscreen canvas. Per frame we
+    // only move/scale this baked texture, so it stays fluid even on the weak phones
+    // and in-app browsers that fall back here — drawing 70k points every frame on the
+    // CPU would freeze them.
+    var DUST = document.createElement("canvas"), DS = 680; DUST.width = DUST.height = DS;
+    (function bakeDust() {
+      var x = DUST.getContext("2d"); x.globalCompositeOperation = "lighter";
+      var cx = DS / 2, cy = DS / 2, RR = DS * 0.47;
+      // soft inner halo for depth (the luminous core of the disk)
+      var hg = x.createRadialGradient(cx, cy, 0, cx, cy, RR * 0.9);
+      hg.addColorStop(0, "rgba(150,196,255,0.10)"); hg.addColorStop(0.45, "rgba(120,160,230,0.06)"); hg.addColorStop(1, "rgba(120,160,230,0)");
+      x.fillStyle = hg; x.fillRect(0, 0, DS, DS);
+      var N = 90000;
+      for (var i = 0; i < N; i++) {
+        var rr = 0.12 + Math.pow(Math.random(), 0.72) * 0.88;          // radial spread, void in the centre
+        var ang = Math.random() * 6.2831853;
+        var px = cx + Math.cos(ang) * rr * RR, py = cy + Math.sin(ang) * rr * RR;
+        var glow = 1 - (rr - 0.12) / 0.88;                              // brighter toward the inner disk
+        x.globalAlpha = (0.09 + 0.20 * glow) * (0.4 + 0.6 * Math.random());   // visible fine grain
+        x.fillStyle = Math.random() < 0.8 ? "rgba(160,200,255,1)" : "rgba(236,108,118,1)";
+        var s = 0.6 + Math.random() * 0.9;
+        x.fillRect(px - s / 2, py - s / 2, s, s);
+      }
+      x.globalAlpha = 1;
+    })();
+
+    var ST = [];   // a handful of live sparkles on top for motion
+    for (var sj = 0; sj < 70; sj++) ST.push({ rad: 0.15 + Math.random() * 0.82, base: Math.random() * 6.2831853, spd: 0.1 + Math.random() * 0.5, s: Math.random() });
+
     function fbResize() {
       W2 = canvas.width = Math.floor(window.innerWidth * DPR2);
       H2 = canvas.height = Math.floor(window.innerHeight * DPR2);
@@ -107,23 +119,27 @@
       if (!drawOnly && sy > introH + vh) return;
       var t = (performance.now() - ft0) / 1000;
       var ctr = fbCenter(), cx = ctr[0], cy = ctr[1];
-      var R = Math.min(W2, H2) * 0.46 * (1.0 + e * 1.3);
+      var baseR = Math.min(W2, H2) * 0.52, grow = 1 + e * 1.25, fade = 1 - e * 0.78;
       c2.clearRect(0, 0, W2, H2);
       c2.globalCompositeOperation = "lighter";
-      for (var s = 0; s < ST.length; s++) {
-        var st = ST[s], a = (0.12 + 0.4 * st.s) * (0.5 + 0.5 * Math.sin(t * 1.5 + st.s * 6.2831853));
-        c2.globalAlpha = a; var sz = (1 + st.s * 2) * DPR2;
-        c2.drawImage(spWhite, st.x * W2 - sz, st.y * H2 - sz, sz * 2, sz * 2);
+      // two gently drifting layers of the baked dust (vertical squash → disk) for depth & life
+      function layer(scale, rot, dy, alpha) {
+        var dw = baseR * 2 * scale * grow, dh = dw * 0.6;
+        c2.save(); c2.translate(cx, cy + dy); c2.rotate(rot);
+        c2.globalAlpha = alpha * fade; c2.drawImage(DUST, -dw / 2, -dh / 2, dw, dh);
+        c2.restore();
       }
-      for (var i = 0; i < NP; i++) {
-        var p = P[i], ang = p.base + p.rad * 2.6 + t * p.spd + e * 1.6;
-        var x = cx + Math.cos(ang) * p.rad * R, y = cy + Math.sin(ang) * p.rad * R * 0.5;
-        var glow = clamp(1 - (p.rad - 0.12) / 0.86, 0, 1);
-        var al = (0.13 + 0.32 * glow) * (0.7 + 0.3 * Math.sin(t * 2 + p.seed * 6.2831853)) * (1 - e * 0.7);
-        if (al <= 0.01) continue;
-        c2.globalAlpha = clamp(al, 0, 1);
-        var z = (p.sz + glow * 1.2) * DPR2 * 1.25;
-        c2.drawImage(p.side ? spCyan : spRed, x - z, y - z, z * 2, z * 2);
+      layer(1.00, Math.sin(t * 0.05) * 0.05, Math.sin(t * 0.3) * 4 * DPR2, 0.9);
+      layer(1.07, -Math.sin(t * 0.04) * 0.045, -Math.sin(t * 0.24) * 4 * DPR2, 0.5);
+      // live sparkles
+      for (var s = 0; s < ST.length; s++) {
+        var p = ST[s], ang = p.base + t * p.spd + e * 1.4;
+        var rx = cx + Math.cos(ang) * p.rad * baseR, ry = cy + Math.sin(ang) * p.rad * baseR * 0.6;
+        var tw = 0.4 + 0.6 * Math.sin(t * 2 + p.s * 6.2831853);
+        c2.globalAlpha = (0.10 + 0.26 * p.s) * tw * fade;
+        c2.fillStyle = "rgba(220,235,255,1)";
+        var z = (0.6 + p.s * 1.5) * DPR2;
+        c2.beginPath(); c2.arc(rx, ry, z, 0, 6.2831853); c2.fill();
       }
       c2.globalAlpha = 1; c2.globalCompositeOperation = "source-over";
     }
