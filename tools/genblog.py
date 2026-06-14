@@ -65,7 +65,7 @@ def article_page(a):
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
 {FONTS}
-<link rel="stylesheet" href="/assets/css/style.css?v=202606147"/>
+<link rel="stylesheet" href="/assets/css/style.css?v=202606141a"/>
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@graph":lds},ensure_ascii=False,separators=(',',':'))}</script>
 </head>
 <body>
@@ -102,7 +102,7 @@ idx=f"""<!DOCTYPE html>
 <meta property="og:image" content="{SITE}/assets/img/og-banner.jpg"/><meta name="theme-color" content="#070910"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png"/>
 {FONTS}
-<link rel="stylesheet" href="/assets/css/style.css?v=202606147"/>
+<link rel="stylesheet" href="/assets/css/style.css?v=202606141a"/>
 </head>
 <body>
 {header(True)}
