@@ -35,7 +35,7 @@
       "msg.published": "منتشر شد ✓ تا ۱–۲ دقیقه دیگر زنده می‌شود", "msg.failed": "خطا: ", "msg.loadfail": "بارگذاری نشد: ",
       "msg.choosefile": "اول یک فایل انتخاب کن", "msg.needname": "نام فایل را وارد کن", "msg.toobig": "فایل خیلی بزرگ است (حداکثر ~۲۴ مگابایت)",
       "msg.expired": "نشست منقضی شد — دوباره وارد شو", "msg.deleted": "حذف شد ✓", "blog.none": "هنوز مقاله‌ای نیست.",
-      "st.connected": "متصل", "st.error": "خطا", "edit": "ویرایش", "del": "حذف", "st.current": "نسخهٔ فعلی", "st.restore": "بازگردانی", "st.restored": "به نسخهٔ قبلی برگشت ✓ تا ۱–۲ دقیقه زنده می‌شود", "st.alreadythere": "همین الان روی این نسخه‌ای", "st.restoreconfirm": "سایت به این نسخه برگردد؟ یک نسخهٔ جدید ساخته می‌شود، پس همین کار هم قابل‌بازگشت است.",
+      "st.connected": "متصل", "st.error": "خطا", "edit": "ویرایش", "del": "حذف", "st.current": "نسخهٔ فعلی", "st.restore": "بازگردانی", "st.restored": "به نسخهٔ قبلی برگشت ✓ تا ۱–۲ دقیقه زنده می‌شود", "st.alreadythere": "همین الان روی این نسخه‌ای", "st.restoreconfirm": "سایت به این نسخه برگردد؟ یک نسخهٔ جدید ساخته می‌شود، پس همین کار هم قابل‌بازگشت است.", "st.older": "نسخهٔ قبلی‌تر", "st.newer": "نسخهٔ بعدی",
       "tab.texts": "متن‌ها", "texts.title": "متن‌های صفحهٔ اصلی", "texts.where": "📍 متنِ همهٔ بخش‌های صفحهٔ اصلی، به‌تفکیک",
       "texts.hint": "زبان را انتخاب کن، بخش را باز کن و هر متنی را ویرایش کن. فقط متن‌های تغییرکرده منتشر می‌شوند.",
       "texts.save": "انتشار تغییرات", "texts.nochange": "تغییری برای انتشار نیست", "group.hero": "بخش معرفی (بالای صفحه)",
@@ -66,7 +66,7 @@
       "msg.published": "Published ✓ live in 1–2 min", "msg.failed": "Failed: ", "msg.loadfail": "Load failed: ",
       "msg.choosefile": "Choose a file first", "msg.needname": "Enter a file name", "msg.toobig": "File too large (max ~24 MB)",
       "msg.expired": "Session expired — sign in again", "msg.deleted": "Deleted ✓", "blog.none": "No articles yet.",
-      "st.connected": "Connected", "st.error": "Error", "edit": "Edit", "del": "Delete", "st.current": "current", "st.restore": "Restore", "st.restored": "Restored ✓ live in 1–2 min", "st.alreadythere": "Already on this version", "st.restoreconfirm": "Restore the site to this version? A new version is created, so this is undoable too.",
+      "st.connected": "Connected", "st.error": "Error", "edit": "Edit", "del": "Delete", "st.current": "current", "st.restore": "Restore", "st.restored": "Restored ✓ live in 1–2 min", "st.alreadythere": "Already on this version", "st.restoreconfirm": "Restore the site to this version? A new version is created, so this is undoable too.", "st.older": "Older", "st.newer": "Newer",
       "tab.texts": "Texts", "texts.title": "Homepage texts", "texts.where": "📍 The text of every homepage section, organised",
       "texts.hint": "Pick a language, open a section and edit any text. Only changed texts are published.",
       "texts.save": "Publish changes", "texts.nochange": "Nothing changed to publish", "group.hero": "Intro (top of page)",
@@ -97,7 +97,7 @@
       "msg.published": "Yayınlandı ✓ 1–2 dk içinde canlı", "msg.failed": "Hata: ", "msg.loadfail": "Yüklenemedi: ",
       "msg.choosefile": "Önce bir dosya seçin", "msg.needname": "Dosya adı girin", "msg.toobig": "Dosya çok büyük (en fazla ~24 MB)",
       "msg.expired": "Oturum doldu — tekrar giriş yapın", "msg.deleted": "Silindi ✓", "blog.none": "Henüz yazı yok.",
-      "st.connected": "Bağlı", "st.error": "Hata", "edit": "Düzenle", "del": "Sil", "st.current": "güncel", "st.restore": "Geri yükle", "st.restored": "Geri yüklendi ✓ 1–2 dk içinde canlı", "st.alreadythere": "Zaten bu sürümdesin", "st.restoreconfirm": "Site bu sürüme geri yüklensin mi? Yeni bir sürüm oluşturulur, bu da geri alınabilir.",
+      "st.connected": "Bağlı", "st.error": "Hata", "edit": "Düzenle", "del": "Sil", "st.current": "güncel", "st.restore": "Geri yükle", "st.restored": "Geri yüklendi ✓ 1–2 dk içinde canlı", "st.alreadythere": "Zaten bu sürümdesin", "st.restoreconfirm": "Site bu sürüme geri yüklensin mi? Yeni bir sürüm oluşturulur, bu da geri alınabilir.", "st.older": "Önceki", "st.newer": "Sonraki",
       "tab.texts": "Metinler", "texts.title": "Ana sayfa metinleri", "texts.where": "📍 Her ana sayfa bölümünün metni, düzenli",
       "texts.hint": "Bir dil seçin, bir bölümü açın ve herhangi bir metni düzenleyin. Yalnızca değişen metinler yayınlanır.",
       "texts.save": "Değişiklikleri yayınla", "texts.nochange": "Yayınlanacak değişiklik yok", "group.hero": "Giriş (sayfanın üstü)",
@@ -182,27 +182,40 @@
   }
 
   // ---------- Status ----------
+  var versionList = [], curIdx = 0;
   function loadStatus() {
     var box = $("st-commits"); box.innerHTML = '<p class="muted">…</p>';
     call("commits").then(function (r) {
       $("st-pill").textContent = t("st.connected"); $("st-pill").className = "pill ok";
-      var cs = r.commits || [];
-      if (!cs.length) { box.innerHTML = '<p class="muted">—</p>'; return; }
-      box.innerHTML = cs.map(function (c, i) {
-        var when = new Date(c.when).toLocaleString();
-        var right = (i === 0)
-          ? '<span class="pill ok" style="white-space:nowrap">' + t("st.current") + "</span>"
-          : '<button class="btn sm" data-restore="' + esc(c.sha) + '" style="white-space:nowrap">↩ ' + t("st.restore") + "</button>";
-        return '<div class="commit"><span style="flex:1">' + esc(c.msg) + '<br><span class="when">' + esc(when) + "</span></span>" + right + "</div>";
-      }).join("");
+      versionList = r.commits || []; curIdx = 0;
+      renderVersions();
     }).catch(function (e) { $("st-pill").textContent = t("st.error"); $("st-pill").className = "pill warn"; box.innerHTML = '<p class="muted">' + esc(e.message) + "</p>"; });
   }
-  function restoreVersion(sha) {
+  function renderVersions() {
+    var box = $("st-commits");
+    if (!versionList.length) { box.innerHTML = '<p class="muted">—</p>'; return; }
+    var nav = '<div style="display:flex;gap:8px;margin-bottom:12px">' +
+      '<button class="btn sm" id="v-newer"' + (curIdx <= 0 ? " disabled" : "") + ' style="flex:1">↪ ' + t("st.newer") + "</button>" +
+      '<button class="btn sm" id="v-older"' + (curIdx >= versionList.length - 1 ? " disabled" : "") + ' style="flex:1">↩ ' + t("st.older") + "</button></div>";
+    var rows = versionList.map(function (c, i) {
+      var when = new Date(c.when).toLocaleString();
+      var right = (i === curIdx)
+        ? '<span class="pill ok" style="white-space:nowrap">' + t("st.current") + "</span>"
+        : '<button class="btn sm" data-idx="' + i + '" style="white-space:nowrap">↩ ' + t("st.restore") + "</button>";
+      return '<div class="commit"' + (i === curIdx ? ' style="background:rgba(84,216,236,.07);border-radius:8px"' : "") +
+        '><span style="flex:1;padding:0 6px">' + esc(c.msg) + '<br><span class="when">' + esc(when) + "</span></span>" + right + "</div>";
+    }).join("");
+    box.innerHTML = nav + rows;
+    if ($("v-older")) $("v-older").onclick = function () { restoreToIndex(curIdx + 1); };
+    if ($("v-newer")) $("v-newer").onclick = function () { restoreToIndex(curIdx - 1); };
+  }
+  function restoreToIndex(idx) {
+    if (idx < 0 || idx >= versionList.length || idx === curIdx) return;
     if (!confirm(t("st.restoreconfirm"))) return;
     var box = $("st-commits"); box.style.opacity = ".5";
-    call("restore", { sha: sha }).then(function (r) {
+    call("restore", { sha: versionList[idx].sha }).then(function (r) {
+      curIdx = idx; renderVersions();
       toast(r && r.noop ? t("st.alreadythere") : t("st.restored"), true);
-      setTimeout(loadStatus, 1200);
     }).catch(function (e) { toast(t("msg.failed") + e.message, false); }).then(function () { box.style.opacity = "1"; });
   }
 
@@ -383,7 +396,7 @@
     $("btn-save-settings").onclick = saveSettings;
     $("btn-upload").onclick = uploadFile;
     $("btn-signout").onclick = signOut;
-    $("st-commits").onclick = function (e) { var b = e.target.closest("button[data-restore]"); if (b) restoreVersion(b.dataset.restore); };
+    $("st-commits").onclick = function (e) { var b = e.target.closest("button[data-idx]"); if (b) restoreToIndex(+b.dataset.idx); };
     $("btn-new-article").onclick = function () { renderEditor(blankArticle(), true); };
     $("btn-save-texts").onclick = saveTexts;
     $("blog-list").onclick = function (e) {
